@@ -1,0 +1,375 @@
+{
+  "slug": "cpmai",
+  "certId": "pmi-cpmai",
+  "code": "CPMAI",
+  "name": {
+    "en": "PMI Certified Professional in Managing AI",
+    "vi": "PMI Certified Professional in Managing AI"
+  },
+  "tagline": {
+    "en": "For project and product leaders who run AI initiatives with the CPMAI methodology: responsible AI, business needs, data needs, model development and evaluation, and operationalization.",
+    "vi": "Dành cho trưởng dự án và sản phẩm triển khai các sáng kiến AI theo phương pháp CPMAI: AI có trách nhiệm, nhu cầu kinh doanh, nhu cầu dữ liệu, phát triển và đánh giá mô hình, và đưa vào vận hành."
+  },
+  "provider": "PMI",
+  "category": "AI Project Management",
+  "accent": "#10b981",
+  "badge": "badges/cpmai.png",
+  "examConfig": {
+    "totalQuestions": 120,
+    "durationMinutes": 160,
+    "passingScore": "TBC",
+    "passingDetail": "Pass/fail. PMI publishes no passing score.",
+    "fee": "$490 / $630",
+    "validity": "3 years",
+    "delivery": "Proctored"
+  },
+  "examFacts": [
+    {
+      "label": {
+        "en": "Questions",
+        "vi": "Số câu"
+      },
+      "value": {
+        "en": "120",
+        "vi": "120"
+      },
+      "detail": {
+        "en": "Scenario-based multiple choice. 100 scored and 20 unscored pretest questions, mixed at random. No scheduled break.",
+        "vi": "Trắc nghiệm theo tình huống. 100 câu tính điểm và 20 câu thử nghiệm không tính điểm, xếp ngẫu nhiên. Không có giờ nghỉ."
+      }
+    },
+    {
+      "label": {
+        "en": "Duration",
+        "vi": "Thời gian"
+      },
+      "value": {
+        "en": "160 min",
+        "vi": "160 phút"
+      },
+      "detail": {
+        "en": "≈ 80 s per question",
+        "vi": "≈ 80 giây mỗi câu"
+      }
+    },
+    {
+      "label": {
+        "en": "Passing score",
+        "vi": "Điểm đạt"
+      },
+      "value": {
+        "en": "TBC",
+        "vi": "TBC"
+      },
+      "detail": {
+        "en": "Pass/fail. PMI publishes no passing score.",
+        "vi": "Đạt/không đạt. PMI không công bố điểm đạt."
+      }
+    },
+    {
+      "label": {
+        "en": "Delivery",
+        "vi": "Hình thức"
+      },
+      "value": {
+        "en": "Proctored",
+        "vi": "Có giám thị"
+      },
+      "detail": {
+        "en": "Pearson VUE test centre (PMI recommends it) or OnVUE online proctored. You must finish the 21-hour PMI-CPMAI Exam Prep Course before you can schedule.",
+        "vi": "Thi tại trung tâm Pearson VUE (PMI khuyến nghị) hoặc thi online có giám thị qua OnVUE. Phải hoàn thành khoá PMI-CPMAI Exam Prep Course 21 giờ trước khi đặt lịch thi."
+      }
+    },
+    {
+      "label": {
+        "en": "Fee",
+        "vi": "Lệ phí"
+      },
+      "value": {
+        "en": "$490 / $630",
+        "vi": "$490 / $630"
+      },
+      "detail": {
+        "en": "PMI member / non-member price for the course and exam bundle as shown on pmi.org in November 2026. PMI prices by region; the US list price is reported as $699 / $899. Retakes need a further exam fee.",
+        "vi": "Giá cho hội viên PMI / không phải hội viên của gói khoá học kèm bài thi, theo pmi.org tháng 11/2026. PMI định giá theo khu vực; giá niêm yết tại Mỹ được nêu là $699 / $899. Thi lại phải trả thêm lệ phí."
+      }
+    },
+    {
+      "label": {
+        "en": "Validity",
+        "vi": "Hiệu lực"
+      },
+      "value": {
+        "en": "3 years",
+        "vi": "3 năm"
+      },
+      "detail": {
+        "en": "Earn 30 PDUs every 3 years and pay a renewal fee.",
+        "vi": "Tích luỹ 30 PDU mỗi 3 năm và đóng phí gia hạn."
+      }
+    }
+  ],
+  "factsSource": null,
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 15,
+      "name": {
+        "en": "Support Responsible and Trustworthy AI Efforts",
+        "vi": "Support Responsible and Trustworthy AI Efforts"
+      },
+      "description": {
+        "en": "How the AI project leader builds privacy, security, transparency, fairness, compliance and accountability into every phase of an AI project, from Business Understanding to Model Operationalization, instead of bolting them on at the end.",
+        "vi": "Cách người lãnh đạo dự án AI đưa quyền riêng tư, bảo mật, minh bạch, công bằng, tuân thủ và trách nhiệm giải trình vào mọi giai đoạn của dự án AI, từ Business Understanding đến Model Operationalization, thay vì vá thêm vào cuối dự án."
+      },
+      "principleCount": 5,
+      "questionCount": 36
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 26,
+      "name": {
+        "en": "Identify Business Needs and Solutions",
+        "vi": "Identify Business Needs and Solutions"
+      },
+      "description": {
+        "en": "The Business Understanding work at the start of an AI project: defining the real business problem, judging whether AI is feasible and worth it, assessing risks, scoping the first iteration, building the ROI and business case, drafting the solution, setting success criteria, and lining up resources and adoption.",
+        "vi": "Phần việc Business Understanding (hiểu nghiệp vụ) ở đầu dự án AI: xác định đúng vấn đề kinh doanh, đánh giá AI có khả thi và đáng đầu tư không, đánh giá rủi ro, khoanh phạm vi cho vòng lặp đầu tiên, xây dựng ROI và business case, phác thảo giải pháp, đặt tiêu chí thành công, và chuẩn bị nguồn lực cũng như kế hoạch để người dùng chấp nhận giải pháp."
+      },
+      "principleCount": 10,
+      "questionCount": 64
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 26,
+      "name": {
+        "en": "Identify Data Needs",
+        "vi": "Identify Data Needs"
+      },
+      "description": {
+        "en": "The data understanding work of an AI project: defining what data the solution needs, finding the people and places that hold it, setting up a governed workspace, gathering and checking the data, and deciding with leadership whether it is good enough to proceed.",
+        "vi": "Phần việc hiểu dữ liệu (data understanding) của một dự án AI: xác định giải pháp cần dữ liệu gì, tìm ra những người và nơi đang nắm giữ dữ liệu, dựng một môi trường làm việc có quản trị, thu thập và kiểm tra dữ liệu, rồi cùng lãnh đạo quyết định dữ liệu đã đủ tốt để đi tiếp hay chưa."
+      },
+      "principleCount": 9,
+      "questionCount": 62
+    },
+    {
+      "id": "D4",
+      "code": "Domain 4",
+      "weight": 16,
+      "name": {
+        "en": "Manage AI Model Development and Evaluation",
+        "vi": "Manage AI Model Development and Evaluation"
+      },
+      "description": {
+        "en": "Overseeing CPMAI Phases III to V: preparing the data, choosing and training the model with data scientists, keeping QA and configuration under control, and making the two go/no-go calls, on data readiness before training and on model readiness before operationalization.",
+        "vi": "Giám sát các Phase III đến V của CPMAI: chuẩn bị dữ liệu, cùng data scientist chọn và huấn luyện mô hình, kiểm soát QA và quản lý cấu hình, và đưa ra hai quyết định go/no-go: dữ liệu đã sẵn sàng để huấn luyện chưa, và mô hình đã sẵn sàng để đưa vào vận hành chưa."
+      },
+      "principleCount": 6,
+      "questionCount": 38
+    },
+    {
+      "id": "D5",
+      "code": "Domain 5",
+      "weight": 17,
+      "name": {
+        "en": "Operationalize AI Solution",
+        "vi": "Operationalize AI Solution"
+      },
+      "description": {
+        "en": "Turning an approved model into a running, governed service: planning and managing the deployment, governing models and drift, tracking business and technical metrics, closing the project with lessons learned, handing over to operations and planning for AI failures.",
+        "vi": "Biến một mô hình đã được phê duyệt thành một dịch vụ đang chạy và được quản trị: lập kế hoạch và quản lý triển khai, quản trị mô hình và drift, theo dõi chỉ số kinh doanh và kỹ thuật, đóng dự án cùng bài học kinh nghiệm, bàn giao cho bộ phận vận hành và lập kế hoạch ứng phó khi AI gặp sự cố."
+      },
+      "principleCount": 7,
+      "questionCount": 41
+    }
+  ],
+  "studyPlan": [
+    {
+      "phase": "Phase 1",
+      "title": {
+        "en": "Methodology, responsible AI and business needs: D1 + D2 (41%)",
+        "vi": "Phương pháp, AI có trách nhiệm và nhu cầu kinh doanh: D1 + D2 (41%)"
+      },
+      "steps": [
+        {
+          "en": "Download the PMI-CPMAI Exam Content Outline (September 2025) and rate yourself 1 to 5 on all 37 tasks; ignore any CPMAI v7 material",
+          "vi": "Tải Exam Content Outline của PMI-CPMAI (tháng 9/2025) và tự chấm 1 đến 5 cho cả 37 nhiệm vụ; bỏ qua mọi tài liệu CPMAI v7"
+        },
+        {
+          "en": "Complete prep course modules 1 and 2 (why AI projects fail, Phase I Business Understanding) and write the six CPMAI phases and their go/no-go questions from memory",
+          "vi": "Học xong module 1 và 2 của khóa luyện thi (vì sao dự án AI thất bại, Giai đoạn I Hiểu bài toán kinh doanh) và viết lại sáu giai đoạn CPMAI cùng các câu hỏi go/no-go mà không cần nhìn tài liệu"
+        },
+        {
+          "en": "Read PMI's Seven Patterns of AI and map ten everyday problems (fraud, chatbot, demand forecast, defect photos) to a pattern",
+          "vi": "Đọc bài Seven Patterns of AI của PMI và gán mười bài toán quen thuộc (gian lận, chatbot, dự báo nhu cầu, ảnh lỗi sản phẩm) vào đúng mẫu"
+        },
+        {
+          "en": "Draft a one-page scope statement, ROI estimate and KPI list for an AI idea from your own work, including what is out of scope",
+          "vi": "Soạn một trang gồm phạm vi, ước tính ROI và danh sách KPI cho một ý tưởng AI trong công việc của bạn, nêu rõ cả phần nằm ngoài phạm vi"
+        },
+        {
+          "en": "Read PMI's Top 10 Ethical Considerations for AI Projects, study the D1 and D2 principles here and drill both domains until you score 80% or more",
+          "vi": "Đọc bài Top 10 Ethical Considerations for AI Projects của PMI, học các nguyên tắc D1 và D2 ở đây và luyện cả hai lĩnh vực đến khi đạt từ 80% trở lên"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": {
+        "en": "Data understanding and data preparation: D3 + the data tasks of D4 (about 30%)",
+        "vi": "Hiểu dữ liệu và chuẩn bị dữ liệu: D3 + các nhiệm vụ dữ liệu của D4 (khoảng 30%)"
+      },
+      "steps": [
+        {
+          "en": "Complete prep course modules 3 and 4 (Phase II Data Understanding, Phase III Data Preparation)",
+          "vi": "Học xong module 3 và 4 của khóa luyện thi (Giai đoạn II Hiểu dữ liệu, Giai đoạn III Chuẩn bị dữ liệu)"
+        },
+        {
+          "en": "For one dataset you know, list its source, owner, data steward, licence or usage rights, refresh rate and the PII it holds",
+          "vi": "Với một bộ dữ liệu bạn biết, liệt kê nguồn, chủ sở hữu, người quản lý dữ liệu (data steward), giấy phép hoặc quyền sử dụng, tần suất cập nhật và các thông tin định danh cá nhân (PII) trong đó"
+        },
+        {
+          "en": "Learn the data quality dimensions (accuracy, completeness, consistency, timeliness) and what makes data representative and sufficient",
+          "vi": "Nắm các chiều chất lượng dữ liệu (chính xác, đầy đủ, nhất quán, kịp thời) và thế nào là dữ liệu đại diện và đủ"
+        },
+        {
+          "en": "Write the questions behind the data go/no-go and the data-preparation go/no-go, and what you do when the answer is no",
+          "vi": "Viết ra các câu hỏi cho quyết định go/no-go về dữ liệu và go/no-go trước khi chuẩn bị dữ liệu, cùng việc cần làm khi câu trả lời là không"
+        },
+        {
+          "en": "Read PMI's AI Data Governance Best Practices, study the D3 principles and drill D3 until you score 80% or more",
+          "vi": "Đọc bài AI Data Governance Best Practices của PMI, học các nguyên tắc D3 và luyện D3 đến khi đạt từ 80% trở lên"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": {
+        "en": "Model development, evaluation and operationalization: D4 + D5 (about 33%)",
+        "vi": "Phát triển, đánh giá mô hình và đưa vào vận hành: D4 + D5 (khoảng 33%)"
+      },
+      "steps": [
+        {
+          "en": "Complete prep course modules 5 to 7 (Phases IV to VI) so the course is finished and scheduling unlocks",
+          "vi": "Học xong module 5 đến 7 (Giai đoạn IV đến VI) để hoàn thành khóa học và mở khóa việc đặt lịch thi"
+        },
+        {
+          "en": "Make a one-page table of supervised, unsupervised, reinforcement learning and generative AI: the problem each fits, the data each needs, how explainable each is",
+          "vi": "Lập bảng một trang về học có giám sát, không giám sát, học tăng cường và AI tạo sinh: mỗi loại hợp với bài toán nào, cần dữ liệu gì, dễ giải thích đến đâu"
+        },
+        {
+          "en": "Explain overfitting, cross-validation, hyperparameter tuning and experiment tracking in plain words, as you would to a sponsor",
+          "vi": "Giải thích overfitting, cross-validation, tinh chỉnh siêu tham số và theo dõi thí nghiệm bằng lời đơn giản, như khi nói với sponsor"
+        },
+        {
+          "en": "Outline a deployment plan with rollback, a monitoring dashboard with drift alerts, a transition plan to operations and a contingency plan",
+          "vi": "Phác thảo kế hoạch triển khai có phương án rollback, dashboard giám sát có cảnh báo drift, kế hoạch bàn giao cho vận hành và kế hoạch dự phòng"
+        },
+        {
+          "en": "Study the D4 and D5 principles and drill both domains until you score 80% or more",
+          "vi": "Học các nguyên tắc D4 và D5 và luyện cả hai lĩnh vực đến khi đạt từ 80% trở lên"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": {
+        "en": "Full mocks, weak tasks and booking",
+        "vi": "Thi thử đầy đủ, ôn nhiệm vụ yếu và đặt lịch thi"
+      },
+      "steps": [
+        {
+          "en": "Take a full 120-question mock in 160 minutes without a break, then retry every miss and name its domain, task and CPMAI phase",
+          "vi": "Làm một đề thi thử đầy đủ 120 câu trong 160 phút không nghỉ, sau đó làm lại mọi câu sai và gọi tên lĩnh vực, nhiệm vụ và giai đoạn CPMAI của nó"
+        },
+        {
+          "en": "Re-rate the 37 ECO tasks and re-study every one still at 3 or lower",
+          "vi": "Chấm lại 37 nhiệm vụ trong ECO và học lại những nhiệm vụ vẫn ở mức 3 trở xuống"
+        },
+        {
+          "en": "Consider PMI's official PMI-CPMAI Practice Exam or Study Hall for questions in PMI's own style",
+          "vi": "Cân nhắc dùng PMI-CPMAI Practice Exam chính thức hoặc Study Hall của PMI để làm quen với câu hỏi đúng văn phong của PMI"
+        },
+        {
+          "en": "Take a second full mock; book with Pearson VUE once you score 80% or more on both",
+          "vi": "Làm đề thi thử đầy đủ thứ hai; đặt lịch với Pearson VUE khi đạt từ 80% trở lên ở cả hai đề"
+        }
+      ]
+    }
+  ],
+  "guide": {
+    "title": {
+      "en": "",
+      "vi": ""
+    },
+    "intro": {
+      "en": "",
+      "vi": ""
+    }
+  },
+  "faqs": [
+    {
+      "question": {
+        "en": "How many questions are on the PMI-CPMAI exam?",
+        "vi": "Đề thi PMI-CPMAI có bao nhiêu câu hỏi?"
+      },
+      "answer": {
+        "en": "The PMI-CPMAI exam has 120 questions.",
+        "vi": "Đề thi PMI-CPMAI có 120 câu hỏi."
+      }
+    },
+    {
+      "question": {
+        "en": "How long is the PMI-CPMAI exam?",
+        "vi": "Thời gian làm bài thi PMI-CPMAI là bao lâu?"
+      },
+      "answer": {
+        "en": "You have 160 minutes, about 80 seconds per question.",
+        "vi": "Bạn có 160 phút, khoảng 80 giây cho mỗi câu."
+      }
+    },
+    {
+      "question": {
+        "en": "How much does the PMI-CPMAI exam cost?",
+        "vi": "Lệ phí thi PMI-CPMAI là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The exam fee is $490 / $630.",
+        "vi": "Lệ phí thi là $490 / $630."
+      }
+    },
+    {
+      "question": {
+        "en": "What does the PMI-CPMAI exam cover?",
+        "vi": "Đề thi PMI-CPMAI gồm những nội dung gì?"
+      },
+      "answer": {
+        "en": "Support Responsible and Trustworthy AI Efforts (15%); Identify Business Needs and Solutions (26%); Identify Data Needs (26%); Manage AI Model Development and Evaluation (16%); Operationalize AI Solution (17%).",
+        "vi": "Support Responsible and Trustworthy AI Efforts (15%); Identify Business Needs and Solutions (26%); Identify Data Needs (26%); Manage AI Model Development and Evaluation (16%); Operationalize AI Solution (17%)."
+      }
+    },
+    {
+      "question": {
+        "en": "Is Practica Cert Prep free?",
+        "vi": "Practica Cert Prep có miễn phí không?"
+      },
+      "answer": {
+        "en": "Yes. Every study page, the practice questions and the mock exam are free, with no login. Progress is saved in your browser.",
+        "vi": "Có. Mọi trang học, câu hỏi luyện tập và bài thi thử đều miễn phí, không cần đăng nhập. Tiến độ được lưu trên trình duyệt của bạn."
+      }
+    }
+  ],
+  "stats": {
+    "domains": 5,
+    "principles": 37,
+    "rules": 38,
+    "glossary": 102,
+    "questions": 0
+  },
+  "sourceUrl": "https://certprep.practica.asia/vi/cpmai",
+  "scrapedAt": "2026-11-24T00:51:31.658Z"
+}

@@ -1,0 +1,1583 @@
+{
+  "slug": "cpmai",
+  "certId": "pmi-cpmai",
+  "scrapedAt": "2026-11-24T00:51:31.658Z",
+  "rules": [
+    {
+      "id": "rule-01",
+      "index": "01",
+      "situation": {
+        "en": "Personal data is about to enter the AI workspace",
+        "vi": "Dữ liệu cá nhân sắp được đưa vào AI workspace"
+      },
+      "choice": {
+        "en": "Classify, minimise and lock down access first; run a PIA before deployment",
+        "vi": "Phân loại, tối thiểu hóa và khóa quyền truy cập trước; làm PIA trước khi triển khai"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-02",
+      "index": "02",
+      "situation": {
+        "en": "The use case requires reasons for each decision (credit, hiring, clinical)",
+        "vi": "Use case yêu cầu lý do cho từng quyết định (tín dụng, tuyển dụng, lâm sàng)"
+      },
+      "choice": {
+        "en": "Set explainability as a requirement in Business Understanding, before choosing the algorithm",
+        "vi": "Đặt khả năng giải thích thành yêu cầu ngay ở Business Understanding, trước khi chọn thuật toán"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-03",
+      "index": "03",
+      "situation": {
+        "en": "Aggregate accuracy meets the target but a subgroup performs worse",
+        "vi": "Độ chính xác tổng thể đạt mục tiêu nhưng một nhóm con kém hơn"
+      },
+      "choice": {
+        "en": "No-go on the aggregate alone: test per group, mitigate, re-test",
+        "vi": "Không phê duyệt chỉ dựa trên số tổng: kiểm tra theo nhóm, giảm thiểu, kiểm tra lại"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-04",
+      "index": "04",
+      "situation": {
+        "en": "\"We removed the protected attribute, so the model is fair\"",
+        "vi": "\"Đã bỏ thuộc tính được bảo vệ nên mô hình công bằng\""
+      },
+      "choice": {
+        "en": "Check for proxies and measure outcomes by group anyway",
+        "vi": "Vẫn kiểm tra proxy và đo kết quả theo từng nhóm"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-05",
+      "index": "05",
+      "situation": {
+        "en": "A new AI regulation or policy appears mid-project",
+        "vi": "Một quy định hoặc chính sách AI mới xuất hiện giữa dự án"
+      },
+      "choice": {
+        "en": "Engage legal and compliance, assess impact, update the risk register and plan through change control",
+        "vi": "Làm việc với pháp lý và compliance, đánh giá tác động, cập nhật risk register và kế hoạch qua change control"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-06",
+      "index": "06",
+      "situation": {
+        "en": "Someone needs to know why or how a past model decision was made",
+        "vi": "Có người cần biết vì sao hoặc bằng cách nào một quyết định của mô hình trước đây được đưa ra"
+      },
+      "choice": {
+        "en": "Versioned data, code and model plus the decision log and signed go/no-go records",
+        "vi": "Dữ liệu, mã và mô hình có phiên bản cùng decision log và biên bản go/no-go đã ký"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-07",
+      "index": "07",
+      "situation": {
+        "en": "A sponsor asks for \"an AI solution\" without naming a business problem",
+        "vi": "Sponsor yêu cầu \"một giải pháp AI\" mà không nêu vấn đề kinh doanh"
+      },
+      "choice": {
+        "en": "Interview stakeholders and define the problem as a business outcome first; choose technology after",
+        "vi": "Phỏng vấn các bên liên quan và định nghĩa vấn đề dưới dạng kết quả kinh doanh trước; chọn công nghệ sau"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-08",
+      "index": "08",
+      "situation": {
+        "en": "The decision follows fixed rules, or must be deterministic and fully explainable every time",
+        "vi": "Quyết định tuân theo quy tắc cố định, hoặc phải tất định và giải thích được hoàn toàn mọi lúc"
+      },
+      "choice": {
+        "en": "Recommend a rules-based or other traditional solution; AI is not the right fit",
+        "vi": "Đề xuất giải pháp dựa trên quy tắc hoặc giải pháp truyền thống khác; AI không phù hợp"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-09",
+      "index": "09",
+      "situation": {
+        "en": "The business case counts only the development cost, or claims benefits with no baseline",
+        "vi": "Business case chỉ tính chi phí phát triển, hoặc nêu lợi ích mà không có baseline"
+      },
+      "choice": {
+        "en": "Use full TCO (data, labelling, infrastructure, monitoring, retraining, support), measure a baseline, and net off the cost of model errors",
+        "vi": "Dùng TCO đầy đủ (dữ liệu, gán nhãn, hạ tầng, giám sát, huấn luyện lại, hỗ trợ), đo baseline và trừ đi chi phí do lỗi của mô hình"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-10",
+      "index": "10",
+      "situation": {
+        "en": "Adoption is low after go-live but model accuracy holds",
+        "vi": "Tỷ lệ áp dụng thấp sau go-live nhưng độ chính xác mô hình vẫn tốt"
+      },
+      "choice": {
+        "en": "Find the root cause with users and fix the workflow fit before touching the model",
+        "vi": "Tìm nguyên nhân gốc rễ cùng người dùng và sửa mức độ phù hợp với quy trình trước khi đụng đến mô hình"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-11",
+      "index": "11",
+      "situation": {
+        "en": "Model accuracy is proposed as the only success criterion",
+        "vi": "Độ chính xác mô hình được đề xuất làm tiêu chí thành công duy nhất"
+      },
+      "choice": {
+        "en": "Add business impact and adoption metrics with thresholds agreed before development (precision/recall for rare events)",
+        "vi": "Thêm chỉ số tác động kinh doanh và áp dụng, với ngưỡng thống nhất trước khi phát triển (precision/recall cho sự kiện hiếm)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-12",
+      "index": "12",
+      "situation": {
+        "en": "The business case rests on an untested performance or automation assumption",
+        "vi": "Business case dựa trên giả định chưa kiểm chứng về hiệu năng hoặc mức tự động hóa"
+      },
+      "choice": {
+        "en": "Challenge it and present evidence-backed ranges or scenarios, then refine as data findings arrive",
+        "vi": "Chất vấn giả định, trình bày khoảng giá trị hoặc kịch bản có bằng chứng, rồi tinh chỉnh khi có phát hiện về dữ liệu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-13",
+      "index": "13",
+      "situation": {
+        "en": "Team wants to start pulling data before requirements are written",
+        "vi": "Nhóm muốn bắt đầu lấy dữ liệu khi chưa viết yêu cầu"
+      },
+      "choice": {
+        "en": "Define the required data (types, volume, time span, granularity, labels, acceptance criteria) mapped to the objective first",
+        "vi": "Trước hết xác định dữ liệu cần thiết (loại, khối lượng, khoảng thời gian, độ chi tiết, nhãn, tiêu chí chấp nhận) gắn với mục tiêu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-14",
+      "index": "14",
+      "situation": {
+        "en": "Nobody on the team knows what a field, code or dataset means, or who owns it",
+        "vi": "Không ai trong nhóm biết một trường, mã hay bộ dữ liệu nghĩa là gì hoặc ai sở hữu"
+      },
+      "choice": {
+        "en": "Ask the SME who creates or uses it, get the owner and steward named, and record the answer in the data dictionary or source inventory",
+        "vi": "Hỏi SME đang tạo hoặc dùng nó, xác định chủ sở hữu và steward, ghi câu trả lời vào data dictionary hoặc bản kiểm kê nguồn"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-15",
+      "index": "15",
+      "situation": {
+        "en": "Shortcut offered: laptops, unapproved environment or a one-off extract to save time",
+        "vi": "Có đề xuất đi tắt: dùng laptop, môi trường chưa phê duyệt hoặc trích xuất một lần cho nhanh"
+      },
+      "choice": {
+        "en": "Use a governed, version-controlled workspace and a repeatable, validated extraction pipeline",
+        "vi": "Dùng môi trường làm việc có quản trị và version control, cùng pipeline trích xuất lặp lại được và có kiểm tra"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-16",
+      "index": "16",
+      "situation": {
+        "en": "Data was collected for another purpose, bought from a third party, or scraped from the web",
+        "vi": "Dữ liệu được thu thập cho mục đích khác, mua từ bên thứ ba hoặc scrape từ web"
+      },
+      "choice": {
+        "en": "Verify usage rights and run a privacy impact assessment before the data enters the AI workspace",
+        "vi": "Xác minh quyền sử dụng và thực hiện đánh giá tác động quyền riêng tư trước khi dữ liệu vào workspace AI"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-17",
+      "index": "17",
+      "situation": {
+        "en": "Millions of rows, but few examples of the outcome or a population that differs from where the model will run",
+        "vi": "Hàng triệu dòng nhưng ít ví dụ về kết quả cần dự đoán, hoặc tập dữ liệu khác với nơi mô hình sẽ chạy"
+      },
+      "choice": {
+        "en": "Judge sufficiency and representativeness against the requirements, not volume; close the gap or call a data no-go",
+        "vi": "Đánh giá mức đủ và tính đại diện so với yêu cầu, không theo khối lượng; lấp khoảng trống hoặc quyết định no-go về dữ liệu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-18",
+      "index": "18",
+      "situation": {
+        "en": "Leadership asks where the data work stands, or the data assessment brings bad news",
+        "vi": "Lãnh đạo hỏi tình hình công việc dữ liệu, hoặc kết quả đánh giá dữ liệu là tin xấu"
+      },
+      "choice": {
+        "en": "Early, business-language summary: readiness status, impact on outcomes, options and a recommendation",
+        "vi": "Báo cáo sớm, bằng ngôn ngữ kinh doanh: trạng thái sẵn sàng, tác động đến kết quả, các phương án và một khuyến nghị"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-19",
+      "index": "19",
+      "situation": {
+        "en": "Labelled outcomes exist / no labels, find groups / learns from rewards by trial",
+        "vi": "Có nhãn kết quả / không nhãn, cần tìm nhóm / học qua thử và phần thưởng"
+      },
+      "choice": {
+        "en": "Supervised / unsupervised / reinforcement learning",
+        "vi": "Supervised / unsupervised / reinforcement learning"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-20",
+      "index": "20",
+      "situation": {
+        "en": "A complex model edges out a simple one, but decisions must be explained",
+        "vi": "Mô hình phức tạp nhỉnh hơn mô hình đơn giản nhưng quyết định phải giải thích được"
+      },
+      "choice": {
+        "en": "Weigh interpretability against the small gain; document the rationale",
+        "vi": "Cân nhắc khả năng diễn giải so với mức lợi nhỏ; ghi lại lý do"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-21",
+      "index": "21",
+      "situation": {
+        "en": "High accuracy on imbalanced data, or a result nobody can reproduce",
+        "vi": "Accuracy cao trên dữ liệu mất cân bằng, hoặc kết quả không ai tái lập được"
+      },
+      "choice": {
+        "en": "Ask for precision/recall per class; version code, data, parameters and model",
+        "vi": "Yêu cầu precision/recall theo từng lớp; đánh phiên bản code, dữ liệu, tham số và mô hình"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-22",
+      "index": "22",
+      "situation": {
+        "en": "Training score far above validation score",
+        "vi": "Điểm huấn luyện cao hơn nhiều so với điểm validation"
+      },
+      "choice": {
+        "en": "Overfitting: do not advance; simplify, regularise, add data, use cross-validation",
+        "vi": "Overfitting: không chuyển tiếp; đơn giản hóa, regularize, thêm dữ liệu, dùng cross-validation"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-23",
+      "index": "23",
+      "situation": {
+        "en": "Known data defects, bias or unrepresentative data before training",
+        "vi": "Đã biết dữ liệu có lỗi, thiên lệch hoặc không đại diện trước khi huấn luyện"
+      },
+      "choice": {
+        "en": "No-go (or conditional go), document, iterate back to data phases",
+        "vi": "No-go (hoặc go có điều kiện), ghi lại, quay lại các phase dữ liệu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-24",
+      "index": "24",
+      "situation": {
+        "en": "Model meets the technical metric but misses a business KPI or production constraint",
+        "vi": "Mô hình đạt chỉ số kỹ thuật nhưng trượt KPI kinh doanh hoặc ràng buộc production"
+      },
+      "choice": {
+        "en": "Not ready: judge against the agreed success criteria and iterate",
+        "vi": "Chưa sẵn sàng: đánh giá theo tiêu chí thành công đã thống nhất và lặp lại"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-25",
+      "index": "25",
+      "situation": {
+        "en": "A pre-agreed rollback trigger fires during a canary or rollout",
+        "vi": "Điều kiện rollback đã thống nhất trước bị kích hoạt trong canary hoặc khi triển khai"
+      },
+      "choice": {
+        "en": "Roll back as the plan says, then investigate; don't extend, scale up or tune in production",
+        "vi": "Rollback đúng như kế hoạch rồi mới điều tra; không kéo dài, mở rộng hay tinh chỉnh trên production"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-26",
+      "index": "26",
+      "situation": {
+        "en": "Risk owners won't let an unproven model act on live decisions",
+        "vi": "Bên chịu trách nhiệm rủi ro chưa cho mô hình chưa được chứng minh ra quyết định thật"
+      },
+      "choice": {
+        "en": "Shadow deployment first, then canary or phased rollout; avoid a big-bang cutover",
+        "vi": "Triển khai shadow trước, rồi canary hoặc theo giai đoạn; tránh chuyển đổi big bang"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-27",
+      "index": "27",
+      "situation": {
+        "en": "Inputs look stable but model performance keeps falling",
+        "vi": "Đầu vào trông ổn định nhưng hiệu năng mô hình tiếp tục giảm"
+      },
+      "choice": {
+        "en": "Concept drift: retrain on recent labelled data and release it under change control",
+        "vi": "Concept drift: huấn luyện lại trên dữ liệu có nhãn gần đây và phát hành theo kiểm soát thay đổi"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-28",
+      "index": "28",
+      "situation": {
+        "en": "Model metrics are healthy but the business KPI has not moved",
+        "vi": "Chỉ số mô hình tốt nhưng KPI kinh doanh không thay đổi"
+      },
+      "choice": {
+        "en": "Check adoption first: how often users follow, ignore or override the outputs",
+        "vi": "Kiểm tra mức độ chấp nhận trước: người dùng làm theo, bỏ qua hay ghi đè kết quả thường xuyên đến đâu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-29",
+      "index": "29",
+      "situation": {
+        "en": "Operations hasn't accepted the solution, or post-handover owners are unclear",
+        "vi": "Bộ phận vận hành chưa nghiệm thu giải pháp, hoặc chưa rõ ai chịu trách nhiệm sau bàn giao"
+      },
+      "choice": {
+        "en": "Agree acceptance criteria, operational roles and a hypercare period; close only after formal acceptance",
+        "vi": "Thống nhất tiêu chí nghiệm thu, vai trò vận hành và giai đoạn hypercare; chỉ đóng dự án sau khi được nghiệm thu chính thức"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-30",
+      "index": "30",
+      "situation": {
+        "en": "A live AI system is producing wrong or harmful outputs",
+        "vi": "Hệ thống AI đang chạy tạo ra kết quả sai hoặc gây hại"
+      },
+      "choice": {
+        "en": "Contain first (disable or switch to the fallback), then diagnose and fix",
+        "vi": "Khoanh vùng trước (tắt hoặc chuyển sang phương án thay thế), rồi mới chẩn đoán và sửa"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-31",
+      "index": "31",
+      "situation": {
+        "en": "The team wants to start building a model",
+        "vi": "Nhóm muốn bắt tay xây mô hình"
+      },
+      "choice": {
+        "en": "Confirm the business problem, success criteria and data readiness first; pass the go/no-go gates in order",
+        "vi": "Xác nhận bài toán kinh doanh, tiêu chí thành công và mức sẵn sàng của dữ liệu trước; qua lần lượt các cổng go/no-go"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-32",
+      "index": "32",
+      "situation": {
+        "en": "A gate check fails (data, model or readiness)",
+        "vi": "Một cổng kiểm tra không đạt (dữ liệu, mô hình hay mức sẵn sàng)"
+      },
+      "choice": {
+        "en": "Go back to the earlier phase and iterate, or call a no-go; never push forward and fix later",
+        "vi": "Quay lại giai đoạn trước và lặp, hoặc quyết định no-go; không bao giờ cố đi tiếp rồi sửa sau"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-33",
+      "index": "33",
+      "situation": {
+        "en": "Two options both meet the goal",
+        "vi": "Hai phương án đều đạt mục tiêu"
+      },
+      "choice": {
+        "en": "The one that better protects privacy, fairness, transparency and compliance",
+        "vi": "Chọn phương án bảo vệ tốt hơn quyền riêng tư, công bằng, minh bạch và tuân thủ"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-34",
+      "index": "34",
+      "situation": {
+        "en": "Personal or regulated data is involved at any phase",
+        "vi": "Có dữ liệu cá nhân hoặc dữ liệu chịu quy định ở bất kỳ giai đoạn nào"
+      },
+      "choice": {
+        "en": "Check usage rights, run or update the privacy impact assessment and involve legal and compliance",
+        "vi": "Kiểm tra quyền sử dụng, thực hiện hoặc cập nhật đánh giá tác động quyền riêng tư và mời pháp chế, tuân thủ tham gia"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-35",
+      "index": "35",
+      "situation": {
+        "en": "A decision, approval or go/no-go outcome is reached",
+        "vi": "Đã có quyết định, phê duyệt hoặc kết quả go/no-go"
+      },
+      "choice": {
+        "en": "Record it with its rationale in the audit trail",
+        "vi": "Ghi vào hồ sơ kiểm toán kèm lý do"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-36",
+      "index": "36",
+      "situation": {
+        "en": "Reporting to leadership or the sponsor",
+        "vi": "Báo cáo cho lãnh đạo hoặc sponsor"
+      },
+      "choice": {
+        "en": "Business impact, risks and a clear recommendation in plain language, not raw model metrics",
+        "vi": "Tác động kinh doanh, rủi ro và khuyến nghị rõ ràng bằng ngôn ngữ dễ hiểu, không đưa nguyên chỉ số mô hình"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-37",
+      "index": "37",
+      "situation": {
+        "en": "An option names a specific vendor, tool or 'the most advanced model' as the fix",
+        "vi": "Một phương án lấy nhà cung cấp, công cụ cụ thể hay 'mô hình tiên tiến nhất' làm lời giải"
+      },
+      "choice": {
+        "en": "Treat it as a distractor; the exam is tool-agnostic and rewards fit to the need",
+        "vi": "Coi là phương án gây nhiễu; bài thi không gắn với công cụ và đánh giá sự phù hợp với nhu cầu"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-38",
+      "index": "38",
+      "situation": {
+        "en": "A simpler non-AI solution would meet the need",
+        "vi": "Một giải pháp không dùng AI, đơn giản hơn vẫn đáp ứng nhu cầu"
+      },
+      "choice": {
+        "en": "Say so at the feasibility step; AI must earn its place against the alternatives",
+        "vi": "Nêu ra ngay ở bước đánh giá khả thi; AI phải chứng minh được giá trị so với các phương án khác"
+      },
+      "personal_notes": ""
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v-1",
+      "term": "most appropriate",
+      "meaning": {
+        "en": "phù hợp nhất (có thể nhiều phương án đúng, chọn cái tốt nhất trong ngữ cảnh)",
+        "vi": "phù hợp nhất (có thể nhiều phương án đúng, chọn cái tốt nhất trong ngữ cảnh)"
+      }
+    },
+    {
+      "id": "v-2",
+      "term": "first / next",
+      "meaning": {
+        "en": "trước tiên / tiếp theo (hỏi về thứ tự công việc, không chỉ đúng sai)",
+        "vi": "trước tiên / tiếp theo (hỏi về thứ tự công việc, không chỉ đúng sai)"
+      }
+    },
+    {
+      "id": "v-3",
+      "term": "stakeholder",
+      "meaning": {
+        "en": "bên liên quan",
+        "vi": "bên liên quan"
+      }
+    },
+    {
+      "id": "v-4",
+      "term": "sponsor",
+      "meaning": {
+        "en": "người bảo trợ dự án, giữ nguyên từ sponsor trong đề thi",
+        "vi": "người bảo trợ dự án, giữ nguyên từ sponsor trong đề thi"
+      }
+    },
+    {
+      "id": "v-5",
+      "term": "feasibility",
+      "meaning": {
+        "en": "tính khả thi",
+        "vi": "tính khả thi"
+      }
+    },
+    {
+      "id": "v-6",
+      "term": "go/no-go",
+      "meaning": {
+        "en": "quyết định tiếp tục hay dừng tại một cổng kiểm soát",
+        "vi": "quyết định tiếp tục hay dừng tại một cổng kiểm soát"
+      }
+    },
+    {
+      "id": "v-7",
+      "term": "scope creep",
+      "meaning": {
+        "en": "phạm vi phình dần ngoài kế hoạch",
+        "vi": "phạm vi phình dần ngoài kế hoạch"
+      }
+    },
+    {
+      "id": "v-8",
+      "term": "mitigate",
+      "meaning": {
+        "en": "giảm nhẹ (rủi ro)",
+        "vi": "giảm nhẹ (rủi ro)"
+      }
+    },
+    {
+      "id": "v-9",
+      "term": "escalate",
+      "meaning": {
+        "en": "báo lên cấp có thẩm quyền cao hơn",
+        "vi": "báo lên cấp có thẩm quyền cao hơn"
+      }
+    },
+    {
+      "id": "v-10",
+      "term": "remediate",
+      "meaning": {
+        "en": "khắc phục",
+        "vi": "khắc phục"
+      }
+    },
+    {
+      "id": "v-11",
+      "term": "elicit",
+      "meaning": {
+        "en": "khơi gợi, thu thập (yêu cầu, thông tin) từ người khác",
+        "vi": "khơi gợi, thu thập (yêu cầu, thông tin) từ người khác"
+      }
+    },
+    {
+      "id": "v-12",
+      "term": "sign-off",
+      "meaning": {
+        "en": "phê duyệt chính thức",
+        "vi": "phê duyệt chính thức"
+      }
+    },
+    {
+      "id": "v-13",
+      "term": "trade-off",
+      "meaning": {
+        "en": "sự đánh đổi",
+        "vi": "sự đánh đổi"
+      }
+    },
+    {
+      "id": "v-14",
+      "term": "representative (data)",
+      "meaning": {
+        "en": "(dữ liệu) có tính đại diện cho thực tế sử dụng",
+        "vi": "(dữ liệu) có tính đại diện cho thực tế sử dụng"
+      }
+    },
+    {
+      "id": "v-15",
+      "term": "lineage",
+      "meaning": {
+        "en": "nguồn gốc và hành trình biến đổi của dữ liệu",
+        "vi": "nguồn gốc và hành trình biến đổi của dữ liệu"
+      }
+    },
+    {
+      "id": "v-16",
+      "term": "drift",
+      "meaning": {
+        "en": "trôi dạt: dữ liệu hoặc hiệu năng mô hình thay đổi dần theo thời gian",
+        "vi": "trôi dạt: dữ liệu hoặc hiệu năng mô hình thay đổi dần theo thời gian"
+      }
+    },
+    {
+      "id": "v-17",
+      "term": "rollback",
+      "meaning": {
+        "en": "quay lui về phiên bản trước",
+        "vi": "quay lui về phiên bản trước"
+      }
+    },
+    {
+      "id": "v-18",
+      "term": "handover / transition",
+      "meaning": {
+        "en": "bàn giao / chuyển giao cho bộ phận vận hành",
+        "vi": "bàn giao / chuyển giao cho bộ phận vận hành"
+      }
+    },
+    {
+      "id": "v-19",
+      "term": "contingency",
+      "meaning": {
+        "en": "dự phòng cho tình huống bất ngờ",
+        "vi": "dự phòng cho tình huống bất ngờ"
+      }
+    },
+    {
+      "id": "v-20",
+      "term": "accountability",
+      "meaning": {
+        "en": "trách nhiệm giải trình",
+        "vi": "trách nhiệm giải trình"
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g-1",
+      "letter": "A",
+      "term": "Accountability documentation",
+      "definition": {
+        "en": "Tài liệu trách nhiệm giải trình: ghi nhận ai quyết định gì, khi nào và dựa trên căn cứ nào.",
+        "vi": "Tài liệu trách nhiệm giải trình: ghi nhận ai quyết định gì, khi nào và dựa trên căn cứ nào."
+      }
+    },
+    {
+      "id": "g-2",
+      "letter": "A",
+      "term": "Adoption risk",
+      "definition": {
+        "en": "Rủi ro người dùng không chấp nhận hoặc không dùng giải pháp, do thói quen, thiếu tin tưởng hay thiếu đào tạo.",
+        "vi": "Rủi ro người dùng không chấp nhận hoặc không dùng giải pháp, do thói quen, thiếu tin tưởng hay thiếu đào tạo."
+      }
+    },
+    {
+      "id": "g-3",
+      "letter": "A",
+      "term": "AI feasibility",
+      "definition": {
+        "en": "Đánh giá AI có khả thi không: kỹ thuật, dữ liệu sẵn có, năng lực tính toán, mức sẵn sàng của tổ chức, và so với giải pháp truyền thống.",
+        "vi": "Đánh giá AI có khả thi không: kỹ thuật, dữ liệu sẵn có, năng lực tính toán, mức sẵn sàng của tổ chức, và so với giải pháp truyền thống."
+      }
+    },
+    {
+      "id": "g-4",
+      "letter": "A",
+      "term": "AI workspace",
+      "definition": {
+        "en": "Môi trường làm việc AI: hạ tầng tính toán, lưu trữ, công cụ cộng tác và quản lý phiên bản, được bảo mật.",
+        "vi": "Môi trường làm việc AI: hạ tầng tính toán, lưu trữ, công cụ cộng tác và quản lý phiên bản, được bảo mật."
+      }
+    },
+    {
+      "id": "g-5",
+      "letter": "A",
+      "term": "Anonymization",
+      "definition": {
+        "en": "Ẩn danh hóa: loại bỏ thông tin để không thể xác định lại cá nhân.",
+        "vi": "Ẩn danh hóa: loại bỏ thông tin để không thể xác định lại cá nhân."
+      }
+    },
+    {
+      "id": "g-6",
+      "letter": "A",
+      "term": "Audit trail",
+      "definition": {
+        "en": "Hồ sơ kiểm toán: chuỗi ghi chép quyết định, phiên bản và phê duyệt để truy vết về sau.",
+        "vi": "Hồ sơ kiểm toán: chuỗi ghi chép quyết định, phiên bản và phê duyệt để truy vết về sau."
+      }
+    },
+    {
+      "id": "g-7",
+      "letter": "A",
+      "term": "Autonomous systems pattern",
+      "definition": {
+        "en": "Mẫu hệ thống tự hành: hoạt động với rất ít sự can thiệp của con người, như xe tự lái.",
+        "vi": "Mẫu hệ thống tự hành: hoạt động với rất ít sự can thiệp của con người, như xe tự lái."
+      }
+    },
+    {
+      "id": "g-8",
+      "letter": "B",
+      "term": "Bias",
+      "definition": {
+        "en": "Thiên lệch: sai lệch có hệ thống trong dữ liệu, mô hình hoặc thuật toán dẫn đến kết quả không công bằng.",
+        "vi": "Thiên lệch: sai lệch có hệ thống trong dữ liệu, mô hình hoặc thuật toán dẫn đến kết quả không công bằng."
+      }
+    },
+    {
+      "id": "g-9",
+      "letter": "B",
+      "term": "Bias mitigation",
+      "definition": {
+        "en": "Giảm thiên lệch: cân bằng lại dữ liệu, điều chỉnh mô hình hoặc ngưỡng quyết định.",
+        "vi": "Giảm thiên lệch: cân bằng lại dữ liệu, điều chỉnh mô hình hoặc ngưỡng quyết định."
+      }
+    },
+    {
+      "id": "g-10",
+      "letter": "B",
+      "term": "Black-box model",
+      "definition": {
+        "en": "Mô hình hộp đen: cho kết quả tốt nhưng khó giải thích, như mạng nơ-ron sâu.",
+        "vi": "Mô hình hộp đen: cho kết quả tốt nhưng khó giải thích, như mạng nơ-ron sâu."
+      }
+    },
+    {
+      "id": "g-11",
+      "letter": "B",
+      "term": "Business case",
+      "definition": {
+        "en": "Hồ sơ lý giải vì sao nên đầu tư: lợi ích, chi phí, rủi ro và căn cứ tài chính.",
+        "vi": "Hồ sơ lý giải vì sao nên đầu tư: lợi ích, chi phí, rủi ro và căn cứ tài chính."
+      }
+    },
+    {
+      "id": "g-12",
+      "letter": "B",
+      "term": "Business continuity",
+      "definition": {
+        "en": "Duy trì hoạt động kinh doanh khi dịch vụ AI gián đoạn, ví dụ quay về quy trình thủ công.",
+        "vi": "Duy trì hoạt động kinh doanh khi dịch vụ AI gián đoạn, ví dụ quay về quy trình thủ công."
+      }
+    },
+    {
+      "id": "g-13",
+      "letter": "B",
+      "term": "Business Understanding (Phase I)",
+      "definition": {
+        "en": "Giai đoạn I: xác định bài toán kinh doanh, kiểm tra AI có phù hợp không, phạm vi, ROI và tiêu chí thành công.",
+        "vi": "Giai đoạn I: xác định bài toán kinh doanh, kiểm tra AI có phù hợp không, phạm vi, ROI và tiêu chí thành công."
+      }
+    },
+    {
+      "id": "g-14",
+      "letter": "C",
+      "term": "CCPA",
+      "definition": {
+        "en": "Luật quyền riêng tư người tiêu dùng của bang California (Mỹ).",
+        "vi": "Luật quyền riêng tư người tiêu dùng của bang California (Mỹ)."
+      }
+    },
+    {
+      "id": "g-15",
+      "letter": "C",
+      "term": "Chain of custody",
+      "definition": {
+        "en": "Chuỗi lưu giữ: hồ sơ ai đã nắm giữ, truy cập hoặc thay đổi dữ liệu huấn luyện và kiểm thử, khi nào.",
+        "vi": "Chuỗi lưu giữ: hồ sơ ai đã nắm giữ, truy cập hoặc thay đổi dữ liệu huấn luyện và kiểm thử, khi nào."
+      }
+    },
+    {
+      "id": "g-16",
+      "letter": "C",
+      "term": "Change management",
+      "definition": {
+        "en": "Quản lý thay đổi: chuẩn bị con người và quy trình để tiếp nhận giải pháp mới.",
+        "vi": "Quản lý thay đổi: chuẩn bị con người và quy trình để tiếp nhận giải pháp mới."
+      }
+    },
+    {
+      "id": "g-17",
+      "letter": "C",
+      "term": "Classification vs regression",
+      "definition": {
+        "en": "Phân loại (dự đoán nhóm) và hồi quy (dự đoán giá trị số).",
+        "vi": "Phân loại (dự đoán nhóm) và hồi quy (dự đoán giá trị số)."
+      }
+    },
+    {
+      "id": "g-18",
+      "letter": "C",
+      "term": "Clustering",
+      "definition": {
+        "en": "Phân cụm: gom các mẫu giống nhau thành nhóm mà không cần nhãn.",
+        "vi": "Phân cụm: gom các mẫu giống nhau thành nhóm mà không cần nhãn."
+      }
+    },
+    {
+      "id": "g-19",
+      "letter": "C",
+      "term": "Configuration management",
+      "definition": {
+        "en": "Quản lý cấu hình: kiểm soát phiên bản mô hình, dữ liệu, mã và tham số.",
+        "vi": "Quản lý cấu hình: kiểm soát phiên bản mô hình, dữ liệu, mã và tham số."
+      }
+    },
+    {
+      "id": "g-20",
+      "letter": "C",
+      "term": "Contingency plan",
+      "definition": {
+        "en": "Kế hoạch dự phòng: ứng phó sự cố AI, sao lưu, khôi phục, leo thang và duy trì hoạt động kinh doanh.",
+        "vi": "Kế hoạch dự phòng: ứng phó sự cố AI, sao lưu, khôi phục, leo thang và duy trì hoạt động kinh doanh."
+      }
+    },
+    {
+      "id": "g-21",
+      "letter": "C",
+      "term": "Conversational pattern",
+      "definition": {
+        "en": "Mẫu hội thoại và tương tác người: chatbot, trợ lý ảo, xử lý ngôn ngữ tự nhiên.",
+        "vi": "Mẫu hội thoại và tương tác người: chatbot, trợ lý ảo, xử lý ngôn ngữ tự nhiên."
+      }
+    },
+    {
+      "id": "g-22",
+      "letter": "C",
+      "term": "CPMAI",
+      "definition": {
+        "en": "Cognitive Project Management in AI: phương pháp quản lý dự án AI lấy dữ liệu làm trung tâm, lặp theo sáu giai đoạn, không gắn với công cụ nào.",
+        "vi": "Cognitive Project Management in AI: phương pháp quản lý dự án AI lấy dữ liệu làm trung tâm, lặp theo sáu giai đoạn, không gắn với công cụ nào."
+      }
+    },
+    {
+      "id": "g-23",
+      "letter": "C",
+      "term": "Cross-validation",
+      "definition": {
+        "en": "Kiểm định chéo: chia dữ liệu thành nhiều phần, luân phiên huấn luyện và kiểm tra để đánh giá đáng tin hơn.",
+        "vi": "Kiểm định chéo: chia dữ liệu thành nhiều phần, luân phiên huấn luyện và kiểm tra để đánh giá đáng tin hơn."
+      }
+    },
+    {
+      "id": "g-24",
+      "letter": "D",
+      "term": "Data augmentation",
+      "definition": {
+        "en": "Tăng cường dữ liệu: tạo thêm mẫu từ dữ liệu có sẵn, như xoay hoặc lật ảnh.",
+        "vi": "Tăng cường dữ liệu: tạo thêm mẫu từ dữ liệu có sẵn, như xoay hoặc lật ảnh."
+      }
+    },
+    {
+      "id": "g-25",
+      "letter": "D",
+      "term": "Data cleansing",
+      "definition": {
+        "en": "Làm sạch dữ liệu: sửa lỗi, xử lý giá trị thiếu, loại bản ghi trùng.",
+        "vi": "Làm sạch dữ liệu: sửa lỗi, xử lý giá trị thiếu, loại bản ghi trùng."
+      }
+    },
+    {
+      "id": "g-26",
+      "letter": "D",
+      "term": "Data drift",
+      "definition": {
+        "en": "Trôi dạt dữ liệu: phân phối dữ liệu đầu vào khi vận hành khác với dữ liệu huấn luyện.",
+        "vi": "Trôi dạt dữ liệu: phân phối dữ liệu đầu vào khi vận hành khác với dữ liệu huấn luyện."
+      }
+    },
+    {
+      "id": "g-27",
+      "letter": "D",
+      "term": "Data governance",
+      "definition": {
+        "en": "Quản trị dữ liệu: chính sách, vai trò và quy trình về chất lượng, bảo mật, quyền truy cập và sử dụng dữ liệu.",
+        "vi": "Quản trị dữ liệu: chính sách, vai trò và quy trình về chất lượng, bảo mật, quyền truy cập và sử dụng dữ liệu."
+      }
+    },
+    {
+      "id": "g-28",
+      "letter": "D",
+      "term": "Data labeling",
+      "definition": {
+        "en": "Gán nhãn dữ liệu: đánh dấu đáp án đúng cho từng mẫu để dùng trong học có giám sát.",
+        "vi": "Gán nhãn dữ liệu: đánh dấu đáp án đúng cho từng mẫu để dùng trong học có giám sát."
+      }
+    },
+    {
+      "id": "g-29",
+      "letter": "D",
+      "term": "Data lineage",
+      "definition": {
+        "en": "Dòng dõi dữ liệu: ghi lại dữ liệu đến từ đâu và đã qua những biến đổi nào, phục vụ kiểm toán.",
+        "vi": "Dòng dõi dữ liệu: ghi lại dữ liệu đến từ đâu và đã qua những biến đổi nào, phục vụ kiểm toán."
+      }
+    },
+    {
+      "id": "g-30",
+      "letter": "D",
+      "term": "Data owner",
+      "definition": {
+        "en": "Chủ sở hữu dữ liệu: người hoặc bộ phận có quyền quyết định ai được dùng dữ liệu và cho mục đích gì.",
+        "vi": "Chủ sở hữu dữ liệu: người hoặc bộ phận có quyền quyết định ai được dùng dữ liệu và cho mục đích gì."
+      }
+    },
+    {
+      "id": "g-31",
+      "letter": "D",
+      "term": "Data pipeline",
+      "definition": {
+        "en": "Đường ống dữ liệu: chuỗi bước tự động trích xuất, chuyển và nạp dữ liệu vào môi trường AI.",
+        "vi": "Đường ống dữ liệu: chuỗi bước tự động trích xuất, chuyển và nạp dữ liệu vào môi trường AI."
+      }
+    },
+    {
+      "id": "g-32",
+      "letter": "D",
+      "term": "Data Preparation (Phase III)",
+      "definition": {
+        "en": "Giai đoạn III: làm sạch, biến đổi, gán nhãn, tăng cường dữ liệu để sẵn sàng cho huấn luyện.",
+        "vi": "Giai đoạn III: làm sạch, biến đổi, gán nhãn, tăng cường dữ liệu để sẵn sàng cho huấn luyện."
+      }
+    },
+    {
+      "id": "g-33",
+      "letter": "D",
+      "term": "Data quality dimensions",
+      "definition": {
+        "en": "Các chiều chất lượng dữ liệu: chính xác, đầy đủ, nhất quán, kịp thời, hợp lệ.",
+        "vi": "Các chiều chất lượng dữ liệu: chính xác, đầy đủ, nhất quán, kịp thời, hợp lệ."
+      }
+    },
+    {
+      "id": "g-34",
+      "letter": "D",
+      "term": "Data representativeness",
+      "definition": {
+        "en": "Tính đại diện của dữ liệu: dữ liệu phản ánh đúng các trường hợp và nhóm người mà mô hình sẽ gặp khi dùng thật.",
+        "vi": "Tính đại diện của dữ liệu: dữ liệu phản ánh đúng các trường hợp và nhóm người mà mô hình sẽ gặp khi dùng thật."
+      }
+    },
+    {
+      "id": "g-35",
+      "letter": "D",
+      "term": "Data SME",
+      "definition": {
+        "en": "Chuyên gia hiểu ngữ cảnh và ý nghĩa của dữ liệu trong nghiệp vụ hoặc hệ thống.",
+        "vi": "Chuyên gia hiểu ngữ cảnh và ý nghĩa của dữ liệu trong nghiệp vụ hoặc hệ thống."
+      }
+    },
+    {
+      "id": "g-36",
+      "letter": "D",
+      "term": "Data steward",
+      "definition": {
+        "en": "Người quản lý dữ liệu theo chính sách quản trị: định nghĩa, chất lượng và quyền truy cập.",
+        "vi": "Người quản lý dữ liệu theo chính sách quản trị: định nghĩa, chất lượng và quyền truy cập."
+      }
+    },
+    {
+      "id": "g-37",
+      "letter": "D",
+      "term": "Data sufficiency",
+      "definition": {
+        "en": "Độ đủ của dữ liệu: khối lượng và độ đa dạng đủ để huấn luyện mô hình bền vững.",
+        "vi": "Độ đủ của dữ liệu: khối lượng và độ đa dạng đủ để huấn luyện mô hình bền vững."
+      }
+    },
+    {
+      "id": "g-38",
+      "letter": "D",
+      "term": "Data Understanding (Phase II)",
+      "definition": {
+        "en": "Giai đoạn II: xác định dữ liệu cần có, nguồn, chất lượng, quyền truy cập, và dữ liệu có đáp ứng bài toán không.",
+        "vi": "Giai đoạn II: xác định dữ liệu cần có, nguồn, chất lượng, quyền truy cập, và dữ liệu có đáp ứng bài toán không."
+      }
+    },
+    {
+      "id": "g-39",
+      "letter": "D",
+      "term": "Data usage rights / licensing",
+      "definition": {
+        "en": "Quyền sử dụng dữ liệu và giấy phép: dữ liệu chỉ được dùng trong phạm vi mục đích và điều khoản cho phép.",
+        "vi": "Quyền sử dụng dữ liệu và giấy phép: dữ liệu chỉ được dùng trong phạm vi mục đích và điều khoản cho phép."
+      }
+    },
+    {
+      "id": "g-40",
+      "letter": "D",
+      "term": "Deployment plan",
+      "definition": {
+        "en": "Kế hoạch triển khai: chiến lược, lịch, hạ tầng, tích hợp, tiêu chí kiểm tra và phương án rollback.",
+        "vi": "Kế hoạch triển khai: chiến lược, lịch, hạ tầng, tích hợp, tiêu chí kiểm tra và phương án rollback."
+      }
+    },
+    {
+      "id": "g-41",
+      "letter": "E",
+      "term": "ECO (Examination Content Outline)",
+      "definition": {
+        "en": "Đề cương nội dung thi của PMI: liệt kê lĩnh vực, nhiệm vụ và tỷ trọng câu hỏi. Bản hiện hành của PMI-CPMAI là tháng 9/2025.",
+        "vi": "Đề cương nội dung thi của PMI: liệt kê lĩnh vực, nhiệm vụ và tỷ trọng câu hỏi. Bản hiện hành của PMI-CPMAI là tháng 9/2025."
+      }
+    },
+    {
+      "id": "g-42",
+      "letter": "E",
+      "term": "Experiment tracking",
+      "definition": {
+        "en": "Theo dõi thí nghiệm: ghi lại dữ liệu, tham số và kết quả của từng lần huấn luyện để tái lập và so sánh.",
+        "vi": "Theo dõi thí nghiệm: ghi lại dữ liệu, tham số và kết quả của từng lần huấn luyện để tái lập và so sánh."
+      }
+    },
+    {
+      "id": "g-43",
+      "letter": "E",
+      "term": "Explainability",
+      "definition": {
+        "en": "Khả năng giải thích: nêu được vì sao mô hình đưa ra một kết quả cụ thể, theo cách người dùng hiểu được.",
+        "vi": "Khả năng giải thích: nêu được vì sao mô hình đưa ra một kết quả cụ thể, theo cách người dùng hiểu được."
+      }
+    },
+    {
+      "id": "g-44",
+      "letter": "E",
+      "term": "Exploratory data analysis (EDA)",
+      "definition": {
+        "en": "Phân tích khám phá dữ liệu: xem phân phối, giá trị thiếu, ngoại lệ và quan hệ trước khi xây mô hình.",
+        "vi": "Phân tích khám phá dữ liệu: xem phân phối, giá trị thiếu, ngoại lệ và quan hệ trước khi xây mô hình."
+      }
+    },
+    {
+      "id": "g-45",
+      "letter": "F",
+      "term": "Fairness testing",
+      "definition": {
+        "en": "Kiểm thử công bằng: so sánh kết quả mô hình giữa các nhóm người để phát hiện phân biệt đối xử.",
+        "vi": "Kiểm thử công bằng: so sánh kết quả mô hình giữa các nhóm người để phát hiện phân biệt đối xử."
+      }
+    },
+    {
+      "id": "g-46",
+      "letter": "F",
+      "term": "Feature engineering",
+      "definition": {
+        "en": "Kỹ thuật đặc trưng: tạo và chọn các biến đầu vào có ích cho mô hình.",
+        "vi": "Kỹ thuật đặc trưng: tạo và chọn các biến đầu vào có ích cho mô hình."
+      }
+    },
+    {
+      "id": "g-47",
+      "letter": "G",
+      "term": "GDPR",
+      "definition": {
+        "en": "Quy định bảo vệ dữ liệu chung của EU, áp dụng cho dữ liệu cá nhân của người ở EU.",
+        "vi": "Quy định bảo vệ dữ liệu chung của EU, áp dụng cho dữ liệu cá nhân của người ở EU."
+      }
+    },
+    {
+      "id": "g-48",
+      "letter": "G",
+      "term": "Generalization",
+      "definition": {
+        "en": "Khả năng tổng quát hóa: mô hình hoạt động tốt trên dữ liệu mới, chưa từng thấy.",
+        "vi": "Khả năng tổng quát hóa: mô hình hoạt động tốt trên dữ liệu mới, chưa từng thấy."
+      }
+    },
+    {
+      "id": "g-49",
+      "letter": "G",
+      "term": "Generative AI",
+      "definition": {
+        "en": "AI tạo sinh: tạo nội dung mới như văn bản, ảnh, mã; cần kiểm soát thêm về độ chính xác và bản quyền.",
+        "vi": "AI tạo sinh: tạo nội dung mới như văn bản, ảnh, mã; cần kiểm soát thêm về độ chính xác và bản quyền."
+      }
+    },
+    {
+      "id": "g-50",
+      "letter": "G",
+      "term": "Go/no-go decision",
+      "definition": {
+        "en": "Điểm quyết định có tiếp tục sang bước sau hay không, dựa trên tiêu chí đã thống nhất; no-go có thể nghĩa là dừng hoặc quay lại giai đoạn trước.",
+        "vi": "Điểm quyết định có tiếp tục sang bước sau hay không, dựa trên tiêu chí đã thống nhất; no-go có thể nghĩa là dừng hoặc quay lại giai đoạn trước."
+      }
+    },
+    {
+      "id": "g-51",
+      "letter": "G",
+      "term": "Goal-driven systems pattern",
+      "definition": {
+        "en": "Mẫu hệ thống hướng mục tiêu: tìm chiến lược tối ưu qua thử và sai, thường dùng học tăng cường.",
+        "vi": "Mẫu hệ thống hướng mục tiêu: tìm chiến lược tối ưu qua thử và sai, thường dùng học tăng cường."
+      }
+    },
+    {
+      "id": "g-52",
+      "letter": "H",
+      "term": "Human in the loop",
+      "definition": {
+        "en": "Có con người tham gia: con người xem xét hoặc phê duyệt quyết định của AI, nhất là với quyết định có tác động lớn.",
+        "vi": "Có con người tham gia: con người xem xét hoặc phê duyệt quyết định của AI, nhất là với quyết định có tác động lớn."
+      }
+    },
+    {
+      "id": "g-53",
+      "letter": "H",
+      "term": "Hyperparameter tuning",
+      "definition": {
+        "en": "Tinh chỉnh siêu tham số: chọn các thiết lập của quá trình học (như tốc độ học) để mô hình tốt hơn.",
+        "vi": "Tinh chỉnh siêu tham số: chọn các thiết lập của quá trình học (như tốc độ học) để mô hình tốt hơn."
+      }
+    },
+    {
+      "id": "g-54",
+      "letter": "H",
+      "term": "Hyperpersonalization pattern",
+      "definition": {
+        "en": "Mẫu siêu cá nhân hóa: điều chỉnh nội dung hay đề xuất theo từng cá nhân.",
+        "vi": "Mẫu siêu cá nhân hóa: điều chỉnh nội dung hay đề xuất theo từng cá nhân."
+      }
+    },
+    {
+      "id": "g-55",
+      "letter": "I",
+      "term": "Incident response",
+      "definition": {
+        "en": "Ứng phó sự cố: quy trình phát hiện, khoanh vùng và xử lý khi hệ thống AI hỏng hoặc cho kết quả sai.",
+        "vi": "Ứng phó sự cố: quy trình phát hiện, khoanh vùng và xử lý khi hệ thống AI hỏng hoặc cho kết quả sai."
+      }
+    },
+    {
+      "id": "g-56",
+      "letter": "I",
+      "term": "Interpretability",
+      "definition": {
+        "en": "Khả năng diễn giải: mức độ con người hiểu được cơ chế bên trong mô hình; mô hình đơn giản thường dễ diễn giải hơn.",
+        "vi": "Khả năng diễn giải: mức độ con người hiểu được cơ chế bên trong mô hình; mô hình đơn giản thường dễ diễn giải hơn."
+      }
+    },
+    {
+      "id": "g-57",
+      "letter": "I",
+      "term": "Iteration",
+      "definition": {
+        "en": "Lặp lại: làm từng vòng nhỏ, quay lại giai đoạn trước khi phát hiện vấn đề thay vì đi thẳng một mạch như waterfall.",
+        "vi": "Lặp lại: làm từng vòng nhỏ, quay lại giai đoạn trước khi phát hiện vấn đề thay vì đi thẳng một mạch như waterfall."
+      }
+    },
+    {
+      "id": "g-58",
+      "letter": "K",
+      "term": "KPI (key performance indicator)",
+      "definition": {
+        "en": "Chỉ số đo lường hiệu quả chính; trong dự án AI cần cả KPI kinh doanh lẫn chỉ số hiệu năng mô hình.",
+        "vi": "Chỉ số đo lường hiệu quả chính; trong dự án AI cần cả KPI kinh doanh lẫn chỉ số hiệu năng mô hình."
+      }
+    },
+    {
+      "id": "g-59",
+      "letter": "L",
+      "term": "Lessons learned",
+      "definition": {
+        "en": "Bài học kinh nghiệm: ghi lại điều làm tốt và cần cải thiện để dùng cho dự án sau.",
+        "vi": "Bài học kinh nghiệm: ghi lại điều làm tốt và cần cải thiện để dùng cho dự án sau."
+      }
+    },
+    {
+      "id": "g-60",
+      "letter": "M",
+      "term": "Model Development (Phase IV)",
+      "definition": {
+        "en": "Giai đoạn IV: chọn kỹ thuật, huấn luyện và tinh chỉnh mô hình.",
+        "vi": "Giai đoạn IV: chọn kỹ thuật, huấn luyện và tinh chỉnh mô hình."
+      }
+    },
+    {
+      "id": "g-61",
+      "letter": "M",
+      "term": "Model drift",
+      "definition": {
+        "en": "Trôi dạt mô hình: hiệu năng giảm dần theo thời gian vì thế giới thực thay đổi.",
+        "vi": "Trôi dạt mô hình: hiệu năng giảm dần theo thời gian vì thế giới thực thay đổi."
+      }
+    },
+    {
+      "id": "g-62",
+      "letter": "M",
+      "term": "Model Evaluation (Phase V)",
+      "definition": {
+        "en": "Giai đoạn V: kiểm tra mô hình so với tiêu chí thành công, độ bền vững và khả năng tổng quát hóa.",
+        "vi": "Giai đoạn V: kiểm tra mô hình so với tiêu chí thành công, độ bền vững và khả năng tổng quát hóa."
+      }
+    },
+    {
+      "id": "g-63",
+      "letter": "M",
+      "term": "Model governance",
+      "definition": {
+        "en": "Quản trị mô hình: quản lý vòng đời, kiểm soát thay đổi, giám sát hiệu năng và lịch huấn luyện lại.",
+        "vi": "Quản trị mô hình: quản lý vòng đời, kiểm soát thay đổi, giám sát hiệu năng và lịch huấn luyện lại."
+      }
+    },
+    {
+      "id": "g-64",
+      "letter": "M",
+      "term": "Model Operationalization (Phase VI)",
+      "definition": {
+        "en": "Giai đoạn VI: đưa mô hình vào sử dụng thực tế, giám sát, quản trị và cải tiến liên tục.",
+        "vi": "Giai đoạn VI: đưa mô hình vào sử dụng thực tế, giám sát, quản trị và cải tiến liên tục."
+      }
+    },
+    {
+      "id": "g-65",
+      "letter": "M",
+      "term": "Model performance metric",
+      "definition": {
+        "en": "Chỉ số kỹ thuật của mô hình như accuracy, precision, recall; không thay thế được chỉ số giá trị kinh doanh.",
+        "vi": "Chỉ số kỹ thuật của mô hình như accuracy, precision, recall; không thay thế được chỉ số giá trị kinh doanh."
+      }
+    },
+    {
+      "id": "g-66",
+      "letter": "M",
+      "term": "Model versioning",
+      "definition": {
+        "en": "Quản lý phiên bản mô hình: mỗi mô hình gắn với phiên bản dữ liệu và mã đã tạo ra nó.",
+        "vi": "Quản lý phiên bản mô hình: mỗi mô hình gắn với phiên bản dữ liệu và mã đã tạo ra nó."
+      }
+    },
+    {
+      "id": "g-67",
+      "letter": "M",
+      "term": "Monitoring dashboard",
+      "definition": {
+        "en": "Bảng giám sát: hiển thị KPI và hiệu năng mô hình, có cảnh báo khi vượt ngưỡng.",
+        "vi": "Bảng giám sát: hiển thị KPI và hiệu năng mô hình, có cảnh báo khi vượt ngưỡng."
+      }
+    },
+    {
+      "id": "g-68",
+      "letter": "N",
+      "term": "Normalization / standardization",
+      "definition": {
+        "en": "Chuẩn hóa: đưa các biến về cùng thang đo để mô hình học ổn định hơn.",
+        "vi": "Chuẩn hóa: đưa các biến về cùng thang đo để mô hình học ổn định hơn."
+      }
+    },
+    {
+      "id": "g-69",
+      "letter": "O",
+      "term": "Overfitting",
+      "definition": {
+        "en": "Quá khớp: mô hình học thuộc dữ liệu huấn luyện, chạy tốt khi huấn luyện nhưng kém trên dữ liệu mới.",
+        "vi": "Quá khớp: mô hình học thuộc dữ liệu huấn luyện, chạy tốt khi huấn luyện nhưng kém trên dữ liệu mới."
+      }
+    },
+    {
+      "id": "g-70",
+      "letter": "P",
+      "term": "Patterns and anomalies pattern",
+      "definition": {
+        "en": "Mẫu phát hiện quy luật và bất thường, ví dụ phát hiện gian lận giao dịch.",
+        "vi": "Mẫu phát hiện quy luật và bất thường, ví dụ phát hiện gian lận giao dịch."
+      }
+    },
+    {
+      "id": "g-71",
+      "letter": "P",
+      "term": "PDU (professional development unit)",
+      "definition": {
+        "en": "Đơn vị phát triển chuyên môn của PMI, mỗi PDU tương ứng một giờ học tập hoặc đóng góp; cần 30 PDU mỗi 3 năm để duy trì PMI-CPMAI.",
+        "vi": "Đơn vị phát triển chuyên môn của PMI, mỗi PDU tương ứng một giờ học tập hoặc đóng góp; cần 30 PDU mỗi 3 năm để duy trì PMI-CPMAI."
+      }
+    },
+    {
+      "id": "g-72",
+      "letter": "P",
+      "term": "Persona",
+      "definition": {
+        "en": "Chân dung người dùng điển hình, giúp làm rõ ai gặp vấn đề và họ cần gì.",
+        "vi": "Chân dung người dùng điển hình, giúp làm rõ ai gặp vấn đề và họ cần gì."
+      }
+    },
+    {
+      "id": "g-73",
+      "letter": "P",
+      "term": "Phased rollout",
+      "definition": {
+        "en": "Triển khai theo giai đoạn: mở dần cho từng nhóm người dùng để hạn chế rủi ro.",
+        "vi": "Triển khai theo giai đoạn: mở dần cho từng nhóm người dùng để hạn chế rủi ro."
+      }
+    },
+    {
+      "id": "g-74",
+      "letter": "P",
+      "term": "PII (personally identifiable information)",
+      "definition": {
+        "en": "Thông tin định danh cá nhân, như họ tên, số CCCD, email, cần được bảo vệ đặc biệt.",
+        "vi": "Thông tin định danh cá nhân, như họ tên, số CCCD, email, cần được bảo vệ đặc biệt."
+      }
+    },
+    {
+      "id": "g-75",
+      "letter": "P",
+      "term": "Pilot",
+      "definition": {
+        "en": "Triển khai thử với người dùng thật trong phạm vi hẹp để kiểm chứng giá trị trước khi mở rộng.",
+        "vi": "Triển khai thử với người dùng thật trong phạm vi hẹp để kiểm chứng giá trị trước khi mở rộng."
+      }
+    },
+    {
+      "id": "g-76",
+      "letter": "P",
+      "term": "Predictive analytics and decisions pattern",
+      "definition": {
+        "en": "Mẫu dự đoán và hỗ trợ ra quyết định, ví dụ dự báo nhu cầu hay rủi ro.",
+        "vi": "Mẫu dự đoán và hỗ trợ ra quyết định, ví dụ dự báo nhu cầu hay rủi ro."
+      }
+    },
+    {
+      "id": "g-77",
+      "letter": "P",
+      "term": "Privacy impact assessment (PIA)",
+      "definition": {
+        "en": "Đánh giá tác động quyền riêng tư: phân tích rủi ro với dữ liệu cá nhân trước khi thu thập hoặc triển khai.",
+        "vi": "Đánh giá tác động quyền riêng tư: phân tích rủi ro với dữ liệu cá nhân trước khi thu thập hoặc triển khai."
+      }
+    },
+    {
+      "id": "g-78",
+      "letter": "P",
+      "term": "Problem statement",
+      "definition": {
+        "en": "Mô tả ngắn gọn vấn đề kinh doanh cần giải quyết, được chuyên gia nghiệp vụ xác nhận trước khi chọn giải pháp.",
+        "vi": "Mô tả ngắn gọn vấn đề kinh doanh cần giải quyết, được chuyên gia nghiệp vụ xác nhận trước khi chọn giải pháp."
+      }
+    },
+    {
+      "id": "g-79",
+      "letter": "P",
+      "term": "Proof of concept (PoC)",
+      "definition": {
+        "en": "Thử nghiệm nhỏ trong môi trường kiểm soát để chứng minh ý tưởng khả thi về kỹ thuật.",
+        "vi": "Thử nghiệm nhỏ trong môi trường kiểm soát để chứng minh ý tưởng khả thi về kỹ thuật."
+      }
+    },
+    {
+      "id": "g-80",
+      "letter": "Q",
+      "term": "QA/QC",
+      "definition": {
+        "en": "Đảm bảo chất lượng (quy trình) và kiểm soát chất lượng (kiểm tra kết quả) cho mô hình.",
+        "vi": "Đảm bảo chất lượng (quy trình) và kiểm soát chất lượng (kiểm tra kết quả) cho mô hình."
+      }
+    },
+    {
+      "id": "g-81",
+      "letter": "R",
+      "term": "Recognition pattern",
+      "definition": {
+        "en": "Mẫu nhận dạng: máy nhận biết đối tượng trong dữ liệu phi cấu trúc như ảnh, âm thanh, chữ viết tay.",
+        "vi": "Mẫu nhận dạng: máy nhận biết đối tượng trong dữ liệu phi cấu trúc như ảnh, âm thanh, chữ viết tay."
+      }
+    },
+    {
+      "id": "g-82",
+      "letter": "R",
+      "term": "Reinforcement learning",
+      "definition": {
+        "en": "Học tăng cường: tác tử học qua thử và sai, nhận thưởng hoặc phạt từ môi trường.",
+        "vi": "Học tăng cường: tác tử học qua thử và sai, nhận thưởng hoặc phạt từ môi trường."
+      }
+    },
+    {
+      "id": "g-83",
+      "letter": "R",
+      "term": "Reproducibility",
+      "definition": {
+        "en": "Khả năng tái lập: chạy lại cùng dữ liệu và thiết lập thì ra cùng kết quả.",
+        "vi": "Khả năng tái lập: chạy lại cùng dữ liệu và thiết lập thì ra cùng kết quả."
+      }
+    },
+    {
+      "id": "g-84",
+      "letter": "R",
+      "term": "Responsible AI",
+      "definition": {
+        "en": "AI có trách nhiệm: phát triển và sử dụng AI có đạo đức, công bằng, an toàn và tuân thủ.",
+        "vi": "AI có trách nhiệm: phát triển và sử dụng AI có đạo đức, công bằng, an toàn và tuân thủ."
+      }
+    },
+    {
+      "id": "g-85",
+      "letter": "R",
+      "term": "Retraining",
+      "definition": {
+        "en": "Huấn luyện lại mô hình với dữ liệu mới, theo lịch hoặc khi giám sát phát hiện suy giảm.",
+        "vi": "Huấn luyện lại mô hình với dữ liệu mới, theo lịch hoặc khi giám sát phát hiện suy giảm."
+      }
+    },
+    {
+      "id": "g-86",
+      "letter": "R",
+      "term": "Robustness",
+      "definition": {
+        "en": "Độ bền vững: mô hình vẫn ổn định khi đầu vào nhiễu, bất thường hoặc thay đổi nhẹ.",
+        "vi": "Độ bền vững: mô hình vẫn ổn định khi đầu vào nhiễu, bất thường hoặc thay đổi nhẹ."
+      }
+    },
+    {
+      "id": "g-87",
+      "letter": "R",
+      "term": "ROI (return on investment)",
+      "definition": {
+        "en": "Lợi tức đầu tư: so sánh lợi ích kỳ vọng với tổng chi phí của giải pháp AI.",
+        "vi": "Lợi tức đầu tư: so sánh lợi ích kỳ vọng với tổng chi phí của giải pháp AI."
+      }
+    },
+    {
+      "id": "g-88",
+      "letter": "R",
+      "term": "Rollback plan",
+      "definition": {
+        "en": "Kế hoạch quay lui: cách trở về phiên bản hoặc quy trình cũ khi triển khai gặp sự cố.",
+        "vi": "Kế hoạch quay lui: cách trở về phiên bản hoặc quy trình cũ khi triển khai gặp sự cố."
+      }
+    },
+    {
+      "id": "g-89",
+      "letter": "S",
+      "term": "Scope statement",
+      "definition": {
+        "en": "Tuyên bố phạm vi: ranh giới, sản phẩm bàn giao, phần trong và ngoài phạm vi, giả định và ràng buộc.",
+        "vi": "Tuyên bố phạm vi: ranh giới, sản phẩm bàn giao, phần trong và ngoài phạm vi, giả định và ràng buộc."
+      }
+    },
+    {
+      "id": "g-90",
+      "letter": "S",
+      "term": "Seven patterns of AI",
+      "definition": {
+        "en": "Bảy mẫu ứng dụng AI: siêu cá nhân hóa, nhận dạng, hội thoại và tương tác người, phân tích dự đoán và ra quyết định, mẫu và bất thường, hệ thống hướng mục tiêu, hệ thống tự hành.",
+        "vi": "Bảy mẫu ứng dụng AI: siêu cá nhân hóa, nhận dạng, hội thoại và tương tác người, phân tích dự đoán và ra quyết định, mẫu và bất thường, hệ thống hướng mục tiêu, hệ thống tự hành."
+      }
+    },
+    {
+      "id": "g-91",
+      "letter": "S",
+      "term": "Sponsor (project sponsor)",
+      "definition": {
+        "en": "Người bảo trợ dự án: cấp lãnh đạo cấp ngân sách, quyết định go/no-go và gỡ vướng cho dự án; trong đề thi giữ nguyên từ 'sponsor'.",
+        "vi": "Người bảo trợ dự án: cấp lãnh đạo cấp ngân sách, quyết định go/no-go và gỡ vướng cho dự án; trong đề thi giữ nguyên từ 'sponsor'."
+      }
+    },
+    {
+      "id": "g-92",
+      "letter": "S",
+      "term": "Structured vs unstructured data",
+      "definition": {
+        "en": "Dữ liệu có cấu trúc (bảng, cột) và phi cấu trúc (văn bản, ảnh, âm thanh).",
+        "vi": "Dữ liệu có cấu trúc (bảng, cột) và phi cấu trúc (văn bản, ảnh, âm thanh)."
+      }
+    },
+    {
+      "id": "g-93",
+      "letter": "S",
+      "term": "Success criteria",
+      "definition": {
+        "en": "Tiêu chí thành công: ngưỡng đo được để biết dự án đạt mục tiêu, thống nhất từ đầu.",
+        "vi": "Tiêu chí thành công: ngưỡng đo được để biết dự án đạt mục tiêu, thống nhất từ đầu."
+      }
+    },
+    {
+      "id": "g-94",
+      "letter": "S",
+      "term": "Supervised learning",
+      "definition": {
+        "en": "Học có giám sát: học từ dữ liệu đã gán nhãn để dự đoán hoặc phân loại.",
+        "vi": "Học có giám sát: học từ dữ liệu đã gán nhãn để dự đoán hoặc phân loại."
+      }
+    },
+    {
+      "id": "g-95",
+      "letter": "S",
+      "term": "Synthetic data",
+      "definition": {
+        "en": "Dữ liệu tổng hợp: dữ liệu được tạo nhân tạo để bù thiếu hoặc bảo vệ quyền riêng tư.",
+        "vi": "Dữ liệu tổng hợp: dữ liệu được tạo nhân tạo để bù thiếu hoặc bảo vệ quyền riêng tư."
+      }
+    },
+    {
+      "id": "g-96",
+      "letter": "T",
+      "term": "Total cost of ownership (TCO)",
+      "definition": {
+        "en": "Tổng chi phí sở hữu: gồm cả hạ tầng, dữ liệu, bảo trì, giám sát và huấn luyện lại, không chỉ chi phí xây dựng ban đầu.",
+        "vi": "Tổng chi phí sở hữu: gồm cả hạ tầng, dữ liệu, bảo trì, giám sát và huấn luyện lại, không chỉ chi phí xây dựng ban đầu."
+      }
+    },
+    {
+      "id": "g-97",
+      "letter": "T",
+      "term": "Training, validation and test sets",
+      "definition": {
+        "en": "Tập huấn luyện để học, tập kiểm định để tinh chỉnh, tập kiểm thử để đánh giá cuối cùng trên dữ liệu chưa thấy.",
+        "vi": "Tập huấn luyện để học, tập kiểm định để tinh chỉnh, tập kiểm thử để đánh giá cuối cùng trên dữ liệu chưa thấy."
+      }
+    },
+    {
+      "id": "g-98",
+      "letter": "T",
+      "term": "Transition plan",
+      "definition": {
+        "en": "Kế hoạch bàn giao: chuyển giải pháp từ nhóm dự án sang nhóm vận hành, kèm chuyển giao kiến thức và quy trình hỗ trợ.",
+        "vi": "Kế hoạch bàn giao: chuyển giải pháp từ nhóm dự án sang nhóm vận hành, kèm chuyển giao kiến thức và quy trình hỗ trợ."
+      }
+    },
+    {
+      "id": "g-99",
+      "letter": "T",
+      "term": "Transparency",
+      "definition": {
+        "en": "Minh bạch: công khai cách chọn dữ liệu, thuật toán và cách hệ thống đưa ra kết quả.",
+        "vi": "Minh bạch: công khai cách chọn dữ liệu, thuật toán và cách hệ thống đưa ra kết quả."
+      }
+    },
+    {
+      "id": "g-100",
+      "letter": "T",
+      "term": "Trustworthy AI",
+      "definition": {
+        "en": "AI đáng tin cậy: minh bạch, giải thích được, công bằng, bảo vệ quyền riêng tư và có trách nhiệm giải trình.",
+        "vi": "AI đáng tin cậy: minh bạch, giải thích được, công bằng, bảo vệ quyền riêng tư và có trách nhiệm giải trình."
+      }
+    },
+    {
+      "id": "g-101",
+      "letter": "U",
+      "term": "Underfitting",
+      "definition": {
+        "en": "Chưa khớp: mô hình quá đơn giản, kém cả trên dữ liệu huấn luyện.",
+        "vi": "Chưa khớp: mô hình quá đơn giản, kém cả trên dữ liệu huấn luyện."
+      }
+    },
+    {
+      "id": "g-102",
+      "letter": "U",
+      "term": "Unsupervised learning",
+      "definition": {
+        "en": "Học không giám sát: tìm cấu trúc trong dữ liệu chưa gán nhãn, như phân cụm.",
+        "vi": "Học không giám sát: tìm cấu trúc trong dữ liệu chưa gán nhãn, như phân cụm."
+      }
+    }
+  ]
+}

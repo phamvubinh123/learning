@@ -1,0 +1,440 @@
+{
+  "slug": "pmp",
+  "certId": "pmi-pmp",
+  "code": "PMP",
+  "name": {
+    "en": "Project Management Professional",
+    "vi": "Project Management Professional"
+  },
+  "tagline": {
+    "en": "The global standard for experienced project managers: leading people, running delivery across predictive, agile and hybrid approaches, and keeping projects aligned with the business.",
+    "vi": "Chuẩn quốc tế cho người quản lý dự án có kinh nghiệm: dẫn dắt con người, triển khai theo cách tiếp cận dự đoán, agile và kết hợp, và giữ dự án gắn với mục tiêu kinh doanh."
+  },
+  "provider": "PMI",
+  "category": "Project Management",
+  "accent": "#f59e0b",
+  "badge": "badges/pmp.png",
+  "examConfig": {
+    "totalQuestions": 180,
+    "durationMinutes": 240,
+    "passingScore": "TBC",
+    "passingDetail": "Pass/fail with feedback per domain. PMI publishes no passing score.",
+    "fee": "$405 / $655",
+    "validity": "3 years",
+    "delivery": "Proctored"
+  },
+  "examFacts": [
+    {
+      "label": {
+        "en": "Questions",
+        "vi": "Số câu"
+      },
+      "value": {
+        "en": "180",
+        "vi": "180"
+      },
+      "detail": {
+        "en": "170 scored and 10 unscored pretest questions, mixed at random. Multiple choice (single and multiple response), matching and drag-and-drop, pull-down lists, point-and-click hotspots, graphic-based questions and case/scenario sets.",
+        "vi": "170 câu tính điểm và 10 câu thử nghiệm không tính điểm, xếp ngẫu nhiên. Trắc nghiệm (một và nhiều đáp án), ghép cặp và kéo thả, danh sách thả xuống, nhấp chọn vùng trên hình, câu hỏi dựa trên đồ hoạ và chuỗi câu hỏi theo tình huống."
+      }
+    },
+    {
+      "label": {
+        "en": "Duration",
+        "vi": "Thời gian"
+      },
+      "value": {
+        "en": "240 min",
+        "vi": "240 phút"
+      },
+      "detail": {
+        "en": "≈ 80 s per question",
+        "vi": "≈ 80 giây mỗi câu"
+      }
+    },
+    {
+      "label": {
+        "en": "Passing score",
+        "vi": "Điểm đạt"
+      },
+      "value": {
+        "en": "TBC",
+        "vi": "TBC"
+      },
+      "detail": {
+        "en": "Pass/fail with feedback per domain. PMI publishes no passing score.",
+        "vi": "Đạt/không đạt, kèm đánh giá theo từng lĩnh vực. PMI không công bố điểm đạt."
+      }
+    },
+    {
+      "label": {
+        "en": "Delivery",
+        "vi": "Hình thức"
+      },
+      "value": {
+        "en": "Proctored",
+        "vi": "Có giám thị"
+      },
+      "detail": {
+        "en": "Pearson VUE test centre or OnVUE online proctored; paper-based in Mainland China. Two 10-minute breaks; you cannot go back to a section after its break.",
+        "vi": "Thi tại trung tâm Pearson VUE hoặc thi trực tuyến có giám thị qua OnVUE; thi trên giấy tại Trung Quốc đại lục. Hai lần nghỉ 10 phút; sau khi nghỉ không quay lại phần trước được."
+      }
+    },
+    {
+      "label": {
+        "en": "Fee",
+        "vi": "Lệ phí"
+      },
+      "value": {
+        "en": "$405 / $655",
+        "vi": "$405 / $655"
+      },
+      "detail": {
+        "en": "PMI member / non-member exam fee. PMI prices by region. You pay after your application is approved; retakes need a further fee.",
+        "vi": "Lệ phí thi cho hội viên PMI / không phải hội viên. PMI định giá theo khu vực. Lệ phí nộp sau khi hồ sơ được duyệt; thi lại phải trả thêm phí."
+      }
+    },
+    {
+      "label": {
+        "en": "Validity",
+        "vi": "Hiệu lực"
+      },
+      "value": {
+        "en": "3 years",
+        "vi": "3 năm"
+      },
+      "detail": {
+        "en": "Earn 60 PDUs every 3 years and pay a renewal fee.",
+        "vi": "Tích luỹ 60 PDU mỗi 3 năm và đóng phí gia hạn."
+      }
+    }
+  ],
+  "factsSource": {
+    "label": "PMI: PMP certification page",
+    "url": "https://www.pmi.org/certifications/project-management-pmp"
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 33,
+      "name": {
+        "en": "People",
+        "vi": "People"
+      },
+      "description": {
+        "en": "How the project manager builds and keeps a shared vision, resolves conflict, leads and empowers the team, engages and aligns stakeholders and customers, makes sure knowledge is transferred, and plans communication and reporting, in predictive, agile and hybrid projects.",
+        "vi": "Cách người quản lý dự án xây dựng và duy trì tầm nhìn chung, giải quyết xung đột, dẫn dắt và trao quyền cho nhóm, gắn kết và điều chỉnh kỳ vọng của các bên liên quan và khách hàng, bảo đảm chuyển giao tri thức, và hoạch định giao tiếp, báo cáo trong dự án dự đoán (predictive), agile và kết hợp (hybrid)."
+      },
+      "principleCount": 8,
+      "questionCount": 119
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 41,
+      "name": {
+        "en": "Process",
+        "vi": "Process"
+      },
+      "description": {
+        "en": "Planning and delivering the work across predictive, agile and hybrid approaches: the integrated plan and delivery approach, scope and backlog, value, resources, procurement, finance, quality, schedule, status and closure. The largest domain on the 2026 exam.",
+        "vi": "Lập kế hoạch và triển khai công việc theo cách tiếp cận dự đoán (predictive), agile và kết hợp: kế hoạch tích hợp và cách tiếp cận triển khai, phạm vi và backlog, giá trị, nguồn lực, mua sắm, tài chính, chất lượng, tiến độ, tình trạng dự án và đóng dự án. Đây là lĩnh vực có tỷ trọng lớn nhất trong đề thi 2026."
+      },
+      "principleCount": 10,
+      "questionCount": 147
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 26,
+      "name": {
+        "en": "Business Environment",
+        "vi": "Business Environment"
+      },
+      "description": {
+        "en": "How the project works inside the organisation and the world around it: governance and escalation, compliance, change control, impediments and issues, risk, continuous improvement, organisational change and shifts in the external environment. The 2026 ECO moved change control, risk, issues and continuous improvement into this domain from Process.",
+        "vi": "Cách dự án vận hành trong tổ chức và trong môi trường xung quanh: quản trị và leo thang, tuân thủ, kiểm soát thay đổi, trở ngại và vấn đề, rủi ro, cải tiến liên tục, thay đổi tổ chức và biến động của môi trường bên ngoài. ECO 2026 đã chuyển kiểm soát thay đổi, rủi ro, vấn đề (issue) và cải tiến liên tục từ miền Quy trình sang miền này."
+      },
+      "principleCount": 8,
+      "questionCount": 94
+    }
+  ],
+  "studyPlan": [
+    {
+      "phase": "Phase 1",
+      "title": {
+        "en": "Foundations and the application: the ECO, delivery approaches and the 35 hours",
+        "vi": "Nền tảng và hồ sơ: ECO, các cách tiếp cận triển khai và 35 giờ đào tạo"
+      },
+      "steps": [
+        {
+          "en": "Read the 2026 ECO end to end and rate yourself 1 to 5 on each of the 26 tasks (8 People, 10 Process, 8 Business Environment)",
+          "vi": "Đọc trọn ECO 2026 và tự chấm 1 đến 5 cho từng nhiệm vụ trong 26 nhiệm vụ (8 Con người, 10 Quy trình, 8 Môi trường kinh doanh)"
+        },
+        {
+          "en": "Start or finish your 35 contact hours; if any of it is live instructor-led and completed from 1 December 2026, take it from a PMI Authorized Training Partner or another provider PMI recognises",
+          "vi": "Bắt đầu hoặc hoàn thành 35 giờ đào tạo; nếu có phần học trực tiếp với giảng viên hoàn thành từ 1/12/2026 thì phải học tại PMI Authorized Training Partner hoặc nhà cung cấp khác được PMI công nhận"
+        },
+        {
+          "en": "Draft your experience entries (role, dates, what you led, outcomes) and line up the supervisors who would sign them if you are audited, then submit the application",
+          "vi": "Soạn các mục kinh nghiệm (vai trò, thời gian, phần việc bạn dẫn dắt, kết quả), chuẩn bị trước những quản lý sẽ ký xác nhận nếu bị audit, rồi nộp hồ sơ"
+        },
+        {
+          "en": "Learn the three delivery approaches and when each fits: predictive, adaptive/agile and hybrid, and how project needs, complexity and uncertainty drive the choice",
+          "vi": "Nắm ba cách tiếp cận triển khai và khi nào dùng mỗi cách: dự đoán, thích ứng/agile và kết hợp, và cách nhu cầu, độ phức tạp, mức bất định của dự án quyết định lựa chọn"
+        },
+        {
+          "en": "Learn the core agile roles, events and artifacts (product owner, team, facilitator; planning, review, retrospective; backlog, increment, definition of done) next to their predictive counterparts",
+          "vi": "Học các vai trò, sự kiện và tạo phẩm agile cốt lõi (product owner, nhóm, người điều phối; lập kế hoạch, review, retrospective; backlog, increment, definition of done) cạnh các khái niệm tương ứng trong cách tiếp cận dự đoán"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": {
+        "en": "Process (41%): planning, scope, schedule, finance, procurement, quality and closure",
+        "vi": "Quy trình (41%): lập kế hoạch, phạm vi, tiến độ, tài chính, mua sắm, chất lượng và đóng dự án"
+      },
+      "steps": [
+        {
+          "en": "Build a small integrated plan for a real project you know: scope (WBS or backlog), schedule, budget with contingency and management reserves, quality and procurement",
+          "vi": "Lập một kế hoạch tích hợp nhỏ cho một dự án thật mà bạn biết: phạm vi (WBS hoặc backlog), tiến độ, ngân sách có dự phòng rủi ro và dự phòng quản lý, chất lượng và mua sắm"
+        },
+        {
+          "en": "Drill estimation and schedule: critical path and float, story points and velocity, PERT estimates, and reading a Gantt chart, burndown and burnup",
+          "vi": "Luyện ước lượng và tiến độ: đường găng và độ trễ cho phép (float), story point và velocity, ước lượng PERT, đọc biểu đồ Gantt, burndown và burnup"
+        },
+        {
+          "en": "Work ten earned value problems (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC) until you can read status from a table at a glance",
+          "vi": "Làm mười bài earned value (PV, EV, AC, CV, SV, CPI, SPI, EAC, ETC) đến khi nhìn bảng là đọc ra ngay tình trạng dự án"
+        },
+        {
+          "en": "Compare contract types (fixed price, cost-reimbursable, time and materials) and who carries the risk in each; know how to evaluate a vendor",
+          "vi": "So sánh các loại hợp đồng (giá cố định, hoàn trả chi phí, thời gian và vật tư) và bên nào chịu rủi ro trong mỗi loại; biết cách đánh giá nhà cung cấp"
+        },
+        {
+          "en": "Study value-based delivery and closure: MVP and incremental release, benefits tracking, acceptance, transition to operations and final lessons learned",
+          "vi": "Học triển khai theo giá trị và đóng dự án: MVP và phát hành tăng dần, theo dõi lợi ích, nghiệm thu, bàn giao cho vận hành và bài học kinh nghiệm cuối cùng"
+        },
+        {
+          "en": "Practise Process questions until you score 75% or more, then 80%",
+          "vi": "Luyện câu hỏi Quy trình đến khi đạt 75% trở lên, rồi 80%"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": {
+        "en": "People (33%) and Business Environment (26%): leadership, stakeholders, change, risk and governance",
+        "vi": "Con người (33%) và Môi trường kinh doanh (26%): lãnh đạo, các bên liên quan, thay đổi, rủi ro và quản trị"
+      },
+      "steps": [
+        {
+          "en": "Learn the leadership and conflict toolkit: servant leadership, team charter and ground rules, the five conflict approaches, coaching and mentoring, and when to escalate",
+          "vi": "Nắm bộ công cụ lãnh đạo và xử lý xung đột: lãnh đạo phục vụ, team charter và quy tắc chung, năm cách xử lý xung đột, coaching và mentoring, và khi nào cần báo cáo lên cấp trên"
+        },
+        {
+          "en": "Map stakeholders on a real project with a power/interest grid and an engagement assessment matrix, then write the communication each one needs",
+          "vi": "Phân tích các bên liên quan của một dự án thật bằng lưới quyền lực/mức quan tâm và ma trận đánh giá mức độ gắn kết, rồi viết kế hoạch truyền thông phù hợp cho từng bên"
+        },
+        {
+          "en": "Walk a change through both worlds: a change request through impact analysis and the change control board, and a new request through the product owner and the backlog",
+          "vi": "Đi trọn một thay đổi theo cả hai cách: yêu cầu thay đổi qua phân tích tác động và hội đồng kiểm soát thay đổi, và một yêu cầu mới qua product owner và backlog"
+        },
+        {
+          "en": "Build a risk register for your project: identify, analyse (probability and impact, EMV), plan responses for threats and opportunities, assign owners, and mark when a risk becomes an issue",
+          "vi": "Lập sổ đăng ký rủi ro cho dự án của bạn: nhận diện, phân tích (xác suất và tác động, EMV), lên phương án ứng phó cho cả mối đe doạ và cơ hội, giao người phụ trách, và đánh dấu khi rủi ro trở thành vấn đề"
+        },
+        {
+          "en": "Cover governance and the wider environment: escalation paths and thresholds, compliance categories (security, safety, sustainability, regulatory), organisational change and external shifts",
+          "vi": "Học quản trị và môi trường rộng hơn: đường và ngưỡng báo cáo lên cấp trên, các nhóm tuân thủ (an ninh, an toàn, bền vững, pháp lý), thay đổi trong tổ chức và biến động bên ngoài"
+        },
+        {
+          "en": "Practise People and Business Environment questions until you score 80% or more",
+          "vi": "Luyện câu hỏi Con người và Môi trường kinh doanh đến khi đạt 80% trở lên"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 4",
+      "title": {
+        "en": "New item types and full mocks: case sets, graphic-based items and exam stamina",
+        "vi": "Dạng câu hỏi mới và đề thi thử trọn bộ: chuỗi câu hỏi tình huống, câu hỏi dựa trên đồ hoạ và sức bền phòng thi"
+      },
+      "steps": [
+        {
+          "en": "Practise case sets: read the scenario once for the goal, the approach and the constraints, then answer each linked item from the case, not from memory of a similar project",
+          "vi": "Luyện chuỗi câu hỏi tình huống: đọc tình huống một lượt để nắm mục tiêu, cách tiếp cận và ràng buộc, rồi trả lời từng câu dựa trên tình huống, không dựa vào trí nhớ về một dự án tương tự"
+        },
+        {
+          "en": "Practise graphic-based items: burndown and burnup charts, Kanban boards, EVM tables, risk matrices, RACI charts and network diagrams",
+          "vi": "Luyện câu hỏi dựa trên đồ hoạ: biểu đồ burndown và burnup, bảng Kanban, bảng EVM, ma trận rủi ro, bảng RACI và sơ đồ mạng"
+        },
+        {
+          "en": "Take a full 180-question mock in 240 minutes with two 10-minute breaks, and review every item before each break because you cannot go back",
+          "vi": "Làm một đề thi thử trọn 180 câu trong 240 phút với hai lần nghỉ 10 phút, và rà lại mọi câu trước mỗi lần nghỉ vì không quay lại được"
+        },
+        {
+          "en": "Retry every miss, name the ECO task it tests and the wrong instinct that led you there; take a second mock before you book",
+          "vi": "Làm lại mọi câu sai, gọi tên nhiệm vụ ECO mà câu đó kiểm tra và phản xạ sai đã dẫn bạn đến đáp án đó; làm đề thi thử thứ hai trước khi đặt lịch"
+        },
+        {
+          "en": "If you sit online, run the OnVUE system test on the exam computer and room a few days before",
+          "vi": "Nếu thi trực tuyến, chạy kiểm tra hệ thống OnVUE trên chính máy và phòng sẽ thi vài ngày trước"
+        }
+      ]
+    }
+  ],
+  "guide": {
+    "title": {
+      "en": "About the PMP exam",
+      "vi": "Tìm hiểu kỳ thi PMP"
+    },
+    "intro": {
+      "en": "The PMP is PMI's certification for people who already lead projects. Anyone booking now sits the exam built on the 2026 Examination Content Outline, the only version since 9 July 2026: 180 questions in 240 minutes across People, Process and Business Environment. This guide covers eligibility, format, cost, renewal and how to prepare.",
+      "vi": "PMP là chứng chỉ của PMI dành cho người đã và đang dẫn dắt dự án. Ai đăng ký thi lúc này sẽ thi theo Examination Content Outline 2026, phiên bản duy nhất từ ngày 9/7/2026: 180 câu trong 240 phút, gồm ba lĩnh vực Con người, Quy trình và Môi trường kinh doanh. Bài viết này tóm tắt điều kiện dự thi, cấu trúc đề, chi phí, gia hạn và cách ôn thi."
+    }
+  },
+  "faqs": [
+    {
+      "question": {
+        "en": "Who it's for and who can apply",
+        "vi": "PMP dành cho ai và ai được đăng ký"
+      },
+      "answer": {
+        "en": "PMP is for people who lead and direct projects: project managers, project leads, delivery managers and agile leads who own outcomes, not just tasks. PMI requires non-overlapping months leading projects in the last 10 years:",
+        "vi": "PMP dành cho người dẫn dắt và điều hành dự án: quản lý dự án, trưởng nhóm dự án, delivery manager và agile lead chịu trách nhiệm về kết quả, không chỉ làm task. PMI yêu cầu số tháng dẫn dắt dự án không trùng lặp trong 10 năm gần nhất:"
+      }
+    },
+    {
+      "question": {
+        "en": "What's tested",
+        "vi": "Đề thi kiểm tra những gì"
+      },
+      "answer": {
+        "en": "The 2026 outline has three domains and 26 tasks:",
+        "vi": "Outline 2026 có ba lĩnh vực và 26 nhiệm vụ (task):"
+      }
+    },
+    {
+      "question": {
+        "en": "Exam format and scoring",
+        "vi": "Cấu trúc đề và cách chấm điểm"
+      },
+      "answer": {
+        "en": "Scoring. PMI does not publish a passing score. The standard is set by psychometric analysis of what a qualified project manager should know, and you get pass or fail plus a performance rating for each domain. The on-screen result is preliminary; the official report follows within 10 business days.",
+        "vi": "Chấm điểm. PMI không công bố điểm đạt. Chuẩn đạt được xác định bằng phân tích đo lường (psychometric) về những gì một người quản lý dự án đủ năng lực cần biết; bạn nhận kết quả đạt/không đạt kèm mức đánh giá cho từng lĩnh vực. Kết quả trên màn hình chỉ là sơ bộ; báo cáo chính thức có trong vòng 10 ngày làm việc."
+      }
+    },
+    {
+      "question": {
+        "en": "Difficulty and study time",
+        "vi": "Độ khó và thời gian ôn"
+      },
+      "answer": {
+        "en": "PMP is hard mainly because it is long and almost every question is a situation with several plausible answers. You must pick what PMI considers the best next action.",
+        "vi": "PMP khó chủ yếu vì đề dài và gần như câu nào cũng là một tình huống với vài đáp án nghe đều hợp lý. Bạn phải chọn hành động tiếp theo mà PMI coi là tốt nhất."
+      }
+    },
+    {
+      "question": {
+        "en": "Cost, application and booking",
+        "vi": "Chi phí, nộp hồ sơ và đặt lịch thi"
+      },
+      "answer": {
+        "en": "Fee. US$405 for PMI members and US$655 for non-members when we checked. Some pmi.org pages have shown US$425 / US$675 and PMI prices by region, so confirm on PMI's PMP page before paying. The member price applies only if you join before paying.",
+        "vi": "Lệ phí. 405 USD cho hội viên PMI và 655 USD cho người không phải hội viên tại thời điểm chúng tôi kiểm tra. Một số trang pmi.org từng hiển thị 425 / 675 USD và PMI định giá theo khu vực, nên hãy xác nhận trên trang PMP của PMI trước khi thanh toán. Giá hội viên chỉ áp dụng nếu bạn gia nhập trước khi trả phí."
+      }
+    },
+    {
+      "question": {
+        "en": "Renewal",
+        "vi": "Gia hạn chứng chỉ"
+      },
+      "answer": {
+        "en": "PMP runs on a 3-year cycle. To renew, report 60 PDUs (1 PDU is 1 hour) and pay the renewal fee, which PMI shows in your dashboard by membership and region.",
+        "vi": "PMP theo chu kỳ 3 năm. Để gia hạn, bạn khai báo 60 PDU (1 PDU bằng 1 giờ) và đóng phí gia hạn; PMI hiển thị mức phí trong dashboard theo tư cách hội viên và khu vực."
+      }
+    },
+    {
+      "question": {
+        "en": "How it compares",
+        "vi": "So sánh với các chứng chỉ khác"
+      },
+      "answer": {
+        "en": "",
+        "vi": ""
+      }
+    },
+    {
+      "question": {
+        "en": "How to prepare",
+        "vi": "Cách ôn thi"
+      },
+      "answer": {
+        "en": "Our free practice questions and mock exams follow the 2026 domains; they are our own, not PMI's. Practica is not affiliated with PMI. PMP, CAPM, PgMP and PMBOK are marks of the Project Management Institute.",
+        "vi": "Câu hỏi luyện tập và đề thi thử miễn phí trên trang của chúng tôi bám theo các lĩnh vực 2026; câu hỏi do chúng tôi tự soạn, không phải của PMI. Practica không liên kết với PMI. PMP, CAPM, PgMP và PMBOK là nhãn hiệu của Project Management Institute."
+      }
+    },
+    {
+      "question": {
+        "en": "How many questions are on the PMP exam?",
+        "vi": "Đề thi PMP có bao nhiêu câu hỏi?"
+      },
+      "answer": {
+        "en": "The PMP exam has 180 questions.",
+        "vi": "Đề thi PMP có 180 câu hỏi."
+      }
+    },
+    {
+      "question": {
+        "en": "How long is the PMP exam?",
+        "vi": "Thời gian làm bài thi PMP là bao lâu?"
+      },
+      "answer": {
+        "en": "You have 240 minutes, about 80 seconds per question.",
+        "vi": "Bạn có 240 phút, khoảng 80 giây cho mỗi câu."
+      }
+    },
+    {
+      "question": {
+        "en": "How much does the PMP exam cost?",
+        "vi": "Lệ phí thi PMP là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The exam fee is $405 / $655.",
+        "vi": "Lệ phí thi là $405 / $655."
+      }
+    },
+    {
+      "question": {
+        "en": "What does the PMP exam cover?",
+        "vi": "Đề thi PMP gồm những nội dung gì?"
+      },
+      "answer": {
+        "en": "People (33%); Process (41%); Business Environment (26%).",
+        "vi": "People (33%); Process (41%); Business Environment (26%)."
+      }
+    },
+    {
+      "question": {
+        "en": "Is Practica Cert Prep free?",
+        "vi": "Practica Cert Prep có miễn phí không?"
+      },
+      "answer": {
+        "en": "Yes. Every study page, the practice questions and the mock exam are free, with no login. Progress is saved in your browser.",
+        "vi": "Có. Mọi trang học, câu hỏi luyện tập và bài thi thử đều miễn phí, không cần đăng nhập. Tiến độ được lưu trên trình duyệt của bạn."
+      }
+    }
+  ],
+  "stats": {
+    "domains": 3,
+    "principles": 26,
+    "rules": 51,
+    "glossary": 107,
+    "questions": 0
+  },
+  "sourceUrl": "https://certprep.practica.asia/vi/pmp",
+  "scrapedAt": "2026-11-24T00:51:52.919Z"
+}

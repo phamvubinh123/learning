@@ -1,0 +1,1781 @@
+{
+  "slug": "pmp",
+  "certId": "pmi-pmp",
+  "scrapedAt": "2026-11-24T00:51:52.919Z",
+  "rules": [
+    {
+      "id": "rule-01",
+      "index": "01",
+      "situation": {
+        "en": "Stakeholders or team members act on different readings of the vision",
+        "vi": "Các bên liên quan hoặc thành viên nhóm hành động theo những cách hiểu khác nhau về tầm nhìn"
+      },
+      "choice": {
+        "en": "Break it down to the root cause first, then facilitate one refreshed, shared statement",
+        "vi": "Phân tích tìm nguyên nhân gốc trước, rồi điều phối để thống nhất một tuyên bố chung được làm mới"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-02",
+      "index": "02",
+      "situation": {
+        "en": "Two team members clash over an issue that matters, and there is time",
+        "vi": "Hai thành viên nhóm bất đồng về một vấn đề quan trọng, và vẫn còn thời gian"
+      },
+      "choice": {
+        "en": "Collaborate: meet them, surface the underlying interests and the facts; do not escalate first",
+        "vi": "Hợp tác (collaborate): gặp họ, làm rõ lợi ích thực sự và dữ kiện; đừng escalate trước"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-03",
+      "index": "03",
+      "situation": {
+        "en": "The agile team asks the PM to decide how to do the work",
+        "vi": "Nhóm agile đề nghị quản lý dự án quyết định cách làm việc"
+      },
+      "choice": {
+        "en": "Facilitate and coach the team to decide; servant leadership, not task assignment",
+        "vi": "Điều phối và huấn luyện để nhóm tự quyết; lãnh đạo phục vụ, không phải giao việc"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-04",
+      "index": "04",
+      "situation": {
+        "en": "A newly identified, powerful stakeholder resists the project",
+        "vi": "Một bên liên quan có quyền lực mới được xác định đang phản đối dự án"
+      },
+      "choice": {
+        "en": "Meet them to understand their interests; update the register and the engagement plan",
+        "vi": "Gặp họ để hiểu lợi ích và mối lo; cập nhật stakeholder register và kế hoạch gắn kết"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-05",
+      "index": "05",
+      "situation": {
+        "en": "Two stakeholders expect conflicting things from the same deliverable",
+        "vi": "Hai bên liên quan kỳ vọng những điều mâu thuẫn từ cùng một sản phẩm"
+      },
+      "choice": {
+        "en": "Facilitate a joint discussion against the objectives; the sponsor or product owner decides",
+        "vi": "Điều phối thảo luận chung, đối chiếu với mục tiêu dự án; nhà tài trợ (sponsor) hoặc product owner quyết định"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-06",
+      "index": "06",
+      "situation": {
+        "en": "Customer satisfaction drops in the middle of the project",
+        "vi": "Mức hài lòng của khách hàng giảm giữa dự án"
+      },
+      "choice": {
+        "en": "Find out why with the customer, show working increments early, and act through the change process",
+        "vi": "Cùng khách hàng tìm nguyên nhân, cho xem các phần sản phẩm chạy được sớm, và xử lý qua quy trình thay đổi"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-07",
+      "index": "07",
+      "situation": {
+        "en": "Critical know-how sits with one person who may leave",
+        "vi": "Bí quyết quan trọng nằm ở một người có thể sắp rời đi"
+      },
+      "choice": {
+        "en": "Start pairing, shadowing and documenting now, not at closure",
+        "vi": "Bắt đầu pair, shadowing và ghi chép ngay bây giờ, không đợi đến khi kết thúc dự án"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-08",
+      "index": "08",
+      "situation": {
+        "en": "The sponsor or steering committee needs a status update",
+        "vi": "Nhà tài trợ (sponsor) hoặc ban chỉ đạo cần cập nhật tình trạng"
+      },
+      "choice": {
+        "en": "A tailored summary per the communications plan: trends, risks and decisions needed",
+        "vi": "Bản tóm tắt phù hợp theo communications plan: xu hướng, rủi ro và các quyết định cần đưa ra"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-09",
+      "index": "09",
+      "situation": {
+        "en": "A stakeholder's engagement drops or a new, powerful stakeholder appears",
+        "vi": "Một bên liên quan giảm gắn kết hoặc xuất hiện bên mới có quyền lực"
+      },
+      "choice": {
+        "en": "Talk to them first: add or update them in the register, learn their concerns, then adjust the engagement plan",
+        "vi": "Trao đổi với họ trước: thêm hoặc cập nhật sổ đăng ký, tìm hiểu lo ngại, rồi điều chỉnh kế hoạch gắn kết"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-10",
+      "index": "10",
+      "situation": {
+        "en": "Stakeholders expect more than the data (burnup, forecast, baseline) supports, or want conflicting things",
+        "vi": "Các bên liên quan kỳ vọng nhiều hơn dữ liệu (burnup, dự báo, baseline) cho phép, hoặc muốn những điều mâu thuẫn"
+      },
+      "choice": {
+        "en": "Show the evidence and facilitate a joint trade-off discussion against the objectives; scope changes then go to the backlog (agile) or change control (predictive)",
+        "vi": "Đưa bằng chứng ra và điều phối thảo luận đánh đổi chung dựa trên mục tiêu; thay đổi phạm vi sau đó vào backlog (agile) hoặc kiểm soát thay đổi (dự đoán)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-11",
+      "index": "11",
+      "situation": {
+        "en": "The customer is unhappy even though the agreed acceptance criteria are met",
+        "vi": "Khách hàng không hài lòng dù đã đạt tiêu chí chấp nhận"
+      },
+      "choice": {
+        "en": "Explore the real need with them and capture it as backlog items or a change request; never argue the contract first or gold-plate",
+        "vi": "Cùng họ tìm hiểu nhu cầu thật và ghi nhận thành hạng mục backlog hoặc yêu cầu thay đổi; đừng mở đầu bằng tranh luận hợp đồng hay mạ vàng"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-12",
+      "index": "12",
+      "situation": {
+        "en": "A key expert is leaving and what they know is undocumented",
+        "vi": "Một chuyên gia chủ chốt sắp rời đi và những gì họ biết chưa được ghi lại"
+      },
+      "choice": {
+        "en": "Pair a named successor with the expert now and confirm the successor can do the task unaided; documents alone are not proof of transfer",
+        "vi": "Cho người kế nhiệm được chỉ định làm việc cặp với chuyên gia ngay bây giờ và xác nhận người kế nhiệm tự làm được; chỉ có tài liệu thì chưa chứng minh đã chuyển giao"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-13",
+      "index": "13",
+      "situation": {
+        "en": "Stakeholders say reports are too long, ignored, or miss what they need",
+        "vi": "Các bên liên quan nói báo cáo quá dài, bị bỏ qua hoặc thiếu điều họ cần"
+      },
+      "choice": {
+        "en": "Ask each audience what they must know or decide, tailor views from one data source, and close the feedback loop; don't just send more often",
+        "vi": "Hỏi từng nhóm đối tượng họ cần biết hay quyết định gì, tạo bản xem riêng từ một nguồn dữ liệu và khép kín vòng phản hồi; đừng chỉ gửi thường xuyên hơn"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-14",
+      "index": "14",
+      "situation": {
+        "en": "Sponsor wants agile (or predictive) before anyone has assessed the project",
+        "vi": "Nhà tài trợ (sponsor) muốn agile (hoặc dự đoán (predictive)) khi chưa ai đánh giá dự án"
+      },
+      "choice": {
+        "en": "Assess needs, complexity and uncertainty first, then recommend the approach",
+        "vi": "Đánh giá nhu cầu, độ phức tạp và mức bất định trước, rồi mới đề xuất cách tiếp cận"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-15",
+      "index": "15",
+      "situation": {
+        "en": "Two subsidiary plans contradict each other",
+        "vi": "Hai kế hoạch thành phần mâu thuẫn nhau"
+      },
+      "choice": {
+        "en": "Reconcile them in the integrated plan before baselining; check dependencies and gaps",
+        "vi": "Đối chiếu và thống nhất trong kế hoạch tích hợp trước khi lập baseline; kiểm tra phụ thuộc và khoảng trống"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-16",
+      "index": "16",
+      "situation": {
+        "en": "A stakeholder asks the team directly to add or reorder work",
+        "vi": "Một bên liên quan yêu cầu thẳng nhóm thêm hoặc đổi thứ tự công việc"
+      },
+      "choice": {
+        "en": "Send it to the product owner (agile) or the change process (predictive); never add it informally",
+        "vi": "Chuyển cho product owner (agile) hoặc quy trình thay đổi (dự đoán (predictive)); không bao giờ thêm một cách không chính thức"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-17",
+      "index": "17",
+      "situation": {
+        "en": "Backlog item is too big to finish in one iteration",
+        "vi": "Hạng mục backlog quá lớn để xong trong một iteration"
+      },
+      "choice": {
+        "en": "Split it into thin vertical slices that each deliver usable value",
+        "vi": "Tách thành các lát cắt dọc mỏng, mỗi lát mang lại giá trị dùng được"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-18",
+      "index": "18",
+      "situation": {
+        "en": "Benefit is in the business case but nobody can say how it will be measured",
+        "vi": "Lợi ích có trong business case nhưng không ai nói được sẽ đo thế nào"
+      },
+      "choice": {
+        "en": "Set baseline, target, owner and data source before release",
+        "vi": "Đặt số liệu nền, mục tiêu, người chịu trách nhiệm và nguồn dữ liệu trước khi phát hành"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-19",
+      "index": "19",
+      "situation": {
+        "en": "Scope is uncertain and the contract must still be signed",
+        "vi": "Phạm vi chưa chắc chắn nhưng vẫn phải ký hợp đồng"
+      },
+      "choice": {
+        "en": "Cost-reimbursable or capped T&M, or fixed-price per increment, not one big fixed price",
+        "vi": "Hoàn trả chi phí hoặc T&M có trần, hoặc giá cố định theo từng phần, không phải một hợp đồng giá cố định trọn gói"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-20",
+      "index": "20",
+      "situation": {
+        "en": "Schedule must be shortened",
+        "vi": "Phải rút ngắn tiến độ"
+      },
+      "choice": {
+        "en": "Crash or fast-track critical-path work only; weigh cost (crash) against risk (fast-track)",
+        "vi": "Chỉ crash hoặc fast-track công việc trên đường găng; cân nhắc chi phí (crash) với rủi ro (fast-track)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-21",
+      "index": "21",
+      "situation": {
+        "en": "Deliverables look finished and the team wants to move on",
+        "vi": "Sản phẩm bàn giao có vẻ đã xong và nhóm muốn chuyển việc khác"
+      },
+      "choice": {
+        "en": "Get formal acceptance and confirm operations is ready before releasing resources",
+        "vi": "Có biên bản nghiệm thu chính thức và xác nhận bộ phận vận hành đã sẵn sàng trước khi giải phóng nguồn lực"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-22",
+      "index": "22",
+      "situation": {
+        "en": "A needed resource is shared or controlled by a functional manager",
+        "vi": "Nguồn lực cần dùng được chia sẻ hoặc do trưởng bộ phận chức năng quản lý"
+      },
+      "choice": {
+        "en": "Assess the impact, then negotiate dates with that manager and record them in the resource calendar; escalate only if that fails",
+        "vi": "Đánh giá tác động, rồi thương lượng ngày với người quản lý đó và ghi vào resource calendar; chỉ leo thang khi không thành"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-23",
+      "index": "23",
+      "situation": {
+        "en": "Choosing a contract type: is the scope well defined or still unknown?",
+        "vi": "Chọn loại hợp đồng: phạm vi đã rõ hay còn chưa biết?"
+      },
+      "choice": {
+        "en": "Fixed price when the spec is stable (seller carries risk); cost-reimbursable or T&M when scope is uncertain (buyer carries risk); agile work: master agreement plus short SOWs per increment",
+        "vi": "Giá cố định khi thông số ổn định (bên bán chịu rủi ro); hoàn trả chi phí hoặc T&M khi phạm vi bất định (bên mua chịu rủi ro); công việc agile: hợp đồng khung kèm SOW ngắn cho từng increment"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-24",
+      "index": "24",
+      "situation": {
+        "en": "An unplanned cost appears: identified risk or not?",
+        "vi": "An unplanned cost appears: identified risk or not?"
+      },
+      "choice": {
+        "en": "Identified risk → contingency reserve (inside the cost baseline); unidentified → request management reserve through governance (outside the baseline)",
+        "vi": "Identified risk → contingency reserve (inside the cost baseline); unidentified → request management reserve through governance (outside the baseline)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-25",
+      "index": "25",
+      "situation": {
+        "en": "A quality requirement applies to every story or deliverable",
+        "vi": "Một yêu cầu chất lượng áp dụng cho mọi story hoặc sản phẩm"
+      },
+      "choice": {
+        "en": "Put it in the definition of done or the quality management plan, not in each item's acceptance criteria",
+        "vi": "Đưa vào definition of done hoặc kế hoạch quản lý chất lượng, không lặp lại trong tiêu chí chấp nhận của từng hạng mục"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-26",
+      "index": "26",
+      "situation": {
+        "en": "SPI is below 1.0 or a task is late, and someone says the finish date will slip",
+        "vi": "SPI dưới 1.0 hoặc một công việc bị chậm, và có người nói ngày kết thúc sẽ trễ"
+      },
+      "choice": {
+        "en": "Check whether the late work is on the critical path or within its float before declaring a slip",
+        "vi": "Kiểm tra phần việc chậm có nằm trên đường găng hay vẫn trong độ trễ cho phép (float) của nó trước khi kết luận là trễ"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-27",
+      "index": "27",
+      "situation": {
+        "en": "A workstream reports green, but its trend data (defects, slipping milestones, burnup) says otherwise",
+        "vi": "Một workstream báo xanh nhưng dữ liệu xu hướng (lỗi, mốc trượt, burnup) nói ngược lại"
+      },
+      "choice": {
+        "en": "Check the data with the owner, then report the data-based status with the trend and a recovery forecast",
+        "vi": "Kiểm tra dữ liệu cùng người phụ trách, rồi báo cáo trạng thái dựa trên dữ liệu, kèm xu hướng và dự báo phục hồi"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-28",
+      "index": "28",
+      "situation": {
+        "en": "Work is finished (or the project is cancelled) and everyone wants to move on",
+        "vi": "Công việc đã xong (hoặc dự án bị hủy) và ai cũng muốn chuyển sang việc khác"
+      },
+      "choice": {
+        "en": "Run closure anyway: formal acceptance, transition readiness, contracts and claims, finances, release resources, final lessons, archive",
+        "vi": "Vẫn phải đóng dự án: nghiệm thu chính thức, kiểm tra sẵn sàng bàn giao, hợp đồng và khiếu nại, tài chính, giải phóng nguồn lực, bài học cuối cùng, lưu trữ hồ sơ"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-29",
+      "index": "29",
+      "situation": {
+        "en": "A variance or decision exceeds your threshold in the governance plan",
+        "vi": "Chênh lệch hoặc quyết định vượt ngưỡng của bạn trong kế hoạch quản trị"
+      },
+      "choice": {
+        "en": "Escalate through the agreed path to the named authority, with data, options and a recommendation",
+        "vi": "Leo thang theo lộ trình đã thống nhất đến đúng cấp có thẩm quyền, kèm dữ liệu, phương án và đề xuất"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-30",
+      "index": "30",
+      "situation": {
+        "en": "A variance is inside your tolerance",
+        "vi": "Chênh lệch vẫn nằm trong ngưỡng cho phép"
+      },
+      "choice": {
+        "en": "Act on it yourself and report it at the normal cadence; do not escalate",
+        "vi": "Tự xử lý và báo cáo theo chu kỳ thường lệ; không leo thang"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-31",
+      "index": "31",
+      "situation": {
+        "en": "A mandatory compliance requirement threatens the date, or someone suggests skipping it",
+        "vi": "Yêu cầu tuân thủ bắt buộc đe dọa tiến độ, hoặc có người đề nghị bỏ qua"
+      },
+      "choice": {
+        "en": "Keep the requirement; change schedule or scope through change control and escalate the pressure",
+        "vi": "Giữ yêu cầu; thay đổi tiến độ hoặc phạm vi qua kiểm soát thay đổi và leo thang áp lực đó"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-32",
+      "index": "32",
+      "situation": {
+        "en": "A stakeholder asks for a change to approved scope (predictive)",
+        "vi": "Bên liên quan yêu cầu thay đổi phạm vi đã phê duyệt (dự đoán (predictive))"
+      },
+      "choice": {
+        "en": "Assess the impact first, then submit a change request to whoever holds the authority",
+        "vi": "Đánh giá tác động trước, rồi gửi change request đến người có thẩm quyền"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-33",
+      "index": "33",
+      "situation": {
+        "en": "A new request arrives mid-sprint (agile)",
+        "vi": "Có yêu cầu mới giữa sprint (agile)"
+      },
+      "choice": {
+        "en": "Send it to the product owner for the backlog; protect the sprint goal",
+        "vi": "Chuyển cho product owner đưa vào backlog; bảo vệ sprint goal"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-34",
+      "index": "34",
+      "situation": {
+        "en": "The team is blocked by something outside its control",
+        "vi": "Nhóm bị chặn bởi thứ nằm ngoài tầm kiểm soát"
+      },
+      "choice": {
+        "en": "Servant leader acts now to remove it; if it cannot be removed, minimise it; fix recurring ones at the root",
+        "vi": "Servant leader hành động ngay để gỡ bỏ; nếu không gỡ được thì giảm thiểu; vấn đề lặp lại thì sửa tận gốc"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-35",
+      "index": "35",
+      "situation": {
+        "en": "A risk in the register has occurred",
+        "vi": "Một rủi ro trong register đã xảy ra"
+      },
+      "choice": {
+        "en": "Apply the planned response, log it as an issue and update the risk register",
+        "vi": "Áp dụng phương án ứng phó đã lập, ghi vào issue log và cập nhật risk register"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-36",
+      "index": "36",
+      "situation": {
+        "en": "The organisation, a regulation or the market changes around the project",
+        "vi": "Tổ chức, quy định hoặc thị trường thay đổi xung quanh dự án"
+      },
+      "choice": {
+        "en": "Assess impact on scope/backlog and the business case, re-confirm with the sponsor, and act through change control or the backlog; capture lessons in OPAs",
+        "vi": "Đánh giá tác động lên phạm vi/backlog và business case, xác nhận lại với nhà tài trợ (sponsor), và xử lý qua kiểm soát thay đổi hoặc backlog; cập nhật bài học vào OPA"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-37",
+      "index": "37",
+      "situation": {
+        "en": "A planned risk's trigger fires",
+        "vi": "Trigger của một rủi ro đã lên kế hoạch xảy ra"
+      },
+      "choice": {
+        "en": "Risk owner carries out the agreed response; update the register. No fresh analysis or change request first",
+        "vi": "risk owner thực hiện ứng phó đã thống nhất và cập nhật register; không phân tích lại hay tạo change request trước"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-38",
+      "index": "38",
+      "situation": {
+        "en": "A law, market, technology or geopolitical change hits mid-project",
+        "vi": "Luật, thị trường, công nghệ hoặc địa chính trị thay đổi giữa dự án"
+      },
+      "choice": {
+        "en": "Assess its impact on scope/backlog first; then a change request (predictive) or the PO reprioritizes (agile); log new risks",
+        "vi": "đánh giá tác động lên phạm vi/backlog trước; sau đó change request (predictive) hoặc PO sắp xếp lại ưu tiên (agile); ghi nhận rủi ro mới"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-39",
+      "index": "39",
+      "situation": {
+        "en": "Lessons learned are planned only for the closing meeting",
+        "vi": "Lessons learned chỉ được dự định làm ở buổi đóng dự án"
+      },
+      "choice": {
+        "en": "Capture them all along in the register and apply them now; at closure move them to the repository and update OPAs",
+        "vi": "ghi vào register suốt dự án và áp dụng ngay; khi đóng thì chuyển vào repository và cập nhật OPA"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-40",
+      "index": "40",
+      "situation": {
+        "en": "Any change to scope, schedule or cost in a predictive project",
+        "vi": "Mọi thay đổi về phạm vi, tiến độ hay chi phí trong dự án dự đoán"
+      },
+      "choice": {
+        "en": "Assess the impact, raise a change request and take it through change control; update the plan and tell stakeholders only after a decision",
+        "vi": "Đánh giá tác động, lập yêu cầu thay đổi và đưa qua kiểm soát thay đổi; chỉ cập nhật kế hoạch và thông báo sau khi có quyết định"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-41",
+      "index": "41",
+      "situation": {
+        "en": "A new request or changed need in an agile project",
+        "vi": "Yêu cầu mới hoặc nhu cầu thay đổi trong dự án agile"
+      },
+      "choice": {
+        "en": "Send it to the product owner to add to and re-prioritise the backlog; do not change the current sprint's commitment mid-sprint",
+        "vi": "Chuyển cho product owner đưa vào và sắp xếp lại backlog; không đổi cam kết của sprint đang chạy giữa chừng"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-42",
+      "index": "42",
+      "situation": {
+        "en": "A problem lands on your desk and the question asks what to do first",
+        "vi": "Một vấn đề xảy ra và câu hỏi hỏi việc làm đầu tiên"
+      },
+      "choice": {
+        "en": "Gather facts and analyse the impact or root cause before acting, escalating or informing the sponsor",
+        "vi": "Thu thập dữ kiện, phân tích tác động hoặc nguyên nhân gốc trước khi hành động, báo cáo lên trên hay báo nhà tài trợ"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-43",
+      "index": "43",
+      "situation": {
+        "en": "Conflict or a performance problem with a team member",
+        "vi": "Xung đột hoặc vấn đề hiệu suất với một thành viên"
+      },
+      "choice": {
+        "en": "Talk to the person privately and work it out collaboratively; escalate or involve HR only after that fails",
+        "vi": "Nói chuyện riêng với người đó và cùng giải quyết; chỉ báo lên trên hoặc nhờ nhân sự khi cách đó thất bại"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-44",
+      "index": "44",
+      "situation": {
+        "en": "The team is blocked",
+        "vi": "Nhóm bị chặn"
+      },
+      "choice": {
+        "en": "As a servant leader, remove or route the impediment yourself and keep reassessing; do not tell the team to work around it alone",
+        "vi": "Là người lãnh đạo phục vụ, tự gỡ hoặc chuyển trở ngại đến đúng người và tiếp tục đánh giá lại; không bảo nhóm tự xoay xở"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-45",
+      "index": "45",
+      "situation": {
+        "en": "A senior stakeholder asks you to add work directly",
+        "vi": "Một bên liên quan cấp cao yêu cầu thêm việc trực tiếp"
+      },
+      "choice": {
+        "en": "Acknowledge the need, then route it through change control or the product owner; never bypass the agreed process",
+        "vi": "Ghi nhận nhu cầu, rồi chuyển qua kiểm soát thay đổi hoặc product owner; không bao giờ bỏ qua quy trình đã thống nhất"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-46",
+      "index": "46",
+      "situation": {
+        "en": "An identified risk occurs",
+        "vi": "Một rủi ro đã nhận diện xảy ra"
+      },
+      "choice": {
+        "en": "It is now an issue: carry out the planned response, log it in the issue log and update the risk register; use a workaround only if no response was planned",
+        "vi": "Giờ là vấn đề: thực hiện phương án ứng phó đã lên kế hoạch, ghi vào nhật ký vấn đề và cập nhật sổ đăng ký rủi ro; chỉ dùng giải pháp tạm thời nếu chưa có phương án"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-47",
+      "index": "47",
+      "situation": {
+        "en": "Choosing a delivery approach",
+        "vi": "Choosing a delivery approach"
+      },
+      "choice": {
+        "en": "Stable, well-understood requirements or heavy regulation point to predictive; high uncertainty and fast feedback point to agile; a mix of both points to hybrid",
+        "vi": "Stable, well-understood requirements or heavy regulation point to predictive; high uncertainty and fast feedback point to agile; a mix of both points to hybrid"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-48",
+      "index": "48",
+      "situation": {
+        "en": "Stakeholder resistance or low engagement",
+        "vi": "Bên liên quan phản đối hoặc ít gắn kết"
+      },
+      "choice": {
+        "en": "Find out why (analyse interests and concerns), then tailor communication and involve them; do not simply send more reports",
+        "vi": "Tìm hiểu lý do (phân tích lợi ích và mối lo), rồi điều chỉnh cách truyền thông và mời họ tham gia; không chỉ gửi thêm báo cáo"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-49",
+      "index": "49",
+      "situation": {
+        "en": "Lessons learned",
+        "vi": "Bài học kinh nghiệm"
+      },
+      "choice": {
+        "en": "Capture them throughout (retrospectives, reviews), apply them in the next iteration, and add them to the OPAs at closure",
+        "vi": "Ghi nhận suốt dự án (retrospective, review), áp dụng ngay ở vòng lặp sau, và đưa vào OPAs khi đóng dự án"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-50",
+      "index": "50",
+      "situation": {
+        "en": "A new law, regulation or market shift affects the project",
+        "vi": "Luật, quy định mới hay biến động thị trường ảnh hưởng dự án"
+      },
+      "choice": {
+        "en": "Assess the impact on scope or backlog with the relevant stakeholders and act through change control or re-prioritisation; compliance outranks convenience",
+        "vi": "Đánh giá tác động lên phạm vi hoặc backlog cùng các bên liên quan và xử lý qua kiểm soát thay đổi hoặc sắp xếp lại ưu tiên; tuân thủ được ưu tiên hơn sự tiện lợi"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-51",
+      "index": "51",
+      "situation": {
+        "en": "Two answers both look right",
+        "vi": "Hai đáp án đều có vẻ đúng"
+      },
+      "choice": {
+        "en": "Pick the one that comes first in the process, fixes the root cause, keeps the decision with the right role and protects value for stakeholders",
+        "vi": "Chọn đáp án đứng trước trong quy trình, xử lý nguyên nhân gốc, để quyết định ở đúng vai trò và bảo vệ giá trị cho các bên liên quan"
+      },
+      "personal_notes": ""
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v-1",
+      "term": "most likely / best / first / next",
+      "meaning": {
+        "en": "nhiều khả năng nhất / tốt nhất / đầu tiên / tiếp theo: từ khoá quyết định đáp án, “first” và “next” hỏi về trình tự",
+        "vi": "nhiều khả năng nhất / tốt nhất / đầu tiên / tiếp theo: từ khoá quyết định đáp án, “first” và “next” hỏi về trình tự"
+      }
+    },
+    {
+      "id": "v-2",
+      "term": "should have",
+      "meaning": {
+        "en": "lẽ ra phải: hỏi bước bị bỏ sót trước đó, không phải việc cần làm bây giờ",
+        "vi": "lẽ ra phải: hỏi bước bị bỏ sót trước đó, không phải việc cần làm bây giờ"
+      }
+    },
+    {
+      "id": "v-3",
+      "term": "escalate",
+      "meaning": {
+        "en": "báo cáo / chuyển vấn đề lên cấp có thẩm quyền cao hơn",
+        "vi": "báo cáo / chuyển vấn đề lên cấp có thẩm quyền cao hơn"
+      }
+    },
+    {
+      "id": "v-4",
+      "term": "mitigate",
+      "meaning": {
+        "en": "giảm nhẹ: giảm xác suất hoặc tác động của rủi ro",
+        "vi": "giảm nhẹ: giảm xác suất hoặc tác động của rủi ro"
+      }
+    },
+    {
+      "id": "v-5",
+      "term": "impediment / blocker",
+      "meaning": {
+        "en": "trở ngại / vật cản khiến nhóm không làm tiếp được",
+        "vi": "trở ngại / vật cản khiến nhóm không làm tiếp được"
+      }
+    },
+    {
+      "id": "v-6",
+      "term": "sponsor",
+      "meaning": {
+        "en": "nhà tài trợ dự án: người cấp nguồn lực và chịu trách nhiệm về business case",
+        "vi": "nhà tài trợ dự án: người cấp nguồn lực và chịu trách nhiệm về business case"
+      }
+    },
+    {
+      "id": "v-7",
+      "term": "buy-in",
+      "meaning": {
+        "en": "sự đồng thuận, ủng hộ thật sự của một bên liên quan",
+        "vi": "sự đồng thuận, ủng hộ thật sự của một bên liên quan"
+      }
+    },
+    {
+      "id": "v-8",
+      "term": "tailor",
+      "meaning": {
+        "en": "điều chỉnh cho phù hợp: chọn và sửa quy trình, công cụ theo bối cảnh dự án",
+        "vi": "điều chỉnh cho phù hợp: chọn và sửa quy trình, công cụ theo bối cảnh dự án"
+      }
+    },
+    {
+      "id": "v-9",
+      "term": "deliverable",
+      "meaning": {
+        "en": "sản phẩm bàn giao: kết quả có thể kiểm chứng mà dự án tạo ra",
+        "vi": "sản phẩm bàn giao: kết quả có thể kiểm chứng mà dự án tạo ra"
+      }
+    },
+    {
+      "id": "v-10",
+      "term": "baseline",
+      "meaning": {
+        "en": "đường cơ sở: phiên bản kế hoạch đã được phê duyệt để so sánh tiến độ thực tế",
+        "vi": "đường cơ sở: phiên bản kế hoạch đã được phê duyệt để so sánh tiến độ thực tế"
+      }
+    },
+    {
+      "id": "v-11",
+      "term": "constraint",
+      "meaning": {
+        "en": "ràng buộc: giới hạn bắt buộc về thời gian, chi phí, phạm vi, pháp lý…",
+        "vi": "ràng buộc: giới hạn bắt buộc về thời gian, chi phí, phạm vi, pháp lý…"
+      }
+    },
+    {
+      "id": "v-12",
+      "term": "assumption",
+      "meaning": {
+        "en": "giả định: điều được coi là đúng khi lập kế hoạch nhưng chưa được kiểm chứng",
+        "vi": "giả định: điều được coi là đúng khi lập kế hoạch nhưng chưa được kiểm chứng"
+      }
+    },
+    {
+      "id": "v-13",
+      "term": "workaround",
+      "meaning": {
+        "en": "giải pháp tạm thời cho một rủi ro đã xảy ra mà chưa có kế hoạch ứng phó",
+        "vi": "giải pháp tạm thời cho một rủi ro đã xảy ra mà chưa có kế hoạch ứng phó"
+      }
+    },
+    {
+      "id": "v-14",
+      "term": "ground rules",
+      "meaning": {
+        "en": "quy tắc chung mà nhóm tự thống nhất về cách làm việc với nhau",
+        "vi": "quy tắc chung mà nhóm tự thống nhất về cách làm việc với nhau"
+      }
+    },
+    {
+      "id": "v-15",
+      "term": "compliance",
+      "meaning": {
+        "en": "tuân thủ: đáp ứng luật, quy định, tiêu chuẩn và chính sách nội bộ",
+        "vi": "tuân thủ: đáp ứng luật, quy định, tiêu chuẩn và chính sách nội bộ"
+      }
+    },
+    {
+      "id": "v-16",
+      "term": "accountable vs responsible",
+      "meaning": {
+        "en": "chịu trách nhiệm giải trình (một người, phê duyệt cuối) và người trực tiếp thực hiện công việc",
+        "vi": "chịu trách nhiệm giải trình (một người, phê duyệt cuối) và người trực tiếp thực hiện công việc"
+      }
+    },
+    {
+      "id": "v-17",
+      "term": "incremental / iterative",
+      "meaning": {
+        "en": "tăng dần (giao từng phần có giá trị) / lặp (làm đi làm lại để hoàn thiện)",
+        "vi": "tăng dần (giao từng phần có giá trị) / lặp (làm đi làm lại để hoàn thiện)"
+      }
+    },
+    {
+      "id": "v-18",
+      "term": "proactively",
+      "meaning": {
+        "en": "chủ động, xử lý trước khi vấn đề xảy ra",
+        "vi": "chủ động, xử lý trước khi vấn đề xảy ra"
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g-1",
+      "letter": "A",
+      "term": "Acceptance criteria",
+      "definition": {
+        "en": "Tiêu chí chấp nhận: điều kiện cụ thể để một hạng mục được coi là đáp ứng yêu cầu.",
+        "vi": "Tiêu chí chấp nhận: điều kiện cụ thể để một hạng mục được coi là đáp ứng yêu cầu."
+      }
+    },
+    {
+      "id": "g-2",
+      "letter": "A",
+      "term": "Adaptive / agile approach",
+      "definition": {
+        "en": "Cách tiếp cận thích ứng: giao giá trị theo vòng lặp ngắn, đón nhận thay đổi qua backlog; hợp với yêu cầu chưa rõ hoặc hay đổi.",
+        "vi": "Cách tiếp cận thích ứng: giao giá trị theo vòng lặp ngắn, đón nhận thay đổi qua backlog; hợp với yêu cầu chưa rõ hoặc hay đổi."
+      }
+    },
+    {
+      "id": "g-3",
+      "letter": "A",
+      "term": "Analogous / parametric / three-point estimating",
+      "definition": {
+        "en": "Ước lượng tương tự (dựa trên dự án cũ), theo tham số (đơn giá × khối lượng), ba điểm/PERT ((O + 4M + P) / 6).",
+        "vi": "Ước lượng tương tự (dựa trên dự án cũ), theo tham số (đơn giá × khối lượng), ba điểm/PERT ((O + 4M + P) / 6)."
+      }
+    },
+    {
+      "id": "g-4",
+      "letter": "A",
+      "term": "Audit (application)",
+      "definition": {
+        "en": "Kiểm tra hồ sơ ngẫu nhiên: nộp bản sao bằng cấp, chữ ký xác nhận của quản lý và chứng nhận đào tạo trong 90 ngày.",
+        "vi": "Kiểm tra hồ sơ ngẫu nhiên: nộp bản sao bằng cấp, chữ ký xác nhận của quản lý và chứng nhận đào tạo trong 90 ngày."
+      }
+    },
+    {
+      "id": "g-5",
+      "letter": "A",
+      "term": "Authorized Training Partner (ATP)",
+      "definition": {
+        "en": "Đối tác đào tạo được PMI uỷ quyền; từ 1/12/2026, đào tạo trực tiếp có giảng viên chỉ được tính nếu do ATP hoặc nhà cung cấp được PMI công nhận khác tổ chức.",
+        "vi": "Đối tác đào tạo được PMI uỷ quyền; từ 1/12/2026, đào tạo trực tiếp có giảng viên chỉ được tính nếu do ATP hoặc nhà cung cấp được PMI công nhận khác tổ chức."
+      }
+    },
+    {
+      "id": "g-6",
+      "letter": "B",
+      "term": "BAC (budget at completion)",
+      "definition": {
+        "en": "Tổng ngân sách đã phê duyệt cho toàn bộ công việc.",
+        "vi": "Tổng ngân sách đã phê duyệt cho toàn bộ công việc."
+      }
+    },
+    {
+      "id": "g-7",
+      "letter": "B",
+      "term": "Burndown chart",
+      "definition": {
+        "en": "Biểu đồ khối lượng việc còn lại theo thời gian; đường thực tế cao hơn đường lý tưởng nghĩa là đang chậm.",
+        "vi": "Biểu đồ khối lượng việc còn lại theo thời gian; đường thực tế cao hơn đường lý tưởng nghĩa là đang chậm."
+      }
+    },
+    {
+      "id": "g-8",
+      "letter": "B",
+      "term": "Burnup chart",
+      "definition": {
+        "en": "Biểu đồ khối lượng việc đã hoàn thành so với tổng phạm vi; cho thấy rõ khi phạm vi tăng lên.",
+        "vi": "Biểu đồ khối lượng việc đã hoàn thành so với tổng phạm vi; cho thấy rõ khi phạm vi tăng lên."
+      }
+    },
+    {
+      "id": "g-9",
+      "letter": "B",
+      "term": "Business case",
+      "definition": {
+        "en": "Phân tích lý do kinh doanh: lợi ích, chi phí và giá trị dự kiến, dùng để quyết định và kiểm tra lại xem dự án còn đáng làm không.",
+        "vi": "Phân tích lý do kinh doanh: lợi ích, chi phí và giá trị dự kiến, dùng để quyết định và kiểm tra lại xem dự án còn đáng làm không."
+      }
+    },
+    {
+      "id": "g-10",
+      "letter": "C",
+      "term": "Case or scenario item",
+      "definition": {
+        "en": "Dạng câu hỏi mới 2026: một tình huống chi tiết (có thể kèm biểu đồ) đi kèm một chuỗi câu hỏi liên quan.",
+        "vi": "Dạng câu hỏi mới 2026: một tình huống chi tiết (có thể kèm biểu đồ) đi kèm một chuỗi câu hỏi liên quan."
+      }
+    },
+    {
+      "id": "g-11",
+      "letter": "C",
+      "term": "Change control board (CCB)",
+      "definition": {
+        "en": "Hội đồng kiểm soát thay đổi: nhóm có thẩm quyền phê duyệt hoặc từ chối yêu cầu thay đổi.",
+        "vi": "Hội đồng kiểm soát thay đổi: nhóm có thẩm quyền phê duyệt hoặc từ chối yêu cầu thay đổi."
+      }
+    },
+    {
+      "id": "g-12",
+      "letter": "C",
+      "term": "Change request",
+      "definition": {
+        "en": "Yêu cầu thay đổi chính thức đối với phạm vi, tiến độ, chi phí hoặc baseline, phải qua kiểm soát thay đổi.",
+        "vi": "Yêu cầu thay đổi chính thức đối với phạm vi, tiến độ, chi phí hoặc baseline, phải qua kiểm soát thay đổi."
+      }
+    },
+    {
+      "id": "g-13",
+      "letter": "C",
+      "term": "Coaching vs mentoring",
+      "definition": {
+        "en": "Coaching giúp người khác tự tìm giải pháp qua câu hỏi; mentoring là người có kinh nghiệm chia sẻ, dẫn dắt người ít kinh nghiệm hơn.",
+        "vi": "Coaching giúp người khác tự tìm giải pháp qua câu hỏi; mentoring là người có kinh nghiệm chia sẻ, dẫn dắt người ít kinh nghiệm hơn."
+      }
+    },
+    {
+      "id": "g-14",
+      "letter": "C",
+      "term": "Communication management plan",
+      "definition": {
+        "en": "Kế hoạch truyền thông: ai cần thông tin gì, khi nào, qua kênh nào và ai gửi.",
+        "vi": "Kế hoạch truyền thông: ai cần thông tin gì, khi nào, qua kênh nào và ai gửi."
+      }
+    },
+    {
+      "id": "g-15",
+      "letter": "C",
+      "term": "Compliance",
+      "definition": {
+        "en": "Tuân thủ: đáp ứng yêu cầu pháp lý, an ninh, an toàn, sức khoẻ, bền vững và chính sách nội bộ; ECO 2026 có một nhiệm vụ riêng cho việc này.",
+        "vi": "Tuân thủ: đáp ứng yêu cầu pháp lý, an ninh, an toàn, sức khoẻ, bền vững và chính sách nội bộ; ECO 2026 có một nhiệm vụ riêng cho việc này."
+      }
+    },
+    {
+      "id": "g-16",
+      "letter": "C",
+      "term": "Conflict resolution approaches",
+      "definition": {
+        "en": "Năm cách xử lý xung đột: hợp tác/giải quyết vấn đề, thoả hiệp, xoa dịu, ép buộc, né tránh; hợp tác thường là tốt nhất nếu có thời gian.",
+        "vi": "Năm cách xử lý xung đột: hợp tác/giải quyết vấn đề, thoả hiệp, xoa dịu, ép buộc, né tránh; hợp tác thường là tốt nhất nếu có thời gian."
+      }
+    },
+    {
+      "id": "g-17",
+      "letter": "C",
+      "term": "Contact hours",
+      "definition": {
+        "en": "Giờ đào tạo quản lý dự án (cần 35 giờ) để đủ điều kiện dự thi; một giờ học bằng một giờ đào tạo.",
+        "vi": "Giờ đào tạo quản lý dự án (cần 35 giờ) để đủ điều kiện dự thi; một giờ học bằng một giờ đào tạo."
+      }
+    },
+    {
+      "id": "g-18",
+      "letter": "C",
+      "term": "Contingency reserve",
+      "definition": {
+        "en": "Dự phòng rủi ro: khoản dành cho rủi ro đã nhận diện, nằm trong baseline chi phí, quản lý dự án được dùng.",
+        "vi": "Dự phòng rủi ro: khoản dành cho rủi ro đã nhận diện, nằm trong baseline chi phí, quản lý dự án được dùng."
+      }
+    },
+    {
+      "id": "g-19",
+      "letter": "C",
+      "term": "Continuous improvement",
+      "definition": {
+        "en": "Cải tiến liên tục: liên tục rà soát và nâng cấp quy trình, ví dụ qua retrospective, Kaizen, chu trình PDCA.",
+        "vi": "Cải tiến liên tục: liên tục rà soát và nâng cấp quy trình, ví dụ qua retrospective, Kaizen, chu trình PDCA."
+      }
+    },
+    {
+      "id": "g-20",
+      "letter": "C",
+      "term": "Cost of quality (CoQ)",
+      "definition": {
+        "en": "Chi phí chất lượng: chi phí phòng ngừa và thẩm định (tuân thủ) cộng chi phí lỗi bên trong và bên ngoài (không tuân thủ).",
+        "vi": "Chi phí chất lượng: chi phí phòng ngừa và thẩm định (tuân thủ) cộng chi phí lỗi bên trong và bên ngoài (không tuân thủ)."
+      }
+    },
+    {
+      "id": "g-21",
+      "letter": "C",
+      "term": "Cost-reimbursable contract",
+      "definition": {
+        "en": "Hợp đồng hoàn trả chi phí: bên mua trả chi phí thực tế cộng phí; bên mua chịu phần lớn rủi ro chi phí.",
+        "vi": "Hợp đồng hoàn trả chi phí: bên mua trả chi phí thực tế cộng phí; bên mua chịu phần lớn rủi ro chi phí."
+      }
+    },
+    {
+      "id": "g-22",
+      "letter": "C",
+      "term": "Crashing vs fast tracking",
+      "definition": {
+        "en": "Crashing: thêm nguồn lực để rút ngắn tiến độ (tốn tiền); fast tracking: làm song song các việc vốn tuần tự (tăng rủi ro).",
+        "vi": "Crashing: thêm nguồn lực để rút ngắn tiến độ (tốn tiền); fast tracking: làm song song các việc vốn tuần tự (tăng rủi ro)."
+      }
+    },
+    {
+      "id": "g-23",
+      "letter": "C",
+      "term": "Critical path",
+      "definition": {
+        "en": "Đường găng: chuỗi hoạt động dài nhất quyết định thời gian tối thiểu của dự án; hoạt động trên đó có float bằng 0.",
+        "vi": "Đường găng: chuỗi hoạt động dài nhất quyết định thời gian tối thiểu của dự án; hoạt động trên đó có float bằng 0."
+      }
+    },
+    {
+      "id": "g-24",
+      "letter": "C",
+      "term": "CV, SV, CPI, SPI",
+      "definition": {
+        "en": "CV = EV − AC, SV = EV − PV; CPI = EV / AC, SPI = EV / PV. Số âm hoặc chỉ số dưới 1 là xấu.",
+        "vi": "CV = EV − AC, SV = EV − PV; CPI = EV / AC, SPI = EV / PV. Số âm hoặc chỉ số dưới 1 là xấu."
+      }
+    },
+    {
+      "id": "g-25",
+      "letter": "D",
+      "term": "Daily standup",
+      "definition": {
+        "en": "Họp nhanh hằng ngày để nhóm đồng bộ tiến độ và nêu trở ngại; không phải họp báo cáo cho quản lý.",
+        "vi": "Họp nhanh hằng ngày để nhóm đồng bộ tiến độ và nêu trở ngại; không phải họp báo cáo cho quản lý."
+      }
+    },
+    {
+      "id": "g-26",
+      "letter": "D",
+      "term": "Definition of done (DoD)",
+      "definition": {
+        "en": "Định nghĩa hoàn thành: danh sách tiêu chí chung mà mọi hạng mục phải đạt để được coi là xong.",
+        "vi": "Định nghĩa hoàn thành: danh sách tiêu chí chung mà mọi hạng mục phải đạt để được coi là xong."
+      }
+    },
+    {
+      "id": "g-27",
+      "letter": "D",
+      "term": "Development approach",
+      "definition": {
+        "en": "Cách sản phẩm được tạo ra và phát triển trong vòng đời dự án (dự đoán, lặp, tăng dần, agile, kết hợp); ECO yêu cầu biết đề xuất cách phù hợp.",
+        "vi": "Cách sản phẩm được tạo ra và phát triển trong vòng đời dự án (dự đoán, lặp, tăng dần, agile, kết hợp); ECO yêu cầu biết đề xuất cách phù hợp."
+      }
+    },
+    {
+      "id": "g-28",
+      "letter": "D",
+      "term": "Domain / task / enabler",
+      "definition": {
+        "en": "Lĩnh vực (nhóm kiến thức lớn) / nhiệm vụ (trách nhiệm của quản lý dự án) / enabler (ví dụ minh hoạ công việc của nhiệm vụ, không phải danh sách đầy đủ).",
+        "vi": "Lĩnh vực (nhóm kiến thức lớn) / nhiệm vụ (trách nhiệm của quản lý dự án) / enabler (ví dụ minh hoạ công việc của nhiệm vụ, không phải danh sách đầy đủ)."
+      }
+    },
+    {
+      "id": "g-29",
+      "letter": "E",
+      "term": "EAC / ETC / VAC",
+      "definition": {
+        "en": "EAC: dự báo tổng chi phí khi hoàn thành (thường BAC / CPI); ETC: chi phí còn cần; VAC = BAC − EAC.",
+        "vi": "EAC: dự báo tổng chi phí khi hoàn thành (thường BAC / CPI); ETC: chi phí còn cần; VAC = BAC − EAC."
+      }
+    },
+    {
+      "id": "g-30",
+      "letter": "E",
+      "term": "Earned value management (EVM)",
+      "definition": {
+        "en": "Phương pháp đo hiệu suất dự án bằng cách so sánh PV, EV và AC.",
+        "vi": "Phương pháp đo hiệu suất dự án bằng cách so sánh PV, EV và AC."
+      }
+    },
+    {
+      "id": "g-31",
+      "letter": "E",
+      "term": "ECO (Examination Content Outline)",
+      "definition": {
+        "en": "Đề cương nội dung thi của PMI: ba lĩnh vực, 26 nhiệm vụ, các enabler và tỷ trọng. Bản PMP hiện hành là ECO 2026 (sửa đổi 11/8/2026).",
+        "vi": "Đề cương nội dung thi của PMI: ba lĩnh vực, 26 nhiệm vụ, các enabler và tỷ trọng. Bản PMP hiện hành là ECO 2026 (sửa đổi 11/8/2026)."
+      }
+    },
+    {
+      "id": "g-32",
+      "letter": "E",
+      "term": "Eligibility period",
+      "definition": {
+        "en": "Thời hạn đủ điều kiện thi: 1 năm kể từ khi hồ sơ được duyệt (hoặc qua audit), tối đa 3 lần thi.",
+        "vi": "Thời hạn đủ điều kiện thi: 1 năm kể từ khi hồ sơ được duyệt (hoặc qua audit), tối đa 3 lần thi."
+      }
+    },
+    {
+      "id": "g-33",
+      "letter": "E",
+      "term": "Emotional intelligence",
+      "definition": {
+        "en": "Trí tuệ cảm xúc: hiểu và điều tiết cảm xúc của mình và người khác; nền tảng của lãnh đạo và xử lý xung đột.",
+        "vi": "Trí tuệ cảm xúc: hiểu và điều tiết cảm xúc của mình và người khác; nền tảng của lãnh đạo và xử lý xung đột."
+      }
+    },
+    {
+      "id": "g-34",
+      "letter": "E",
+      "term": "Enterprise environmental factors (EEFs)",
+      "definition": {
+        "en": "Yếu tố môi trường doanh nghiệp: văn hoá, cơ cấu, luật lệ, điều kiện thị trường… mà dự án không kiểm soát được nhưng phải tính đến.",
+        "vi": "Yếu tố môi trường doanh nghiệp: văn hoá, cơ cấu, luật lệ, điều kiện thị trường… mà dự án không kiểm soát được nhưng phải tính đến."
+      }
+    },
+    {
+      "id": "g-35",
+      "letter": "E",
+      "term": "Escalation path / threshold",
+      "definition": {
+        "en": "Đường và ngưỡng báo cáo lên cấp trên: ai cần được báo khi nào, khi vấn đề vượt mức nào.",
+        "vi": "Đường và ngưỡng báo cáo lên cấp trên: ai cần được báo khi nào, khi vấn đề vượt mức nào."
+      }
+    },
+    {
+      "id": "g-36",
+      "letter": "E",
+      "term": "Expected monetary value (EMV)",
+      "definition": {
+        "en": "Giá trị tiền tệ kỳ vọng = xác suất × tác động; cơ hội mang dấu dương, mối đe doạ mang dấu âm.",
+        "vi": "Giá trị tiền tệ kỳ vọng = xác suất × tác động; cơ hội mang dấu dương, mối đe doạ mang dấu âm."
+      }
+    },
+    {
+      "id": "g-37",
+      "letter": "E",
+      "term": "External business environment",
+      "definition": {
+        "en": "Môi trường kinh doanh bên ngoài: luật lệ, công nghệ, địa chính trị, thị trường; thay đổi ở đây có thể buộc phải điều chỉnh phạm vi/backlog.",
+        "vi": "Môi trường kinh doanh bên ngoài: luật lệ, công nghệ, địa chính trị, thị trường; thay đổi ở đây có thể buộc phải điều chỉnh phạm vi/backlog."
+      }
+    },
+    {
+      "id": "g-38",
+      "letter": "F",
+      "term": "Fixed-price contract",
+      "definition": {
+        "en": "Hợp đồng giá cố định: người bán chịu phần lớn rủi ro chi phí; hợp khi phạm vi rõ ràng.",
+        "vi": "Hợp đồng giá cố định: người bán chịu phần lớn rủi ro chi phí; hợp khi phạm vi rõ ràng."
+      }
+    },
+    {
+      "id": "g-39",
+      "letter": "F",
+      "term": "Float / slack",
+      "definition": {
+        "en": "Độ trễ cho phép: thời gian một hoạt động có thể chậm mà không làm chậm dự án (total float) hoặc hoạt động kế tiếp (free float).",
+        "vi": "Độ trễ cho phép: thời gian một hoạt động có thể chậm mà không làm chậm dự án (total float) hoặc hoạt động kế tiếp (free float)."
+      }
+    },
+    {
+      "id": "g-40",
+      "letter": "G",
+      "term": "Gold plating",
+      "definition": {
+        "en": "“Mạ vàng”: nhóm tự làm thêm tính năng ngoài yêu cầu; PMI coi đây là sai dù có ý tốt.",
+        "vi": "“Mạ vàng”: nhóm tự làm thêm tính năng ngoài yêu cầu; PMI coi đây là sai dù có ý tốt."
+      }
+    },
+    {
+      "id": "g-41",
+      "letter": "G",
+      "term": "Governance",
+      "definition": {
+        "en": "Quản trị dự án: cấu trúc, quy tắc, quy trình, báo cáo và thẩm quyền ra quyết định, gồm đường và ngưỡng báo cáo lên cấp trên.",
+        "vi": "Quản trị dự án: cấu trúc, quy tắc, quy trình, báo cáo và thẩm quyền ra quyết định, gồm đường và ngưỡng báo cáo lên cấp trên."
+      }
+    },
+    {
+      "id": "g-42",
+      "letter": "G",
+      "term": "Graphic-based item",
+      "definition": {
+        "en": "Dạng câu hỏi mới 2026: phải đọc và diễn giải biểu đồ, sơ đồ hay hình ảnh để trả lời.",
+        "vi": "Dạng câu hỏi mới 2026: phải đọc và diễn giải biểu đồ, sơ đồ hay hình ảnh để trả lời."
+      }
+    },
+    {
+      "id": "g-43",
+      "letter": "G",
+      "term": "Ground rules",
+      "definition": {
+        "en": "Quy tắc chung về hành vi trong nhóm; khi bị vi phạm, quản lý dự án xử lý trực tiếp và nhắc lại quy tắc.",
+        "vi": "Quy tắc chung về hành vi trong nhóm; khi bị vi phạm, quản lý dự án xử lý trực tiếp và nhắc lại quy tắc."
+      }
+    },
+    {
+      "id": "g-44",
+      "letter": "H",
+      "term": "Hybrid approach",
+      "definition": {
+        "en": "Cách tiếp cận kết hợp: dùng cả yếu tố dự đoán và agile trong một dự án, ví dụ phần cứng theo kế hoạch cố định, phần mềm theo sprint.",
+        "vi": "Cách tiếp cận kết hợp: dùng cả yếu tố dự đoán và agile trong một dự án, ví dụ phần cứng theo kế hoạch cố định, phần mềm theo sprint."
+      }
+    },
+    {
+      "id": "g-45",
+      "letter": "I",
+      "term": "Impediment",
+      "definition": {
+        "en": "Trở ngại cản nhóm làm việc; người lãnh đạo phục vụ ưu tiên gỡ bỏ, rồi tiếp tục đánh giá lại.",
+        "vi": "Trở ngại cản nhóm làm việc; người lãnh đạo phục vụ ưu tiên gỡ bỏ, rồi tiếp tục đánh giá lại."
+      }
+    },
+    {
+      "id": "g-46",
+      "letter": "I",
+      "term": "Incremental delivery",
+      "definition": {
+        "en": "Giao hàng tăng dần: bàn giao sản phẩm thành nhiều phần dùng được để nhận giá trị và phản hồi sớm.",
+        "vi": "Giao hàng tăng dần: bàn giao sản phẩm thành nhiều phần dùng được để nhận giá trị và phản hồi sớm."
+      }
+    },
+    {
+      "id": "g-47",
+      "letter": "I",
+      "term": "Information radiator",
+      "definition": {
+        "en": "Bảng thông tin hiển thị công khai (Kanban, burndown) để mọi người tự xem tình trạng dự án.",
+        "vi": "Bảng thông tin hiển thị công khai (Kanban, burndown) để mọi người tự xem tình trạng dự án."
+      }
+    },
+    {
+      "id": "g-48",
+      "letter": "I",
+      "term": "Integrated change control",
+      "definition": {
+        "en": "Kiểm soát thay đổi tích hợp: ghi nhận, phân tích tác động, phê duyệt hay từ chối, rồi cập nhật kế hoạch và thông báo.",
+        "vi": "Kiểm soát thay đổi tích hợp: ghi nhận, phân tích tác động, phê duyệt hay từ chối, rồi cập nhật kế hoạch và thông báo."
+      }
+    },
+    {
+      "id": "g-49",
+      "letter": "I",
+      "term": "Integrated project management plan",
+      "definition": {
+        "en": "Kế hoạch quản lý dự án tích hợp: gộp các kế hoạch con và baseline về phạm vi, tiến độ, chi phí thành một thể thống nhất.",
+        "vi": "Kế hoạch quản lý dự án tích hợp: gộp các kế hoạch con và baseline về phạm vi, tiến độ, chi phí thành một thể thống nhất."
+      }
+    },
+    {
+      "id": "g-50",
+      "letter": "I",
+      "term": "Issue log",
+      "definition": {
+        "en": "Nhật ký vấn đề: ghi các vấn đề đang xảy ra, người phụ trách, hạn xử lý và tình trạng.",
+        "vi": "Nhật ký vấn đề: ghi các vấn đề đang xảy ra, người phụ trách, hạn xử lý và tình trạng."
+      }
+    },
+    {
+      "id": "g-51",
+      "letter": "K",
+      "term": "Kanban board / WIP limit",
+      "definition": {
+        "en": "Bảng Kanban hiển thị luồng công việc theo cột; giới hạn WIP chặn số việc dở dang ở mỗi cột để lộ điểm nghẽn.",
+        "vi": "Bảng Kanban hiển thị luồng công việc theo cột; giới hạn WIP chặn số việc dở dang ở mỗi cột để lộ điểm nghẽn."
+      }
+    },
+    {
+      "id": "g-52",
+      "letter": "K",
+      "term": "Knowledge transfer",
+      "definition": {
+        "en": "Chuyển giao tri thức: xác định, thu thập và chia sẻ kiến thức quan trọng của dự án để không bị mất khi người rời đi hoặc khi bàn giao.",
+        "vi": "Chuyển giao tri thức: xác định, thu thập và chia sẻ kiến thức quan trọng của dự án để không bị mất khi người rời đi hoặc khi bàn giao."
+      }
+    },
+    {
+      "id": "g-53",
+      "letter": "L",
+      "term": "Lessons learned",
+      "definition": {
+        "en": "Bài học kinh nghiệm: ghi lại suốt dự án chứ không chỉ cuối dự án, và đưa vào OPAs.",
+        "vi": "Bài học kinh nghiệm: ghi lại suốt dự án chứ không chỉ cuối dự án, và đưa vào OPAs."
+      }
+    },
+    {
+      "id": "g-54",
+      "letter": "M",
+      "term": "Make-or-buy analysis",
+      "definition": {
+        "en": "Phân tích tự làm hay mua ngoài, dựa trên chi phí, năng lực, rủi ro và chiến lược.",
+        "vi": "Phân tích tự làm hay mua ngoài, dựa trên chi phí, năng lực, rủi ro và chiến lược."
+      }
+    },
+    {
+      "id": "g-55",
+      "letter": "M",
+      "term": "Management reserve",
+      "definition": {
+        "en": "Dự phòng quản lý: khoản cho rủi ro chưa biết, nằm ngoài baseline, cần phê duyệt của cấp quản lý để dùng.",
+        "vi": "Dự phòng quản lý: khoản cho rủi ro chưa biết, nằm ngoài baseline, cần phê duyệt của cấp quản lý để dùng."
+      }
+    },
+    {
+      "id": "g-56",
+      "letter": "M",
+      "term": "Milestone",
+      "definition": {
+        "en": "Mốc quan trọng: thời điểm đánh dấu một sự kiện quan trọng, có thời lượng bằng 0.",
+        "vi": "Mốc quan trọng: thời điểm đánh dấu một sự kiện quan trọng, có thời lượng bằng 0."
+      }
+    },
+    {
+      "id": "g-57",
+      "letter": "M",
+      "term": "MoSCoW prioritisation",
+      "definition": {
+        "en": "Cách ưu tiên: Must have, Should have, Could have, Won't have (lần này).",
+        "vi": "Cách ưu tiên: Must have, Should have, Could have, Won't have (lần này)."
+      }
+    },
+    {
+      "id": "g-58",
+      "letter": "M",
+      "term": "MVP (minimum viable product)",
+      "definition": {
+        "en": "Sản phẩm khả dụng tối thiểu: phiên bản nhỏ nhất đủ để giao giá trị và học từ phản hồi người dùng.",
+        "vi": "Sản phẩm khả dụng tối thiểu: phiên bản nhỏ nhất đủ để giao giá trị và học từ phản hồi người dùng."
+      }
+    },
+    {
+      "id": "g-59",
+      "letter": "O",
+      "term": "Opportunity responses",
+      "definition": {
+        "en": "Ứng phó cơ hội: escalate, exploit (khai thác), share (chia sẻ), enhance (tăng cường), accept (chấp nhận).",
+        "vi": "Ứng phó cơ hội: escalate, exploit (khai thác), share (chia sẻ), enhance (tăng cường), accept (chấp nhận)."
+      }
+    },
+    {
+      "id": "g-60",
+      "letter": "O",
+      "term": "Organizational change management",
+      "definition": {
+        "en": "Quản lý thay đổi tổ chức: đánh giá văn hoá và mức sẵn sàng, chuẩn bị con người đón nhận thay đổi mà dự án mang lại.",
+        "vi": "Quản lý thay đổi tổ chức: đánh giá văn hoá và mức sẵn sàng, chuẩn bị con người đón nhận thay đổi mà dự án mang lại."
+      }
+    },
+    {
+      "id": "g-61",
+      "letter": "O",
+      "term": "Organizational process assets (OPAs)",
+      "definition": {
+        "en": "Tài sản quy trình của tổ chức: chính sách, mẫu biểu, quy trình và kho bài học kinh nghiệm; được cập nhật khi dự án kết thúc.",
+        "vi": "Tài sản quy trình của tổ chức: chính sách, mẫu biểu, quy trình và kho bài học kinh nghiệm; được cập nhật khi dự án kết thúc."
+      }
+    },
+    {
+      "id": "g-62",
+      "letter": "P",
+      "term": "PDU (professional development unit)",
+      "definition": {
+        "en": "Đơn vị phát triển chuyên môn; PMP cần 60 PDU mỗi 3 năm để duy trì chứng chỉ.",
+        "vi": "Đơn vị phát triển chuyên môn; PMP cần 60 PDU mỗi 3 năm để duy trì chứng chỉ."
+      }
+    },
+    {
+      "id": "g-63",
+      "letter": "P",
+      "term": "PMO (project management office)",
+      "definition": {
+        "en": "Văn phòng quản lý dự án: đơn vị chuẩn hoá quy trình, hỗ trợ hoặc giám sát các dự án trong tổ chức.",
+        "vi": "Văn phòng quản lý dự án: đơn vị chuẩn hoá quy trình, hỗ trợ hoặc giám sát các dự án trong tổ chức."
+      }
+    },
+    {
+      "id": "g-64",
+      "letter": "P",
+      "term": "PMP (Project Management Professional)",
+      "definition": {
+        "en": "Chứng chỉ quản lý dự án chuyên nghiệp của PMI dành cho người có kinh nghiệm dẫn dắt dự án; đề thi mới áp dụng từ 9/7/2026.",
+        "vi": "Chứng chỉ quản lý dự án chuyên nghiệp của PMI dành cho người có kinh nghiệm dẫn dắt dự án; đề thi mới áp dụng từ 9/7/2026."
+      }
+    },
+    {
+      "id": "g-65",
+      "letter": "P",
+      "term": "Power/interest grid",
+      "definition": {
+        "en": "Lưới quyền lực/mức quan tâm: xếp các bên vào bốn ô để chọn cách quản lý (quản lý chặt, giữ hài lòng, giữ thông tin, theo dõi).",
+        "vi": "Lưới quyền lực/mức quan tâm: xếp các bên vào bốn ô để chọn cách quản lý (quản lý chặt, giữ hài lòng, giữ thông tin, theo dõi)."
+      }
+    },
+    {
+      "id": "g-66",
+      "letter": "P",
+      "term": "Predictive approach",
+      "definition": {
+        "en": "Cách tiếp cận dự đoán (waterfall): xác định phạm vi, tiến độ, chi phí từ đầu rồi kiểm soát theo baseline; hợp với yêu cầu ổn định.",
+        "vi": "Cách tiếp cận dự đoán (waterfall): xác định phạm vi, tiến độ, chi phí từ đầu rồi kiểm soát theo baseline; hợp với yêu cầu ổn định."
+      }
+    },
+    {
+      "id": "g-67",
+      "letter": "P",
+      "term": "Pretest item",
+      "definition": {
+        "en": "Câu thử nghiệm không tính điểm (10 trong 180 câu), xen ngẫu nhiên, dùng để kiểm định câu hỏi tương lai.",
+        "vi": "Câu thử nghiệm không tính điểm (10 trong 180 câu), xen ngẫu nhiên, dùng để kiểm định câu hỏi tương lai."
+      }
+    },
+    {
+      "id": "g-68",
+      "letter": "P",
+      "term": "Probability and impact matrix",
+      "definition": {
+        "en": "Ma trận xác suất và tác động: xếp hạng rủi ro để biết rủi ro nào cần ưu tiên.",
+        "vi": "Ma trận xác suất và tác động: xếp hạng rủi ro để biết rủi ro nào cần ưu tiên."
+      }
+    },
+    {
+      "id": "g-69",
+      "letter": "P",
+      "term": "Product backlog",
+      "definition": {
+        "en": "Danh sách công việc của sản phẩm do product owner sắp xếp theo giá trị; thay đổi phạm vi trong agile đi vào đây.",
+        "vi": "Danh sách công việc của sản phẩm do product owner sắp xếp theo giá trị; thay đổi phạm vi trong agile đi vào đây."
+      }
+    },
+    {
+      "id": "g-70",
+      "letter": "P",
+      "term": "Product owner",
+      "definition": {
+        "en": "Người chịu trách nhiệm tối đa hoá giá trị sản phẩm và quyết định thứ tự ưu tiên của backlog.",
+        "vi": "Người chịu trách nhiệm tối đa hoá giá trị sản phẩm và quyết định thứ tự ưu tiên của backlog."
+      }
+    },
+    {
+      "id": "g-71",
+      "letter": "P",
+      "term": "Project charter",
+      "definition": {
+        "en": "Điều lệ dự án: văn bản do nhà tài trợ phê duyệt, chính thức khởi động dự án và trao quyền cho quản lý dự án.",
+        "vi": "Điều lệ dự án: văn bản do nhà tài trợ phê duyệt, chính thức khởi động dự án và trao quyền cho quản lý dự án."
+      }
+    },
+    {
+      "id": "g-72",
+      "letter": "P",
+      "term": "Project or phase closure",
+      "definition": {
+        "en": "Đóng dự án/giai đoạn: lấy nghiệm thu, đóng hợp đồng và tài chính, giải phóng nguồn lực, tổng kết bài học, lưu trữ hồ sơ.",
+        "vi": "Đóng dự án/giai đoạn: lấy nghiệm thu, đóng hợp đồng và tài chính, giải phóng nguồn lực, tổng kết bài học, lưu trữ hồ sơ."
+      }
+    },
+    {
+      "id": "g-73",
+      "letter": "P",
+      "term": "PV / EV / AC",
+      "definition": {
+        "en": "PV: giá trị kế hoạch của việc lẽ ra đã xong; EV: giá trị của việc thực sự đã xong; AC: chi phí thực tế đã chi.",
+        "vi": "PV: giá trị kế hoạch của việc lẽ ra đã xong; EV: giá trị của việc thực sự đã xong; AC: chi phí thực tế đã chi."
+      }
+    },
+    {
+      "id": "g-74",
+      "letter": "Q",
+      "term": "Quality assurance vs quality control",
+      "definition": {
+        "en": "Đảm bảo chất lượng: kiểm tra quy trình để phòng lỗi; kiểm soát chất lượng: kiểm tra sản phẩm để phát hiện lỗi.",
+        "vi": "Đảm bảo chất lượng: kiểm tra quy trình để phòng lỗi; kiểm soát chất lượng: kiểm tra sản phẩm để phát hiện lỗi."
+      }
+    },
+    {
+      "id": "g-75",
+      "letter": "R",
+      "term": "RACI chart",
+      "definition": {
+        "en": "Ma trận phân công: Responsible (thực hiện), Accountable (chịu trách nhiệm cuối, chỉ một người), Consulted (được hỏi ý kiến), Informed (được thông báo).",
+        "vi": "Ma trận phân công: Responsible (thực hiện), Accountable (chịu trách nhiệm cuối, chỉ một người), Consulted (được hỏi ý kiến), Informed (được thông báo)."
+      }
+    },
+    {
+      "id": "g-76",
+      "letter": "R",
+      "term": "Resource levelling vs smoothing",
+      "definition": {
+        "en": "Cân bằng nguồn lực (có thể làm dời ngày kết thúc) và làm mượt nguồn lực (chỉ dùng float, không đổi ngày kết thúc).",
+        "vi": "Cân bằng nguồn lực (có thể làm dời ngày kết thúc) và làm mượt nguồn lực (chỉ dùng float, không đổi ngày kết thúc)."
+      }
+    },
+    {
+      "id": "g-77",
+      "letter": "R",
+      "term": "Risk appetite / threshold",
+      "definition": {
+        "en": "Khẩu vị rủi ro (mức rủi ro tổ chức sẵn sàng chấp nhận) và ngưỡng rủi ro (mức cụ thể mà vượt qua thì phải hành động).",
+        "vi": "Khẩu vị rủi ro (mức rủi ro tổ chức sẵn sàng chấp nhận) và ngưỡng rủi ro (mức cụ thể mà vượt qua thì phải hành động)."
+      }
+    },
+    {
+      "id": "g-78",
+      "letter": "R",
+      "term": "Risk owner",
+      "definition": {
+        "en": "Người phụ trách rủi ro: theo dõi tác nhân kích hoạt và thực hiện phương án ứng phó khi cần.",
+        "vi": "Người phụ trách rủi ro: theo dõi tác nhân kích hoạt và thực hiện phương án ứng phó khi cần."
+      }
+    },
+    {
+      "id": "g-79",
+      "letter": "R",
+      "term": "Risk register",
+      "definition": {
+        "en": "Sổ đăng ký rủi ro: danh sách rủi ro, xác suất, tác động, phương án ứng phó, người phụ trách và tình trạng.",
+        "vi": "Sổ đăng ký rủi ro: danh sách rủi ro, xác suất, tác động, phương án ứng phó, người phụ trách và tình trạng."
+      }
+    },
+    {
+      "id": "g-80",
+      "letter": "R",
+      "term": "Risk vs issue",
+      "definition": {
+        "en": "Rủi ro là sự kiện có thể xảy ra trong tương lai; vấn đề là điều đã xảy ra. Rủi ro xảy ra thì trở thành vấn đề.",
+        "vi": "Rủi ro là sự kiện có thể xảy ra trong tương lai; vấn đề là điều đã xảy ra. Rủi ro xảy ra thì trở thành vấn đề."
+      }
+    },
+    {
+      "id": "g-81",
+      "letter": "R",
+      "term": "Root cause analysis",
+      "definition": {
+        "en": "Phân tích nguyên nhân gốc (5 Whys, biểu đồ xương cá) để sửa tận gốc thay vì xử lý triệu chứng.",
+        "vi": "Phân tích nguyên nhân gốc (5 Whys, biểu đồ xương cá) để sửa tận gốc thay vì xử lý triệu chứng."
+      }
+    },
+    {
+      "id": "g-82",
+      "letter": "S",
+      "term": "Schedule baseline",
+      "definition": {
+        "en": "Baseline tiến độ: phiên bản lịch trình đã phê duyệt, chỉ thay đổi qua kiểm soát thay đổi.",
+        "vi": "Baseline tiến độ: phiên bản lịch trình đã phê duyệt, chỉ thay đổi qua kiểm soát thay đổi."
+      }
+    },
+    {
+      "id": "g-83",
+      "letter": "S",
+      "term": "Scope baseline",
+      "definition": {
+        "en": "Baseline phạm vi: tuyên bố phạm vi, WBS và từ điển WBS đã được phê duyệt.",
+        "vi": "Baseline phạm vi: tuyên bố phạm vi, WBS và từ điển WBS đã được phê duyệt."
+      }
+    },
+    {
+      "id": "g-84",
+      "letter": "S",
+      "term": "Scope creep",
+      "definition": {
+        "en": "Phình phạm vi: thêm việc mà không qua kiểm soát thay đổi và không điều chỉnh thời gian, chi phí, nguồn lực.",
+        "vi": "Phình phạm vi: thêm việc mà không qua kiểm soát thay đổi và không điều chỉnh thời gian, chi phí, nguồn lực."
+      }
+    },
+    {
+      "id": "g-85",
+      "letter": "S",
+      "term": "Scrum master / team facilitator",
+      "definition": {
+        "en": "Người điều phối nhóm agile: hướng dẫn quy trình, gỡ trở ngại, bảo vệ nhóm; là người lãnh đạo phục vụ.",
+        "vi": "Người điều phối nhóm agile: hướng dẫn quy trình, gỡ trở ngại, bảo vệ nhóm; là người lãnh đạo phục vụ."
+      }
+    },
+    {
+      "id": "g-86",
+      "letter": "S",
+      "term": "Secondary / residual risk",
+      "definition": {
+        "en": "Rủi ro thứ cấp phát sinh do chính phương án ứng phó; rủi ro còn lại tồn tại sau khi đã ứng phó.",
+        "vi": "Rủi ro thứ cấp phát sinh do chính phương án ứng phó; rủi ro còn lại tồn tại sau khi đã ứng phó."
+      }
+    },
+    {
+      "id": "g-87",
+      "letter": "S",
+      "term": "Self-organising team",
+      "definition": {
+        "en": "Nhóm tự tổ chức: tự quyết định cách làm việc để đạt mục tiêu, không cần quản lý giao từng việc.",
+        "vi": "Nhóm tự tổ chức: tự quyết định cách làm việc để đạt mục tiêu, không cần quản lý giao từng việc."
+      }
+    },
+    {
+      "id": "g-88",
+      "letter": "S",
+      "term": "Servant leadership",
+      "definition": {
+        "en": "Lãnh đạo phục vụ: người lãnh đạo hỗ trợ, gỡ trở ngại và trao quyền cho nhóm thay vì ra lệnh; lựa chọn mặc định trong đề PMP.",
+        "vi": "Lãnh đạo phục vụ: người lãnh đạo hỗ trợ, gỡ trở ngại và trao quyền cho nhóm thay vì ra lệnh; lựa chọn mặc định trong đề PMP."
+      }
+    },
+    {
+      "id": "g-89",
+      "letter": "S",
+      "term": "Sprint / iteration",
+      "definition": {
+        "en": "Chu kỳ làm việc ngắn, cố định thời gian (thường 1–4 tuần), kết thúc bằng một phần sản phẩm có thể dùng được.",
+        "vi": "Chu kỳ làm việc ngắn, cố định thời gian (thường 1–4 tuần), kết thúc bằng một phần sản phẩm có thể dùng được."
+      }
+    },
+    {
+      "id": "g-90",
+      "letter": "S",
+      "term": "Sprint review vs retrospective",
+      "definition": {
+        "en": "Review: trình diễn sản phẩm cho các bên liên quan để lấy phản hồi; retrospective: nhóm tự xem lại cách làm việc để cải tiến.",
+        "vi": "Review: trình diễn sản phẩm cho các bên liên quan để lấy phản hồi; retrospective: nhóm tự xem lại cách làm việc để cải tiến."
+      }
+    },
+    {
+      "id": "g-91",
+      "letter": "S",
+      "term": "Stakeholder",
+      "definition": {
+        "en": "Bên liên quan: cá nhân, nhóm hay tổ chức ảnh hưởng hoặc bị ảnh hưởng bởi dự án.",
+        "vi": "Bên liên quan: cá nhân, nhóm hay tổ chức ảnh hưởng hoặc bị ảnh hưởng bởi dự án."
+      }
+    },
+    {
+      "id": "g-92",
+      "letter": "S",
+      "term": "Stakeholder engagement assessment matrix",
+      "definition": {
+        "en": "Ma trận so sánh mức gắn kết hiện tại và mong muốn của từng bên (không biết, phản đối, trung lập, ủng hộ, dẫn dắt).",
+        "vi": "Ma trận so sánh mức gắn kết hiện tại và mong muốn của từng bên (không biết, phản đối, trung lập, ủng hộ, dẫn dắt)."
+      }
+    },
+    {
+      "id": "g-93",
+      "letter": "S",
+      "term": "Stakeholder register",
+      "definition": {
+        "en": "Sổ đăng ký các bên liên quan: danh sách, vai trò, mức quan tâm, ảnh hưởng và kỳ vọng của từng bên.",
+        "vi": "Sổ đăng ký các bên liên quan: danh sách, vai trò, mức quan tâm, ảnh hưởng và kỳ vọng của từng bên."
+      }
+    },
+    {
+      "id": "g-94",
+      "letter": "S",
+      "term": "Statement of work (SOW)",
+      "definition": {
+        "en": "Bản mô tả công việc: mô tả chi tiết phần việc mua ngoài để nhà cung cấp biết cần giao gì.",
+        "vi": "Bản mô tả công việc: mô tả chi tiết phần việc mua ngoài để nhà cung cấp biết cần giao gì."
+      }
+    },
+    {
+      "id": "g-95",
+      "letter": "S",
+      "term": "Story points",
+      "definition": {
+        "en": "Đơn vị ước lượng tương đối về công sức, độ phức tạp và rủi ro của một hạng mục, không phải giờ làm việc.",
+        "vi": "Đơn vị ước lượng tương đối về công sức, độ phức tạp và rủi ro của một hạng mục, không phải giờ làm việc."
+      }
+    },
+    {
+      "id": "g-96",
+      "letter": "S",
+      "term": "Sustainability",
+      "definition": {
+        "en": "Tính bền vững: yếu tố môi trường, xã hội và kinh tế lâu dài; ECO 2026 nhắc đến trong yêu cầu thông tin, chất lượng, tuân thủ và rủi ro.",
+        "vi": "Tính bền vững: yếu tố môi trường, xã hội và kinh tế lâu dài; ECO 2026 nhắc đến trong yêu cầu thông tin, chất lượng, tuân thủ và rủi ro."
+      }
+    },
+    {
+      "id": "g-97",
+      "letter": "T",
+      "term": "Tacit vs explicit knowledge",
+      "definition": {
+        "en": "Tri thức ngầm (kinh nghiệm, khó viết ra, chia sẻ qua kèm cặp) và tri thức hiện (đã ghi thành tài liệu).",
+        "vi": "Tri thức ngầm (kinh nghiệm, khó viết ra, chia sẻ qua kèm cặp) và tri thức hiện (đã ghi thành tài liệu)."
+      }
+    },
+    {
+      "id": "g-98",
+      "letter": "T",
+      "term": "Tailoring",
+      "definition": {
+        "en": "Điều chỉnh quy trình, công cụ và tạo phẩm cho phù hợp với bối cảnh dự án thay vì áp dụng máy móc.",
+        "vi": "Điều chỉnh quy trình, công cụ và tạo phẩm cho phù hợp với bối cảnh dự án thay vì áp dụng máy móc."
+      }
+    },
+    {
+      "id": "g-99",
+      "letter": "T",
+      "term": "Team charter",
+      "definition": {
+        "en": "Văn bản nhóm cùng thống nhất về giá trị, quy tắc chung, cách ra quyết định và xử lý xung đột.",
+        "vi": "Văn bản nhóm cùng thống nhất về giá trị, quy tắc chung, cách ra quyết định và xử lý xung đột."
+      }
+    },
+    {
+      "id": "g-100",
+      "letter": "T",
+      "term": "Threat responses",
+      "definition": {
+        "en": "Ứng phó mối đe doạ: escalate, avoid (tránh), transfer (chuyển giao), mitigate (giảm nhẹ), accept (chấp nhận).",
+        "vi": "Ứng phó mối đe doạ: escalate, avoid (tránh), transfer (chuyển giao), mitigate (giảm nhẹ), accept (chấp nhận)."
+      }
+    },
+    {
+      "id": "g-101",
+      "letter": "T",
+      "term": "Time and materials (T&M) contract",
+      "definition": {
+        "en": "Hợp đồng theo thời gian và vật tư: trả theo đơn giá giờ công và vật tư; hợp với việc nhỏ hoặc phạm vi chưa rõ.",
+        "vi": "Hợp đồng theo thời gian và vật tư: trả theo đơn giá giờ công và vật tư; hợp với việc nhỏ hoặc phạm vi chưa rõ."
+      }
+    },
+    {
+      "id": "g-102",
+      "letter": "T",
+      "term": "Transition / handover",
+      "definition": {
+        "en": "Bàn giao: chuyển sản phẩm cho đội vận hành hoặc giai đoạn kế tiếp, sau khi xác nhận mức sẵn sàng.",
+        "vi": "Bàn giao: chuyển sản phẩm cho đội vận hành hoặc giai đoạn kế tiếp, sau khi xác nhận mức sẵn sàng."
+      }
+    },
+    {
+      "id": "g-103",
+      "letter": "T",
+      "term": "Trigger",
+      "definition": {
+        "en": "Tác nhân kích hoạt: dấu hiệu cho thấy rủi ro sắp xảy ra hoặc đã xảy ra.",
+        "vi": "Tác nhân kích hoạt: dấu hiệu cho thấy rủi ro sắp xảy ra hoặc đã xảy ra."
+      }
+    },
+    {
+      "id": "g-104",
+      "letter": "U",
+      "term": "User story",
+      "definition": {
+        "en": "Mô tả ngắn một yêu cầu từ góc nhìn người dùng (“Là…, tôi muốn…, để…”), kèm tiêu chí chấp nhận.",
+        "vi": "Mô tả ngắn một yêu cầu từ góc nhìn người dùng (“Là…, tôi muốn…, để…”), kèm tiêu chí chấp nhận."
+      }
+    },
+    {
+      "id": "g-105",
+      "letter": "V",
+      "term": "Value / benefits realisation",
+      "definition": {
+        "en": "Giá trị và hiện thực hoá lợi ích: kết quả kinh doanh dự án mang lại, được đo bằng hệ thống theo dõi lợi ích, có thể sau khi dự án kết thúc.",
+        "vi": "Giá trị và hiện thực hoá lợi ích: kết quả kinh doanh dự án mang lại, được đo bằng hệ thống theo dõi lợi ích, có thể sau khi dự án kết thúc."
+      }
+    },
+    {
+      "id": "g-106",
+      "letter": "V",
+      "term": "Velocity",
+      "definition": {
+        "en": "Tốc độ: số story point nhóm hoàn thành trung bình mỗi sprint; dùng để dự báo, không dùng so sánh giữa các nhóm.",
+        "vi": "Tốc độ: số story point nhóm hoàn thành trung bình mỗi sprint; dùng để dự báo, không dùng so sánh giữa các nhóm."
+      }
+    },
+    {
+      "id": "g-107",
+      "letter": "W",
+      "term": "WBS (work breakdown structure)",
+      "definition": {
+        "en": "Cấu trúc phân rã công việc: chia toàn bộ phạm vi thành các gói công việc nhỏ dễ quản lý.",
+        "vi": "Cấu trúc phân rã công việc: chia toàn bộ phạm vi thành các gói công việc nhỏ dễ quản lý."
+      }
+    }
+  ]
+}

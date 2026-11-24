@@ -1,0 +1,637 @@
+{
+  "slug": "cpmai",
+  "certId": "pmi-cpmai",
+  "scrapedAt": "2026-11-24T00:51:31.658Z",
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 15,
+      "name": {
+        "en": "Support Responsible and Trustworthy AI Efforts",
+        "vi": "Support Responsible and Trustworthy AI Efforts"
+      },
+      "description": {
+        "en": "How the AI project leader builds privacy, security, transparency, fairness, compliance and accountability into every phase of an AI project, from Business Understanding to Model Operationalization, instead of bolting them on at the end.",
+        "vi": "Cách người lãnh đạo dự án AI đưa quyền riêng tư, bảo mật, minh bạch, công bằng, tuân thủ và trách nhiệm giải trình vào mọi giai đoạn của dự án AI, từ Business Understanding đến Model Operationalization, thay vì vá thêm vào cuối dự án."
+      },
+      "principles": [
+        {
+          "id": "d1-p1",
+          "number": 1,
+          "domainId": "D1",
+          "title": {
+            "en": "Privacy and security plan",
+            "vi": "Kế hoạch quyền riêng tư và bảo mật"
+          },
+          "body": {
+            "en": "Personal data in an AI project needs a plan before it reaches the workspace, not after a model is built. The plan sets data governance for PII (classification, minimisation, lawful purpose, retention), encryption and role-based access for training data, and secure handling across the lifecycle, including the deployed model, which can leak training data through its outputs. Run a privacy impact assessment (PIA/DPIA) before deploying a model that processes personal data in a new way, and repeat it when the use changes. Regulations such as GDPR and CCPA can apply because of where the data subjects are, not only where the team is based. Traps: treating \"we removed the names\" as anonymisation (quasi-identifiers such as birth date and postcode can re-identify people), reusing data collected for one purpose for another without checking the lawful basis, and letting staff paste personal data into unapproved generative AI tools. When a stem asks what to do first, the answer is usually to assess and control the data before using it.",
+            "vi": "Dữ liệu cá nhân trong dự án AI cần có kế hoạch trước khi được đưa vào workspace, chứ không phải sau khi đã xây xong mô hình. Kế hoạch này thiết lập data governance cho PII (phân loại, tối thiểu hóa, mục đích hợp pháp, thời hạn lưu giữ), mã hóa và phân quyền theo vai trò cho dữ liệu huấn luyện, và quy trình xử lý an toàn suốt vòng đời, kể cả mô hình đã triển khai, vì mô hình có thể làm lộ dữ liệu huấn luyện qua đầu ra. Hãy thực hiện đánh giá tác động quyền riêng tư (PIA/DPIA) trước khi triển khai một mô hình xử lý dữ liệu cá nhân theo cách mới, và làm lại khi mục đích sử dụng thay đổi. Các quy định như GDPR và CCPA có thể áp dụng vì nơi chủ thể dữ liệu sinh sống, chứ không chỉ vì nơi đội dự án đặt trụ sở. Bẫy thường gặp: coi \"đã xóa tên\" là ẩn danh hóa (các quasi-identifier như ngày sinh và mã bưu chính có thể định danh lại người dùng), dùng lại dữ liệu thu thập cho mục đích này vào mục đích khác mà không kiểm tra cơ sở pháp lý, và để nhân viên dán dữ liệu cá nhân vào công cụ generative AI chưa được phê duyệt. Khi đề hỏi việc cần làm trước tiên, đáp án thường là đánh giá và kiểm soát dữ liệu trước khi sử dụng."
+          },
+          "questionCount": 8,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p2",
+          "number": 2,
+          "domainId": "D1",
+          "title": {
+            "en": "AI transparency and explainability",
+            "vi": "Minh bạch và khả năng giải thích của AI"
+          },
+          "body": {
+            "en": "Transparency means people affected by an AI system, and the people accountable for it, can see what data it uses, how it was built and why it produces a given result. The project leader makes this a requirement in Business Understanding, because the level of explainability needed (for example, reasons for a declined loan) constrains which algorithms are acceptable later. Practices the exam expects: document model selection criteria and the rationale, including rejected alternatives; report data sources and preprocessing steps (for example in datasheets or model cards); tailor explanations to the audience, with per-case reasons for front-line users and global drivers for executives; use interpretability tools such as SHAP or LIME on complex models and have domain experts check that the drivers make sense; log each algorithmic decision with its inputs and model version; and tell users when they are dealing with AI. Trap: choosing the most accurate black-box model first and trying to explain it afterwards when the use case requires explanations.",
+            "vi": "Minh bạch nghĩa là những người chịu ảnh hưởng bởi hệ thống AI, và những người chịu trách nhiệm về nó, có thể thấy hệ thống dùng dữ liệu gì, được xây dựng ra sao và vì sao cho ra một kết quả cụ thể. Người lãnh đạo dự án đưa điều này thành yêu cầu ngay ở Business Understanding, vì mức độ giải thích cần có (ví dụ lý do từ chối khoản vay) sẽ giới hạn những thuật toán được chấp nhận về sau. Các thực hành đề thi kỳ vọng: ghi lại tiêu chí chọn mô hình và lý do, kể cả các phương án bị loại; báo cáo nguồn dữ liệu và các bước tiền xử lý (ví dụ bằng datasheet hoặc model card); điều chỉnh lời giải thích theo người nghe, với lý do cho từng trường hợp dành cho người dùng tuyến đầu và các yếu tố chi phối tổng thể dành cho lãnh đạo; dùng công cụ interpretability như SHAP hoặc LIME cho mô hình phức tạp và để chuyên gia nghiệp vụ kiểm tra xem các yếu tố đó có hợp lý không; ghi log từng quyết định của thuật toán kèm đầu vào và phiên bản mô hình; và cho người dùng biết khi họ đang tương tác với AI. Bẫy: chọn mô hình black-box chính xác nhất trước rồi mới tìm cách giải thích, trong khi use case bắt buộc phải giải thích được."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p3",
+          "number": 3,
+          "domainId": "D1",
+          "title": {
+            "en": "Bias checks across data, model and algorithm",
+            "vi": "Kiểm tra thiên lệch ở dữ liệu, mô hình và thuật toán"
+          },
+          "body": {
+            "en": "Bias can enter at every CPMAI phase: unrepresentative samples and historically biased labels in the data, proxy features and objective choices in the algorithm, and uneven error rates in the model's outputs. Bias checks are therefore planned work in Data Understanding, Model Evaluation and operations, not a single test before launch. What the exam expects: analyse training data for demographic and representation imbalances before modelling; agree the fairness definition and metric with business, legal and ethics stakeholders in advance, since metrics such as demographic parity and equal error rates can conflict; test performance per group, because a strong aggregate score can hide a weak subgroup; remember that dropping a protected attribute does not remove bias when proxies such as postcode remain; apply mitigation (rebalancing, reweighting, constraints, threshold adjustment) and re-test; and monitor bias metrics in production as the population shifts. Trap: approving a model on overall accuracy, or treating \"we don't use gender\" as proof of fairness.",
+            "vi": "Thiên lệch (bias) có thể xuất hiện ở mọi giai đoạn CPMAI: mẫu không đại diện và nhãn mang thiên lệch lịch sử trong dữ liệu, feature đại diện (proxy) và cách chọn hàm mục tiêu trong thuật toán, và tỷ lệ lỗi không đồng đều trong đầu ra của mô hình. Vì vậy kiểm tra bias là công việc có kế hoạch trong Data Understanding, Model Evaluation và vận hành, không phải một bài test duy nhất trước khi ra mắt. Đề thi kỳ vọng: phân tích dữ liệu huấn luyện để tìm mất cân bằng về nhân khẩu học và mức độ đại diện trước khi xây mô hình; thống nhất định nghĩa và chỉ số công bằng với các bên nghiệp vụ, pháp lý và đạo đức từ trước, vì các chỉ số như demographic parity và tỷ lệ lỗi ngang nhau có thể mâu thuẫn; kiểm tra hiệu năng theo từng nhóm, vì điểm tổng thể cao có thể che giấu một nhóm yếu; nhớ rằng bỏ thuộc tính được bảo vệ không loại bỏ bias khi vẫn còn proxy như mã bưu chính; áp dụng biện pháp giảm thiểu (cân bằng lại, đánh trọng số lại, ràng buộc, điều chỉnh ngưỡng) rồi kiểm tra lại; và giám sát chỉ số bias khi vận hành vì tập người dùng thay đổi. Bẫy: phê duyệt mô hình chỉ dựa trên độ chính xác tổng thể, hoặc coi \"chúng tôi không dùng giới tính\" là bằng chứng công bằng."
+          },
+          "questionCount": 9,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p4",
+          "number": 4,
+          "domainId": "D1",
+          "title": {
+            "en": "Regulatory and policy compliance",
+            "vi": "Tuân thủ quy định và chính sách"
+          },
+          "body": {
+            "en": "AI rules change quickly and differ by jurisdiction and sector, so compliance is something the project leader monitors throughout the project, with legal and compliance teams as partners rather than a final sign-off. What the exam expects: identify early which laws, sector rules and internal policies apply, including where the system is deployed and whose data it uses (the EU AI Act, for example, places obligations on high-risk uses such as recruitment and credit scoring); track changes and assess their impact through the risk register and change control; build compliance checks into phase gates and ongoing monitoring and reporting; and keep audit-ready documentation as you go. Voluntary frameworks and standards such as the NIST AI Risk Management Framework and ISO/IEC 42001 help structure governance but do not replace legal obligations. Traps: assuming a rule does not apply because the team is based elsewhere, deciding legal questions without counsel, and halting or ignoring the project when a new regulation appears instead of assessing its impact.",
+            "vi": "Quy định về AI thay đổi nhanh và khác nhau theo khu vực pháp lý và ngành, nên tuân thủ là việc người lãnh đạo dự án theo dõi suốt dự án, với đội pháp lý và compliance là đối tác chứ không chỉ là bước ký duyệt cuối cùng. Đề thi kỳ vọng: xác định sớm những luật, quy định ngành và chính sách nội bộ nào áp dụng, kể cả nơi hệ thống được triển khai và dữ liệu là của ai (ví dụ EU AI Act đặt nghĩa vụ cho các ứng dụng rủi ro cao như tuyển dụng và chấm điểm tín dụng); theo dõi thay đổi và đánh giá tác động qua risk register và quy trình change control; đưa các bước kiểm tra tuân thủ vào phase gate và vào cơ chế giám sát, báo cáo liên tục; và duy trì tài liệu sẵn sàng cho kiểm toán ngay trong quá trình làm. Các khung và tiêu chuẩn tự nguyện như NIST AI Risk Management Framework và ISO/IEC 42001 giúp cấu trúc hóa quản trị nhưng không thay thế nghĩa vụ pháp lý. Bẫy: cho rằng quy định không áp dụng vì đội ở nơi khác, tự quyết các vấn đề pháp lý mà không hỏi luật sư, và dừng hẳn hoặc phớt lờ dự án khi có quy định mới thay vì đánh giá tác động."
+          },
+          "questionCount": 8,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p5",
+          "number": 5,
+          "domainId": "D1",
+          "title": {
+            "en": "Accountability documentation and audit trail",
+            "vi": "Tài liệu trách nhiệm giải trình và dấu vết kiểm toán"
+          },
+          "body": {
+            "en": "Accountability means that for any model in use, the organisation can show who decided what, when, on what evidence, and with which exact data, code and model version. The project leader builds this record during the project; it cannot be reconstructed later. What the exam expects: keep a decision log of development decisions with alternatives and rationale; version models, datasets, training code and configuration together so any past result can be reproduced; record stakeholder approvals at each go/no-go point with the criteria, evidence and named approver; maintain chain of custody for training and test data, including who accessed or changed it and how the test set was kept separate; route retraining and other model changes through change control; name an accountable owner for each production model (accountability stays with people, not with the model or the vendor); and prepare accountability reports for executives and regulators. Trap: relying on team memory, chat threads or a final summary instead of a contemporaneous, versioned record.",
+            "vi": "Trách nhiệm giải trình nghĩa là với bất kỳ mô hình nào đang được sử dụng, tổ chức có thể chỉ ra ai đã quyết định điều gì, khi nào, dựa trên bằng chứng nào, và với chính xác dữ liệu, mã nguồn và phiên bản mô hình nào. Người lãnh đạo dự án xây dựng hồ sơ này trong quá trình làm dự án; không thể tái dựng lại về sau. Đề thi kỳ vọng: duy trì decision log cho các quyết định phát triển kèm phương án thay thế và lý do; quản lý phiên bản mô hình, bộ dữ liệu, mã huấn luyện và cấu hình cùng nhau để có thể tái tạo bất kỳ kết quả nào trong quá khứ; ghi nhận phê duyệt của các bên liên quan tại từng điểm go/no-go kèm tiêu chí, bằng chứng và người phê duyệt có tên; duy trì chain of custody (chuỗi lưu giữ) cho dữ liệu huấn luyện và kiểm thử, gồm ai đã truy cập hay thay đổi và tập test được tách riêng thế nào; đưa việc huấn luyện lại và các thay đổi mô hình qua change control; chỉ định người chịu trách nhiệm cho từng mô hình production (trách nhiệm thuộc về con người, không thuộc về mô hình hay nhà cung cấp); và chuẩn bị báo cáo trách nhiệm giải trình cho lãnh đạo và cơ quan quản lý. Bẫy: dựa vào trí nhớ của đội, các luồng chat hoặc một bản tóm tắt cuối dự án thay vì một hồ sơ có phiên bản được ghi lại ngay khi sự việc diễn ra."
+          },
+          "questionCount": 11,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 26,
+      "name": {
+        "en": "Identify Business Needs and Solutions",
+        "vi": "Identify Business Needs and Solutions"
+      },
+      "description": {
+        "en": "The Business Understanding work at the start of an AI project: defining the real business problem, judging whether AI is feasible and worth it, assessing risks, scoping the first iteration, building the ROI and business case, drafting the solution, setting success criteria, and lining up resources and adoption.",
+        "vi": "Phần việc Business Understanding (hiểu nghiệp vụ) ở đầu dự án AI: xác định đúng vấn đề kinh doanh, đánh giá AI có khả thi và đáng đầu tư không, đánh giá rủi ro, khoanh phạm vi cho vòng lặp đầu tiên, xây dựng ROI và business case, phác thảo giải pháp, đặt tiêu chí thành công, và chuẩn bị nguồn lực cũng như kế hoạch để người dùng chấp nhận giải pháp."
+      },
+      "principles": [
+        {
+          "id": "d2-p1",
+          "number": 1,
+          "domainId": "D2",
+          "title": {
+            "en": "Defining the problem to solve",
+            "vi": "Xác định vấn đề cần giải quyết"
+          },
+          "body": {
+            "en": "Every AI project starts in Business Understanding (CPMAI Phase I) with a business problem, not a technology. Interview the stakeholders who feel the pain, study the current process, and describe the users as personas with concrete use cases. Write the problem as an outcome the business needs (cut claim handling time from 9 days to 3), not as a solution (build a chatbot). Then map the problem to an AI pattern, such as recognition, conversational, predictive analytics, pattern and anomaly detection, hyper-personalization, goal-driven or autonomous systems. Separate the steps that need cognition from those that rules or plain automation can handle. Validate the problem statement with subject matter experts before feasibility work, and keep the first iteration small and specific. The trap: accepting a sponsor's 'we need AI' as the problem statement, or starting on data and models before the problem is agreed.",
+            "vi": "Mọi dự án AI bắt đầu ở Business Understanding (Phase I của CPMAI) bằng một vấn đề kinh doanh, không phải bằng một công nghệ. Phỏng vấn các bên liên quan đang chịu \"nỗi đau\", tìm hiểu quy trình hiện tại, và mô tả người dùng bằng persona kèm các use case cụ thể. Viết vấn đề dưới dạng kết quả mà doanh nghiệp cần (giảm thời gian xử lý hồ sơ bồi thường từ 9 ngày xuống 3 ngày), không phải dưới dạng giải pháp (xây một chatbot). Sau đó ánh xạ vấn đề vào một AI pattern (mẫu AI) như recognition, conversational, predictive analytics, pattern and anomaly detection, hyper-personalization, goal-driven hay autonomous systems. Tách các bước cần nhận thức (cognitive) khỏi các bước mà quy tắc hoặc tự động hóa thông thường xử lý được. Xác nhận problem statement với chuyên gia nghiệp vụ (SME) trước khi đánh giá khả thi, và giữ vòng lặp đầu tiên nhỏ, cụ thể. Bẫy thường gặp: chấp nhận câu \"chúng ta cần AI\" của sponsor làm problem statement, hoặc bắt tay vào dữ liệu và mô hình trước khi vấn đề được thống nhất."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p2",
+          "number": 2,
+          "domainId": "D2",
+          "title": {
+            "en": "Initial AI feasibility",
+            "vi": "Đánh giá khả thi AI ban đầu"
+          },
+          "body": {
+            "en": "Before committing, check whether AI is the right tool and whether this organisation can make it work. Ask five questions. Is it technically viable: has this kind of problem been solved with acceptable accuracy? Is the data available, accessible and good enough, including labels for supervised learning? What compute do training and inference need, and does that fit the budget, latency and hardware limits? Is the organisation ready, with the skills, sponsorship and processes to act on predictions? Would a traditional solution (rules, scripts, a process change) do the job more cheaply? If the problem can be solved with fixed rules, or needs a guaranteed and fully explainable answer every time, AI is usually the wrong fit. When viability is uncertain, run a small proof of concept on the organisation's own data. The trap: treating a vendor demo or a sponsor's enthusiasm as proof of feasibility, or leaving the data question until Phase II.",
+            "vi": "Trước khi cam kết, hãy kiểm tra AI có phải công cụ phù hợp không và tổ chức này có làm được không. Đặt năm câu hỏi. Về kỹ thuật có khả thi không: loại vấn đề này đã từng được giải với độ chính xác chấp nhận được chưa? Dữ liệu có sẵn, truy cập được và đủ tốt không, kể cả nhãn (label) cho supervised learning? Huấn luyện và suy luận (inference) cần bao nhiêu tài nguyên tính toán, và có vừa ngân sách, yêu cầu độ trễ, giới hạn phần cứng không? Tổ chức đã sẵn sàng chưa, có đủ kỹ năng, sự bảo trợ và quy trình để hành động theo dự đoán không? Một giải pháp truyền thống (quy tắc, script, thay đổi quy trình) có làm được việc với chi phí thấp hơn không? Nếu vấn đề giải được bằng quy tắc cố định, hoặc cần câu trả lời được bảo đảm và giải thích được hoàn toàn mọi lúc, AI thường không phù hợp. Khi chưa chắc về tính khả thi, chạy một proof of concept nhỏ trên chính dữ liệu của tổ chức. Bẫy thường gặp: coi bản demo của nhà cung cấp hay sự hào hứng của sponsor là bằng chứng khả thi, hoặc để câu hỏi về dữ liệu đến tận Phase II."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p3",
+          "number": 3,
+          "domainId": "D2",
+          "title": {
+            "en": "AI risk assessment",
+            "vi": "Đánh giá rủi ro AI"
+          },
+          "body": {
+            "en": "Assess AI risks during Business Understanding and revisit them in every later phase. Cover safety (how the system can fail and who is harmed when it does), AI-specific security (prompt injection, data poisoning, model theft or inversion, leakage of training data) on top of normal IT threats, ethics (fairness, the effect of automated decisions on people), reputation (offensive or wrong public output) and business continuity (dependence on one vendor or model, failure at peak load). For each significant risk, rate probability and impact, name an owner, and plan both a mitigation (human review, guardrails, staged rollout) and a contingency with a clear trigger (fall back to manual or rules-based processing). The trap: postponing risk work until the model is built, or treating an AI system like ordinary software whose failures are deterministic and fully testable.",
+            "vi": "Đánh giá rủi ro AI ngay trong Business Understanding và xem lại ở mọi phase sau đó. Bao quát an toàn (hệ thống có thể hỏng theo cách nào và ai bị tổn hại khi đó), bảo mật đặc thù của AI (prompt injection, data poisoning, đánh cắp hoặc đảo ngược mô hình, rò rỉ dữ liệu huấn luyện) bên cạnh các mối đe dọa IT thông thường, đạo đức (công bằng, tác động của quyết định tự động lên con người), danh tiếng (đầu ra công khai sai hoặc phản cảm) và tính liên tục kinh doanh (phụ thuộc một nhà cung cấp hay một mô hình, sự cố lúc tải cao điểm). Với mỗi rủi ro đáng kể, đánh giá xác suất và tác động, chỉ định người chịu trách nhiệm, và lập cả biện pháp giảm thiểu (người duyệt, guardrail, triển khai theo giai đoạn) lẫn phương án dự phòng có điều kiện kích hoạt rõ ràng (quay về xử lý thủ công hoặc theo quy tắc). Bẫy thường gặp: hoãn việc đánh giá rủi ro đến khi mô hình đã xây xong, hoặc đối xử với hệ thống AI như phần mềm thông thường có lỗi mang tính tất định và kiểm thử được hoàn toàn."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p4",
+          "number": 4,
+          "domainId": "D2",
+          "title": {
+            "en": "AI project scope statement",
+            "vi": "Tuyên bố phạm vi dự án AI"
+          },
+          "body": {
+            "en": "The scope statement fixes what this iteration will deliver. It names the deliverables (for example, a model integrated into the claims system with monitoring and documentation, not just a notebook), measurable success criteria, what is in and out of scope, and the assumptions and constraints (the data period assumed to be representative, on-premises hosting only, responses under 200 ms). Because AI outcomes are uncertain, scope the first iteration small enough to finish with the people, data and budget available, and plan later iterations rather than promising everything at once. Have the sponsor and key stakeholders approve it before Data Understanding starts, and route later requests through change control. The trap: vague goals such as 'improve forecasting', no explicit out-of-scope list, which invites scope creep, or a scope that ignores resource limits.",
+            "vi": "Scope statement (tuyên bố phạm vi) chốt lại những gì vòng lặp này sẽ bàn giao. Nó nêu các sản phẩm bàn giao (ví dụ: mô hình được tích hợp vào hệ thống bồi thường kèm giám sát và tài liệu, chứ không chỉ một notebook), tiêu chí thành công đo được, những gì nằm trong và ngoài phạm vi, cùng các giả định và ràng buộc (giai đoạn dữ liệu được giả định là đại diện, chỉ được chạy on-premises, phản hồi dưới 200 ms). Vì kết quả AI không chắc chắn, hãy khoanh vòng lặp đầu tiên đủ nhỏ để hoàn thành với con người, dữ liệu và ngân sách hiện có, và lên kế hoạch cho các vòng lặp sau thay vì hứa mọi thứ cùng lúc. Lấy phê duyệt của sponsor và các bên liên quan chính trước khi bắt đầu Data Understanding, và đưa các yêu cầu phát sinh qua quy trình kiểm soát thay đổi. Bẫy thường gặp: mục tiêu mơ hồ như \"cải thiện dự báo\", không có danh sách ngoài phạm vi rõ ràng nên dễ bị phình phạm vi, hoặc phạm vi bỏ qua giới hạn nguồn lực."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p5",
+          "number": 5,
+          "domainId": "D2",
+          "title": {
+            "en": "Determining ROI",
+            "vi": "Xác định ROI"
+          },
+          "body": {
+            "en": "ROI compares the measurable benefit of the AI solution with its total cost of ownership (TCO). Express benefits against a baseline measured before go-live (handling hours, loss rate, conversion), convert them to money where possible, and net off the cost of the model's errors, such as false positives that staff must clear. TCO covers far more than development: data acquisition and labelling, infrastructure for training and inference, integration, monitoring, retraining, support, licences and change management. Because accuracy and adoption are uncertain, show ranges or scenarios rather than a single number, and compare against alternatives, including doing nothing. Agree the ROI metrics (payback period, net benefit, cost per transaction) up front so they can be measured after deployment. The trap: a business case that counts only the build cost, or claims benefits without a baseline.",
+            "vi": "ROI so sánh lợi ích đo được của giải pháp AI với tổng chi phí sở hữu (TCO). Thể hiện lợi ích so với một baseline (mức nền) đo trước khi go-live (số giờ xử lý, tỷ lệ tổn thất, tỷ lệ chuyển đổi), quy ra tiền khi có thể, và trừ đi chi phí do lỗi của mô hình, chẳng hạn các false positive mà nhân viên phải xử lý. TCO lớn hơn nhiều so với chi phí phát triển: thu thập và gán nhãn dữ liệu, hạ tầng cho huấn luyện và suy luận, tích hợp, giám sát, huấn luyện lại, hỗ trợ, bản quyền và quản lý thay đổi. Vì độ chính xác và mức độ chấp nhận còn bất định, hãy đưa ra khoảng giá trị hoặc các kịch bản thay vì một con số duy nhất, và so sánh với các phương án khác, kể cả không làm gì. Thống nhất các chỉ số ROI (thời gian hoàn vốn, lợi ích ròng, chi phí mỗi giao dịch) ngay từ đầu để đo được sau triển khai. Bẫy thường gặp: business case chỉ tính chi phí xây dựng, hoặc tuyên bố lợi ích mà không có baseline."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p6",
+          "number": 6,
+          "domainId": "D2",
+          "title": {
+            "en": "Adoption and integration risks",
+            "vi": "Rủi ro về chấp nhận và tích hợp"
+          },
+          "body": {
+            "en": "An accurate model that nobody uses delivers nothing. Assess early how the AI changes people's work and what change management it needs. Look for sources of resistance: fear of job loss, distrust of opaque recommendations, extra steps in the workflow. Plan integration with the systems and workflows people already use, so predictions appear where decisions are made rather than in a separate tool. Involve end users in design, train them on what the system can and cannot do, and explain why it is coming. After launch, track adoption metrics (usage, override rates, time to decision) and act on them. Watch for both under-trust and over-trust: users who rubber-stamp every output are an adoption risk too. The trap: treating adoption as a training session after deployment, or measuring only model accuracy.",
+            "vi": "Một mô hình chính xác mà không ai dùng thì không mang lại gì. Đánh giá sớm AI sẽ thay đổi công việc của mọi người ra sao và cần quản lý thay đổi (change management) thế nào. Tìm các nguồn gây kháng cự: sợ mất việc, không tin các khuyến nghị khó hiểu, thêm bước trong quy trình. Lên kế hoạch tích hợp với các hệ thống và quy trình người dùng đang dùng, để dự đoán xuất hiện đúng nơi ra quyết định thay vì trong một công cụ riêng. Đưa người dùng cuối vào thiết kế, đào tạo họ về những gì hệ thống làm được và không làm được, và giải thích lý do triển khai. Sau khi ra mắt, theo dõi các chỉ số chấp nhận (mức sử dụng, tỷ lệ bỏ qua khuyến nghị, thời gian ra quyết định) và hành động theo đó. Cảnh giác cả việc tin quá ít lẫn tin quá nhiều: người dùng duyệt \"cho qua\" mọi đầu ra cũng là một rủi ro chấp nhận. Bẫy thường gặp: coi việc chấp nhận chỉ là một buổi đào tạo sau triển khai, hoặc chỉ đo độ chính xác của mô hình."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p7",
+          "number": 7,
+          "domainId": "D2",
+          "title": {
+            "en": "Drafting the AI solution",
+            "vi": "Phác thảo giải pháp AI"
+          },
+          "body": {
+            "en": "In Business Understanding the team drafts the solution at a high level: enough to judge feasibility, cost and risk, not a final design. The draft shows the architecture (where data comes from, where the model runs, how results reach users), data flow and processing needs (batch or real time, volumes, latency), likely model types and approaches (classification, forecasting, a pretrained language model, rules plus machine learning), integration points with existing systems, and deployment and operating considerations such as monitoring, retraining and cloud or on-premises hosting. Data scientists and architects shape the technical content; the project leader makes sure it traces back to the problem statement and the constraints. The trap: committing to a specific algorithm before the data is understood, or drafting a model that has no path into production.",
+            "vi": "Trong Business Understanding, nhóm phác thảo giải pháp ở mức tổng quan: đủ để đánh giá tính khả thi, chi phí và rủi ro, chưa phải thiết kế cuối cùng. Bản phác thảo thể hiện kiến trúc (dữ liệu đến từ đâu, mô hình chạy ở đâu, kết quả đến người dùng thế nào), luồng dữ liệu và yêu cầu xử lý (batch hay real time, khối lượng, độ trễ), các loại mô hình và cách tiếp cận dự kiến (phân loại, dự báo, mô hình ngôn ngữ huấn luyện sẵn, quy tắc kết hợp machine learning), các điểm tích hợp với hệ thống hiện có, và các cân nhắc về triển khai và vận hành như giám sát, huấn luyện lại, chạy trên cloud hay on-premises. Data scientist và kiến trúc sư định hình nội dung kỹ thuật; người lãnh đạo dự án bảo đảm nó bám sát problem statement và các ràng buộc. Bẫy thường gặp: chốt một thuật toán cụ thể trước khi hiểu dữ liệu, hoặc phác thảo một mô hình không có đường đưa vào production."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p8",
+          "number": 8,
+          "domainId": "D2",
+          "title": {
+            "en": "Success criteria and KPIs",
+            "vi": "Tiêu chí thành công và KPI"
+          },
+          "body": {
+            "en": "Define success at several levels and set the targets before development begins: model performance indicators (precision, recall, error rate) chosen to fit the cost of each kind of error; business impact metrics with thresholds (fraud losses down 20%, handling time under 4 minutes); technical benchmarks (latency, throughput, availability); and user adoption and satisfaction criteria. Every metric should trace to an organisational objective, have a baseline and a threshold, and be measurable in production. Accuracy alone can mislead, especially when one class is rare. The trap: defining success only as model accuracy, or setting criteria after the results are in, which turns the go/no-go decision into a formality.",
+            "vi": "Định nghĩa thành công ở nhiều cấp độ và đặt mục tiêu trước khi bắt đầu phát triển: chỉ số hiệu năng mô hình (precision, recall, tỷ lệ lỗi) được chọn theo chi phí của từng loại lỗi; chỉ số tác động kinh doanh có ngưỡng (tổn thất do gian lận giảm 20%, thời gian xử lý dưới 4 phút); chuẩn kỹ thuật (độ trễ, thông lượng, độ sẵn sàng); và tiêu chí về mức độ chấp nhận và hài lòng của người dùng. Mỗi chỉ số cần gắn với một mục tiêu của tổ chức, có baseline và ngưỡng, và đo được trong production. Chỉ riêng accuracy có thể gây hiểu lầm, nhất là khi một lớp rất hiếm. Bẫy thường gặp: chỉ định nghĩa thành công bằng accuracy của mô hình, hoặc đặt tiêu chí sau khi đã có kết quả, khiến quyết định go/no-go chỉ còn là hình thức."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p9",
+          "number": 9,
+          "domainId": "D2",
+          "title": {
+            "en": "Supporting the business case",
+            "vi": "Hỗ trợ xây dựng business case"
+          },
+          "body": {
+            "en": "The business case is usually owned by the sponsor or a business lead; the AI project leader supplies and checks its AI content. Gather cost data and projected benefits, work with finance on estimates and assumptions, and validate the technical claims: are the accuracy, timeline and data assumptions realistic? Help shape a narrative for executives that links the investment to strategy in business language, states the uncertainty honestly and shows the decision points where the project can stop. Review and refine the case as Data Understanding and later phases replace assumptions with facts. The trap: inflating benefits to win approval, presenting technical metrics instead of business outcomes, or treating the approved business case as fixed.",
+            "vi": "Business case thường do sponsor hoặc một lãnh đạo nghiệp vụ sở hữu; người lãnh đạo dự án AI cung cấp và kiểm tra phần nội dung về AI. Thu thập dữ liệu chi phí và lợi ích dự kiến, làm việc với bộ phận tài chính về các ước tính và giả định, và thẩm định các tuyên bố kỹ thuật: giả định về độ chính xác, tiến độ và dữ liệu có thực tế không? Giúp xây dựng câu chuyện cho lãnh đạo, gắn khoản đầu tư với chiến lược bằng ngôn ngữ kinh doanh, nói thật về mức độ bất định và chỉ ra các điểm quyết định mà dự án có thể dừng lại. Rà soát và tinh chỉnh business case khi Data Understanding và các phase sau thay giả định bằng dữ kiện. Bẫy thường gặp: thổi phồng lợi ích để được duyệt, trình bày chỉ số kỹ thuật thay vì kết quả kinh doanh, hoặc coi business case đã duyệt là bất biến."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p10",
+          "number": 10,
+          "domainId": "D2",
+          "title": {
+            "en": "Identifying project resources",
+            "vi": "Xác định nguồn lực dự án"
+          },
+          "body": {
+            "en": "AI projects need a wider mix of skills than most IT projects: data scientists, data engineers, ML or MLOps engineers, domain experts, data owners, and people from legal, security and change management. Assess the skills each phase needs against the people available, identify gaps that call for contractors or consultants (and plan knowledge transfer so the capability stays in-house), and estimate hardware and infrastructure for both development (training compute, GPUs, storage) and deployment. Plan when each resource is needed: data engineering peaks early, MLOps later. Engage procurement early for tools, cloud services, data and platforms, because contracts and security reviews take time. The trap: staffing only data scientists, or discovering GPU or licence lead times after the schedule is set.",
+            "vi": "Dự án AI cần tổ hợp kỹ năng rộng hơn đa số dự án IT: data scientist, data engineer, kỹ sư ML hoặc MLOps, chuyên gia nghiệp vụ, chủ sở hữu dữ liệu, và người từ pháp chế, bảo mật và quản lý thay đổi. Đánh giá kỹ năng mỗi phase cần so với nhân sự hiện có, xác định các khoảng trống cần thuê nhà thầu hoặc tư vấn (và lên kế hoạch chuyển giao kiến thức để năng lực ở lại tổ chức), và ước tính phần cứng, hạ tầng cho cả phát triển (tài nguyên huấn luyện, GPU, lưu trữ) lẫn triển khai. Lên kế hoạch thời điểm cần từng nguồn lực: data engineering cao điểm ở đầu, MLOps ở sau. Làm việc sớm với bộ phận mua sắm về công cụ, dịch vụ cloud, dữ liệu và nền tảng, vì hợp đồng và đánh giá bảo mật cần thời gian. Bẫy thường gặp: chỉ tuyển data scientist, hoặc phát hiện thời gian chờ GPU hay bản quyền sau khi đã chốt tiến độ."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 26,
+      "name": {
+        "en": "Identify Data Needs",
+        "vi": "Identify Data Needs"
+      },
+      "description": {
+        "en": "The data understanding work of an AI project: defining what data the solution needs, finding the people and places that hold it, setting up a governed workspace, gathering and checking the data, and deciding with leadership whether it is good enough to proceed.",
+        "vi": "Phần việc hiểu dữ liệu (data understanding) của một dự án AI: xác định giải pháp cần dữ liệu gì, tìm ra những người và nơi đang nắm giữ dữ liệu, dựng một môi trường làm việc có quản trị, thu thập và kiểm tra dữ liệu, rồi cùng lãnh đạo quyết định dữ liệu đã đủ tốt để đi tiếp hay chưa."
+      },
+      "principles": [
+        {
+          "id": "d3-p1",
+          "number": 1,
+          "domainId": "D3",
+          "title": {
+            "en": "Defining the required data",
+            "vi": "Xác định dữ liệu cần thiết"
+          },
+          "body": {
+            "en": "Start from the business objective and the AI pattern, not from the data you happen to have. For each requirement, state the data types and formats, the volume and sampling approach, the time span and granularity, the labels the model must learn from, and the quality standards the data must meet to be accepted. Every requirement should trace back to the use case and success criteria; data that maps to no objective adds cost and risk without adding value. Two traps appear often. First, \"collect everything and see what helps\" is not a requirement. Second, data the model trains on must also be available, at the same granularity, when the model makes a prediction in production. A feature that only exists after the outcome is known leaks the answer and inflates test results. Exam stems reward the leader who defines requirements and acceptance criteria before any extraction starts.",
+            "vi": "Hãy bắt đầu từ mục tiêu kinh doanh và AI pattern, không phải từ dữ liệu tình cờ đang có. Với mỗi yêu cầu, nêu rõ loại và định dạng dữ liệu, khối lượng và cách lấy mẫu, khoảng thời gian và độ chi tiết (granularity), các nhãn (label) mà mô hình phải học, và tiêu chuẩn chất lượng để dữ liệu được chấp nhận. Mỗi yêu cầu phải truy ngược được về use case và tiêu chí thành công; dữ liệu không gắn với mục tiêu nào chỉ thêm chi phí và rủi ro mà không thêm giá trị. Có hai bẫy hay gặp. Thứ nhất, \"thu hết mọi thứ rồi xem cái gì có ích\" không phải là một yêu cầu. Thứ hai, dữ liệu dùng để huấn luyện cũng phải có sẵn, ở cùng độ chi tiết, khi mô hình dự đoán trong production. Một feature chỉ xuất hiện sau khi đã biết kết quả sẽ làm lộ đáp án (leakage) và thổi phồng kết quả kiểm thử. Đề thi thường chấm điểm cho người lãnh đạo xác định yêu cầu và tiêu chí chấp nhận trước khi bắt đầu trích xuất dữ liệu."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p2",
+          "number": 2,
+          "domainId": "D3",
+          "title": {
+            "en": "Finding data SMEs",
+            "vi": "Tìm chuyên gia nghiệp vụ về dữ liệu (data SME)"
+          },
+          "body": {
+            "en": "Data rarely explains itself. The project leader identifies four kinds of subject matter experts early: domain experts who know which sources matter, business users who know what fields and codes actually mean, data stewards and governance teams who decide how data may be used, and technical experts who know the systems and structures. Match the question to the right expert: the meaning of a status code goes to the people who create and use it, permission to reuse data goes to the steward, and how a legacy table is built goes to the system owner. Then set up working channels: named contacts, agreed time commitments approved by their managers, a regular cadence, and a place where answers are recorded, such as a data dictionary. When experts disagree on a definition, bring them together with the steward and document one agreed meaning. Capture knowledge before a key expert leaves.",
+            "vi": "Dữ liệu hiếm khi tự giải thích được. Người lãnh đạo dự án cần sớm xác định bốn nhóm chuyên gia nghiệp vụ (SME): chuyên gia lĩnh vực biết nguồn nào quan trọng, người dùng nghiệp vụ biết các trường và mã thực sự có nghĩa gì, data steward và nhóm quản trị dữ liệu quyết định dữ liệu được dùng ra sao, và chuyên gia kỹ thuật hiểu hệ thống và cấu trúc. Hãy hỏi đúng người: ý nghĩa của một mã trạng thái thì hỏi những người tạo ra và sử dụng nó, quyền dùng lại dữ liệu thì hỏi steward, còn cấu trúc một bảng trong hệ thống cũ thì hỏi chủ sở hữu hệ thống. Sau đó thiết lập kênh làm việc: người liên hệ cụ thể, cam kết thời gian được quản lý của họ phê duyệt, nhịp họp đều đặn và một nơi ghi lại câu trả lời, ví dụ data dictionary. Khi các chuyên gia bất đồng về một định nghĩa, hãy mời họ cùng steward ngồi lại và ghi nhận một định nghĩa thống nhất. Thu thập kiến thức trước khi một chuyên gia chủ chốt rời đi."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p3",
+          "number": 3,
+          "domainId": "D3",
+          "title": {
+            "en": "Data sources and locations",
+            "vi": "Nguồn dữ liệu và vị trí lưu trữ"
+          },
+          "body": {
+            "en": "Before buying or building new data, map what the organization already holds: operational databases, data warehouses and lakes, cloud buckets owned by different departments, legacy systems and archives, and the spreadsheets that business users keep on the side. Then look outward at third-party providers and public datasets. Record each candidate source in an inventory with its location, owner, access permissions, format, history covered, refresh rate and the keys needed to join it to other sources. External data needs extra diligence: licensing terms, provenance, quality, coverage of your population and the provider's ability to keep supplying it. Legacy archives may hold the history the model needs, but the effort to read and convert them must be estimated, not assumed. A source with no known owner is not ready to use until someone accountable is found. The exam favours inventory and ownership first, purchase later.",
+            "vi": "Trước khi mua hay tạo dữ liệu mới, hãy lập bản đồ những gì tổ chức đang có: cơ sở dữ liệu vận hành, data warehouse và data lake, các bucket trên cloud thuộc nhiều phòng ban, hệ thống cũ (legacy) và kho lưu trữ, cùng các bảng tính mà người dùng nghiệp vụ tự duy trì. Sau đó mới nhìn ra ngoài, tới nhà cung cấp bên thứ ba và các bộ dữ liệu công khai. Ghi mỗi nguồn ứng viên vào một bản kiểm kê (inventory) với vị trí, chủ sở hữu, quyền truy cập, định dạng, khoảng lịch sử có sẵn, tần suất cập nhật và các khóa cần để nối với nguồn khác. Dữ liệu bên ngoài cần thẩm định kỹ hơn: điều khoản cấp phép, nguồn gốc, chất lượng, mức độ bao phủ tập đối tượng của bạn và khả năng nhà cung cấp tiếp tục cung cấp. Kho lưu trữ cũ có thể chứa lịch sử mà mô hình cần, nhưng công sức đọc và chuyển đổi phải được ước lượng, không được mặc định. Một nguồn chưa rõ chủ sở hữu thì chưa sẵn sàng sử dụng cho đến khi tìm được người chịu trách nhiệm. Đề thi ưu tiên kiểm kê và xác định chủ sở hữu trước, mua sau."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p4",
+          "number": 4,
+          "domainId": "D3",
+          "title": {
+            "en": "AI workspace and infrastructure",
+            "vi": "Môi trường làm việc và hạ tầng cho AI"
+          },
+          "body": {
+            "en": "The AI team needs a workspace before it can explore data: compute for processing and training, a secure development environment, storage with backup, collaboration tools, and version control for code, data and models. The project leader coordinates this with IT, security and governance early, because hardware and approvals have lead times that can stall the project. Good practice: keep sensitive data inside a governed environment rather than on laptops; give each person least-privilege access; keep an untouched copy of raw data so cleaning can be repeated; track experiments so results can be reproduced; and size infrastructure to the phase, using elastic cloud capacity while needs are still uncertain. Security and compliance requirements are designed in from the start, not reviewed after the environment is already in use. A typical wrong answer lets the team start work in an unapproved or ad hoc environment to save time.",
+            "vi": "Nhóm AI cần một môi trường làm việc trước khi có thể khám phá dữ liệu: tài nguyên tính toán cho xử lý và huấn luyện, môi trường phát triển an toàn, lưu trữ có sao lưu, công cụ cộng tác và quản lý phiên bản (version control) cho mã nguồn, dữ liệu và mô hình. Người lãnh đạo dự án phối hợp việc này với IT, bảo mật và quản trị từ sớm, vì phần cứng và các phê duyệt đều có thời gian chờ có thể làm dự án đình trệ. Thực hành tốt: giữ dữ liệu nhạy cảm trong một môi trường có quản trị thay vì trên laptop; cấp cho mỗi người quyền tối thiểu cần thiết (least privilege); giữ một bản sao dữ liệu thô không bị chỉnh sửa để có thể làm sạch lại; theo dõi thí nghiệm (experiment tracking) để tái lập được kết quả; và định cỡ hạ tầng theo giai đoạn, dùng năng lực cloud co giãn khi nhu cầu còn chưa chắc chắn. Yêu cầu bảo mật và tuân thủ được thiết kế ngay từ đầu, không phải rà soát sau khi môi trường đã được dùng. Một đáp án sai điển hình là cho nhóm bắt đầu làm việc trong một môi trường chưa được phê duyệt hoặc dựng tạm để tiết kiệm thời gian."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p5",
+          "number": 5,
+          "domainId": "D3",
+          "title": {
+            "en": "Gathering the data",
+            "vi": "Thu thập dữ liệu"
+          },
+          "body": {
+            "en": "Gathering means extracting data from the identified sources, moving it into the AI environment, and setting up the feeds the solution will need later. Validate as you collect: reconcile record counts and totals against the source, check that key fields, time zones and encodings survived the transfer, and stop to fix extraction errors at their origin rather than patching them downstream. Coordinate large transfers with system owners so production systems are not disrupted. A one-off extract is rarely enough. A model that will be retrained or scored in production needs a repeatable pipeline and a refresh schedule that matches how quickly the underlying data changes. Log what was extracted, from where, with which query and when, so any dataset can be rebuilt. When a source cannot deliver as planned, the leader assesses the impact on scope and schedule and escalates; quietly substituting a weaker source is a trap.",
+            "vi": "Thu thập nghĩa là trích xuất dữ liệu từ các nguồn đã xác định, chuyển vào môi trường AI và thiết lập các luồng dữ liệu (feed) mà giải pháp sẽ cần sau này. Hãy kiểm tra ngay trong lúc thu thập: đối chiếu số bản ghi và các tổng số với nguồn, kiểm tra các trường khóa, múi giờ và bảng mã ký tự còn nguyên sau khi chuyển, và dừng lại để sửa lỗi trích xuất tại gốc thay vì vá ở các bước sau. Phối hợp các đợt chuyển dữ liệu lớn với chủ sở hữu hệ thống để không làm gián đoạn hệ thống production. Một lần trích xuất duy nhất hiếm khi đủ. Mô hình sẽ được huấn luyện lại hoặc chấm điểm trong production cần một pipeline lặp lại được và lịch làm mới phù hợp với tốc độ thay đổi của dữ liệu gốc. Ghi lại đã trích xuất gì, từ đâu, bằng truy vấn nào và khi nào, để có thể dựng lại bất kỳ bộ dữ liệu nào. Khi một nguồn không cung cấp được như kế hoạch, người lãnh đạo đánh giá tác động lên phạm vi và tiến độ rồi báo cáo lên trên; lặng lẽ thay bằng một nguồn kém hơn là một cái bẫy."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p6",
+          "number": 6,
+          "domainId": "D3",
+          "title": {
+            "en": "Data privacy, compliance and access",
+            "vi": "Quyền riêng tư, tuân thủ và quyền truy cập dữ liệu"
+          },
+          "body": {
+            "en": "Having data is not the same as being allowed to use it for AI. Before training, confirm usage rights: the consent or legal basis under which personal data was collected, and the licence terms of third-party or public data, which may forbid model training or commercial use. Check the data protection rules that apply, such as GDPR, CCPA or sector rules, and involve legal, privacy and the data steward rather than deciding alone. Run a privacy impact assessment when personal data is used in a new way. Apply access controls on the principle of least privilege, and minimise or de-identify data the model does not need in identifiable form. Document data lineage, meaning where each dataset came from, how it was transformed and who used it, so the project can answer an audit. On the exam, the right answer pauses use of questionable data until rights are confirmed; \"use it now and fix it later\" is wrong.",
+            "vi": "Có dữ liệu không đồng nghĩa với được phép dùng nó cho AI. Trước khi huấn luyện, hãy xác nhận quyền sử dụng: sự đồng ý hoặc cơ sở pháp lý mà dữ liệu cá nhân đã được thu thập, và điều khoản cấp phép của dữ liệu bên thứ ba hoặc dữ liệu công khai, vốn có thể cấm huấn luyện mô hình hoặc sử dụng thương mại. Kiểm tra các quy định bảo vệ dữ liệu áp dụng, như GDPR, CCPA hay quy định theo ngành, và mời bộ phận pháp chế, quyền riêng tư và data steward tham gia thay vì tự quyết. Thực hiện đánh giá tác động quyền riêng tư (privacy impact assessment) khi dữ liệu cá nhân được dùng theo cách mới. Áp dụng kiểm soát truy cập theo nguyên tắc quyền tối thiểu, và giảm thiểu hoặc khử định danh những dữ liệu mà mô hình không cần ở dạng định danh. Ghi lại data lineage, tức mỗi bộ dữ liệu đến từ đâu, được biến đổi thế nào và ai đã dùng, để dự án có thể trả lời khi kiểm toán. Trong đề thi, đáp án đúng là tạm dừng dùng dữ liệu còn nghi vấn cho đến khi xác nhận được quyền; \"cứ dùng trước, sửa sau\" là sai."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p7",
+          "number": 7,
+          "domainId": "D3",
+          "title": {
+            "en": "Overseeing data evaluation",
+            "vi": "Giám sát việc đánh giá dữ liệu"
+          },
+          "body": {
+            "en": "Once data is gathered, the team evaluates it before anyone builds a model. The project leader does not run every query but makes sure the evaluation covers the quality dimensions (accuracy, completeness, consistency, timeliness), the distributions of key fields and the target, gaps and potential biases such as under-represented groups, freshness and relevance to current conditions, and whether the schema and structure fit the modelling approach. Exploratory data analysis is the main tool: profiling, summary statistics, visual checks and comparison with what the SMEs expect. Findings are recorded against the acceptance criteria defined earlier, so the evaluation answers a question instead of producing a pile of charts. The common trap is skipping evaluation because the data \"came from the warehouse\" or because the schedule is tight. Problems found here are far cheaper to handle than problems found after training.",
+            "vi": "Khi dữ liệu đã được thu thập, nhóm phải đánh giá nó trước khi xây dựng mô hình. Người lãnh đạo dự án không tự chạy từng truy vấn nhưng phải bảo đảm việc đánh giá bao quát các chiều chất lượng (độ chính xác, độ đầy đủ, tính nhất quán, tính kịp thời), phân phối của các trường chính và biến mục tiêu, các khoảng trống và thiên lệch (bias) tiềm ẩn như nhóm bị đại diện thiếu, độ mới và mức độ phù hợp với điều kiện hiện tại, và liệu schema cùng cấu trúc có phù hợp với cách tiếp cận mô hình hóa hay không. Phân tích dữ liệu khám phá (EDA) là công cụ chính: lập hồ sơ dữ liệu (profiling), thống kê tóm tắt, kiểm tra trực quan và so sánh với kỳ vọng của SME. Các phát hiện được ghi nhận đối chiếu với tiêu chí chấp nhận đã xác định trước đó, để việc đánh giá trả lời một câu hỏi thay vì tạo ra một đống biểu đồ. Bẫy thường gặp là bỏ qua bước đánh giá vì dữ liệu \"lấy từ warehouse\" hoặc vì tiến độ gấp. Vấn đề phát hiện ở bước này rẻ hơn rất nhiều so với vấn đề phát hiện sau khi đã huấn luyện."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p8",
+          "number": 8,
+          "domainId": "D3",
+          "title": {
+            "en": "Does the data meet the need?",
+            "vi": "Dữ liệu có đáp ứng nhu cầu không?"
+          },
+          "body": {
+            "en": "Data understanding ends with a decision. This decision judges the raw data against the requirements; the check of the data after preparation, just before training, is a separate later gate. Compare what the team actually has with the requirements set at the start: is there enough data, with enough examples of each outcome, to train a robust model; does it represent the population and conditions the solution will face; and does it meet the quality and acceptance criteria? Where it falls short, define the gap and a remediation strategy: collect more, label more, buy or augment data, narrow the scope to what the data supports, or change the approach. Then make an explicit go/no-go call on data readiness, involving the sponsor when the answer changes scope, cost or schedule. CPMAI is iterative, so a no-go often means returning to business understanding or data collection rather than cancelling. The trap is moving into model development \"to see what happens\" when the data clearly cannot support the objective.",
+            "vi": "Giai đoạn hiểu dữ liệu kết thúc bằng một quyết định. Quyết định này đánh giá dữ liệu thô so với các yêu cầu; việc kiểm tra dữ liệu sau khi chuẩn bị, ngay trước khi huấn luyện, là một cửa kiểm soát riêng ở bước sau. So sánh dữ liệu nhóm thực sự có với các yêu cầu đặt ra từ đầu: có đủ dữ liệu, với đủ ví dụ cho mỗi kết quả, để huấn luyện một mô hình vững chắc không; dữ liệu có đại diện cho tập đối tượng và điều kiện mà giải pháp sẽ gặp không; và có đạt tiêu chuẩn chất lượng và tiêu chí chấp nhận không? Nếu còn thiếu, hãy xác định khoảng trống và chiến lược khắc phục: thu thêm, gán nhãn thêm, mua hoặc tăng cường (augment) dữ liệu, thu hẹp phạm vi về mức dữ liệu cho phép, hoặc đổi cách tiếp cận. Sau đó đưa ra quyết định go/no-go rõ ràng về mức sẵn sàng của dữ liệu, có sự tham gia của sponsor khi kết quả làm thay đổi phạm vi, chi phí hoặc tiến độ. CPMAI mang tính lặp, nên no-go thường có nghĩa là quay lại bước hiểu bài toán kinh doanh hoặc thu thập dữ liệu chứ không phải hủy dự án. Bẫy ở đây là chuyển sang phát triển mô hình \"để xem thế nào\" khi dữ liệu rõ ràng không thể đáp ứng mục tiêu."
+          },
+          "questionCount": 8,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p9",
+          "number": 9,
+          "domainId": "D3",
+          "title": {
+            "en": "Conveying data understanding to leadership",
+            "vi": "Truyền đạt hiểu biết về dữ liệu tới lãnh đạo"
+          },
+          "body": {
+            "en": "Leaders decide on funding, scope and risk, so they need the data story in business terms. Prepare a short executive summary: what data the project needs, what it has, how good it is, what the gaps mean for the objective, and what you recommend, with options, costs and risks. Use simple visuals, such as a readiness scorecard or coverage chart, rather than raw statistics. Translate technical findings into consequences: \"30% of claims lack a diagnosis code\" becomes \"the model could not score about a third of claims without more data work, which adds six weeks.\" Present bad news early and with a recommendation, not buried in an appendix. Keep a regular cadence of updates on data preparation progress and challenges, so the go/no-go decision does not surprise anyone. Wrong answers on the exam tend to send leadership detailed technical reports, or delay reporting until the problem is solved.",
+            "vi": "Lãnh đạo quyết định về ngân sách, phạm vi và rủi ro, nên họ cần câu chuyện dữ liệu bằng ngôn ngữ kinh doanh. Hãy chuẩn bị một bản tóm tắt điều hành ngắn: dự án cần dữ liệu gì, đang có gì, chất lượng ra sao, các khoảng trống ảnh hưởng gì tới mục tiêu, và bạn đề xuất gì, kèm các phương án, chi phí và rủi ro. Dùng hình ảnh đơn giản, như bảng điểm mức sẵn sàng (readiness scorecard) hoặc biểu đồ độ bao phủ, thay vì số liệu thống kê thô. Chuyển các phát hiện kỹ thuật thành hệ quả: \"30% hồ sơ bồi thường thiếu mã chẩn đoán\" trở thành \"mô hình sẽ không chấm được khoảng một phần ba số hồ sơ nếu không xử lý thêm dữ liệu, việc này làm tăng sáu tuần\". Báo tin xấu sớm và kèm đề xuất, không giấu trong phụ lục. Duy trì nhịp cập nhật đều đặn về tiến độ và khó khăn trong chuẩn bị dữ liệu, để quyết định go/no-go không gây bất ngờ cho ai. Các đáp án sai trong đề thường là gửi cho lãnh đạo báo cáo kỹ thuật chi tiết, hoặc trì hoãn báo cáo cho tới khi vấn đề được giải quyết."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D4",
+      "code": "Domain 4",
+      "weight": 16,
+      "name": {
+        "en": "Manage AI Model Development and Evaluation",
+        "vi": "Manage AI Model Development and Evaluation"
+      },
+      "description": {
+        "en": "Overseeing CPMAI Phases III to V: preparing the data, choosing and training the model with data scientists, keeping QA and configuration under control, and making the two go/no-go calls, on data readiness before training and on model readiness before operationalization.",
+        "vi": "Giám sát các Phase III đến V của CPMAI: chuẩn bị dữ liệu, cùng data scientist chọn và huấn luyện mô hình, kiểm soát QA và quản lý cấu hình, và đưa ra hai quyết định go/no-go: dữ liệu đã sẵn sàng để huấn luyện chưa, và mô hình đã sẵn sàng để đưa vào vận hành chưa."
+      },
+      "principles": [
+        {
+          "id": "d4-p1",
+          "number": 1,
+          "domainId": "D4",
+          "title": {
+            "en": "Choosing the modelling technique",
+            "vi": "Chọn kỹ thuật mô hình hóa"
+          },
+          "body": {
+            "en": "The AI project leader does not pick the algorithm, but guides the choice with data scientists and makes sure it fits the problem, the data and the constraints. Match the approach to the data: supervised learning needs labelled examples of the outcome (classification for categories, regression for numbers); unsupervised learning finds structure such as clusters or anomalies in unlabelled data; reinforcement learning learns by trial and reward in an environment. Weigh complexity against performance and interpretability. A more complex model is justified only when it beats a simpler baseline by enough to matter and still meets explainability, latency and cost constraints. In regulated decisions, interpretability can outweigh a small accuracy gain. Record the selection criteria and the rationale for audit and transparency. Trap: choosing the most advanced technique because it is new, or treating the choice as purely a data science matter that ignores business constraints.",
+            "vi": "Người lãnh đạo dự án AI không tự chọn thuật toán, nhưng định hướng lựa chọn cùng data scientist và bảo đảm nó phù hợp với bài toán, dữ liệu và các ràng buộc. Chọn cách tiếp cận theo dữ liệu: supervised learning (học có giám sát) cần ví dụ đã gán nhãn kết quả (classification cho nhóm, regression cho giá trị số); unsupervised learning (học không giám sát) tìm cấu trúc như cụm (cluster) hay bất thường trong dữ liệu không nhãn; reinforcement learning (học tăng cường) học qua thử và nhận phần thưởng trong một môi trường. Cân nhắc độ phức tạp so với hiệu năng và khả năng diễn giải. Mô hình phức tạp hơn chỉ đáng dùng khi vượt một baseline đơn giản đủ nhiều để có ý nghĩa và vẫn đáp ứng yêu cầu về giải thích, độ trễ và chi phí. Với quyết định chịu quản lý, khả năng diễn giải có thể quan trọng hơn một chút độ chính xác. Ghi lại tiêu chí lựa chọn và lý do để phục vụ kiểm toán và minh bạch. Bẫy: chọn kỹ thuật tiên tiến nhất vì nó mới, hoặc coi đây thuần túy là việc của data science mà bỏ qua ràng buộc kinh doanh."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p2",
+          "number": 2,
+          "domainId": "D4",
+          "title": {
+            "en": "Model QA/QC and configuration management",
+            "vi": "QA/QC mô hình và quản lý cấu hình"
+          },
+          "body": {
+            "en": "Quality is planned, not inspected at the end. Set testing protocols early: a held-out test set that is never used for tuning, agreed metrics, and tests on important segments and edge cases, not just one overall number. Pick metrics that reflect the business cost of errors. On imbalanced data, accuracy misleads; look at precision (how many flagged cases are real) and recall (how many real cases are caught), and decide which error costs more. Configuration management versions everything that produces a model: code, data snapshot, features, hyperparameters and the trained artefact, so any result can be reproduced and any deployed version traced. Use peer reviews and technical validation of model designs, and hold notebooks and pipelines to coding standards before engineering inherits them. Trap: celebrating a high headline accuracy without asking how it was measured or whether it can be reproduced.",
+            "vi": "Chất lượng được lên kế hoạch, không phải kiểm tra ở cuối. Đặt quy trình kiểm thử từ sớm: một test set tách riêng không bao giờ dùng để tinh chỉnh, các chỉ số đã thống nhất, và kiểm thử trên các phân khúc quan trọng và trường hợp biên, không chỉ một con số tổng. Chọn chỉ số phản ánh chi phí kinh doanh của lỗi. Với dữ liệu mất cân bằng, accuracy gây hiểu nhầm; hãy xem precision (bao nhiêu ca bị gắn cờ là thật) và recall (bao nhiêu ca thật được phát hiện), và quyết định loại lỗi nào tốn kém hơn. Quản lý cấu hình (configuration management) đánh phiên bản mọi thứ tạo ra mô hình: code, snapshot dữ liệu, feature, hyperparameter và mô hình đã huấn luyện, để có thể tái lập mọi kết quả và truy vết mọi phiên bản đã triển khai. Dùng peer review và thẩm định kỹ thuật cho thiết kế mô hình, và yêu cầu notebook và pipeline tuân theo chuẩn code trước khi bàn giao cho đội kỹ thuật. Bẫy: ăn mừng con số accuracy cao mà không hỏi nó được đo thế nào hay có tái lập được không."
+          },
+          "questionCount": 9,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p3",
+          "number": 3,
+          "domainId": "D4",
+          "title": {
+            "en": "Managing model training",
+            "vi": "Quản lý việc huấn luyện mô hình"
+          },
+          "body": {
+            "en": "Training is a managed activity with a schedule, a compute budget and tracked experiments. Watch the gap between training and validation results. High training but much lower validation performance means overfitting: the model memorised the training data and will not generalise. Poor results on both means underfitting: the model or features are too weak, which often sends the team back to data preparation. Cross-validation (for example k-fold) rotates which part of the data is held out, giving a more reliable estimate than one split, which matters most with small datasets. Hyperparameters are settings chosen before training (such as tree depth or learning rate); tuning them should run within an agreed budget and stopping rule. Experiment tracking records each run with its data version, parameters and metrics so the team can pick and defend the best model. Trap: running more and more experiments without a budget, or selecting a model on its training score.",
+            "vi": "Huấn luyện là một hoạt động được quản lý, có lịch, ngân sách tính toán và theo dõi thí nghiệm. Theo dõi khoảng cách giữa kết quả huấn luyện và kiểm định (validation). Kết quả huấn luyện cao nhưng validation thấp hơn nhiều nghĩa là overfitting (quá khớp): mô hình đã học thuộc dữ liệu huấn luyện và sẽ không tổng quát hóa. Kết quả kém ở cả hai nghĩa là underfitting (chưa khớp): mô hình hoặc feature quá yếu, thường buộc đội quay lại bước chuẩn bị dữ liệu. Cross-validation (ví dụ k-fold) luân phiên phần dữ liệu được giữ lại, cho ước lượng đáng tin hơn một lần chia duy nhất, đặc biệt quan trọng khi dữ liệu nhỏ. Hyperparameter là các thiết lập chọn trước khi huấn luyện (như độ sâu cây hay learning rate); việc tinh chỉnh chúng phải chạy trong ngân sách và quy tắc dừng đã thống nhất. Experiment tracking ghi lại từng lần chạy cùng phiên bản dữ liệu, tham số và chỉ số để đội chọn và bảo vệ được mô hình tốt nhất. Bẫy: chạy ngày càng nhiều thí nghiệm mà không có ngân sách, hoặc chọn mô hình theo điểm huấn luyện."
+          },
+          "questionCount": 7,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p4",
+          "number": 4,
+          "domainId": "D4",
+          "title": {
+            "en": "Data transformation and preparation",
+            "vi": "Biến đổi và chuẩn bị dữ liệu"
+          },
+          "body": {
+            "en": "Data preparation (CPMAI Phase III) usually takes most of the project effort, so the leader manages it as a workflow, not a one-off task. It covers cleaning (duplicates, errors, missing values), feature engineering and selection (often with domain SMEs, who know which signals matter), normalisation or standardisation so features on different scales do not distort the model, and augmentation or synthetic data where real examples are scarce. Guard against data leakage: a feature that would not be known at prediction time, or test data influencing the transformation, makes results look better than reality. Every transformation must be scripted, versioned and documented so it can be rerun identically on new data, including in production. Synthetic or augmented data supplements training; keep it out of the test set so evaluation reflects real data. Trap: manual, undocumented fixes in spreadsheets, or dropping problem rows without checking whom that removes.",
+            "vi": "Chuẩn bị dữ liệu (CPMAI Phase III) thường chiếm phần lớn công sức dự án, nên người lãnh đạo quản lý nó như một quy trình, không phải việc làm một lần. Nó gồm làm sạch (trùng lặp, lỗi, giá trị thiếu), feature engineering và chọn feature (thường cùng SME nghiệp vụ, những người biết tín hiệu nào quan trọng), normalization hay standardization để các feature khác thang đo không làm lệch mô hình, và augmentation hay dữ liệu tổng hợp (synthetic data) khi ví dụ thật khan hiếm. Đề phòng data leakage (rò rỉ dữ liệu): một feature mà lúc dự đoán chưa thể biết, hoặc dữ liệu test ảnh hưởng tới phép biến đổi, khiến kết quả trông tốt hơn thực tế. Mọi phép biến đổi phải được viết thành script, đánh phiên bản và ghi tài liệu để chạy lại y hệt trên dữ liệu mới, kể cả trong production. Dữ liệu tổng hợp hay augmentation bổ sung cho huấn luyện; giữ chúng ngoài test set để đánh giá phản ánh dữ liệu thật. Bẫy: sửa tay không ghi chép trong spreadsheet, hoặc xóa các dòng có vấn đề mà không kiểm tra điều đó loại bỏ những ai."
+          },
+          "questionCount": 9,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p5",
+          "number": 5,
+          "domainId": "D4",
+          "title": {
+            "en": "Data quality go/no-go before model training",
+            "vi": "Go/no-go về chất lượng dữ liệu trước khi huấn luyện"
+          },
+          "body": {
+            "en": "This gate comes after data preparation and before model training. Whether the raw data meets the requirements was judged earlier, at the end of Data Understanding; this gate asks whether preparation worked as intended and whether the prepared data is still complete, representative and unbiased. Preparation can create new defects: imputation that flattens a group, relabelling that leaves old and new labels inconsistent, a cleaning rule that drops a segment, augmentation artefacts, or a train/test split done wrong. The assessment compares the prepared data with the raw data and the acceptance criteria. The outcome is go, conditional go with documented limitations, or no-go with a remediation path. CPMAI is iterative: a no-go sends the team back to Data Understanding or Data Preparation, which is cheaper than discovering the problem after training. Document the findings, decision and recommendations so the decision is traceable. Schedule pressure does not change the criteria; if a sponsor wants to proceed anyway, present the evidence and the risk and record the decision. Trap: starting training to \"see what happens\" with known data defects.",
+            "vi": "Cổng này nằm sau bước chuẩn bị dữ liệu và trước khi huấn luyện mô hình. Việc dữ liệu thô có đáp ứng yêu cầu hay không đã được đánh giá trước đó, ở cuối Data Understanding; cổng này hỏi việc chuẩn bị có cho kết quả đúng như dự định không và dữ liệu đã chuẩn bị có còn đầy đủ, đại diện và không thiên lệch hay không. Bước chuẩn bị có thể tạo ra lỗi mới: imputation làm mờ khác biệt của một nhóm, việc gán nhãn lại khiến nhãn cũ và mới không nhất quán, một quy tắc làm sạch loại mất một phân khúc, lỗi giả tạo (artefact) từ augmentation, hoặc chia train/test sai cách. Việc đánh giá so sánh dữ liệu đã chuẩn bị với dữ liệu thô và tiêu chí chấp nhận. Kết quả là go, go có điều kiện kèm giới hạn được ghi lại, hoặc no-go kèm hướng khắc phục. CPMAI mang tính lặp: no-go đưa đội quay lại Data Understanding hoặc Data Preparation, rẻ hơn nhiều so với phát hiện vấn đề sau khi huấn luyện. Ghi lại phát hiện, quyết định và khuyến nghị để quyết định truy vết được. Áp lực tiến độ không thay đổi tiêu chí; nếu sponsor vẫn muốn tiến hành, hãy trình bày bằng chứng và rủi ro và ghi lại quyết định. Bẫy: bắt đầu huấn luyện để \"xem thử sao\" khi đã biết dữ liệu có lỗi."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p6",
+          "number": 6,
+          "domainId": "D4",
+          "title": {
+            "en": "Model go/no-go for operationalization",
+            "vi": "Go/no-go mô hình trước khi vận hành"
+          },
+          "body": {
+            "en": "Model Evaluation (CPMAI Phase V) ends in a go/no-go decision on whether the model may move to operationalization. Judge the model against the success criteria set in Business Understanding, both the model metrics and the business KPIs, not against whatever score it happened to reach. Check robustness and generalisation on data it has not seen, such as a recent time period, other regions or noisy inputs, because test-set performance from the same period can overstate real-world results. Review deployment readiness: latency, throughput, infrastructure and integration requirements, plus documentation, a monitoring plan for drift and an operational runbook. Approval comes from the stakeholders and governance roles agreed for the gate, based on documented evidence. If the model falls short, iterate back to an earlier phase rather than lowering the bar quietly. Trap: approving because the technical metric looks good while the business criterion or the production constraint is not met.",
+            "vi": "Model Evaluation (CPMAI Phase V) kết thúc bằng quyết định go/no-go về việc mô hình có được chuyển sang vận hành hay không. Đánh giá mô hình theo tiêu chí thành công đặt ra từ Business Understanding, cả chỉ số mô hình lẫn KPI kinh doanh, chứ không theo bất kỳ điểm số nào nó tình cờ đạt được. Kiểm tra độ bền vững (robustness) và khả năng tổng quát hóa trên dữ liệu chưa thấy, như giai đoạn gần đây, vùng khác hay đầu vào nhiễu, vì hiệu năng trên test set cùng giai đoạn có thể phóng đại kết quả thực tế. Xem xét mức sẵn sàng triển khai: độ trễ, thông lượng, yêu cầu hạ tầng và tích hợp, cùng tài liệu, kế hoạch giám sát drift và runbook vận hành. Phê duyệt đến từ các bên liên quan và vai trò quản trị đã thống nhất cho cổng này, dựa trên bằng chứng được ghi lại. Nếu mô hình chưa đạt, quay lại một phase trước thay vì lặng lẽ hạ tiêu chuẩn. Bẫy: phê duyệt vì chỉ số kỹ thuật trông tốt trong khi tiêu chí kinh doanh hoặc ràng buộc production chưa được đáp ứng."
+          },
+          "questionCount": 8,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D5",
+      "code": "Domain 5",
+      "weight": 17,
+      "name": {
+        "en": "Operationalize AI Solution",
+        "vi": "Operationalize AI Solution"
+      },
+      "description": {
+        "en": "Turning an approved model into a running, governed service: planning and managing the deployment, governing models and drift, tracking business and technical metrics, closing the project with lessons learned, handing over to operations and planning for AI failures.",
+        "vi": "Biến một mô hình đã được phê duyệt thành một dịch vụ đang chạy và được quản trị: lập kế hoạch và quản lý triển khai, quản trị mô hình và drift, theo dõi chỉ số kinh doanh và kỹ thuật, đóng dự án cùng bài học kinh nghiệm, bàn giao cho bộ phận vận hành và lập kế hoạch ứng phó khi AI gặp sự cố."
+      },
+      "principles": [
+        {
+          "id": "d5-p1",
+          "number": 1,
+          "domainId": "D5",
+          "title": {
+            "en": "Building the AI deployment plan",
+            "vi": "Xây dựng kế hoạch triển khai AI"
+          },
+          "body": {
+            "en": "The deployment plan turns an approved model into a controlled release. It sets the deployment strategy and timeline (big bang, phased, shadow, canary, blue-green), sizes infrastructure from the production load rather than the training setup, and agrees integration work with IT early, inside their change process. It must also contain a rollback procedure with clear triggers and an owner, and a checklist with measurable validation criteria agreed before go-live. The exam trap is a plan that stops at the technical steps: if a stem asks what is missing, look for rollback, validation criteria or IT coordination. For risky models, prefer a strategy that limits exposure first (shadow or canary) over a single cutover, and fit the timeline around business peaks and integration readiness.",
+            "vi": "Kế hoạch triển khai biến một mô hình đã được duyệt thành một đợt phát hành có kiểm soát. Kế hoạch xác định chiến lược và lịch triển khai (big bang, theo giai đoạn, shadow, canary, blue-green), tính toán hạ tầng dựa trên tải thực tế khi vận hành chứ không dựa trên môi trường huấn luyện, và thống nhất sớm phần tích hợp với IT, theo đúng quy trình quản lý thay đổi của họ. Kế hoạch cũng phải có quy trình rollback (quay lui) với điều kiện kích hoạt rõ ràng và người chịu trách nhiệm, cùng một checklist với tiêu chí xác nhận đo lường được, thống nhất trước khi go-live. Bẫy thường gặp trong đề là một kế hoạch chỉ dừng ở các bước kỹ thuật: nếu đề hỏi kế hoạch còn thiếu gì, hãy tìm rollback, tiêu chí xác nhận hoặc phối hợp với IT. Với mô hình rủi ro cao, ưu tiên chiến lược hạn chế phạm vi ảnh hưởng trước (shadow hoặc canary) thay vì chuyển đổi một lần, và sắp xếp lịch tránh mùa cao điểm kinh doanh và theo mức sẵn sàng tích hợp."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p2",
+          "number": 2,
+          "domainId": "D5",
+          "title": {
+            "en": "Running the deployment",
+            "vi": "Điều hành quá trình triển khai"
+          },
+          "body": {
+            "en": "Managing the deployment means running the plan, not improvising. Coordinate the technical teams through one integrated runbook with owners and checkpoints, track progress, and resolve issues through the normal issue and change process. Validate functionality and performance in the production environment with real inputs, because staging success does not prove production success (training-serving skew is a classic cause). Provision access by role and least privilege, and never trade security controls for schedule. When a pre-agreed rollback trigger fires, execute the rollback, then investigate. Finish with post-deployment verification against the validation criteria before declaring the deployment complete. Exam trap: answers that let someone bypass security, ignore the trigger, or declare success because the service is merely 'up'.",
+            "vi": "Quản lý triển khai nghĩa là thực hiện theo kế hoạch, không ứng biến. Điều phối các nhóm kỹ thuật bằng một runbook tích hợp duy nhất có người phụ trách và các điểm kiểm tra, theo dõi tiến độ và xử lý vấn đề qua quy trình quản lý vấn đề và thay đổi thông thường. Xác nhận chức năng và hiệu năng ngay trong môi trường production với dữ liệu thật, vì chạy tốt ở staging không chứng minh chạy tốt ở production (training-serving skew, tức sai lệch giữa dữ liệu lúc huấn luyện và lúc phục vụ, là nguyên nhân kinh điển). Cấp quyền truy cập theo vai trò và nguyên tắc đặc quyền tối thiểu, và không bao giờ đánh đổi kiểm soát bảo mật lấy tiến độ. Khi một điều kiện rollback đã thống nhất trước bị kích hoạt, hãy thực hiện rollback rồi mới điều tra. Kết thúc bằng bước xác minh sau triển khai theo tiêu chí xác nhận trước khi tuyên bố hoàn tất. Bẫy trong đề: các phương án cho phép bỏ qua bảo mật, phớt lờ điều kiện rollback, hoặc tuyên bố thành công chỉ vì dịch vụ đang 'chạy'."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p3",
+          "number": 3,
+          "domainId": "D5",
+          "title": {
+            "en": "Model governance and drift",
+            "vi": "Quản trị mô hình và drift"
+          },
+          "body": {
+            "en": "AI models degrade after deployment because the world changes. Model governance keeps them under control: lifecycle procedures (register, validate, approve, deploy, monitor, retire) with named owners; versioning and change control so every model, dataset and configuration change is traceable and reversible; monitoring for data drift (input distributions change) and concept drift (the relationship between inputs and outcomes changes); retraining schedules set by how fast the data changes, plus triggers from monitoring; and compliance with internal policies such as model risk management. Exam traps: pushing a retrained model straight to production because it scores better, assuming stable inputs mean a healthy model, and treating retraining as a one-off fix rather than a governed, repeatable process.",
+            "vi": "Mô hình AI suy giảm sau khi triển khai vì thế giới thay đổi. Quản trị mô hình giữ chúng trong tầm kiểm soát: quy trình vòng đời (đăng ký, xác nhận, phê duyệt, triển khai, giám sát, ngừng sử dụng) với người phụ trách cụ thể; quản lý phiên bản và kiểm soát thay đổi để mọi thay đổi về mô hình, dữ liệu và cấu hình đều truy vết được và đảo ngược được; giám sát data drift (phân phối dữ liệu đầu vào thay đổi) và concept drift (mối quan hệ giữa đầu vào và kết quả thay đổi); lịch huấn luyện lại dựa trên tốc độ thay đổi của dữ liệu, cộng thêm các điều kiện kích hoạt từ giám sát; và tuân thủ các chính sách nội bộ như quản lý rủi ro mô hình. Bẫy trong đề: đẩy thẳng mô hình huấn luyện lại lên production vì điểm cao hơn, cho rằng đầu vào ổn định nghĩa là mô hình khỏe, và coi việc huấn luyện lại là sửa chữa một lần thay vì một quy trình có quản trị và lặp lại được."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p4",
+          "number": 4,
+          "domainId": "D5",
+          "title": {
+            "en": "Monitoring AI solution metrics",
+            "vi": "Giám sát chỉ số của giải pháp AI"
+          },
+          "body": {
+            "en": "Once live, the solution is judged on business results, not only model accuracy. Build dashboards that pair technical metrics (accuracy, latency, drift) with the business KPIs and success criteria agreed at the start. Analyse trends, not just thresholds, so gradual degradation is raised before it breaches a limit. Set alerts with thresholds tied to success criteria and route them to named owners, avoiding alert fatigue. Report regularly to stakeholders in business language. When ground truth arrives late (for example, loan defaults), watch leading indicators such as input drift and prediction distributions. Exam trap: a healthy model metric with a flat business KPI usually points to adoption or process problems (users overriding or ignoring outputs), not to the model.",
+            "vi": "Khi đã chạy thật, giải pháp được đánh giá bằng kết quả kinh doanh, không chỉ bằng độ chính xác của mô hình. Xây dựng dashboard ghép chỉ số kỹ thuật (độ chính xác, độ trễ, drift) với KPI kinh doanh và tiêu chí thành công đã thống nhất từ đầu. Phân tích xu hướng chứ không chỉ ngưỡng, để sự suy giảm từ từ được nêu ra trước khi vượt giới hạn. Đặt cảnh báo với ngưỡng gắn với tiêu chí thành công và chuyển đến người phụ trách cụ thể, tránh tình trạng 'nhờn' cảnh báo (alert fatigue). Báo cáo định kỳ cho các bên liên quan bằng ngôn ngữ kinh doanh. Khi ground truth (kết quả thực tế) đến muộn, ví dụ nợ xấu của khoản vay, hãy theo dõi các chỉ báo sớm như drift đầu vào và phân phối dự đoán. Bẫy trong đề: chỉ số mô hình tốt nhưng KPI kinh doanh không nhúc nhích thường chỉ ra vấn đề về mức độ chấp nhận hoặc quy trình (người dùng ghi đè hoặc bỏ qua kết quả), chứ không phải do mô hình."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p5",
+          "number": 5,
+          "domainId": "D5",
+          "title": {
+            "en": "Final report and lessons learned",
+            "vi": "Báo cáo tổng kết và bài học kinh nghiệm"
+          },
+          "body": {
+            "en": "Closing the project means proving and recording what it achieved. The final report compares outcomes against the objectives and success criteria set at the start, including ROI, and reports shortfalls honestly with causes and recommendations. Lessons learned are captured even when the project succeeds: what worked, what did not, and how estimates compared with reality (data work usually takes far longer than planned). They go into the organisation's knowledge repository so future AI projects can use them. Knowledge transfer documentation (model documentation, data lineage, limitations, monitoring thresholds, runbooks) goes to the operational teams. Present results to leadership in terms of business value, remaining risks and next steps. Exam trap: closing with only technical metrics, or skipping lessons learned because the project went well.",
+            "vi": "Đóng dự án nghĩa là chứng minh và ghi lại những gì dự án đạt được. Báo cáo tổng kết so sánh kết quả với mục tiêu và tiêu chí thành công đặt ra từ đầu, bao gồm ROI, và trình bày trung thực những điểm chưa đạt cùng nguyên nhân và khuyến nghị. Bài học kinh nghiệm phải được ghi nhận ngay cả khi dự án thành công: điều gì hiệu quả, điều gì không, và ước tính so với thực tế ra sao (công việc dữ liệu thường tốn thời gian hơn kế hoạch rất nhiều). Chúng được đưa vào kho tri thức của tổ chức để các dự án AI sau sử dụng. Tài liệu chuyển giao tri thức (tài liệu mô hình, data lineage, giới hạn, ngưỡng giám sát, runbook) được giao cho các nhóm vận hành. Trình bày kết quả với lãnh đạo theo giá trị kinh doanh, rủi ro còn lại và bước tiếp theo. Bẫy trong đề: đóng dự án chỉ với chỉ số kỹ thuật, hoặc bỏ qua bài học kinh nghiệm vì dự án suôn sẻ."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p6",
+          "number": 6,
+          "domainId": "D5",
+          "title": {
+            "en": "Transition to operations",
+            "vi": "Chuyển giao sang vận hành"
+          },
+          "body": {
+            "en": "An AI solution needs owners after the project team leaves. Plan the transition early, not in the final week: agree acceptance criteria with the operations team, define roles and responsibilities for the operational phase (who monitors, who decides to retrain, who approves model changes, who owns the data pipelines), and establish maintenance and support procedures. Transfer knowledge actively through runbooks, training, shadowing and a hypercare period in which the project team supports operations until agreed exit criteria are met. Handover is complete only when operations formally accepts. Exam traps: handing over documents without training, leaving model ownership undefined, and assuming the IT service desk can support a model the way it supports ordinary software.",
+            "vi": "Giải pháp AI cần có người chịu trách nhiệm sau khi nhóm dự án rời đi. Lập kế hoạch chuyển giao từ sớm, không để đến tuần cuối: thống nhất tiêu chí nghiệm thu với nhóm vận hành, xác định vai trò và trách nhiệm cho giai đoạn vận hành (ai giám sát, ai quyết định huấn luyện lại, ai phê duyệt thay đổi mô hình, ai sở hữu data pipeline), và thiết lập quy trình bảo trì và hỗ trợ. Chuyển giao tri thức một cách chủ động qua runbook, đào tạo, làm kèm (shadowing) và một giai đoạn hypercare, trong đó nhóm dự án hỗ trợ vận hành cho đến khi đạt tiêu chí kết thúc đã thống nhất. Bàn giao chỉ hoàn tất khi bộ phận vận hành chính thức nghiệm thu. Bẫy trong đề: bàn giao tài liệu mà không đào tạo, để trống quyền sở hữu mô hình, và cho rằng service desk IT có thể hỗ trợ một mô hình giống như hỗ trợ phần mềm thông thường."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p7",
+          "number": 7,
+          "domainId": "D5",
+          "title": {
+            "en": "AI contingency plan",
+            "vi": "Kế hoạch dự phòng cho AI"
+          },
+          "body": {
+            "en": "AI systems fail in ways ordinary software does not: wrong or harmful outputs, silent degradation, broken data pipelines. The contingency plan covers incident response for these failures (detect, contain, often by switching to a fallback, then investigate); backup and disaster recovery for model artefacts, versions, features and pipelines as well as data; escalation procedures with severity levels and named contacts; and business continuity so the business process keeps running when the AI service is down (manual or rules-based fallback). Test the procedures regularly with drills or tabletop exercises; an untested plan is an assumption. Exam trap: answers that fix the model while harm continues. Contain first, then diagnose.",
+            "vi": "Hệ thống AI hỏng theo những cách phần mềm thông thường không gặp: kết quả sai hoặc gây hại, suy giảm âm thầm, data pipeline bị đứt. Kế hoạch dự phòng bao gồm ứng phó sự cố cho các lỗi này (phát hiện, khoanh vùng, thường bằng cách chuyển sang phương án thay thế, rồi điều tra); sao lưu và khôi phục thảm họa cho artefact mô hình, các phiên bản, feature và pipeline chứ không chỉ dữ liệu; quy trình leo thang với mức độ nghiêm trọng và đầu mối liên hệ cụ thể; và kế hoạch duy trì kinh doanh liên tục để quy trình nghiệp vụ vẫn chạy khi dịch vụ AI ngừng hoạt động (phương án thủ công hoặc dựa trên quy tắc). Kiểm thử các quy trình định kỳ bằng diễn tập hoặc tabletop exercise (diễn tập trên giấy); một kế hoạch chưa kiểm thử chỉ là một giả định. Bẫy trong đề: các phương án sửa mô hình trong khi tác hại vẫn tiếp diễn. Khoanh vùng trước, chẩn đoán sau."
+          },
+          "questionCount": 5,
+          "personal_notes": ""
+        }
+      ]
+    }
+  ]
+}

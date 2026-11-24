@@ -1,0 +1,697 @@
+{
+  "slug": "ccar-p",
+  "certId": "ccap",
+  "scrapedAt": "2026-11-24T00:51:10.092Z",
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 18,
+      "name": {
+        "en": "Solution Design and Architecture",
+        "vi": "Solution Design and Architecture"
+      },
+      "description": {
+        "en": "Split the work between Claude, existing systems and humans, pick the simplest pattern the tightest constraint allows, and choose the surface and runtime the hard constraints leave open.",
+        "vi": "Phân chia công việc giữa Claude, các hệ thống hiện có và con người, chọn pattern đơn giản nhất mà ràng buộc chặt nhất cho phép, và chọn surface cùng runtime trong phạm vi các ràng buộc cứng còn để ngỏ."
+      },
+      "principles": [
+        {
+          "id": "d1-p1",
+          "number": 1,
+          "domainId": "D1",
+          "title": {
+            "en": "Task Delegation Between Claude and Humans",
+            "vi": "Phân công nhiệm vụ giữa Claude và con người"
+          },
+          "body": {
+            "en": "Split the process three ways. Claude takes the language work (reading, summarizing, drafting, classifying). Existing systems keep deterministic rules, systems of record and live lookups. Humans keep judgment calls, exceptions and approvals. Justify each assignment by reversibility, stakes and accountability: put a human gate before any irreversible or high-stakes action, and keep a rule that must be right every time in deterministic code, not in a prompt. Split mixed steps (Claude drafts, the system sends, a human approves above a threshold) rather than handing the whole step to Claude.",
+            "vi": "Chia quy trình làm ba phần. Claude đảm nhận phần việc ngôn ngữ (đọc, tóm tắt, soạn thảo, phân loại). Các hệ thống hiện có giữ các quy tắc tất định, hệ thống nguồn dữ liệu chính thức (system of record) và các truy vấn trạng thái thực tế. Con người giữ các quyết định cần phán đoán, các ngoại lệ và việc phê duyệt. Biện minh cho mỗi phân công dựa trên khả năng đảo ngược, mức độ hệ trọng và trách nhiệm giải trình: đặt một bước phê duyệt của con người trước mọi hành động không thể đảo ngược hoặc có rủi ro cao, và giữ quy tắc nào phải luôn đúng trong code tất định, không phải trong prompt. Tách các bước hỗn hợp (Claude soạn thảo, hệ thống gửi đi, con người phê duyệt khi vượt ngưỡng) thay vì giao toàn bộ bước đó cho Claude."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p2",
+          "number": 2,
+          "domainId": "D1",
+          "title": {
+            "en": "End-to-End Architecture Evaluation",
+            "vi": "Đánh giá kiến trúc end-to-end"
+          },
+          "body": {
+            "en": "Trace input, processing, output and feedback against each stated requirement, and name the one component that breaks first under the stated load or trust condition. Common first failures: retrieval answering live-state questions from a stale snapshot (fix: a tool call to the system of record), access control left to prompt text instead of enforced at the data boundary, and high-consequence logic running in a probabilistic component. Fix the failing component. Do not wrap it in monitoring or upgrade the model.",
+            "vi": "Lần theo input, xử lý, output và feedback so với từng yêu cầu đã nêu, và chỉ ra thành phần duy nhất sẽ hỏng đầu tiên dưới điều kiện tải hoặc điều kiện tin cậy đã nêu. Các lỗi đầu tiên thường gặp: retrieval trả lời câu hỏi về trạng thái thực tế từ một snapshot cũ (cách sửa: gọi tool tới system of record), kiểm soát truy cập bị phó mặc cho nội dung prompt thay vì được thực thi tại ranh giới dữ liệu, và logic có hậu quả lớn chạy trong một thành phần mang tính xác suất. Hãy sửa chính thành phần bị lỗi. Đừng bọc nó bằng monitoring hay nâng cấp model."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p3",
+          "number": 3,
+          "domainId": "D1",
+          "title": {
+            "en": "Architectural Pattern Selection",
+            "vi": "Lựa chọn pattern kiến trúc"
+          },
+          "body": {
+            "en": "Choose the simplest pattern that meets the tightest of the five factors (predictability, error cost, observability, latency, cost). Use an augmented LLM for one bounded, verifiable task. Use a workflow (chaining, routing, parallelization, evaluator-optimizer) when the steps can be listed in advance and error cost or auditability matters. Use an agent only when the path truly cannot be written in advance and errors are recoverable, and bound it with narrow tools, budgets and stopping criteria. Package a repeated, cross-team procedure that needs governance and rollback as a versioned Skill. Uncertainty about the task is not a reason to pick an agent.",
+            "vi": "Chọn pattern đơn giản nhất đáp ứng được yếu tố chặt nhất trong năm yếu tố (khả năng dự đoán, chi phí của lỗi, observability, latency, chi phí). Dùng augmented LLM cho một task có giới hạn rõ ràng và kiểm chứng được. Dùng workflow (chaining, routing, parallelization, evaluator-optimizer) khi các bước có thể liệt kê trước và chi phí của lỗi hoặc khả năng audit là quan trọng. Chỉ dùng agent khi thực sự không thể viết trước lộ trình và lỗi có thể khắc phục được, đồng thời giới hạn nó bằng các tool hẹp, ngân sách và tiêu chí dừng. Đóng gói một quy trình lặp lại, dùng chung giữa nhiều team, cần quản trị và rollback thành một Skill có version. Việc không chắc chắn về task không phải là lý do để chọn agent."
+          },
+          "questionCount": 6,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p4",
+          "number": 4,
+          "domainId": "D1",
+          "title": {
+            "en": "Orchestrator and Subagent Decomposition",
+            "vi": "Phân rã orchestrator và subagent"
+          },
+          "body": {
+            "en": "The orchestrator owns the goal, the delegation and the synthesis. Subagents own scoped units, each in its own context. Design for the asymmetry: a subagent failure is recoverable (validate each result, then retry, re-route or record the gap), but an orchestrator failure is often fatal (checkpoint its state so a run can resume). Require a coverage check at synthesis (results returned must equal units dispatched), an explicit rule for resolving conflicts or escalating them, a shared trace ID across all agents, and a human gate before irreversible actions.",
+            "vi": "Orchestrator nắm mục tiêu, việc ủy quyền và tổng hợp kết quả. Subagent đảm nhận các đơn vị công việc có phạm vi xác định, mỗi subagent trong context riêng. Hãy thiết kế theo sự bất đối xứng: lỗi ở subagent có thể khắc phục (kiểm tra từng kết quả, rồi retry, chuyển hướng hoặc ghi nhận phần thiếu), nhưng lỗi ở orchestrator thường là chí mạng (lưu checkpoint trạng thái của nó để một lần chạy có thể tiếp tục). Yêu cầu một bước kiểm tra độ bao phủ khi tổng hợp (số kết quả trả về phải bằng số đơn vị đã giao), một quy tắc rõ ràng để giải quyết hoặc escalate các xung đột, một trace ID dùng chung cho tất cả agent, và một bước phê duyệt của con người trước các hành động không thể đảo ngược."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p5",
+          "number": 5,
+          "domainId": "D1",
+          "title": {
+            "en": "Value-Based Architectural Decisions",
+            "vi": "Quyết định kiến trúc dựa trên giá trị"
+          },
+          "body": {
+            "en": "Choose the option that delivers the most measurable business outcome while staying under the stated cost or SLA ceiling. An option that breaches the ceiling is out, however attractive its features. Size the workload before building (call volume, token distribution, model tier, sensitivity), then weigh proposals against the stated value pillars (efficiency, transformation, productivity, solution cost, performance SLAs). Prefer eval-validated per-step tiering, caching, and batch processing where the SLA allows it. Reject both 'best model everywhere' and cuts to the scope that delivers the value.",
+            "vi": "Chọn phương án mang lại kết quả kinh doanh đo lường được lớn nhất trong khi vẫn nằm dưới mức trần chi phí hoặc SLA đã nêu. Phương án nào vượt trần đều bị loại, dù tính năng hấp dẫn đến đâu. Ước lượng quy mô workload trước khi xây dựng (số lượng call, phân bố token, model tier, mức độ nhạy cảm), rồi cân nhắc các đề xuất theo các trụ cột giá trị đã nêu (hiệu quả, chuyển đổi, năng suất, chi phí giải pháp, SLA hiệu năng). Ưu tiên phân tier theo từng bước đã được eval kiểm chứng, caching và batch processing khi SLA cho phép. Bác bỏ cả kiểu “dùng model tốt nhất ở mọi chỗ” lẫn việc cắt giảm phạm vi tạo ra giá trị."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p6",
+          "number": 6,
+          "domainId": "D1",
+          "title": {
+            "en": "Deployment Surface and Agent Runtime Selection",
+            "vi": "Lựa chọn deployment surface và agent runtime"
+          },
+          "body": {
+            "en": "Let hard constraints (data residency, compliance coverage such as a BAA, the approved cloud vendor, model availability) rule surfaces out before preference or cost is weighed, then name the trade-off the choice forces. Cloud marketplace surfaces (Bedrock, Vertex AI, Foundry) keep traffic in the customer's cloud but lag first-party features, and leave the agent loop, session state and sandbox with the customer. The Anthropic API gets features first and allows hosted runtimes such as Claude Managed Agents, but hosting and data custody then sit with Anthropic. Zero data retention addresses retention, not residency, and an answer that claims no trade-off is wrong.",
+            "vi": "Để các ràng buộc cứng (data residency – nơi lưu trữ dữ liệu, phạm vi tuân thủ như BAA, nhà cung cấp cloud được phê duyệt, khả năng có sẵn của model) loại trừ các surface trước khi cân nhắc sở thích hay chi phí, sau đó nêu rõ trade-off mà lựa chọn đó buộc phải chấp nhận. Các surface trên cloud marketplace (Bedrock, Vertex AI, Foundry) giữ lưu lượng trong cloud của khách hàng nhưng có tính năng chậm hơn bản first-party, và để agent loop, session state và sandbox cho khách hàng tự lo. Anthropic API có tính năng sớm nhất và cho phép dùng các runtime được host sẵn như Claude Managed Agents, nhưng khi đó việc hosting và lưu giữ dữ liệu thuộc về Anthropic. Zero data retention giải quyết vấn đề lưu giữ dữ liệu, không phải data residency, và đáp án nào tuyên bố không có trade-off là sai."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 13,
+      "name": {
+        "en": "Claude Models, Prompting, and Context Engineering",
+        "vi": "Claude Models, Prompting, and Context Engineering"
+      },
+      "description": {
+        "en": "Choose the tier, prompt, technique, cache layout, reasoning effort and context lifecycle that meet every binding constraint at the lowest token cost.",
+        "vi": "Chọn tier, prompt, kỹ thuật, bố cục cache, reasoning effort và vòng đời context đáp ứng mọi ràng buộc bắt buộc với chi phí token thấp nhất."
+      },
+      "principles": [
+        {
+          "id": "d2-p1",
+          "number": 1,
+          "domainId": "D2",
+          "title": {
+            "en": "Model Tier Selection",
+            "vi": "Lựa chọn model tier"
+          },
+          "body": {
+            "en": "Start with Sonnet. Move up to Opus only when an eval set shows Sonnet misses the quality bar, and down to Haiku only when it shows the loss is acceptable; set the threshold before running the eval. The right tier meets every binding constraint (latency, cost, quality) at once, and you reject each alternative by naming the constraint it breaks. Treat a model swap as a release: read the per-segment scores, not the average, and route failing segments to a higher tier instead of renegotiating the threshold.",
+            "vi": "Bắt đầu với Sonnet. Chỉ chuyển lên Opus khi một eval set cho thấy Sonnet không đạt ngưỡng chất lượng, và chỉ chuyển xuống Haiku khi eval cho thấy mức sụt giảm là chấp nhận được; đặt ngưỡng trước khi chạy eval. Tier đúng là tier đáp ứng đồng thời mọi ràng buộc bắt buộc (latency, chi phí, chất lượng), và bạn loại từng phương án thay thế bằng cách chỉ ra ràng buộc mà nó vi phạm. Xem việc đổi model như một lần release: đọc điểm theo từng phân khúc, không phải điểm trung bình, và định tuyến các phân khúc không đạt sang tier cao hơn thay vì thương lượng lại ngưỡng."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p2",
+          "number": 2,
+          "domainId": "D2",
+          "title": {
+            "en": "System Prompt Diagnosis and Revision",
+            "vi": "Chẩn đoán và chỉnh sửa system prompt"
+          },
+          "body": {
+            "en": "Read the prompt for what it leaves out. Wherever it is silent on scope, output format or constraints, the model improvises, and differently each time. Revise by stating the scope (what is in and out of bounds), an explicit output contract and the constraints that must hold, and restate the goal next to the instruction. Put hard guardrails in the output contract or in code, not only in role text. Do not over-constrain with scripts that remove legitimate variation, and do not switch to a bigger model to fix an underspecified prompt.",
+            "vi": "Đọc prompt để tìm những gì nó bỏ sót. Bất cứ chỗ nào prompt im lặng về phạm vi, định dạng output hay ràng buộc, model sẽ tự ứng biến, và mỗi lần một kiểu. Chỉnh sửa bằng cách nêu rõ phạm vi (cái gì nằm trong và ngoài giới hạn), một output contract tường minh và các ràng buộc phải được đảm bảo, đồng thời nhắc lại mục tiêu ngay cạnh chỉ dẫn. Đặt guardrail cứng trong output contract hoặc trong code, không chỉ trong phần mô tả vai trò. Đừng ràng buộc quá mức bằng các kịch bản loại bỏ những biến thể hợp lệ, và đừng chuyển sang model lớn hơn để sửa một prompt thiếu đặc tả."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p3",
+          "number": 3,
+          "domainId": "D2",
+          "title": {
+            "en": "Prompting Technique Selection",
+            "vi": "Lựa chọn kỹ thuật prompting"
+          },
+          "body": {
+            "en": "Use the lightest technique that fixes the observed failure. Zero-shot fits well-specified tasks. Few-shot, with balanced and representative examples, fits a format or judgment that is easier to show than to describe. Prompted reasoning or native thinking fits multi-step conditional logic. Structured output fits when downstream parsing needs a guaranteed shape. Each step up costs tokens and latency on every call, so add reasoning only where an eval shows it closes a measured gap.",
+            "vi": "Dùng kỹ thuật nhẹ nhất mà sửa được lỗi quan sát thấy. Zero-shot phù hợp với các task được đặc tả rõ. Few-shot, với các ví dụ cân bằng và mang tính đại diện, phù hợp với một định dạng hoặc kiểu phán đoán dễ minh họa hơn là mô tả. Prompted reasoning hoặc native thinking phù hợp với logic điều kiện nhiều bước. Structured output phù hợp khi khâu parse phía sau cần một cấu trúc được đảm bảo. Mỗi bậc nâng lên đều tốn thêm token và latency ở mọi call, vì vậy chỉ thêm reasoning ở những chỗ eval cho thấy nó thu hẹp được một khoảng cách đã đo."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p4",
+          "number": 4,
+          "domainId": "D2",
+          "title": {
+            "en": "Context Composition and Token Economics",
+            "vi": "Thành phần context và kinh tế học token"
+          },
+          "body": {
+            "en": "Measure what fills each call (system prompt, history, retrieved content, tool outputs) at the stated volume, using the usage fields rather than estimates, and cut whatever the current step does not need. Prefer progressive context: retrieve stable knowledge just in time instead of resending whole corpora, fetch live state through tools, and summarize older turns. Budget for the largest realistic session, not the full window. Caching lowers the price of repeated tokens, but they still take up the same space in the window.",
+            "vi": "Đo lường những gì lấp đầy mỗi call (system prompt, lịch sử hội thoại, nội dung truy xuất, output của tool) ở quy mô đã nêu, dùng các trường usage thay vì ước lượng, và cắt bỏ bất cứ thứ gì bước hiện tại không cần. Ưu tiên context lũy tiến (progressive context): truy xuất kiến thức ổn định đúng lúc cần thay vì gửi lại toàn bộ kho dữ liệu, lấy trạng thái thực tế qua tool, và tóm tắt các lượt cũ. Lập ngân sách cho session thực tế lớn nhất, không phải cho toàn bộ context window. Caching làm giảm giá của các token lặp lại, nhưng chúng vẫn chiếm cùng một lượng chỗ trong context window."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p5",
+          "number": 5,
+          "domainId": "D2",
+          "title": {
+            "en": "Cache Breakpoints and Reusable Packaging",
+            "vi": "Cache breakpoint và đóng gói để tái sử dụng"
+          },
+          "body": {
+            "en": "Order every repeated prompt static before dynamic: fixed instructions, guardrails and definitions first, a cache breakpoint at the end of that stable prefix, then the per-request content. Any per-request value above the breakpoint (a timestamp, a user ID, a document) makes every call a cache miss. Cache only where the call frequency within the TTL pays back the write cost. Package a stable procedure that several teams reuse as one versioned Skill, not as copied prompt fragments, so it can be governed and rolled back.",
+            "vi": "Sắp xếp mọi prompt lặp lại theo thứ tự tĩnh trước, động sau: chỉ dẫn cố định, guardrail và định nghĩa đặt trước, một cache breakpoint ở cuối phần prefix ổn định đó, rồi mới đến nội dung theo từng request. Bất kỳ giá trị theo từng request nào nằm phía trên breakpoint (timestamp, user ID, một tài liệu) đều khiến mọi call bị cache miss. Chỉ cache ở nơi tần suất gọi trong khoảng TTL đủ bù lại chi phí ghi cache. Đóng gói một quy trình ổn định được nhiều team dùng lại thành một Skill có version, không phải các đoạn prompt sao chép, để có thể quản trị và rollback."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p6",
+          "number": 6,
+          "domainId": "D2",
+          "title": {
+            "en": "Reasoning Effort and Context Lifecycle",
+            "vi": "Reasoning effort và vòng đời context"
+          },
+          "body": {
+            "en": "Treat reasoning as a billed cost and a latency cost. On current models, control it with adaptive thinking and the effort parameter, not token budgets. Raise effort only on steps where evals show an accuracy gap, and keep it low on routine steps such as routing. For long sessions, combine the lifecycle strategies: clear stale tool outputs (context editing), keep load-bearing state such as identifiers and decisions outside the window (memory tool), and compact the rest, remembering that compaction is lossy and largely one-way.",
+            "vi": "Xem reasoning là một khoản chi phí bị tính tiền và một khoản chi phí latency. Trên các model hiện tại, hãy kiểm soát nó bằng adaptive thinking và tham số effort, không phải bằng token budget. Chỉ tăng effort ở những bước mà eval cho thấy có khoảng cách về độ chính xác, và giữ mức thấp ở các bước thường quy như routing. Với các session dài, hãy kết hợp các chiến lược vòng đời: xóa các output tool đã cũ (context editing), giữ các trạng thái then chốt như định danh và quyết định bên ngoài context window (memory tool), và nén phần còn lại (compaction), nhớ rằng compaction làm mất thông tin và phần lớn là một chiều."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 21,
+      "name": {
+        "en": "Integration",
+        "vi": "Integration"
+      },
+      "description": {
+        "en": "Connect Claude to tools, data, identity, and other agents with least privilege, the right retrieval and connection mechanism, observability that catches silent failures, and reliability controls that never duplicate side effects.",
+        "vi": "Kết nối Claude với tool, dữ liệu, danh tính và các agent khác theo nguyên tắc least privilege (quyền tối thiểu), với cơ chế truy xuất và kết nối phù hợp, khả năng quan sát (observability) bắt được các lỗi âm thầm, và các cơ chế kiểm soát độ tin cậy không bao giờ gây trùng lặp side effect."
+      },
+      "principles": [
+        {
+          "id": "d3-p1",
+          "number": 1,
+          "domainId": "D3",
+          "title": {
+            "en": "Least-Privilege Tool Configuration",
+            "vi": "Cấu hình tool theo least privilege"
+          },
+          "body": {
+            "en": "Audit every connected tool the way you audit permissions: keep it only if the agent's task requires it, remove what is merely convenient, and record why. Scope each subagent's tools to its own job, and replace broad generic tools (raw SQL, arbitrary URL fetch) with constrained, purpose-specific ones that return only what the task needs. Do not leave an unneeded tool connected and rely on a prompt instruction not to use it; it is still attack surface, cost, and a source of misrouted calls.",
+            "vi": "Audit mọi tool được kết nối giống như cách bạn audit quyền truy cập: chỉ giữ lại nếu task của agent cần đến nó, loại bỏ những gì chỉ để cho tiện, và ghi lại lý do. Giới hạn tool của mỗi subagent theo đúng công việc của nó, và thay các tool chung chung, rộng (raw SQL, fetch URL tùy ý) bằng các tool chuyên biệt, có ràng buộc, chỉ trả về những gì task cần. Đừng để một tool không cần thiết vẫn kết nối rồi dựa vào chỉ dẫn trong prompt bảo đừng dùng nó; nó vẫn là bề mặt tấn công, là chi phí, và là nguồn gây ra các call bị định tuyến sai."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p2",
+          "number": 2,
+          "domainId": "D3",
+          "title": {
+            "en": "Authentication and Authorization Posture",
+            "vi": "Tư thế xác thực và phân quyền"
+          },
+          "body": {
+            "en": "Verify identity on the server before the Claude call and inject the user's role and authorized scope from the authentication layer; never trust a role the user asserts in a message. Keep credentials out of the context window and out of model-visible tool arguments by holding them in a gateway or tool implementation, scope them to the task and tenant, and make the integration enforce the same authorization model as the underlying system so Claude cannot become a path around it. Name each mitigation as an enforceable control, not a prompt instruction.",
+            "vi": "Xác minh danh tính ở phía server trước khi gọi Claude và inject vai trò cùng phạm vi được phép của người dùng từ lớp xác thực; không bao giờ tin vào một vai trò mà người dùng tự khai trong tin nhắn. Giữ credential ngoài context window và ngoài các tham số tool mà model nhìn thấy bằng cách lưu chúng trong gateway hoặc phần cài đặt tool, giới hạn chúng theo task và tenant, và làm cho phần tích hợp thực thi cùng mô hình phân quyền như hệ thống bên dưới để Claude không thể trở thành một đường vòng qua nó. Gọi tên mỗi biện pháp giảm thiểu như một cơ chế kiểm soát có thể thực thi, không phải một chỉ dẫn trong prompt."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p3",
+          "number": 3,
+          "domainId": "D3",
+          "title": {
+            "en": "Relieving the Binding Performance Constraint",
+            "vi": "Giải tỏa ràng buộc hiệu năng bắt buộc"
+          },
+          "body": {
+            "en": "First identify which constraint is binding (accuracy or latency) and how much headroom the other has, then pick the lever that acts on the binding mechanism: retrieval depth when the right content is not reaching the model, model tier when the task is over- or under-served, caching when a long stable prefix dominates input, call pattern when orchestration or synchronous calls dominate. Choose the change that relieves the binding constraint at least cost to the other and confirm it with the eval set. Do not reach for the most capable model or extended thinking by reflex; both add cost and latency.",
+            "vi": "Trước tiên xác định ràng buộc nào đang là ràng buộc bắt buộc (độ chính xác hay latency) và ràng buộc còn lại còn bao nhiêu dư địa, rồi chọn đòn bẩy tác động vào đúng cơ chế bắt buộc đó: độ sâu retrieval khi nội dung đúng không đến được model, model tier khi task được phục vụ quá mức hoặc chưa đủ, caching khi một prefix dài và ổn định chiếm phần lớn input, mẫu gọi (call pattern) khi orchestration hoặc các call đồng bộ chiếm phần lớn. Chọn thay đổi giải tỏa được ràng buộc bắt buộc với chi phí thấp nhất cho ràng buộc còn lại và xác nhận bằng eval set. Đừng theo phản xạ mà chọn model mạnh nhất hay extended thinking; cả hai đều làm tăng chi phí và latency."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p4",
+          "number": 4,
+          "domainId": "D3",
+          "title": {
+            "en": "Instrumentation and Monitoring Gaps",
+            "vi": "Lỗ hổng về instrumentation và monitoring"
+          },
+          "body": {
+            "en": "LLM systems usually fail with fluent, wrong output rather than errors, so latency, error-rate, and cost dashboards miss most failures. Instrument the mechanism that actually failed: a shared trace ID across orchestrator and subagents, coverage reconciliation (results returned equal units dispatched), retrieval precision and recall and index freshness as system metrics, per-request decomposition rather than aggregates only, and a downstream outcome signal. The right answer is the monitor that would have detected this specific failure, not more logging in general.",
+            "vi": "Hệ thống LLM thường hỏng bằng các output trôi chảy nhưng sai thay vì báo lỗi, vì vậy các dashboard về latency, tỷ lệ lỗi và chi phí bỏ sót hầu hết các lỗi. Hãy instrument đúng cơ chế đã hỏng: một trace ID dùng chung giữa orchestrator và các subagent, đối soát độ bao phủ (số kết quả trả về bằng số đơn vị đã giao), precision và recall của retrieval cùng độ mới của index như các metric hệ thống, phân rã theo từng request thay vì chỉ có số liệu tổng hợp, và một tín hiệu kết quả từ phía downstream. Đáp án đúng là cơ chế monitor lẽ ra đã phát hiện được chính lỗi này, không phải là thêm logging nói chung."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p5",
+          "number": 5,
+          "domainId": "D3",
+          "title": {
+            "en": "Retrieval Architecture Selection",
+            "vi": "Lựa chọn kiến trúc retrieval"
+          },
+          "body": {
+            "en": "Match the mechanism to the data: a pre-built RAG index for large, stable knowledge; tool calls (agentic search) against the system of record for live state, never retrieval over snapshots; full-corpus context when the corpus is small and bounded and queries need simultaneous access to all of it. When indexing is chosen, chunk by document structure, use hybrid dense-plus-sparse retrieval when queries mix concepts with exact identifiers, add document context to each chunk (contextual retrieval), and define a fallback for weak or empty retrieval instead of generating anyway. Measure retrieval quality against a labeled set.",
+            "vi": "Chọn cơ chế phù hợp với dữ liệu: một RAG index dựng sẵn cho kho kiến thức lớn và ổn định; tool call (agentic search) tới system of record cho trạng thái thực tế, không bao giờ dùng retrieval trên snapshot; đưa toàn bộ corpus vào context khi corpus nhỏ, có giới hạn và các truy vấn cần truy cập đồng thời vào toàn bộ. Khi chọn indexing, hãy chia chunk theo cấu trúc tài liệu, dùng hybrid retrieval dense kết hợp sparse khi truy vấn vừa chứa khái niệm vừa chứa định danh chính xác, thêm ngữ cảnh tài liệu vào mỗi chunk (contextual retrieval), và định nghĩa phương án dự phòng cho trường hợp retrieval yếu hoặc rỗng thay vì vẫn sinh câu trả lời. Đo chất lượng retrieval trên một tập dữ liệu có gán nhãn."
+          },
+          "questionCount": 5,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p6",
+          "number": 6,
+          "domainId": "D3",
+          "title": {
+            "en": "Connection Mechanism Selection",
+            "vi": "Lựa chọn cơ chế kết nối"
+          },
+          "body": {
+            "en": "Use MCP when the same tools must be reachable from several Claude clients; it keeps integration separate from orchestration but adds a protocol layer and harder debugging, so it does not pay back for a single client. Use direct API tool use (or a CLI) when the tool lives inside one product and latency and control matter. Hand off to a subagent or another agent when a scoped sub-task needs its own isolated context, tools, or state, and accept the extra hop and token spend. Let the stated latency, security, and statefulness constraints decide.",
+            "vi": "Dùng MCP khi cùng một bộ tool cần truy cập được từ nhiều Claude client; nó tách phần tích hợp khỏi phần orchestration nhưng thêm một lớp protocol và khiến việc debug khó hơn, nên không đáng nếu chỉ có một client. Dùng tool use trực tiếp qua API (hoặc một CLI) khi tool nằm trong một sản phẩm duy nhất và latency cùng khả năng kiểm soát là quan trọng. Chuyển giao cho một subagent hoặc agent khác khi một sub-task có phạm vi riêng cần context, tool hoặc state cô lập của riêng nó, và chấp nhận thêm một bước trung chuyển cùng chi phí token. Hãy để các ràng buộc đã nêu về latency, bảo mật và tính có trạng thái (statefulness) quyết định."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p7",
+          "number": 7,
+          "domainId": "D3",
+          "title": {
+            "en": "Progressive Discovery vs. Monolithic Context Loading",
+            "vi": "Khám phá lũy tiến so với nạp context nguyên khối"
+          },
+          "body": {
+            "en": "Load everything up front only for bounded tasks with predictable input size, a stable cacheable prefix, and reasoning that truly needs simultaneous access to all material. When the tool set or reference material is large relative to what any one step uses, or varies per request so it cannot be cached, expose a lightweight catalog and pull detail just in time. Weigh the extra discovery steps against the stated latency tolerance, and do not let context accumulate silently toward the window limit.",
+            "vi": "Chỉ nạp mọi thứ ngay từ đầu cho các task có giới hạn, với kích thước input dự đoán được, prefix ổn định có thể cache, và phần reasoning thực sự cần truy cập đồng thời vào toàn bộ tài liệu. Khi bộ tool hoặc tài liệu tham khảo lớn so với những gì một bước sử dụng, hoặc thay đổi theo từng request nên không thể cache, hãy cung cấp một catalog gọn nhẹ và lấy chi tiết đúng lúc cần. Cân nhắc các bước khám phá bổ sung so với mức chịu đựng latency đã nêu, và đừng để context âm thầm tích tụ dần tới giới hạn của context window."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p8",
+          "number": 8,
+          "domainId": "D3",
+          "title": {
+            "en": "Production Reliability Controls",
+            "vi": "Các cơ chế kiểm soát độ tin cậy trong production"
+          },
+          "body": {
+            "en": "Read the trace for the failure mechanism before adding controls. Transient errors (429, timeouts, 5xx) get bounded retries with exponential backoff close to the API call; a degraded dependency gets a circuit breaker at the service boundary; an unavailable primary gets fallback routing in the orchestration layer. Any retried call with side effects needs an idempotency key so the tool deduplicates the repeat; shortening timeouts, cutting retry counts, or adding prompt instructions leaves the duplicate mechanism in place.",
+            "vi": "Đọc trace để tìm cơ chế gây lỗi trước khi thêm các cơ chế kiểm soát. Lỗi tạm thời (429, timeout, 5xx) được xử lý bằng retry có giới hạn với exponential backoff đặt sát API call; một dependency bị suy giảm được xử lý bằng circuit breaker tại ranh giới service; một primary không khả dụng được xử lý bằng fallback routing ở lớp orchestration. Bất kỳ call nào có side effect mà được retry đều cần một idempotency key để tool loại bỏ lần lặp trùng; rút ngắn timeout, giảm số lần retry hoặc thêm chỉ dẫn vào prompt vẫn để nguyên cơ chế gây trùng lặp."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D4",
+      "code": "Domain 4",
+      "weight": 17,
+      "name": {
+        "en": "Evaluation, Testing, and Optimization",
+        "vi": "Evaluation, Testing, and Optimization"
+      },
+      "description": {
+        "en": "Build evals from the business process, grade with the cheapest reliable method, de-bias judges, design comparisons that beat run-to-run noise, isolate root causes from traces, optimize cost within a quality floor, and migrate model versions on evidence.",
+        "vi": "Xây dựng eval từ quy trình nghiệp vụ, chấm điểm bằng phương pháp đáng tin cậy rẻ nhất, khử bias cho judge, thiết kế phép so sánh vượt qua nhiễu giữa các lần chạy, cô lập nguyên nhân gốc từ trace, tối ưu chi phí trong giới hạn chất lượng tối thiểu, và chuyển đổi phiên bản model dựa trên bằng chứng."
+      },
+      "principles": [
+        {
+          "id": "d4-p1",
+          "number": 1,
+          "domainId": "D4",
+          "title": {
+            "en": "Evaluation Coverage Gaps",
+            "vi": "Lỗ hổng về độ bao phủ của evaluation"
+          },
+          "body": {
+            "en": "When a failure escapes to production, name the dimension the suite never measured (accuracy, groundedness, latency, cost, safety, security) or the grading target it graded wrongly, and add the metric that would have failed the release on that behavior. Follow the grading ladder: code-based checks for anything deterministic (schema, field values, leaked identifiers, latency, cost), a calibrated judge for interpretive behavior such as faithfulness, human review for high-stakes novel cases. Adding cases to a dimension that already passed does not close a gap in one that was never measured.",
+            "vi": "Khi một lỗi lọt ra production, hãy chỉ ra chiều đánh giá mà bộ test chưa bao giờ đo (độ chính xác, groundedness – độ bám sát nguồn, latency, chi phí, an toàn, bảo mật) hoặc mục tiêu chấm điểm mà nó đã chấm sai, rồi thêm metric lẽ ra đã chặn bản release vì hành vi đó. Tuân theo thang chấm điểm: kiểm tra bằng code cho mọi thứ tất định (schema, giá trị trường, định danh bị lộ, latency, chi phí), một judge đã được hiệu chỉnh cho hành vi mang tính diễn giải như độ trung thực (faithfulness), và review của con người cho các trường hợp mới lạ có rủi ro cao. Thêm case vào một chiều đánh giá vốn đã pass không lấp được lỗ hổng ở một chiều chưa từng được đo."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p2",
+          "number": 2,
+          "domainId": "D4",
+          "title": {
+            "en": "Deriving Evaluations from Business Processes",
+            "vi": "Xây dựng evaluation từ quy trình nghiệp vụ"
+          },
+          "body": {
+            "en": "Build the eval from the step of the business process the decision affects, using real inputs that represent the deployed distribution, edge cases and adversarial inputs included, labeled with the outcome the business already records. Set pass thresholds from the business requirement before running, not from what the prototype achieves. Mix methods to match the behaviors and the decision: code checks for structured fields, calibrated judges for interpretation, multi-turn sets for conversational products, and shadow testing where user exposure is unacceptable. Keep the dataset current with every prompt or system change.",
+            "vi": "Xây dựng eval từ bước trong quy trình nghiệp vụ mà quyết định tác động đến, dùng input thực tế đại diện cho phân bố khi triển khai, bao gồm cả edge case và input mang tính đối kháng, được gán nhãn bằng kết quả mà doanh nghiệp vốn đã ghi nhận. Đặt ngưỡng pass từ yêu cầu nghiệp vụ trước khi chạy, không dựa trên những gì prototype đạt được. Kết hợp các phương pháp cho phù hợp với hành vi và quyết định: kiểm tra bằng code cho các trường có cấu trúc, judge đã hiệu chỉnh cho phần diễn giải, các tập multi-turn cho sản phẩm hội thoại, và shadow testing khi không thể chấp nhận việc để người dùng tiếp xúc. Cập nhật dataset theo mọi thay đổi về prompt hoặc hệ thống."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p3",
+          "number": 3,
+          "domainId": "D4",
+          "title": {
+            "en": "LLM-as-Judge Design and Bias",
+            "vi": "Thiết kế LLM-as-Judge và bias"
+          },
+          "body": {
+            "en": "Diagnose the bias from the disagreement pattern, then fix that mechanism: position bias by judging both orderings and counting only consistent verdicts; verbosity bias with a content-based rubric and constrained verdict labels; self-preference by grading with a different model than the one being evaluated; judge drift by pinning the judge version and re-calibrating against a fixed human-labeled set. Require reasoning with each score and calibrate against human labels before trusting the judge. Telling the judge to be fair is not a correction.",
+            "vi": "Chẩn đoán bias từ kiểu bất đồng, rồi sửa đúng cơ chế đó: position bias bằng cách chấm cả hai thứ tự và chỉ tính các phán quyết nhất quán; verbosity bias bằng một rubric dựa trên nội dung và các nhãn phán quyết bị giới hạn; self-preference bằng cách chấm với một model khác với model đang được đánh giá; judge drift bằng cách pin phiên bản judge và hiệu chỉnh lại theo một tập cố định được con người gán nhãn. Yêu cầu reasoning kèm theo mỗi điểm số và hiệu chỉnh theo nhãn của con người trước khi tin vào judge. Bảo judge hãy công bằng không phải là một biện pháp khắc phục."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p4",
+          "number": 4,
+          "domainId": "D4",
+          "title": {
+            "en": "Experimental Design for Configuration Comparison",
+            "vi": "Thiết kế thực nghiệm để so sánh cấu hình"
+          },
+          "body": {
+            "en": "Change one variable at a time, run both configurations on the same cases, and pre-specify the primary metric, the minimum effect that counts, the sample size, and the secondary metrics that must not degrade. Because outputs vary run to run, spend part of the budget on repeated trials per case so you can estimate that variance and judge whether the observed difference exceeds it; one pass per configuration cannot separate the configuration effect from noise. Check per-segment results before declaring a winner.",
+            "vi": "Mỗi lần chỉ thay đổi một biến, chạy cả hai cấu hình trên cùng các case, và xác định trước metric chính, hiệu ứng tối thiểu được tính là có ý nghĩa, kích thước mẫu, và các metric phụ không được phép giảm. Vì output thay đổi giữa các lần chạy, hãy dành một phần ngân sách cho việc chạy lặp lại nhiều lần trên mỗi case để ước lượng phương sai đó và đánh giá xem chênh lệch quan sát được có vượt quá nó hay không; chỉ chạy một lượt cho mỗi cấu hình thì không thể tách hiệu ứng của cấu hình khỏi nhiễu. Kiểm tra kết quả theo từng phân khúc trước khi tuyên bố phương án thắng."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p5",
+          "number": 5,
+          "domainId": "D4",
+          "title": {
+            "en": "Root-Cause Isolation from Logs and Traces",
+            "vi": "Cô lập nguyên nhân gốc từ log và trace"
+          },
+          "body": {
+            "en": "Classify before fixing, using the trace: right content never reached the context means retrieval failure; content reached it and the output contradicts or exceeds it means hallucination, fixed by grounding or verification; an ambiguous instruction means prompt failure; a tool error or empty result the agent misread means tool or subagent error, fixed with structured error responses; quality falling after a tier swap means model mismatch, fixed by eval-gated model selection. Applying another class's fix wastes the cycle and leaves the cause in place.",
+            "vi": "Phân loại trước khi sửa, dựa vào trace: nội dung đúng chưa bao giờ đến được context nghĩa là lỗi retrieval; nội dung đã đến context nhưng output mâu thuẫn hoặc vượt quá nó nghĩa là hallucination, sửa bằng grounding hoặc verification; một chỉ dẫn mơ hồ nghĩa là lỗi prompt; một lỗi tool hoặc kết quả rỗng mà agent hiểu sai nghĩa là lỗi tool hoặc subagent, sửa bằng các phản hồi lỗi có cấu trúc; chất lượng giảm sau khi đổi tier nghĩa là model không phù hợp, sửa bằng việc chọn model có eval làm cổng kiểm soát. Áp dụng cách sửa của một nhóm lỗi khác sẽ lãng phí một vòng lặp và để nguyên nguyên nhân."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p6",
+          "number": 6,
+          "domainId": "D4",
+          "title": {
+            "en": "Cost and Latency Optimization",
+            "vi": "Tối ưu chi phí và latency"
+          },
+          "body": {
+            "en": "Decompose telemetry per request and per component to find where spend and latency concentrate: heavy-tailed inputs, uncached stable prefixes, oversized model tiers, unneeded thinking or output length. A low cache hit rate on a stable prefix usually means dynamic content precedes the cache breakpoint or requests arrive less often than the cache lifetime. Apply the optimization that targets the concentration (static-first ordering, batch for work that can be asynchronous, routing simple categories to a smaller tier) and confirm the quality floor with the eval suite.",
+            "vi": "Phân rã telemetry theo từng request và từng thành phần để tìm nơi chi phí và latency tập trung: input có phân bố đuôi dài (heavy-tailed), prefix ổn định nhưng không được cache, model tier quá lớn, thinking hoặc độ dài output không cần thiết. Tỷ lệ cache hit thấp trên một prefix ổn định thường có nghĩa là nội dung động đứng trước cache breakpoint hoặc các request đến thưa hơn thời gian sống của cache. Áp dụng tối ưu nhắm vào đúng chỗ tập trung (sắp xếp tĩnh trước, batch cho công việc có thể chạy bất đồng bộ, định tuyến các nhóm đơn giản sang tier nhỏ hơn) và xác nhận ngưỡng chất lượng tối thiểu bằng bộ eval."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d4-p7",
+          "number": 7,
+          "domainId": "D4",
+          "title": {
+            "en": "Model Version Migration",
+            "vi": "Chuyển đổi phiên bản model"
+          },
+          "body": {
+            "en": "Pin model versions, track the deprecation timeline, and treat a version change as a release gated by the eval suite with rollback criteria set in advance. Read regression results per category, not by average: when the candidate regresses on specific categories and time remains, keep the pin, re-tune prompts for those categories, re-baseline the evaluations on the new version, and cut over before retirement; defer only while the timeline allows. Never migrate on an average that hides category regressions, and never plan to stay on a version past its retirement.",
+            "vi": "Pin phiên bản model, theo dõi lộ trình deprecation, và xem việc đổi phiên bản như một lần release được kiểm soát bởi bộ eval với tiêu chí rollback được đặt trước. Đọc kết quả regression theo từng nhóm, không theo trung bình: khi phiên bản ứng viên bị regression ở một số nhóm cụ thể và vẫn còn thời gian, hãy giữ nguyên pin, tinh chỉnh lại prompt cho các nhóm đó, thiết lập lại baseline của evaluation trên phiên bản mới, và chuyển đổi trước ngày ngừng hỗ trợ (retirement); chỉ trì hoãn khi lộ trình còn cho phép. Không bao giờ chuyển đổi dựa trên một con số trung bình che giấu regression ở từng nhóm, và không bao giờ lên kế hoạch ở lại một phiên bản quá ngày ngừng hỗ trợ của nó."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D5",
+      "code": "Domain 5",
+      "weight": 16,
+      "name": {
+        "en": "Governance, Safety, and Risk Management",
+        "vi": "Governance, Safety, and Risk Management"
+      },
+      "description": {
+        "en": "Place deterministic controls where harm can enter, gate irreversible actions by stakes, and evidence every obligation with an owned, living artifact.",
+        "vi": "Đặt các cơ chế kiểm soát tất định (deterministic) tại nơi rủi ro có thể xâm nhập, chặn các hành động không thể đảo ngược theo mức độ hệ trọng, và chứng minh mọi nghĩa vụ bằng một artifact sống có người chịu trách nhiệm."
+      },
+      "principles": [
+        {
+          "id": "d5-p1",
+          "number": 1,
+          "domainId": "D5",
+          "title": {
+            "en": "Guardrail Placement",
+            "vi": "Vị trí đặt guardrail"
+          },
+          "body": {
+            "en": "Match the control to the point on the path where the misuse happens: input screening before the model call, output screening before the response returns, and deterministic tool-call authorization (allowlist plus identity and scope) before any side effect. One output filter does not cover the other two points, and a system-prompt rule is steering, not enforcement. Decide each team-built control's failure direction explicitly and fail closed with every failed gate logged, because a guardrail that silently passes traffic looks like protection and provides none.",
+            "vi": "Đặt cơ chế kiểm soát đúng tại điểm trên luồng xử lý nơi hành vi lạm dụng xảy ra: sàng lọc input trước khi gọi model, sàng lọc output trước khi trả response, và phân quyền tool call tất định (allowlist cộng với danh tính và phạm vi) trước mọi side effect. Một bộ lọc output không bao quát được hai điểm còn lại, và một quy tắc trong system prompt chỉ là định hướng, không phải thực thi. Quyết định rõ ràng hướng xử lý khi lỗi của từng cơ chế kiểm soát do team tự xây dựng và chọn fail closed (chặn khi lỗi), ghi log mọi lần cổng kiểm soát bị lỗi, vì một guardrail âm thầm cho lưu lượng đi qua trông như đang bảo vệ nhưng thực ra không bảo vệ gì cả."
+          },
+          "questionCount": 5,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p2",
+          "number": 2,
+          "domainId": "D5",
+          "title": {
+            "en": "Prompt Injection Surface and Controls",
+            "vi": "Bề mặt prompt injection và các cơ chế kiểm soát"
+          },
+          "body": {
+            "en": "Treat retrieved documents, tool results, MCP responses, and third-party Skills as untrusted data, not instruction. Screen retrieved and tool content before it is appended to context (user-input screening never sees it), and keep a deterministic authorization on side-effecting tools so a misled model still cannot act. For Skills, audit the bundle against its stated purpose and record an approve, reject, or remediate verdict, run it with least privilege in a sandbox, prefer trusted sources, and never assume the platform screens Skills for you.",
+            "vi": "Xem tài liệu được truy xuất, kết quả tool, phản hồi MCP và các Skill của bên thứ ba là dữ liệu không đáng tin cậy, không phải chỉ dẫn. Sàng lọc nội dung truy xuất và nội dung từ tool trước khi nó được thêm vào context (bước sàng lọc input của người dùng không bao giờ thấy nội dung này), và giữ cơ chế phân quyền tất định trên các tool có side effect để ngay cả khi model bị dẫn dắt sai thì vẫn không thể hành động. Với Skill, hãy audit gói đó so với mục đích đã nêu và ghi lại phán quyết chấp thuận, từ chối hoặc cần khắc phục, chạy nó với least privilege trong sandbox, ưu tiên nguồn đáng tin cậy, và không bao giờ mặc định rằng nền tảng sẽ sàng lọc Skill giúp bạn."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p3",
+          "number": 3,
+          "domainId": "D5",
+          "title": {
+            "en": "Risk Assessment and Ranking",
+            "vi": "Đánh giá và xếp hạng rủi ro"
+          },
+          "body": {
+            "en": "Walk every entry point (user input, retrieved content, tool outputs, model output, logs) against the recurring categories: direct and indirect injection, tool and action abuse, token-budget and quota exhaustion, data exposure, and dependency or supply-chain risk. Rank by exposure, meaning likelihood and impact given the controls already in place, so an uncontrolled path from untrusted content to a side-effecting tool outranks a risk that already has a mitigation. Record each risk with category, component, likelihood and impact, mitigation, owner, and evidence.",
+            "vi": "Rà soát mọi điểm đầu vào (input của người dùng, nội dung truy xuất, output của tool, output của model, log) theo các nhóm rủi ro thường gặp: injection trực tiếp và gián tiếp, lạm dụng tool và hành động, cạn kiệt token budget và quota, lộ lọt dữ liệu, và rủi ro từ dependency hoặc chuỗi cung ứng. Xếp hạng theo mức độ phơi nhiễm, tức là khả năng xảy ra và mức tác động khi tính đến các cơ chế kiểm soát đã có, vì vậy một đường đi không được kiểm soát từ nội dung không đáng tin cậy tới một tool có side effect sẽ được xếp trên một rủi ro đã có biện pháp giảm thiểu. Ghi lại mỗi rủi ro với nhóm, thành phần, khả năng xảy ra và tác động, biện pháp giảm thiểu, người chịu trách nhiệm và bằng chứng."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p4",
+          "number": 4,
+          "domainId": "D5",
+          "title": {
+            "en": "Human-in-the-Loop Checkpoints",
+            "vi": "Các checkpoint human-in-the-loop"
+          },
+          "body": {
+            "en": "Set gates by reversibility and the cost of a wrong action, and use calibrated confidence only to decide how much high-stakes volume can pass unreviewed. Put pre-action approval before irreversible or high-cost steps, let reversible, auditable, low-cost steps run, and use sampled or post-action review only where a mistake can be undone. Do not gate everything (consent fatigue turns review into approval) and do not use the model's self-reported confidence as the gate; show the reviewer the inputs, the output, and the flag reason.",
+            "vi": "Đặt cổng kiểm soát dựa trên khả năng đảo ngược và cái giá của một hành động sai, và chỉ dùng độ tin cậy đã hiệu chỉnh (calibrated confidence) để quyết định bao nhiêu khối lượng có rủi ro cao được phép đi qua mà không cần review. Đặt bước phê duyệt trước hành động cho các bước không thể đảo ngược hoặc có chi phí cao, để các bước có thể đảo ngược, audit được và chi phí thấp tự chạy, và chỉ dùng review lấy mẫu hoặc review sau hành động ở những chỗ sai sót có thể hoàn tác. Đừng chặn mọi thứ (sự mệt mỏi vì phải đồng ý liên tục biến việc review thành phê duyệt cho qua) và đừng dùng độ tin cậy tự báo cáo của model làm cổng kiểm soát; hãy cho người review thấy input, output và lý do bị gắn cờ."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p5",
+          "number": 5,
+          "domainId": "D5",
+          "title": {
+            "en": "Architectural Controls for Compliance Obligations",
+            "vi": "Các cơ chế kiểm soát kiến trúc cho nghĩa vụ tuân thủ"
+          },
+          "body": {
+            "en": "Turn each obligation into a specific technical control, a named owner, and a living evidence artifact a reviewer can inspect (signed agreement, configuration screen, data-flow record, returned log query), revalidated on a schedule. A compliant entry point or a design document is a prerequisite, not proof. Do not confuse controls: zero-data-retention governs how long data is held, not where it is processed; training exclusion is not a retention claim; tenant isolation and PII redaction must be enforced in the application layer, not by prompt.",
+            "vi": "Biến mỗi nghĩa vụ thành một cơ chế kiểm soát kỹ thuật cụ thể, một người chịu trách nhiệm được chỉ định và một artifact bằng chứng sống mà người review có thể kiểm tra (thỏa thuận đã ký, màn hình cấu hình, bản ghi luồng dữ liệu, kết quả truy vấn log), được xác nhận lại theo lịch. Một điểm truy cập đạt chuẩn tuân thủ hoặc một tài liệu thiết kế là điều kiện tiên quyết, không phải bằng chứng. Đừng nhầm lẫn các cơ chế kiểm soát: zero-data-retention quy định dữ liệu được lưu giữ bao lâu, không phải dữ liệu được xử lý ở đâu; việc loại trừ khỏi huấn luyện không phải là một cam kết về lưu giữ; cô lập tenant và che PII phải được thực thi ở lớp ứng dụng, không phải bằng prompt."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d5-p6",
+          "number": 6,
+          "domainId": "D5",
+          "title": {
+            "en": "Bias Source Identification and Mitigation",
+            "vi": "Xác định và giảm thiểu nguồn gốc bias"
+          },
+          "body": {
+            "en": "Locate the source of a disparity before choosing a fix: the retrieval corpus, prompt framing, few-shot examples, downstream routing, or the evaluation itself. Use controlled comparisons (matched inputs, retrieval on and off, blind human grading, production outcomes) to separate data bias from prompt-framing and evaluation-design bias, then mitigate at that source. Do not treat fairness as the model vendor's property, do not apply a prompt fix to a data problem, and keep decision logs with per-subgroup breakdowns so the source can be proven.",
+            "vi": "Xác định nguồn gốc của sự chênh lệch trước khi chọn cách sửa: corpus dùng cho retrieval, cách đặt vấn đề trong prompt, các few-shot example, việc định tuyến phía sau, hay chính bản thân evaluation. Dùng các phép so sánh có kiểm soát (input tương đương, bật và tắt retrieval, chấm điểm mù bởi con người, kết quả trong production) để tách bias dữ liệu khỏi bias do cách đặt vấn đề trong prompt và bias do thiết kế evaluation, rồi giảm thiểu tại đúng nguồn đó. Đừng xem tính công bằng là thuộc tính của nhà cung cấp model, đừng áp dụng cách sửa bằng prompt cho một vấn đề về dữ liệu, và hãy lưu decision log với số liệu phân tách theo từng nhóm con để có thể chứng minh được nguồn gốc."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D6",
+      "code": "Domain 6",
+      "weight": 7,
+      "name": {
+        "en": "Stakeholder Communication and Lifecycle Management",
+        "vi": "Stakeholder Communication and Lifecycle Management"
+      },
+      "description": {
+        "en": "Commit only to what the architecture can deliver, record trade-offs with reversal cost and honest residual risk, and hand off a system others can run.",
+        "vi": "Chỉ cam kết những gì kiến trúc có thể đáp ứng, ghi lại các trade-off kèm chi phí đảo ngược và rủi ro còn lại một cách trung thực, và bàn giao một hệ thống mà người khác có thể vận hành."
+      },
+      "principles": [
+        {
+          "id": "d6-p1",
+          "number": 1,
+          "domainId": "D6",
+          "title": {
+            "en": "Unsupportable Commitments in Requirements and SLAs",
+            "vi": "Các cam kết không thể đảm bảo trong yêu cầu và SLA"
+          },
+          "body": {
+            "en": "Every SLA threshold must trace to a tangible source (user-experience expectation, business criticality, eval acceptance criteria) and name what is measured, what counts as a breach, and what happens next. Reject guarantees of model correctness and end-to-end promises that depend on a human gate or dependency the system does not control; resolve them by clarifying the requirement (split what the system owns from what a reviewer owns) or changing the architecture. Translate stakeholder preferences into testable, bounded constraints and label unconfirmed items as assumptions.",
+            "vi": "Mọi ngưỡng SLA phải truy được về một nguồn cụ thể (kỳ vọng trải nghiệm người dùng, mức độ quan trọng với nghiệp vụ, tiêu chí chấp nhận của eval) và nêu rõ cái gì được đo, thế nào là vi phạm, và điều gì xảy ra tiếp theo. Bác bỏ các cam kết đảm bảo tính đúng đắn của model và các lời hứa end-to-end phụ thuộc vào một bước phê duyệt của con người hoặc một dependency mà hệ thống không kiểm soát; giải quyết chúng bằng cách làm rõ yêu cầu (tách phần hệ thống chịu trách nhiệm khỏi phần người review chịu trách nhiệm) hoặc thay đổi kiến trúc. Chuyển các mong muốn của stakeholder thành các ràng buộc có giới hạn và kiểm thử được, và gắn nhãn các mục chưa được xác nhận là giả định."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        },
+        {
+          "id": "d6-p2",
+          "number": 2,
+          "domainId": "D6",
+          "title": {
+            "en": "Architecture Decision Records",
+            "vi": "Architecture Decision Records"
+          },
+          "body": {
+            "en": "An ADR must answer the stakeholder constraint it affects and record the decision, the rejected alternatives, and the trade-off as gain, loss, and reversal cost, plus the compliance posture in regulated settings. State model behavior as a measured eval result with its scope, residual risk, and the monitoring trigger that would detect drift, never as a guarantee. Name who accepted the residual risk; do not strip the rationale or declare the decision final to appear certain.",
+            "vi": "Một ADR phải trả lời được ràng buộc của stakeholder mà nó tác động đến và ghi lại quyết định, các phương án bị loại, và trade-off dưới dạng được gì, mất gì và chi phí đảo ngược, cộng thêm tình trạng tuân thủ trong môi trường có quản lý. Mô tả hành vi của model như một kết quả eval đã đo cùng phạm vi của nó, rủi ro còn lại, và trigger monitoring sẽ phát hiện drift, không bao giờ như một sự đảm bảo. Nêu rõ ai đã chấp nhận rủi ro còn lại; đừng lược bỏ lý do hay tuyên bố quyết định là cuối cùng chỉ để tỏ ra chắc chắn."
+          },
+          "questionCount": 5,
+          "personal_notes": ""
+        },
+        {
+          "id": "d6-p3",
+          "number": 3,
+          "domainId": "D6",
+          "title": {
+            "en": "Operational Handoff Completeness",
+            "vi": "Tính đầy đủ của bàn giao vận hành"
+          },
+          "body": {
+            "en": "The test is whether a competent team that was not in the room can operate and safely change the system from the package alone. Beyond diagrams and prompts, include the decision log with rejected alternatives, an assumption register with owners, the control register with evidence links, dependencies and their limits, a governance table mapping each signal (including scheduled regulatory checks and slow drift) to trigger, owner, and action, and a runbook with an escalation path.",
+            "vi": "Phép thử là liệu một team có năng lực nhưng không tham gia từ đầu có thể vận hành và thay đổi hệ thống một cách an toàn chỉ từ gói bàn giao hay không. Ngoài sơ đồ và prompt, hãy đưa vào decision log kèm các phương án bị loại, một sổ đăng ký giả định (assumption register) có người chịu trách nhiệm, sổ đăng ký cơ chế kiểm soát (control register) kèm link bằng chứng, các dependency và giới hạn của chúng, một bảng quản trị ánh xạ từng tín hiệu (bao gồm các đợt kiểm tra quy định theo lịch và drift chậm) tới trigger, người chịu trách nhiệm và hành động, và một runbook có lộ trình escalation."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D7",
+      "code": "Domain 7",
+      "weight": 8,
+      "name": {
+        "en": "Developer Productivity and Operational Enablement",
+        "vi": "Developer Productivity and Operational Enablement"
+      },
+      "description": {
+        "en": "Ship proven workflows as governed plugins, enforce safety centrally with least-privilege configuration, and keep a human accountable for every AI-generated change.",
+        "vi": "Đưa các workflow đã được kiểm chứng ra dưới dạng plugin có quản trị, thực thi an toàn tập trung với cấu hình least privilege, và luôn có một người chịu trách nhiệm cho mọi thay đổi do AI tạo ra."
+      },
+      "principles": [
+        {
+          "id": "d7-p1",
+          "number": 1,
+          "domainId": "D7",
+          "title": {
+            "en": "Packaging and Distributing Claude Code Workflows",
+            "vi": "Đóng gói và phân phối workflow Claude Code"
+          },
+          "body": {
+            "en": "Package a proven workflow (skills, hooks, subagents, commands, MCP configuration) as a plugin in an organization marketplace, assigned to groups with install preferences and version-controlled updates so it can be rolled back. Enforce centrally, through managed settings, the controls that keep it safe unattended (guardrail hooks, permission rules, model and spend limits), and leave team-specific conventions in each team's CLAUDE.md. Do not copy configuration into every repo or ship a shared asset with no version, owner, or way back.",
+            "vi": "Đóng gói một workflow đã được kiểm chứng (skill, hook, subagent, command, cấu hình MCP) thành plugin trong marketplace của tổ chức, gán cho các nhóm với thiết lập cài đặt và cập nhật có quản lý version để có thể rollback. Thực thi tập trung, thông qua managed settings, các cơ chế kiểm soát giữ cho nó an toàn khi chạy không giám sát (guardrail hook, permission rule, giới hạn model và chi tiêu), và để các quy ước riêng của từng team trong CLAUDE.md của team đó. Đừng sao chép cấu hình vào mọi repo hoặc phát hành một tài sản dùng chung không có version, người chịu trách nhiệm hay cách quay lui."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d7-p2",
+          "number": 2,
+          "domainId": "D7",
+          "title": {
+            "en": "Agent SDK and Claude Code Configuration",
+            "vi": "Cấu hình Agent SDK và Claude Code"
+          },
+          "body": {
+            "en": "Configure the narrowest permission posture that lets the workflow run: headless -p for CI with explicit allow rules and a mode that denies rather than prompts, plan for read-only exploration, acceptEdits for supervised local editing. Enforce must-hold rules with hooks (for example PreToolUse blocks) and scope subagent tools and credentials to least privilege. Do not use bypassPermissions in CI or rely on CLAUDE.md or system-prompt wording for rules that must hold every time.",
+            "vi": "Cấu hình tư thế permission hẹp nhất mà vẫn cho workflow chạy được: headless -p cho CI với các allow rule tường minh và một mode từ chối thay vì hỏi xác nhận, plan cho việc khám phá chỉ đọc, acceptEdits cho việc chỉnh sửa cục bộ có giám sát. Thực thi các quy tắc bắt buộc bằng hook (ví dụ chặn bằng PreToolUse) và giới hạn tool cùng credential của subagent theo least privilege. Đừng dùng bypassPermissions trong CI hoặc dựa vào câu chữ trong CLAUDE.md hay system prompt cho các quy tắc phải luôn được đảm bảo."
+          },
+          "questionCount": 4,
+          "personal_notes": ""
+        },
+        {
+          "id": "d7-p3",
+          "number": 3,
+          "domainId": "D7",
+          "title": {
+            "en": "Accountability for AI-Generated Code",
+            "vi": "Trách nhiệm giải trình với code do AI tạo ra"
+          },
+          "body": {
+            "en": "A named human author owns each AI-generated change, must be able to explain what it does and why, and merges it only after a verification checklist covering correctness, security, maintainability, and human understanding, with automated tests and evals as required gates. Hold AI-generated code to the same standard as hand-written code. Do not let AI approve or merge its own changes, exempt small AI changes from review, or treat green tests or AI review as a substitute for human judgment.",
+            "vi": "Một tác giả là người cụ thể sở hữu mỗi thay đổi do AI tạo ra, phải giải thích được nó làm gì và tại sao, và chỉ merge sau khi qua một checklist xác minh bao gồm tính đúng đắn, bảo mật, khả năng bảo trì và mức độ hiểu của con người, với automated test và eval là các cổng bắt buộc. Áp dụng cho code do AI tạo ra cùng tiêu chuẩn như code viết tay. Đừng để AI tự phê duyệt hoặc tự merge thay đổi của chính nó, đừng miễn review cho các thay đổi nhỏ do AI tạo ra, và đừng xem test pass hay AI review là sự thay thế cho phán đoán của con người."
+          },
+          "questionCount": 3,
+          "personal_notes": ""
+        }
+      ]
+    }
+  ]
+}

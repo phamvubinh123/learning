@@ -1,0 +1,461 @@
+{
+  "slug": "ccar-p",
+  "certId": "ccap",
+  "code": "CCAR-P",
+  "name": {
+    "en": "Claude Certified Architect – Professional",
+    "vi": "Claude Certified Architect – Professional"
+  },
+  "tagline": {
+    "en": "For senior architects, AI/ML engineers and tech leads who design, integrate and govern Claude systems in enterprise production, from discovery to handoff.",
+    "vi": "Dành cho kiến trúc sư, kỹ sư AI/ML và tech lead cấp cao thiết kế, tích hợp và quản trị hệ thống Claude trong doanh nghiệp, từ khảo sát đến bàn giao."
+  },
+  "provider": "Anthropic",
+  "category": "AI & Architecture",
+  "accent": "#0284c7",
+  "badge": "badges/ccar-p.png",
+  "examConfig": {
+    "totalQuestions": 70,
+    "durationMinutes": 120,
+    "passingScore": "720",
+    "passingDetail": "Scaled 100–1,000",
+    "fee": "$175",
+    "validity": "12 months",
+    "delivery": "Proctored"
+  },
+  "examFacts": [
+    {
+      "label": {
+        "en": "Questions",
+        "vi": "Số câu"
+      },
+      "value": {
+        "en": "70",
+        "vi": "70"
+      },
+      "detail": {
+        "en": "60 scored + 10 unscored, unidentified. Scenario-based multiple choice; each item says how many to pick.",
+        "vi": "60 câu tính điểm + 10 câu không tính điểm (không được đánh dấu). Trắc nghiệm tình huống; mỗi câu ghi rõ số đáp án cần chọn."
+      }
+    },
+    {
+      "label": {
+        "en": "Duration",
+        "vi": "Thời gian"
+      },
+      "value": {
+        "en": "120 min",
+        "vi": "120 phút"
+      },
+      "detail": {
+        "en": "≈ 103 s per question",
+        "vi": "≈ 103 giây mỗi câu"
+      }
+    },
+    {
+      "label": {
+        "en": "Passing score",
+        "vi": "Điểm đạt"
+      },
+      "value": {
+        "en": "720",
+        "vi": "720"
+      },
+      "detail": {
+        "en": "Scaled 100–1,000",
+        "vi": "Thang điểm 100–1.000"
+      }
+    },
+    {
+      "label": {
+        "en": "Delivery",
+        "vi": "Hình thức"
+      },
+      "value": {
+        "en": "Proctored",
+        "vi": "Có giám thị"
+      },
+      "detail": {
+        "en": "Pearson OnVUE online or a Pearson test centre. Closed book.",
+        "vi": "Thi online qua Pearson OnVUE hoặc tại trung tâm Pearson. Không dùng tài liệu."
+      }
+    },
+    {
+      "label": {
+        "en": "Fee",
+        "vi": "Lệ phí"
+      },
+      "value": {
+        "en": "$175",
+        "vi": "$175"
+      },
+      "detail": {
+        "en": "50% off for Select partners and above",
+        "vi": "Giảm 50% cho đối tác Select trở lên"
+      }
+    },
+    {
+      "label": {
+        "en": "Validity",
+        "vi": "Hiệu lực"
+      },
+      "value": {
+        "en": "12 months",
+        "vi": "12 tháng"
+      },
+      "detail": {
+        "en": "Free renewal assessment if on time",
+        "vi": "Gia hạn miễn phí nếu làm đúng hạn"
+      }
+    }
+  ],
+  "factsSource": {
+    "label": "Anthropic: CCAR-P exam guide v1.1, exams from 7 December 2026 (PDF)",
+    "url": "https://cc.sj-cdn.net/instructor/6nizmqk8tpzpfjvt6qmmav7rh/public/1794946420/Claude_Certified_Architect_-_Professional_Exam_Guide_Updated_Dec_7.pdf"
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 18,
+      "name": {
+        "en": "Solution Design and Architecture",
+        "vi": "Solution Design and Architecture"
+      },
+      "description": {
+        "en": "Split the work between Claude, existing systems and humans, pick the simplest pattern the tightest constraint allows, and choose the surface and runtime the hard constraints leave open.",
+        "vi": "Phân chia công việc giữa Claude, các hệ thống hiện có và con người, chọn pattern đơn giản nhất mà ràng buộc chặt nhất cho phép, và chọn surface cùng runtime trong phạm vi các ràng buộc cứng còn để ngỏ."
+      },
+      "principleCount": 6,
+      "questionCount": 25
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 13,
+      "name": {
+        "en": "Claude Models, Prompting, and Context Engineering",
+        "vi": "Claude Models, Prompting, and Context Engineering"
+      },
+      "description": {
+        "en": "Choose the tier, prompt, technique, cache layout, reasoning effort and context lifecycle that meet every binding constraint at the lowest token cost.",
+        "vi": "Chọn tier, prompt, kỹ thuật, bố cục cache, reasoning effort và vòng đời context đáp ứng mọi ràng buộc bắt buộc với chi phí token thấp nhất."
+      },
+      "principleCount": 6,
+      "questionCount": 18
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 21,
+      "name": {
+        "en": "Integration",
+        "vi": "Integration"
+      },
+      "description": {
+        "en": "Connect Claude to tools, data, identity, and other agents with least privilege, the right retrieval and connection mechanism, observability that catches silent failures, and reliability controls that never duplicate side effects.",
+        "vi": "Kết nối Claude với tool, dữ liệu, danh tính và các agent khác theo nguyên tắc least privilege (quyền tối thiểu), với cơ chế truy xuất và kết nối phù hợp, khả năng quan sát (observability) bắt được các lỗi âm thầm, và các cơ chế kiểm soát độ tin cậy không bao giờ gây trùng lặp side effect."
+      },
+      "principleCount": 8,
+      "questionCount": 30
+    },
+    {
+      "id": "D4",
+      "code": "Domain 4",
+      "weight": 17,
+      "name": {
+        "en": "Evaluation, Testing, and Optimization",
+        "vi": "Evaluation, Testing, and Optimization"
+      },
+      "description": {
+        "en": "Build evals from the business process, grade with the cheapest reliable method, de-bias judges, design comparisons that beat run-to-run noise, isolate root causes from traces, optimize cost within a quality floor, and migrate model versions on evidence.",
+        "vi": "Xây dựng eval từ quy trình nghiệp vụ, chấm điểm bằng phương pháp đáng tin cậy rẻ nhất, khử bias cho judge, thiết kế phép so sánh vượt qua nhiễu giữa các lần chạy, cô lập nguyên nhân gốc từ trace, tối ưu chi phí trong giới hạn chất lượng tối thiểu, và chuyển đổi phiên bản model dựa trên bằng chứng."
+      },
+      "principleCount": 7,
+      "questionCount": 24
+    },
+    {
+      "id": "D5",
+      "code": "Domain 5",
+      "weight": 16,
+      "name": {
+        "en": "Governance, Safety, and Risk Management",
+        "vi": "Governance, Safety, and Risk Management"
+      },
+      "description": {
+        "en": "Place deterministic controls where harm can enter, gate irreversible actions by stakes, and evidence every obligation with an owned, living artifact.",
+        "vi": "Đặt các cơ chế kiểm soát tất định (deterministic) tại nơi rủi ro có thể xâm nhập, chặn các hành động không thể đảo ngược theo mức độ hệ trọng, và chứng minh mọi nghĩa vụ bằng một artifact sống có người chịu trách nhiệm."
+      },
+      "principleCount": 6,
+      "questionCount": 22
+    },
+    {
+      "id": "D6",
+      "code": "Domain 6",
+      "weight": 7,
+      "name": {
+        "en": "Stakeholder Communication and Lifecycle Management",
+        "vi": "Stakeholder Communication and Lifecycle Management"
+      },
+      "description": {
+        "en": "Commit only to what the architecture can deliver, record trade-offs with reversal cost and honest residual risk, and hand off a system others can run.",
+        "vi": "Chỉ cam kết những gì kiến trúc có thể đáp ứng, ghi lại các trade-off kèm chi phí đảo ngược và rủi ro còn lại một cách trung thực, và bàn giao một hệ thống mà người khác có thể vận hành."
+      },
+      "principleCount": 3,
+      "questionCount": 10
+    },
+    {
+      "id": "D7",
+      "code": "Domain 7",
+      "weight": 8,
+      "name": {
+        "en": "Developer Productivity and Operational Enablement",
+        "vi": "Developer Productivity and Operational Enablement"
+      },
+      "description": {
+        "en": "Ship proven workflows as governed plugins, enforce safety centrally with least-privilege configuration, and keep a human accountable for every AI-generated change.",
+        "vi": "Đưa các workflow đã được kiểm chứng ra dưới dạng plugin có quản trị, thực thi an toàn tập trung với cấu hình least privilege, và luôn có một người chịu trách nhiệm cho mọi thay đổi do AI tạo ra."
+      },
+      "principleCount": 3,
+      "questionCount": 11
+    }
+  ],
+  "studyPlan": [
+    {
+      "phase": "Phase 1",
+      "title": {
+        "en": "Blueprint and the heavy domains: D1 + D3 (39%)",
+        "vi": "Blueprint và các domain nặng: D1 + D3 (39%)"
+      },
+      "steps": [
+        {
+          "en": "Read the exam guide that matches your exam date (7 Dec or later: v1.1, 70 items) and rate yourself 1–5 on all 39 skill objectives",
+          "vi": "Đọc exam guide tương ứng với ngày thi của bạn (từ 7/12 trở đi: v1.1, 70 câu) và tự đánh giá bản thân từ 1–5 cho cả 39 mục tiêu kỹ năng"
+        },
+        {
+          "en": "Complete Partner Academy module 1 (Platform & Solution Design) and the Integration screens of module 2",
+          "vi": "Hoàn thành module 1 trên Partner Academy (Platform & Solution Design) và các màn hình Integration của module 2"
+        },
+        {
+          "en": "Study the D1 and D3 principles here, then drill both domains until you score 80% or more",
+          "vi": "Học các nguyên tắc D1 và D3 tại đây, rồi luyện đề cả hai domain cho đến khi đạt từ 80% trở lên"
+        },
+        {
+          "en": "Re-read the Foundations exam guide. Its scope is assumed knowledge for this exam",
+          "vi": "Đọc lại exam guide của Foundations. Phạm vi của nó được xem là kiến thức nền mặc định cho kỳ thi này"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": {
+        "en": "Evaluation and governance: D4 + D5 (33%)",
+        "vi": "Evaluation và quản trị: D4 + D5 (33%)"
+      },
+      "steps": [
+        {
+          "en": "Finish module 2 (Evals, POC to Prod, Sizing, A/B and Observability) and module 3 (Responsible AI, Safety & Risk)",
+          "vi": "Hoàn thành module 2 (Evals, POC to Prod, Sizing, A/B and Observability) và module 3 (Responsible AI, Safety & Risk)"
+        },
+        {
+          "en": "Study the D4 and D5 principles. Practise reasoning from artifacts: logs, traces, eval tables and configs",
+          "vi": "Học các nguyên tắc D4 và D5. Luyện tập suy luận từ các artifact: log, trace, bảng eval và config"
+        },
+        {
+          "en": "Drill D4 and D5. For every miss, name the layer or control you overlooked",
+          "vi": "Luyện đề D4 và D5. Với mỗi câu sai, hãy chỉ ra lớp hoặc cơ chế kiểm soát mà bạn đã bỏ sót"
+        },
+        {
+          "en": "Review the Cheatsheet decision rules for D1–D5",
+          "vi": "Ôn lại các quy tắc quyết định trong Cheatsheet cho D1–D5"
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": {
+        "en": "Models, stakeholders, enablement and the mock: D2 + D6 + D7 (28%)",
+        "vi": "Model, stakeholder, enablement và bài thi thử: D2 + D6 + D7 (28%)"
+      },
+      "steps": [
+        {
+          "en": "Complete module 4 (Stakeholder Engagement, Lifecycle & GTM) and module 5 (Team Enablement)",
+          "vi": "Hoàn thành module 4 (Stakeholder Engagement, Lifecycle & GTM) và module 5 (Team Enablement)"
+        },
+        {
+          "en": "Study the D2, D6 and D7 principles and drill them",
+          "vi": "Học các nguyên tắc D2, D6 và D7 và luyện đề"
+        },
+        {
+          "en": "Take the full 70-question mock in 120 minutes, under exam conditions",
+          "vi": "Làm bài thi thử đầy đủ 70 câu trong 120 phút, trong điều kiện như thi thật"
+        },
+        {
+          "en": "Retry every missed question, re-read its principle, and take a second mock before you book",
+          "vi": "Làm lại mọi câu sai, đọc lại nguyên tắc liên quan, và làm bài thi thử thứ hai trước khi đăng ký thi"
+        }
+      ]
+    }
+  ],
+  "guide": {
+    "title": {
+      "en": "About the CCAR-P exam",
+      "vi": "Tìm hiểu kỳ thi CCAR-P"
+    },
+    "intro": {
+      "en": "Claude Certified Architect – Professional (exam code CCAR-P) is Anthropic's senior architect certification: designing, integrating, evaluating and governing Claude systems in enterprise production. The exam changes on 7 December 2026, from 63 to 70 items with new domain weights. Below: who it suits, both versions, cost, renewal and preparation.",
+      "vi": "Claude Certified Architect – Professional (mã thi CCAR-P) là chứng chỉ kiến trúc sư cấp cao của Anthropic: thiết kế, tích hợp, đánh giá và quản trị hệ thống Claude trong môi trường production của doanh nghiệp. Đề thi đổi từ ngày 7/12/2026, từ 63 lên 70 câu với tỉ trọng domain mới. Dưới đây là chứng chỉ hợp với ai, cả hai phiên bản đề, chi phí, gia hạn và cách ôn."
+    }
+  },
+  "faqs": [
+    {
+      "question": {
+        "en": "Who it's for and who can sit it",
+        "vi": "Chứng chỉ dành cho ai và ai được thi"
+      },
+      "answer": {
+        "en": "CCAR-P targets mid- to senior-level solution architects, AI/ML engineers, tech leads and senior software engineers who own a Claude system from discovery through deployment and operation, and who advise clients or internal teams, including security, legal and executive stakeholders.",
+        "vi": "CCAR-P nhắm tới solution architect, kỹ sư AI/ML, tech lead và kỹ sư phần mềm từ trung cấp đến cấp cao, người chịu trách nhiệm một hệ thống Claude từ khảo sát đến triển khai và vận hành, đồng thời tư vấn cho khách hàng hoặc đội nội bộ, kể cả các bên bảo mật, pháp lý và lãnh đạo."
+      }
+    },
+    {
+      "question": {
+        "en": "What's tested",
+        "vi": "Đề thi kiểm tra những gì"
+      },
+      "answer": {
+        "en": "Seven domains in both versions, with weights from 7 December 2026 (and before):",
+        "vi": "Cả hai phiên bản đều có bảy domain; tỉ trọng từ 7/12/2026 (và trước đó):"
+      }
+    },
+    {
+      "question": {
+        "en": "Exam format and scoring",
+        "vi": "Cấu trúc đề và cách chấm điểm"
+      },
+      "answer": {
+        "en": "Your exam date, not your booking date, decides the version: test on or before 6 December and you sit the old form; on or after 7 December, the new one. Study from the guide that matches your date.",
+        "vi": "Ngày thi, không phải ngày đặt lịch, quyết định phiên bản: thi từ 6/12 trở về trước là đề cũ; từ 7/12 trở đi là đề mới. Hãy ôn theo exam guide đúng với ngày thi của bạn."
+      }
+    },
+    {
+      "question": {
+        "en": "Difficulty and study time",
+        "vi": "Độ khó và thời gian ôn"
+      },
+      "answer": {
+        "en": "CCAR-P is the more demanding of the two architect exams: each option is usually a sound practice, and only one fits all the stated constraints on cost, latency, compliance and risk. Expect long scenarios where you read a trace, an SLA draft or a config and find what fails first.",
+        "vi": "CCAR-P là đề khó hơn trong hai bài thi kiến trúc sư: các phương án thường đều là cách làm tốt, nhưng chỉ một phương án thoả mọi ràng buộc đã nêu về chi phí, độ trễ, tuân thủ và rủi ro. Hãy chuẩn bị cho tình huống dài, nơi bạn phải đọc trace, bản nháp SLA hoặc file cấu hình và tìm ra chỗ hỏng đầu tiên."
+      }
+    },
+    {
+      "question": {
+        "en": "Cost, eligibility and booking",
+        "vi": "Chi phí, điều kiện và đặt lịch thi"
+      },
+      "answer": {
+        "en": "Fee. US$175 per attempt before discounts, when we checked. Discounts follow your firm's Claude Partner Network tier: Registered partners pay full price; Select, Preferred and Global Premier partners get 50% off at Pearson checkout, and Global Premier gets 100% off until 31 December 2026. Retakes cost the full fee again.",
+        "vi": "Lệ phí. 175 USD mỗi lần thi, chưa tính giảm giá, tại thời điểm chúng tôi kiểm tra. Mức giảm theo hạng của công ty bạn trong Claude Partner Network: hạng Registered trả đủ; Select, Preferred và Global Premier được giảm 50% khi thanh toán ở Pearson, riêng Global Premier được giảm 100% đến hết 31/12/2026. Thi lại phải trả lại toàn bộ lệ phí."
+      }
+    },
+    {
+      "question": {
+        "en": "Renewal",
+        "vi": "Gia hạn chứng chỉ"
+      },
+      "answer": {
+        "en": "CCAR-P is valid for 12 months from the date you earn it.",
+        "vi": "CCAR-P có hiệu lực 12 tháng kể từ ngày bạn đạt."
+      }
+    },
+    {
+      "question": {
+        "en": "How it compares",
+        "vi": "So sánh với các chứng chỉ khác"
+      },
+      "answer": {
+        "en": "",
+        "vi": ""
+      }
+    },
+    {
+      "question": {
+        "en": "How to prepare",
+        "vi": "Cách ôn thi"
+      },
+      "answer": {
+        "en": "Our free practice questions and mock exams follow the official domains; they are written by us, not by Anthropic. Practica is not affiliated with Anthropic. Claude is a trademark of Anthropic.",
+        "vi": "Câu hỏi luyện tập và đề thi thử miễn phí trên trang của chúng tôi bám theo các domain chính thức; câu hỏi do chúng tôi tự soạn, không phải của Anthropic. Practica không liên kết với Anthropic. Claude là nhãn hiệu của Anthropic."
+      }
+    },
+    {
+      "question": {
+        "en": "How many questions are on the CCAR-P exam?",
+        "vi": "Đề thi CCAR-P có bao nhiêu câu hỏi?"
+      },
+      "answer": {
+        "en": "The CCAR-P exam has 70 questions.",
+        "vi": "Đề thi CCAR-P có 70 câu hỏi."
+      }
+    },
+    {
+      "question": {
+        "en": "How long is the CCAR-P exam?",
+        "vi": "Thời gian làm bài thi CCAR-P là bao lâu?"
+      },
+      "answer": {
+        "en": "You have 120 minutes, about 103 seconds per question.",
+        "vi": "Bạn có 120 phút, khoảng 103 giây cho mỗi câu."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the passing score for CCAR-P?",
+        "vi": "Điểm đạt của kỳ thi CCAR-P là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The passing score is 720.",
+        "vi": "Điểm đạt là 720."
+      }
+    },
+    {
+      "question": {
+        "en": "How much does the CCAR-P exam cost?",
+        "vi": "Lệ phí thi CCAR-P là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The exam fee is $175.",
+        "vi": "Lệ phí thi là $175."
+      }
+    },
+    {
+      "question": {
+        "en": "What does the CCAR-P exam cover?",
+        "vi": "Đề thi CCAR-P gồm những nội dung gì?"
+      },
+      "answer": {
+        "en": "Solution Design and Architecture (18%); Claude Models, Prompting, and Context Engineering (13%); Integration (21%); Evaluation, Testing, and Optimization (17%); Governance, Safety, and Risk Management (16%); Stakeholder Communication and Lifecycle Management (7%); Developer Productivity and Operational Enablement (8%).",
+        "vi": "Solution Design and Architecture (18%); Claude Models, Prompting, and Context Engineering (13%); Integration (21%); Evaluation, Testing, and Optimization (17%); Governance, Safety, and Risk Management (16%); Stakeholder Communication and Lifecycle Management (7%); Developer Productivity and Operational Enablement (8%)."
+      }
+    },
+    {
+      "question": {
+        "en": "Is Practica Cert Prep free?",
+        "vi": "Practica Cert Prep có miễn phí không?"
+      },
+      "answer": {
+        "en": "Yes. Every study page, the practice questions and the mock exam are free, with no login. Progress is saved in your browser.",
+        "vi": "Có. Mọi trang học, câu hỏi luyện tập và bài thi thử đều miễn phí, không cần đăng nhập. Tiến độ được lưu trên trình duyệt của bạn."
+      }
+    }
+  ],
+  "stats": {
+    "domains": 7,
+    "principles": 39,
+    "rules": 34,
+    "glossary": 0,
+    "questions": 140
+  },
+  "sourceUrl": "https://certprep.practica.asia/vi/ccar-p",
+  "scrapedAt": "2026-11-24T00:51:10.092Z"
+}

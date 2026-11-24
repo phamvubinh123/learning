@@ -1,0 +1,451 @@
+{
+  "slug": "ccar-p",
+  "certId": "ccap",
+  "scrapedAt": "2026-11-24T00:51:10.092Z",
+  "rules": [
+    {
+      "id": "rule-01",
+      "index": "01",
+      "situation": {
+        "en": "A business rule must be right every time (threshold, eligibility, tolerance)",
+        "vi": "Một quy tắc nghiệp vụ phải luôn đúng (ngưỡng, điều kiện đủ, dung sai)"
+      },
+      "choice": {
+        "en": "Keep it in the existing deterministic system and have Claude call it; never move it into a prompt",
+        "vi": "Giữ nó trong hệ thống tất định hiện có và để Claude gọi tới; không bao giờ chuyển nó vào prompt"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-02",
+      "index": "02",
+      "situation": {
+        "en": "An action is irreversible, high-stakes, or has a named accountable owner",
+        "vi": "Một hành động không thể đảo ngược, có rủi ro cao, hoặc có người chịu trách nhiệm được chỉ định"
+      },
+      "choice": {
+        "en": "A human approval gate before execution; sample or audit only reversible, low-stakes steps",
+        "vi": "Một bước phê duyệt của con người trước khi thực thi; chỉ lấy mẫu hoặc audit với các bước có thể đảo ngược và rủi ro thấp"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-03",
+      "index": "03",
+      "situation": {
+        "en": "The question is about live state (order status, inventory, balances)",
+        "vi": "Câu hỏi về trạng thái thực tế (trạng thái đơn hàng, tồn kho, số dư)"
+      },
+      "choice": {
+        "en": "A tool call to the system of record, not retrieval over an index or snapshot",
+        "vi": "Một tool call tới system of record, không phải retrieval trên index hay snapshot"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-04",
+      "index": "04",
+      "situation": {
+        "en": "The steps can be listed in advance and auditors need step-level logs",
+        "vi": "Các bước có thể liệt kê trước và auditor cần log ở mức từng bước"
+      },
+      "choice": {
+        "en": "A workflow (router plus chains) with control flow in code; an agent only when the path truly cannot be scripted",
+        "vi": "Một workflow (router cộng các chain) với luồng điều khiển nằm trong code; chỉ dùng agent khi lộ trình thực sự không thể viết thành kịch bản"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-05",
+      "index": "05",
+      "situation": {
+        "en": "A fan-out synthesis reports fewer results than units dispatched",
+        "vi": "Bước tổng hợp sau fan-out báo về ít kết quả hơn số đơn vị đã giao"
+      },
+      "choice": {
+        "en": "A coverage check at synthesis, with retry, re-route or a flagged gap; checkpoint the orchestrator and share a trace ID across agents",
+        "vi": "Kiểm tra độ bao phủ khi tổng hợp, kèm retry, chuyển hướng hoặc gắn cờ phần thiếu; lưu checkpoint cho orchestrator và dùng chung một trace ID giữa các agent"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-06",
+      "index": "06",
+      "situation": {
+        "en": "Residency or BAA coverage is tied to the customer's existing cloud",
+        "vi": "Yêu cầu về data residency hoặc phạm vi BAA gắn với cloud hiện có của khách hàng"
+      },
+      "choice": {
+        "en": "That cloud's marketplace surface; accept feature lag and own the agent loop, session state and sandbox (zero data retention does not equal residency)",
+        "vi": "Surface marketplace của cloud đó; chấp nhận tính năng có chậm hơn và tự lo agent loop, session state và sandbox (zero data retention không đồng nghĩa với data residency)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-07",
+      "index": "07",
+      "situation": {
+        "en": "No residency constraint, day-one features wanted, and the team won't run a runtime",
+        "vi": "Không có ràng buộc về data residency, muốn có tính năng ngay từ ngày đầu, và team không muốn tự vận hành runtime"
+      },
+      "choice": {
+        "en": "The Anthropic API with Claude Managed Agents; accept that hosting and data custody sit with Anthropic",
+        "vi": "Anthropic API với Claude Managed Agents; chấp nhận rằng việc hosting và lưu giữ dữ liệu thuộc về Anthropic"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-08",
+      "index": "08",
+      "situation": {
+        "en": "A proposed model change (up or down a tier)",
+        "vi": "Một đề xuất thay đổi model (lên hoặc xuống một tier)"
+      },
+      "choice": {
+        "en": "Start on Sonnet; move only on an eval with a threshold set beforehand, judged per segment; route failing segments to the higher tier",
+        "vi": "Bắt đầu với Sonnet; chỉ thay đổi dựa trên eval với ngưỡng đặt trước, đánh giá theo từng phân khúc; định tuyến các phân khúc không đạt sang tier cao hơn"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-09",
+      "index": "09",
+      "situation": {
+        "en": "Cache reads near zero on a high-volume prompt",
+        "vi": "Lượng cache read gần bằng 0 trên một prompt có lưu lượng cao"
+      },
+      "choice": {
+        "en": "Reorder static before dynamic: move per-request values (timestamps, IDs, documents) below the breakpoint",
+        "vi": "Sắp xếp lại theo thứ tự tĩnh trước động sau: chuyển các giá trị theo từng request (timestamp, ID, tài liệu) xuống dưới breakpoint"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-10",
+      "index": "10",
+      "situation": {
+        "en": "A long-running agent loses track or fills its window",
+        "vi": "Một agent chạy dài bị mất mạch hoặc làm đầy context window"
+      },
+      "choice": {
+        "en": "Context editing for stale tool outputs, the memory tool for load-bearing state, compaction for the rest; reasoning effort set per step from evals",
+        "vi": "Context editing cho các output tool đã cũ, memory tool cho trạng thái then chốt, compaction cho phần còn lại; reasoning effort được đặt theo từng bước dựa trên eval"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-11",
+      "index": "11",
+      "situation": {
+        "en": "A subagent holds tools its task never uses and traces show it calling them",
+        "vi": "Một subagent giữ các tool mà task của nó không bao giờ dùng và trace cho thấy nó đang gọi chúng"
+      },
+      "choice": {
+        "en": "Remove or scope the tools (record why) and route extra needs through the orchestrator; not a prompt rule",
+        "vi": "Loại bỏ hoặc giới hạn phạm vi các tool (ghi lại lý do) và định tuyến các nhu cầu phát sinh qua orchestrator; không dùng quy tắc trong prompt"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-12",
+      "index": "12",
+      "situation": {
+        "en": "A user asserts a role or entitlement in their message",
+        "vi": "Người dùng tự khai vai trò hoặc quyền hạn trong tin nhắn"
+      },
+      "choice": {
+        "en": "Resolve identity server-side from SSO, inject it, and have the tool enforce authorization",
+        "vi": "Xác định danh tính ở phía server từ SSO, inject vào, và để tool thực thi phân quyền"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-13",
+      "index": "13",
+      "situation": {
+        "en": "A credential sits in the prompt or in model-visible tool arguments",
+        "vi": "Một credential nằm trong prompt hoặc trong tham số tool mà model nhìn thấy"
+      },
+      "choice": {
+        "en": "Hold credentials in the gateway or tool implementation, scoped to tenant and task",
+        "vi": "Lưu credential trong gateway hoặc phần cài đặt tool, giới hạn theo tenant và task"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-14",
+      "index": "14",
+      "situation": {
+        "en": "Accuracy is binding, latency has headroom, and the answer passage ranks just below the top-k cutoff",
+        "vi": "Độ chính xác là ràng buộc bắt buộc, latency còn dư địa, và đoạn chứa câu trả lời xếp hạng ngay dưới ngưỡng top-k"
+      },
+      "choice": {
+        "en": "Increase retrieval depth, then re-run the eval",
+        "vi": "Tăng độ sâu retrieval, rồi chạy lại eval"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-15",
+      "index": "15",
+      "situation": {
+        "en": "Latency is binding, accuracy has headroom, and a smaller tier clears the floor on the eval",
+        "vi": "Latency là ràng buộc bắt buộc, độ chính xác còn dư địa, và một tier nhỏ hơn vượt ngưỡng tối thiểu trên eval"
+      },
+      "choice": {
+        "en": "Move to the smaller tier, gated by the eval",
+        "vi": "Chuyển sang tier nhỏ hơn, với eval làm cổng kiểm soát"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-16",
+      "index": "16",
+      "situation": {
+        "en": "Live state (orders, balances, stock) is answered from an index",
+        "vi": "Trạng thái thực tế (đơn hàng, số dư, tồn kho) được trả lời từ một index"
+      },
+      "choice": {
+        "en": "Tool call to the system of record; keep RAG for stable knowledge",
+        "vi": "Tool call tới system of record; giữ RAG cho kiến thức ổn định"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-17",
+      "index": "17",
+      "situation": {
+        "en": "The same tools are needed from several Claude clients versus one product only",
+        "vi": "Cùng một bộ tool cần dùng từ nhiều Claude client so với chỉ trong một sản phẩm"
+      },
+      "choice": {
+        "en": "MCP for multi-client reuse; direct API tool use for a single product",
+        "vi": "MCP để tái sử dụng cho nhiều client; tool use trực tiếp qua API cho một sản phẩm duy nhất"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-18",
+      "index": "18",
+      "situation": {
+        "en": "A retried side-effecting call created duplicates",
+        "vi": "Một call có side effect được retry đã tạo ra bản ghi trùng lặp"
+      },
+      "choice": {
+        "en": "Idempotency key per intent; backoff for transient errors; fallback routing for an overloaded primary",
+        "vi": "Idempotency key cho mỗi ý định; backoff cho lỗi tạm thời; fallback routing khi primary bị quá tải"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-19",
+      "index": "19",
+      "situation": {
+        "en": "A failure shipped in a dimension the suite never measured (leakage, groundedness, cost)",
+        "vi": "Một lỗi lọt ra ở một chiều đánh giá mà bộ test chưa bao giờ đo (rò rỉ dữ liệu, groundedness, chi phí)"
+      },
+      "choice": {
+        "en": "Add that dimension with the cheapest reliable grader: code if deterministic, calibrated judge if interpretive",
+        "vi": "Thêm chiều đánh giá đó với cách chấm đáng tin cậy rẻ nhất: code nếu tất định, judge đã hiệu chỉnh nếu mang tính diễn giải"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-20",
+      "index": "20",
+      "situation": {
+        "en": "Judge verdicts flip with order, track length, or favor the judge's own model",
+        "vi": "Phán quyết của judge đổi theo thứ tự, bám theo độ dài, hoặc thiên vị model của chính judge"
+      },
+      "choice": {
+        "en": "Both orders; content rubric with constrained verdicts; a different judge model; recalibrate against human labels",
+        "vi": "Chấm cả hai thứ tự; rubric theo nội dung với các phán quyết bị giới hạn; một model judge khác; hiệu chỉnh lại theo nhãn của con người"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-21",
+      "index": "21",
+      "situation": {
+        "en": "Run-to-run variance is as large as the observed difference between configurations",
+        "vi": "Phương sai giữa các lần chạy lớn ngang với chênh lệch quan sát được giữa các cấu hình"
+      },
+      "choice": {
+        "en": "Repeated trials per case on the same cases, one variable changed, metric pre-specified",
+        "vi": "Chạy lặp lại nhiều lần trên mỗi case, trên cùng các case, chỉ thay đổi một biến, metric được xác định trước"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-22",
+      "index": "22",
+      "situation": {
+        "en": "A replacement model regresses in specific categories and the retirement date is months away",
+        "vi": "Model thay thế bị regression ở một số nhóm cụ thể và ngày ngừng hỗ trợ còn vài tháng nữa"
+      },
+      "choice": {
+        "en": "Keep the pin, re-tune for those categories, re-baseline evals, migrate before retirement",
+        "vi": "Giữ nguyên pin, tinh chỉnh lại cho các nhóm đó, thiết lập lại baseline của eval, chuyển đổi trước ngày ngừng hỗ trợ"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-23",
+      "index": "23",
+      "situation": {
+        "en": "Misuse runs through a side-effecting tool and an output filter missed it",
+        "vi": "Hành vi lạm dụng đi qua một tool có side effect và bộ lọc output đã bỏ sót"
+      },
+      "choice": {
+        "en": "Deterministic tool-call authorization (identity + scope) before the tool runs, not a prompt rule or a stronger output judge; make team-built screens fail closed",
+        "vi": "Phân quyền tool call tất định (danh tính + phạm vi) trước khi tool chạy, không phải quy tắc trong prompt hay một output judge mạnh hơn; cho các bộ sàng lọc do team tự xây dựng fail closed"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-24",
+      "index": "24",
+      "situation": {
+        "en": "Instructions arrive in retrieved docs, tool results, MCP responses, or a third-party Skill",
+        "vi": "Chỉ dẫn xuất hiện trong tài liệu truy xuất, kết quả tool, phản hồi MCP hoặc Skill của bên thứ ba"
+      },
+      "choice": {
+        "en": "Screen retrieved and tool content before it enters context, keep deterministic authorization on side-effecting tools; audit Skills with a recorded verdict and sandbox them",
+        "vi": "Sàng lọc nội dung truy xuất và nội dung từ tool trước khi vào context, giữ phân quyền tất định trên các tool có side effect; audit Skill với phán quyết được ghi lại và chạy chúng trong sandbox"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-25",
+      "index": "25",
+      "situation": {
+        "en": "Ranking a list of deployment risks",
+        "vi": "Xếp hạng danh sách các rủi ro khi triển khai"
+      },
+      "choice": {
+        "en": "Rank by exposure given existing controls: an uncontrolled path from untrusted content to a side-effecting tool ranks first",
+        "vi": "Xếp hạng theo mức độ phơi nhiễm khi tính đến các cơ chế kiểm soát hiện có: một đường đi không được kiểm soát từ nội dung không đáng tin cậy tới một tool có side effect xếp đầu tiên"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-26",
+      "index": "26",
+      "situation": {
+        "en": "Agent workflow mixes reversible and irreversible steps",
+        "vi": "Workflow của agent có cả bước có thể đảo ngược lẫn không thể đảo ngược"
+      },
+      "choice": {
+        "en": "Pre-action gate only on irreversible or high-cost steps, with inputs and flag reason shown; no gate-everything, no confidence self-report gate, no post-hoc review for irreversible actions",
+        "vi": "Chỉ đặt cổng phê duyệt trước hành động cho các bước không thể đảo ngược hoặc chi phí cao, kèm hiển thị input và lý do gắn cờ; không chặn mọi thứ, không dùng độ tin cậy tự báo cáo làm cổng, không review sau hành động cho các hành động không thể đảo ngược"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-27",
+      "index": "27",
+      "situation": {
+        "en": "Residency obligation and someone proposes zero-data-retention",
+        "vi": "Có nghĩa vụ về data residency và ai đó đề xuất zero-data-retention"
+      },
+      "choice": {
+        "en": "Regional processing/storage config plus a data-flow record of every copy; ZDR is about retention, not location",
+        "vi": "Cấu hình xử lý/lưu trữ theo vùng cộng với bản ghi luồng dữ liệu cho mọi bản sao; ZDR là về thời gian lưu giữ, không phải vị trí"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-28",
+      "index": "28",
+      "situation": {
+        "en": "Disparate outcomes across groups",
+        "vi": "Kết quả chênh lệch giữa các nhóm"
+      },
+      "choice": {
+        "en": "Isolate the source with controlled comparisons, then mitigate there: corpus for data bias, prompt for framing bias, rubric and references for eval-design bias",
+        "vi": "Cô lập nguồn gốc bằng các phép so sánh có kiểm soát, rồi giảm thiểu tại đó: corpus cho bias dữ liệu, prompt cho bias do cách đặt vấn đề, rubric và đáp án tham chiếu cho bias do thiết kế eval"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-29",
+      "index": "29",
+      "situation": {
+        "en": "Draft SLA guarantees model correctness or an end-to-end time through a human gate",
+        "vi": "Bản nháp SLA cam kết tính đúng đắn của model hoặc thời gian end-to-end đi qua một bước phê duyệt của con người"
+      },
+      "choice": {
+        "en": "Restate as an eval-traced threshold with breach and response, and split system-owned from human-owned commitments",
+        "vi": "Viết lại thành một ngưỡng truy được về eval kèm định nghĩa vi phạm và cách phản hồi, và tách các cam kết do hệ thống chịu trách nhiệm khỏi các cam kết do con người chịu trách nhiệm"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-30",
+      "index": "30",
+      "situation": {
+        "en": "Draft ADR misses a stakeholder constraint or says 'guarantees'",
+        "vi": "Bản nháp ADR bỏ sót một ràng buộc của stakeholder hoặc dùng từ “đảm bảo”"
+      },
+      "choice": {
+        "en": "Add gain, loss, reversal cost, compliance posture and rejected alternative; state behavior as measured eval results with residual risk",
+        "vi": "Thêm phần được, mất, chi phí đảo ngược, tình trạng tuân thủ và phương án bị loại; mô tả hành vi bằng kết quả eval đã đo kèm rủi ro còn lại"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-31",
+      "index": "31",
+      "situation": {
+        "en": "Handoff package has diagrams and dashboards but no owners or triggers",
+        "vi": "Gói bàn giao có sơ đồ và dashboard nhưng không có người chịu trách nhiệm hay trigger"
+      },
+      "choice": {
+        "en": "Governance table and runbook mapping each signal (including scheduled audits and slow drift) to trigger, owner, action, and escalation path",
+        "vi": "Bảng quản trị và runbook ánh xạ từng tín hiệu (bao gồm các đợt audit theo lịch và drift chậm) tới trigger, người chịu trách nhiệm, hành động và lộ trình escalation"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-32",
+      "index": "32",
+      "situation": {
+        "en": "Proven Claude Code workflow must reach many teams, some unattended",
+        "vi": "Workflow Claude Code đã được kiểm chứng cần đến tay nhiều team, một số chạy không giám sát"
+      },
+      "choice": {
+        "en": "Plugin via org marketplace with group assignment and versioned updates; enforce guardrail hooks, permission and spend rules via managed settings; leave conventions to teams",
+        "vi": "Plugin qua marketplace của tổ chức với việc gán theo nhóm và cập nhật có version; thực thi guardrail hook, permission rule và quy tắc chi tiêu qua managed settings; để các quy ước cho từng team"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-33",
+      "index": "33",
+      "situation": {
+        "en": "Claude Code in CI hangs on permission prompts",
+        "vi": "Claude Code trong CI bị treo vì các prompt hỏi permission"
+      },
+      "choice": {
+        "en": "-p with narrow allow rules, a deny-instead-of-prompt mode, and blocking hooks; never bypassPermissions",
+        "vi": "-p với các allow rule hẹp, một mode từ chối thay vì hỏi, và các hook chặn; không bao giờ dùng bypassPermissions"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-34",
+      "index": "34",
+      "situation": {
+        "en": "Proposal to let AI merge its own code or skip review for small AI changes",
+        "vi": "Đề xuất để AI tự merge code của chính nó hoặc bỏ qua review cho các thay đổi nhỏ do AI tạo ra"
+      },
+      "choice": {
+        "en": "Named human owner who can explain the change, verification checklist gate, automated tests and evals as required checks",
+        "vi": "Một người cụ thể chịu trách nhiệm và giải thích được thay đổi, checklist xác minh làm cổng kiểm soát, automated test và eval là các bước kiểm tra bắt buộc"
+      },
+      "personal_notes": ""
+    }
+  ],
+  "vocabulary": [],
+  "glossary": []
+}

@@ -1,0 +1,442 @@
+{
+  "slug": "pmp",
+  "certId": "pmi-pmp",
+  "scrapedAt": "2026-11-24T00:51:52.919Z",
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 33,
+      "name": {
+        "en": "People",
+        "vi": "People"
+      },
+      "description": {
+        "en": "How the project manager builds and keeps a shared vision, resolves conflict, leads and empowers the team, engages and aligns stakeholders and customers, makes sure knowledge is transferred, and plans communication and reporting, in predictive, agile and hybrid projects.",
+        "vi": "Cách người quản lý dự án xây dựng và duy trì tầm nhìn chung, giải quyết xung đột, dẫn dắt và trao quyền cho nhóm, gắn kết và điều chỉnh kỳ vọng của các bên liên quan và khách hàng, bảo đảm chuyển giao tri thức, và hoạch định giao tiếp, báo cáo trong dự án dự đoán (predictive), agile và kết hợp (hybrid)."
+      },
+      "principles": [
+        {
+          "id": "d1-p1",
+          "number": 1,
+          "domainId": "D1",
+          "title": {
+            "en": "Building a shared vision",
+            "vi": "Xây dựng tầm nhìn chung"
+          },
+          "body": {
+            "en": "A shared vision is the short answer to 'why are we doing this, and for whom', agreed by the sponsor, the key stakeholders and the team. The project manager does not write it alone and send it out for sign-off; they facilitate it with the people who must act on it, then make it visible (charter, product vision statement or board, elevator pitch, release and sprint goals) so everyday choices can be tested against it. Keep it current: revisit it at release planning, phase gates and after a major market or strategy change, and tell everyone what changed and why. When people act on different readings of the vision, break the situation down first (five whys, cause-and-effect diagram) to find what was actually misunderstood, before rewriting requirements or escalating. Traps: emailing a document and calling it 'shared'; treating repeated rejections as a scope problem when the real cause is a different picture of the outcome.",
+            "vi": "Tầm nhìn chung là câu trả lời ngắn gọn cho 'vì sao làm việc này, và làm cho ai', được nhà tài trợ (sponsor), các bên liên quan chủ chốt và nhóm dự án cùng thống nhất. Người quản lý dự án không tự viết rồi gửi đi xin ký duyệt; họ điều phối để chính những người sẽ hành động theo tầm nhìn cùng xây dựng nó, rồi làm cho nó luôn hiện diện (project charter, product vision statement hoặc vision board, elevator pitch, release goal và sprint goal) để mọi lựa chọn hằng ngày đều có thể được đối chiếu với nó. Giữ tầm nhìn luôn cập nhật: xem lại ở release planning, các phase gate và sau mỗi thay đổi lớn về thị trường hay chiến lược, rồi thông báo cho mọi người điều gì đã thay đổi và vì sao. Khi mọi người hành động theo những cách hiểu khác nhau về tầm nhìn, hãy phân tích tình huống trước (five whys, biểu đồ nhân quả) để tìm ra điều thực sự bị hiểu sai, trước khi viết lại yêu cầu hay leo thang (escalate). Bẫy: gửi email một tài liệu rồi gọi đó là 'tầm nhìn chung'; coi việc sản phẩm bị từ chối nhiều lần là vấn đề phạm vi trong khi nguyên nhân thật là mỗi bên hình dung một kết quả khác nhau."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p2",
+          "number": 2,
+          "domainId": "D1",
+          "title": {
+            "en": "Managing conflict",
+            "vi": "Quản lý xung đột"
+          },
+          "body": {
+            "en": "Conflict is normal and can be useful; the aim is to resolve it early, at the lowest level, while keeping relationships intact. First identify the source (scarce resources, priorities and schedules, technical opinions, work styles) and the context: what is at stake, how much time there is, who holds power. Then choose the approach: collaborate/problem-solve when the issue matters and time allows (usually the best answer); compromise/reconcile when both sides have equal power and a temporary fix is acceptable; smooth/accommodate to protect a relationship over a minor point; withdraw/avoid to let tempers cool or when the issue is trivial; force/direct only in emergencies such as a safety or legal breach. Prevent conflict with ground rules the team writes itself (team charter, working agreements), and explain the agreed resolution approach to vendors and other external parties. Handle a ground rule violation privately first, with reference to the agreement, and escalate only if the pattern continues. Traps: escalating to the sponsor first, or deciding for a self-organizing team that can resolve the matter itself.",
+            "vi": "Xung đột là bình thường và có thể hữu ích; mục tiêu là giải quyết sớm, ở cấp thấp nhất, mà vẫn giữ được quan hệ. Trước hết xác định nguồn gốc (nguồn lực khan hiếm, ưu tiên và lịch trình, quan điểm kỹ thuật, phong cách làm việc) và bối cảnh: điều gì đang bị đe dọa, còn bao nhiêu thời gian, ai nắm quyền lực. Sau đó chọn cách tiếp cận: collaborate/problem-solve (hợp tác, cùng giải quyết vấn đề) khi vấn đề quan trọng và còn thời gian (thường là đáp án tốt nhất); compromise/reconcile (thỏa hiệp) khi hai bên ngang quyền và chấp nhận được giải pháp tạm thời; smooth/accommodate (xoa dịu, nhượng bộ) để giữ quan hệ trong một điểm nhỏ; withdraw/avoid (tạm rút lui) để hạ nhiệt hoặc khi vấn đề không đáng kể; force/direct (áp đặt) chỉ trong tình huống khẩn cấp như vi phạm an toàn hay pháp lý. Phòng ngừa xung đột bằng các quy tắc nền (ground rules) do chính nhóm viết ra (team charter, working agreement), và giải thích cách giải quyết xung đột đã thống nhất cho nhà cung cấp và các bên bên ngoài. Xử lý vi phạm quy tắc nền một cách riêng tư trước, dựa trên thỏa thuận chung, và chỉ escalate nếu tình trạng tiếp diễn. Bẫy: escalate lên nhà tài trợ (sponsor) ngay từ đầu, hoặc quyết định thay cho một nhóm tự tổ chức trong khi nhóm có thể tự giải quyết."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p3",
+          "number": 3,
+          "domainId": "D1",
+          "title": {
+            "en": "Leading the project team",
+            "vi": "Dẫn dắt nhóm dự án"
+          },
+          "body": {
+            "en": "The exam expects a servant leader first. Set team-level expectations (team charter, Definition of Done, RACI or role descriptions), then empower the team to plan and decide how to do the work, remove obstacles, and shield it from outside pressure by representing its voice with data (velocity, capacity, risks). Adapt the style to the situation: more directive for a new, inexperienced team or a crisis, coaching while the team is storming, supporting and delegating as it norms and performs (Tuckman stages; situational leadership). Use the team's varied skills, cultures and working styles on purpose: draw out quiet members, build psychological safety so people raise problems early, and recognise contributions. Make roles explicit so each deliverable has exactly one accountable person, and set expectations for how the team may use AI tools within organizational policy. Traps: solving the team's problem for it, assigning tasks daily to an agile team, or accepting unrealistic overtime on the team's behalf without consulting it.",
+            "vi": "Đề thi kỳ vọng trước hết một nhà lãnh đạo phục vụ (servant leader). Đặt kỳ vọng ở cấp độ nhóm (team charter, Definition of Done, RACI hoặc mô tả vai trò), rồi trao quyền cho nhóm tự lập kế hoạch và quyết định cách làm, gỡ bỏ trở ngại, và che chắn nhóm khỏi áp lực bên ngoài bằng cách đại diện cho tiếng nói của nhóm bằng dữ liệu (velocity, năng lực, rủi ro). Điều chỉnh phong cách theo tình huống: chỉ đạo nhiều hơn với nhóm mới, ít kinh nghiệm hoặc khi khủng hoảng; huấn luyện (coaching) khi nhóm đang ở giai đoạn storming; hỗ trợ và ủy quyền khi nhóm đến norming và performing (các giai đoạn Tuckman; situational leadership). Chủ động tận dụng sự đa dạng về kỹ năng, văn hoá và phong cách làm việc: khuyến khích người ít nói, xây dựng an toàn tâm lý (psychological safety) để mọi người nêu vấn đề sớm, và ghi nhận đóng góp. Làm rõ vai trò để mỗi sản phẩm bàn giao có đúng một người chịu trách nhiệm giải trình (accountable), và đặt kỳ vọng về cách nhóm dùng công cụ AI trong khuôn khổ chính sách của tổ chức. Bẫy: giải quyết vấn đề thay cho nhóm, giao việc hằng ngày cho một nhóm agile, hoặc thay nhóm nhận làm thêm giờ phi thực tế mà không hỏi ý kiến nhóm."
+          },
+          "questionCount": 16,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p4",
+          "number": 4,
+          "domainId": "D1",
+          "title": {
+            "en": "Engaging stakeholders",
+            "vi": "Gắn kết các bên liên quan"
+          },
+          "body": {
+            "en": "Identify stakeholders early and keep identifying them, because new ones appear throughout the project. Analyze them by power, interest, influence and attitude (power/interest grid, salience model, and the stakeholder engagement assessment matrix comparing current with desired engagement: unaware, resistant, neutral, supportive, leading). Record the results in the stakeholder register. Tailor engagement and communication to each group, execute the stakeholder engagement plan, and adjust it when engagement drifts from the desired level. Keep stakeholder needs, expectations and project objectives aligned. Build trust through transparency and kept promises, and influence through shared interests rather than positional authority. Traps: dropping a stakeholder because their interest is low today; engaging everyone in the same way; escalating about a resistant, powerful stakeholder before talking to them and understanding their concerns.",
+            "vi": "Xác định các bên liên quan sớm và tiếp tục xác định trong suốt dự án, vì bên liên quan mới có thể xuất hiện bất cứ lúc nào. Phân tích họ theo quyền lực, mức quan tâm, ảnh hưởng và thái độ (lưới power/interest, salience model, và ma trận đánh giá mức độ gắn kết (stakeholder engagement assessment matrix) so sánh mức hiện tại với mức mong muốn: unaware, resistant, neutral, supportive, leading). Ghi kết quả vào stakeholder register. Điều chỉnh cách gắn kết và giao tiếp cho từng nhóm, thực hiện kế hoạch gắn kết các bên liên quan, và điều chỉnh khi mức gắn kết lệch khỏi mức mong muốn. Giữ cho nhu cầu, kỳ vọng của các bên và mục tiêu dự án luôn đồng bộ. Xây dựng niềm tin bằng sự minh bạch và giữ lời hứa, và gây ảnh hưởng bằng lợi ích chung thay vì quyền lực chức vụ. Bẫy: bỏ qua một bên liên quan vì hiện họ ít quan tâm; gắn kết mọi người theo cùng một cách; escalate về một bên liên quan có quyền lực đang phản đối trước khi nói chuyện trực tiếp và hiểu mối lo của họ."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p5",
+          "number": 5,
+          "domainId": "D1",
+          "title": {
+            "en": "Aligning stakeholder expectations",
+            "vi": "Điều chỉnh kỳ vọng của các bên liên quan"
+          },
+          "body": {
+            "en": "Categorize stakeholders (internal or external, supporters or resisters, by role and by impact) and surface their expectations explicitly, including the unstated ones: success criteria, timing, and how involved they want to be. When expectations conflict, facilitate a discussion that puts the competing needs side by side against the project objectives and business case, and let the person with the authority (sponsor or product owner) make the call, rather than quietly favouring one side. Record what was agreed and revisit it as the project changes. Remember that influence runs in four directions: upward (sponsor, senior management, steering committee), downward (the team and specialists contributing to the work), outward (customers, end users, vendors, regulators) and sideward (peers such as other project managers and functional managers competing for the same resources). The salience model categorizes stakeholders by power, legitimacy and urgency: those with all three are definitive and need attention first, while a 'dependent' stakeholder has legitimacy and urgency but relies on someone else's power to be heard. The 2026 ECO also places mentoring here: notice and act on chances to mentor stakeholders and team members, for example coaching a new product owner in how to order the backlog. Traps: promising each stakeholder what they want in separate meetings; assuming silence means agreement.",
+            "vi": "Phân loại các bên liên quan (bên trong hay bên ngoài, ủng hộ hay phản đối, theo vai trò và theo mức tác động) và làm rõ kỳ vọng của họ, kể cả những kỳ vọng không nói ra: tiêu chí thành công, thời điểm, và mức độ họ muốn tham gia. Khi các kỳ vọng mâu thuẫn, hãy điều phối một buổi thảo luận đặt các nhu cầu cạnh tranh cạnh nhau, đối chiếu với mục tiêu dự án và business case, và để người có thẩm quyền (sponsor hoặc product owner) quyết định, thay vì ngầm thiên vị một bên. Ghi lại điều đã thống nhất và xem lại khi dự án thay đổi. Nhớ rằng ảnh hưởng đi theo bốn hướng: hướng lên (upward: nhà tài trợ (sponsor), lãnh đạo cấp cao, ban chỉ đạo), hướng xuống (downward: nhóm và các chuyên gia đóng góp vào công việc), hướng ra ngoài (outward: khách hàng, người dùng cuối, nhà cung cấp, cơ quan quản lý) và ngang hàng (sideward: các quản lý dự án khác và quản lý chức năng đang cạnh tranh cùng nguồn lực). Salience model phân loại các bên liên quan theo quyền lực (power), tính chính đáng (legitimacy) và mức khẩn cấp (urgency): bên có đủ cả ba là bên quyết định (definitive) và cần được chú ý trước, còn bên 'phụ thuộc' (dependent) có tính chính đáng và mức khẩn cấp nhưng phải dựa vào quyền lực của người khác để được lắng nghe. ECO 2026 cũng đặt việc cố vấn (mentoring) vào đây: nhận ra và tận dụng cơ hội cố vấn cho các bên liên quan và thành viên nhóm, ví dụ hướng dẫn một product owner mới cách sắp xếp thứ tự backlog. Bẫy: hứa với mỗi bên điều họ muốn trong những cuộc họp riêng; cho rằng im lặng nghĩa là đồng ý."
+          },
+          "questionCount": 14,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p6",
+          "number": 6,
+          "domainId": "D1",
+          "title": {
+            "en": "Managing customer expectations and satisfaction",
+            "vi": "Quản lý kỳ vọng và sự hài lòng của khách hàng"
+          },
+          "body": {
+            "en": "Know who the internal and external customers are and what they expect: outcomes, quality, timing and how they want to be involved. Keep the outcomes aligned with those expectations through early and frequent feedback (demos, sprint reviews, prototypes, acceptance criteria agreed up front), and monitor satisfaction with measures such as surveys, net promoter score or acceptance results. The Kano model helps decide what to deliver first: basic needs are expected and cause dissatisfaction only when missing, performance needs raise satisfaction the better they are met, and delighters are unexpected features that please when present but are not missed when absent. When satisfaction drops, find out why with the customer and respond quickly: clarify, reprioritize within the agreed change process, or reset expectations honestly with evidence. Traps: waiting for final acceptance to learn that the customer is unhappy; adding unapproved extras (gold plating) to please the customer; equating 'met the specification' with 'satisfied'.",
+            "vi": "Biết rõ ai là khách hàng nội bộ và bên ngoài, và họ kỳ vọng gì: kết quả, chất lượng, thời điểm và cách họ muốn tham gia. Giữ kết quả bám sát các kỳ vọng đó bằng phản hồi sớm và thường xuyên (demo, sprint review, prototype, tiêu chí chấp nhận thống nhất từ đầu), và theo dõi sự hài lòng bằng các thước đo như khảo sát, net promoter score hoặc kết quả nghiệm thu. Mô hình Kano giúp quyết định nên giao gì trước: nhu cầu cơ bản (basic) là điều được mặc định và chỉ gây không hài lòng khi thiếu, nhu cầu hiệu năng (performance) càng được đáp ứng tốt thì càng hài lòng, còn yếu tố gây thích thú (delighter) là những tính năng bất ngờ làm khách hàng vui khi có nhưng không bị nhớ đến khi thiếu. Khi mức hài lòng giảm, cùng khách hàng tìm hiểu nguyên nhân và phản ứng nhanh: làm rõ, sắp xếp lại ưu tiên trong quy trình thay đổi đã thống nhất, hoặc đặt lại kỳ vọng một cách trung thực, có bằng chứng. Bẫy: đợi đến lúc nghiệm thu cuối mới biết khách hàng không hài lòng; tự thêm những thứ chưa được duyệt (gold plating) để làm vừa lòng khách hàng; đánh đồng 'đạt đặc tả' với 'hài lòng'."
+          },
+          "questionCount": 14,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p7",
+          "number": 7,
+          "domainId": "D1",
+          "title": {
+            "en": "Knowledge transfer",
+            "vi": "Chuyển giao tri thức"
+          },
+          "body": {
+            "en": "Identify which knowledge is critical to the project and who holds it, especially tacit knowledge held by a single person (a one-person dependency is a risk). Gather knowledge continuously, not only at closure: lessons learned register, retrospectives, decision logs, wikis, pairing and mob programming, job shadowing, communities of practice. Explicit knowledge can be written down; tacit knowledge moves mainly through people working together, so plan time for it. Foster an environment where people share freely: recognition, time in the plan, and psychological safety to admit what did not work. Plan the handover to operations or the next phase early, with the receiving team involved before go-live. Traps: leaving lessons learned to the final week; assuming a document alone transfers an expert's know-how.",
+            "vi": "Xác định tri thức nào quan trọng với dự án và ai đang nắm giữ, đặc biệt là tri thức ngầm (tacit knowledge) chỉ một người nắm (phụ thuộc vào một người là một rủi ro). Thu thập tri thức liên tục, không chỉ khi kết thúc: lessons learned register, retrospective, decision log, wiki, pair và mob programming, job shadowing, cộng đồng thực hành (community of practice). Tri thức hiện (explicit knowledge) có thể viết ra; tri thức ngầm chủ yếu được truyền qua việc làm cùng nhau, nên cần dành thời gian cho việc đó trong kế hoạch. Tạo môi trường để mọi người sẵn lòng chia sẻ: ghi nhận, có thời gian trong kế hoạch, và an toàn tâm lý để thừa nhận điều chưa hiệu quả. Lên kế hoạch bàn giao cho bộ phận vận hành hoặc giai đoạn tiếp theo từ sớm, với nhóm tiếp nhận tham gia trước khi go-live. Bẫy: để lessons learned đến tuần cuối; cho rằng chỉ một tài liệu là đủ chuyển giao bí quyết của một chuyên gia."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d1-p8",
+          "number": 8,
+          "domainId": "D1",
+          "title": {
+            "en": "Planning and managing communication",
+            "vi": "Hoạch định và quản lý giao tiếp"
+          },
+          "body": {
+            "en": "Define a communication strategy from stakeholder needs: who needs what information, in what format, how often and through which channel (communications management plan; push, pull and interactive methods). Promote transparency and collaboration with information radiators and open access to project data, and build feedback loops so you know a message was understood, not just sent. Understand the reporting requirements of governance (sponsor, PMO, steering committee) and create reports at the right level: a sponsor wants trends, risks and decisions needed, not task lists. Support reporting and governance processes with accurate, timely reports, and raise bad news early. Traps: sending the same detailed report to everyone; using email for complex or sensitive messages that need a conversation; softening or hiding unfavourable status.",
+            "vi": "Xây dựng chiến lược giao tiếp từ nhu cầu của các bên liên quan: ai cần thông tin gì, ở định dạng nào, tần suất ra sao và qua kênh nào (communications management plan; các phương pháp push, pull và interactive). Thúc đẩy minh bạch và hợp tác bằng information radiator và quyền truy cập mở vào dữ liệu dự án, và tạo vòng phản hồi để biết thông điệp đã được hiểu, chứ không chỉ đã được gửi. Hiểu yêu cầu báo cáo của bộ máy quản trị (sponsor, PMO, ban chỉ đạo) và lập báo cáo ở mức phù hợp: nhà tài trợ (sponsor) cần xu hướng, rủi ro và các quyết định cần đưa ra, không phải danh sách công việc. Hỗ trợ quy trình báo cáo và quản trị bằng các báo cáo chính xác, kịp thời, và báo tin xấu sớm. Bẫy: gửi cùng một báo cáo chi tiết cho tất cả mọi người; dùng email cho thông điệp phức tạp hoặc nhạy cảm vốn cần trao đổi trực tiếp; làm nhẹ đi hoặc che giấu tình trạng bất lợi."
+          },
+          "questionCount": 16,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 41,
+      "name": {
+        "en": "Process",
+        "vi": "Process"
+      },
+      "description": {
+        "en": "Planning and delivering the work across predictive, agile and hybrid approaches: the integrated plan and delivery approach, scope and backlog, value, resources, procurement, finance, quality, schedule, status and closure. The largest domain on the 2026 exam.",
+        "vi": "Lập kế hoạch và triển khai công việc theo cách tiếp cận dự đoán (predictive), agile và kết hợp: kế hoạch tích hợp và cách tiếp cận triển khai, phạm vi và backlog, giá trị, nguồn lực, mua sắm, tài chính, chất lượng, tiến độ, tình trạng dự án và đóng dự án. Đây là lĩnh vực có tỷ trọng lớn nhất trong đề thi 2026."
+      },
+      "principles": [
+        {
+          "id": "d2-p1",
+          "number": 1,
+          "domainId": "D2",
+          "title": {
+            "en": "Integrated planning and choosing the delivery approach",
+            "vi": "Lập kế hoạch tích hợp và chọn cách tiếp cận triển khai"
+          },
+          "body": {
+            "en": "Choose the development approach from the project's needs, not from habit. Assess complexity, size, how stable the requirements are, how often feedback is possible, regulation and the organisation's capability. Stable, well-understood scope with heavy regulation suits a predictive plan; uncertain requirements with frequent customer feedback suit an agile approach; mixed work (fixed hardware or contracts beside evolving software) suits a hybrid. The integrated project management plan joins the subsidiary plans and baselines so that they agree with each other. Review the consolidated plan for dependencies, gaps and whether the business case still holds, decide which information the project must track (sustainability metrics, for example), and keep the plan current through progressive elaboration. Traps: picking agile because the sponsor likes it, letting subsidiary plans contradict each other, and acting on data, including AI-generated forecasts, without checking its quality and assumptions. Stems often ask what to do first: assess before you recommend.",
+            "vi": "Hãy chọn cách tiếp cận phát triển dựa trên nhu cầu của dự án, không phải theo thói quen. Đánh giá độ phức tạp, quy mô, mức ổn định của yêu cầu, tần suất có thể nhận phản hồi, yêu cầu pháp lý và năng lực của tổ chức. Phạm vi ổn định, đã hiểu rõ và chịu quản lý chặt phù hợp với kế hoạch dự đoán (predictive); yêu cầu chưa chắc chắn và khách hàng phản hồi thường xuyên phù hợp với agile; công việc hỗn hợp (phần cứng hoặc hợp đồng cố định bên cạnh phần mềm thay đổi liên tục) phù hợp với hybrid (kết hợp). Kế hoạch quản lý dự án tích hợp gắn các kế hoạch thành phần và các baseline lại để chúng nhất quán với nhau. Rà soát kế hoạch tổng hợp để tìm phụ thuộc, khoảng trống và kiểm tra business case còn đứng vững không, xác định những thông tin dự án phải theo dõi (ví dụ chỉ số bền vững), và giữ kế hoạch luôn cập nhật bằng cách chi tiết hóa dần (progressive elaboration). Bẫy thường gặp: chọn agile vì nhà tài trợ (sponsor) thích, để các kế hoạch thành phần mâu thuẫn nhau, và hành động dựa trên dữ liệu, kể cả dự báo do AI tạo ra, mà không kiểm tra chất lượng và giả định của nó. Đề thường hỏi việc cần làm trước tiên: hãy đánh giá trước khi đề xuất."
+          },
+          "questionCount": 18,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p2",
+          "number": 2,
+          "domainId": "D2",
+          "title": {
+            "en": "Scope and backlog",
+            "vi": "Phạm vi và backlog"
+          },
+          "body": {
+            "en": "Scope is defined, agreed and broken down. In a predictive project the scope baseline is the approved scope statement (deliverables, acceptance criteria, exclusions, constraints, assumptions), the WBS and the WBS dictionary. The WBS covers 100% of the work, including project management, and decomposes deliverables down to work packages that can be estimated and assigned. A requirements traceability matrix links each requirement to its source and to the deliverable and test that satisfy it. In agile work, scope lives in the product backlog, which the product owner orders and the team refines continuously. Large items are split into thin vertical slices that each deliver usable value; acceptance criteria apply to one item, while the Definition of Done applies to every item. Get stakeholder agreement on scope before you baseline or commit to it. Traps: leaving exclusions unwritten, gold plating, and stakeholders bypassing the product owner to add work straight to the team.",
+            "vi": "Phạm vi phải được xác định, thống nhất và phân rã. Trong dự án dự đoán (predictive), scope baseline gồm bản mô tả phạm vi đã phê duyệt (sản phẩm bàn giao, tiêu chí nghiệm thu, các hạng mục loại trừ, ràng buộc, giả định), WBS và WBS dictionary. WBS bao trùm 100% công việc, kể cả công việc quản lý dự án, và phân rã sản phẩm bàn giao xuống tới work package có thể ước lượng và giao việc. Ma trận truy vết yêu cầu (RTM) liên kết từng yêu cầu với nguồn gốc của nó và với sản phẩm bàn giao, bài kiểm thử đáp ứng nó. Trong agile, phạm vi nằm trong product backlog do product owner sắp thứ tự và nhóm liên tục làm mịn (refine). Hạng mục lớn được tách thành các lát cắt dọc mỏng, mỗi lát mang lại giá trị dùng được; tiêu chí nghiệm thu áp dụng cho một hạng mục, còn Definition of Done áp dụng cho mọi hạng mục. Hãy có sự đồng thuận của các bên liên quan về phạm vi trước khi lập baseline hoặc cam kết. Bẫy: không ghi rõ hạng mục loại trừ, gold plating (làm thêm thứ không được yêu cầu), và các bên liên quan bỏ qua product owner để giao thêm việc thẳng cho nhóm."
+          },
+          "questionCount": 17,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p3",
+          "number": 3,
+          "domainId": "D2",
+          "title": {
+            "en": "Value-based delivery",
+            "vi": "Triển khai dựa trên giá trị"
+          },
+          "body": {
+            "en": "A project exists to deliver value, so agree with key stakeholders what value means here: revenue, cost savings, risk reduction, compliance, customer satisfaction or social and environmental benefit. Then order the work by value and feedback, using techniques such as MoSCoW, cost of delay or weighted shortest job first, and look for chances to release value in increments rather than all at the end. Check the business value throughout the project, not only at the gate reviews. A benefit can only be tracked if a measurement system is in place: a baseline taken before release, a target, an owner and a data source. Prefer outcome measures (adoption, cycle time saved) to output measures (features shipped, velocity). When value is uncertain, choose a delivery option that demonstrates it cheaply, such as a prototype, a pilot or a minimum viable product. Traps: treating velocity as value, building everything before anyone uses it, and keeping low-value work only because it was in the original plan.",
+            "vi": "Dự án tồn tại để mang lại giá trị, vì vậy hãy thống nhất với các bên liên quan chủ chốt giá trị ở đây nghĩa là gì: doanh thu, tiết kiệm chi phí, giảm rủi ro, tuân thủ, sự hài lòng của khách hàng hay lợi ích xã hội và môi trường. Sau đó sắp thứ tự công việc theo giá trị và phản hồi, dùng các kỹ thuật như MoSCoW, cost of delay hoặc weighted shortest job first (WSJF), và tìm cơ hội phát hành giá trị theo từng phần thay vì dồn hết đến cuối. Kiểm tra giá trị kinh doanh suốt dự án, không chỉ tại các kỳ xét duyệt giai đoạn. Một lợi ích chỉ theo dõi được khi đã có hệ thống đo lường: số liệu nền (baseline) đo trước khi phát hành, mục tiêu, người chịu trách nhiệm và nguồn dữ liệu. Ưu tiên chỉ số kết quả (mức độ sử dụng, thời gian xử lý tiết kiệm được) hơn chỉ số đầu ra (số tính năng đã giao, velocity). Khi giá trị chưa chắc chắn, hãy chọn phương án triển khai chứng minh được giá trị với chi phí thấp, như prototype, pilot hoặc minimum viable product (MVP). Bẫy: coi velocity là giá trị, xây hết mọi thứ trước khi có ai dùng, và giữ công việc giá trị thấp chỉ vì nó có trong kế hoạch ban đầu."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p4",
+          "number": 4,
+          "domainId": "D2",
+          "title": {
+            "en": "Resources",
+            "vi": "Nguồn lực"
+          },
+          "body": {
+            "en": "Plan resources from the requirements: which skills, people, equipment, materials and facilities the work needs, how many and when. Record them in the resource management plan, resource breakdown structure and resource calendars, and agree availability with functional managers or resource owners before the schedule depends on it. During the project, compare demand with availability and optimise. Resource levelling moves work to remove over-allocation and can extend the schedule; resource smoothing moves work only within float and keeps the end date. In agile teams, keep the team stable and long-lived and let it pull work at a sustainable pace instead of loading individuals. Traps: assuming named people are available because they appear in the plan, overloading the one expert everybody needs, and adding people late to a late task, which often slows it down further. When a shortage appears, look at the critical path and priorities first, then negotiate.",
+            "vi": "Lập kế hoạch nguồn lực từ yêu cầu: công việc cần những kỹ năng, con người, thiết bị, vật tư và cơ sở vật chất nào, bao nhiêu và khi nào. Ghi lại trong kế hoạch quản lý nguồn lực, cấu trúc phân rã nguồn lực (RBS) và lịch nguồn lực, và thống nhất khả năng sẵn có với trưởng bộ phận chức năng hoặc chủ sở hữu nguồn lực trước khi tiến độ phụ thuộc vào đó. Trong quá trình dự án, so sánh nhu cầu với khả năng sẵn có và tối ưu hóa. Resource levelling dời công việc để hết tình trạng quá tải và có thể kéo dài tiến độ; resource smoothing chỉ dời công việc trong phạm vi float và giữ nguyên ngày kết thúc. Với nhóm agile, giữ nhóm ổn định, gắn bó lâu dài và để nhóm tự kéo việc với nhịp độ bền vững thay vì dồn việc cho từng cá nhân. Bẫy: cho rằng người có tên trong kế hoạch là chắc chắn sẵn sàng, dồn tải cho một chuyên gia mà ai cũng cần, và thêm người vào muộn cho một việc đang trễ, điều thường làm nó trễ thêm. Khi thiếu nguồn lực, hãy xem đường găng và thứ tự ưu tiên trước, rồi mới thương lượng."
+          },
+          "questionCount": 13,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p5",
+          "number": 5,
+          "domainId": "D2",
+          "title": {
+            "en": "Procurement and contracts",
+            "vi": "Mua sắm và hợp đồng"
+          },
+          "body": {
+            "en": "Start with a make-or-buy analysis, then plan the procurement strategy: what to buy, how sellers are selected, and which contract type fits. Fixed-price contracts suit a well-defined scope and put cost risk on the seller; cost-reimbursable contracts suit uncertain scope and keep the risk with the buyer; time-and-materials suits small or staff-augmentation work. Agile work often uses fixed-price increments, capped time-and-materials or contracts that allow scope to be reprioritised. When negotiating, decide your strategy and walk-away points first and aim for an agreement both sides can deliver. During delivery, manage the seller against the contract terms, evaluate performance with agreed measures, and handle disputes through the contract's own process; claims administration and negotiation come before litigation. Traps: changing a supplier's work informally without a contract change, letting the team direct a vendor outside the agreement, and closing a contract before checking that every deliverable and term has been met.",
+            "vi": "Bắt đầu bằng phân tích tự làm hay đi mua (make-or-buy), rồi lập chiến lược mua sắm: mua gì, chọn nhà cung cấp thế nào và loại hợp đồng nào phù hợp. Hợp đồng giá cố định (fixed-price) hợp với phạm vi đã xác định rõ và đặt rủi ro chi phí lên bên bán; hợp đồng hoàn trả chi phí (cost-reimbursable) hợp với phạm vi chưa chắc chắn và rủi ro nằm ở bên mua; time-and-materials hợp với việc nhỏ hoặc bổ sung nhân sự. Công việc agile thường dùng hợp đồng giá cố định theo từng phần, time-and-materials có trần, hoặc hợp đồng cho phép sắp xếp lại phạm vi. Khi đàm phán, xác định chiến lược và ngưỡng dừng trước, và nhắm tới thỏa thuận mà cả hai bên đều thực hiện được. Trong quá trình thực hiện, quản lý nhà cung cấp theo điều khoản hợp đồng, đánh giá hiệu quả bằng các thước đo đã thống nhất, và xử lý tranh chấp theo quy trình của chính hợp đồng; quản lý khiếu nại và thương lượng đi trước kiện tụng. Bẫy: thay đổi công việc của nhà cung cấp một cách không chính thức mà không sửa hợp đồng, để nhóm chỉ đạo nhà cung cấp ngoài thỏa thuận, và đóng hợp đồng trước khi kiểm tra mọi sản phẩm bàn giao và điều khoản đã được đáp ứng."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p6",
+          "number": 6,
+          "domainId": "D2",
+          "title": {
+            "en": "Finance, budget and reserves",
+            "vi": "Tài chính, ngân sách và dự phòng"
+          },
+          "body": {
+            "en": "Build the budget from the estimates: work package costs roll up to control accounts and the cost baseline; contingency reserves for identified risks sit inside the baseline and are managed by the project manager; management reserves for unknown-unknowns sit outside it and need management approval to use. The project budget is the cost baseline plus management reserve. Quantify risk allocations with methods such as expected monetary value, plan how spending will be tracked and reported, and anticipate funding issues such as currency moves, fiscal-year limits or funding released in tranches. In agile work, funding is often by team or increment, and cost follows from team cost per iteration. Monitor variances against the cost baseline and act within the thresholds set by governance; escalate beyond them. Traps: using management reserve without approval, hiding a variance until it grows, and drawing on contingency for new scope instead of using change control.",
+            "vi": "Xây ngân sách từ các ước lượng: chi phí work package cộng dồn lên control account và cost baseline; dự phòng rủi ro (contingency reserve) cho các rủi ro đã nhận diện nằm trong baseline và do người quản lý dự án quản lý; dự phòng quản lý (management reserve) cho những điều chưa biết nằm ngoài baseline và cần cấp quản lý phê duyệt mới được dùng. Ngân sách dự án bằng cost baseline cộng management reserve. Lượng hóa khoản dự phòng rủi ro bằng các phương pháp như giá trị tiền tệ kỳ vọng (EMV), lên kế hoạch theo dõi và báo cáo chi tiêu, và lường trước các vấn đề về vốn như biến động tỷ giá, giới hạn năm tài chính hay vốn giải ngân theo đợt. Với agile, vốn thường cấp theo nhóm hoặc theo phần tăng trưởng, và chi phí suy ra từ chi phí của nhóm mỗi iteration. Theo dõi chênh lệch so với cost baseline và hành động trong ngưỡng do cơ chế quản trị đặt ra; vượt ngưỡng thì báo cáo lên cấp trên. Bẫy: dùng management reserve khi chưa được phê duyệt, giấu chênh lệch đến khi nó phình to, và lấy contingency để làm phạm vi mới thay vì đi qua kiểm soát thay đổi."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p7",
+          "number": 7,
+          "domainId": "D2",
+          "title": {
+            "en": "Quality of deliverables",
+            "vi": "Chất lượng sản phẩm bàn giao"
+          },
+          "body": {
+            "en": "Quality means the deliverables meet the agreed requirements and are fit for use. Gather quality requirements early, including regulatory and sustainability requirements, and plan how they will be met and checked. Quality assurance improves the process so defects are prevented; quality control inspects the outputs to find defects before the customer does. Cost of quality has two sides: the cost of conformance (prevention and appraisal, such as training, reviews and testing) and the cost of nonconformance (internal and external failures, such as rework, warranty claims and lost customers). Prevention is usually cheaper than inspection, and inspection is cheaper than failures in the field. Agile teams build quality in through the Definition of Done, automated testing, frequent reviews and retrospectives. Use tools such as control charts, Pareto charts and root cause analysis to decide where to improve. Traps: adding extra inspection when the process itself is the cause, and gold plating beyond the requirement.",
+            "vi": "Chất lượng nghĩa là sản phẩm bàn giao đáp ứng yêu cầu đã thống nhất và phù hợp để sử dụng. Thu thập yêu cầu chất lượng sớm, kể cả yêu cầu pháp lý và yêu cầu về tính bền vững, và lên kế hoạch cách đáp ứng, cách kiểm tra. Đảm bảo chất lượng (QA) cải tiến quy trình để ngăn ngừa lỗi; kiểm soát chất lượng (QC) kiểm tra đầu ra để tìm lỗi trước khi khách hàng phát hiện. Chi phí chất lượng (CoQ) có hai phía: chi phí tuân thủ (phòng ngừa và thẩm định, như đào tạo, review và kiểm thử) và chi phí không tuân thủ (lỗi nội bộ và lỗi bên ngoài, như làm lại, bảo hành, mất khách hàng). Phòng ngừa thường rẻ hơn kiểm tra, và kiểm tra rẻ hơn lỗi xảy ra ngoài thực tế. Nhóm agile đưa chất lượng vào ngay từ đầu qua Definition of Done, kiểm thử tự động, review thường xuyên và retrospective. Dùng các công cụ như biểu đồ kiểm soát, biểu đồ Pareto và phân tích nguyên nhân gốc để quyết định chỗ cần cải tiến. Bẫy: thêm khâu kiểm tra trong khi chính quy trình là nguyên nhân, và gold plating vượt quá yêu cầu."
+          },
+          "questionCount": 14,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p8",
+          "number": 8,
+          "domainId": "D2",
+          "title": {
+            "en": "Schedule and estimation",
+            "vi": "Tiến độ và ước lượng"
+          },
+          "body": {
+            "en": "Build the schedule to suit the approach. Predictive schedules come from defined activities, dependencies, duration estimates and the critical path, the longest path, which has zero total float in a normal schedule. Agile schedules come from a prioritised backlog, relative estimates such as story points, and the team's measured velocity, which forecasts how many iterations a release needs. Use historical data and benchmarks: analogous estimating is quick but rough, parametric estimating scales from a reliable unit rate, bottom-up is the most accurate and the slowest, and three-point (PERT) estimating gives an expected value (O + 4M + P) / 6. Coordinate with other projects and operations that share resources or dates, then baseline the schedule. To recover a delay, crashing adds resources to critical-path work at extra cost; fast-tracking runs work in parallel and adds risk. Traps: compressing activities that are not on the critical path, comparing story points across teams, and treating a velocity forecast as a commitment.",
+            "vi": "Xây tiến độ phù hợp với cách tiếp cận. Tiến độ dự đoán (predictive) đến từ các hoạt động đã xác định, quan hệ phụ thuộc, ước lượng thời lượng và đường găng (critical path), tức đường dài nhất, có tổng float bằng 0 trong một tiến độ thông thường. Tiến độ agile đến từ backlog đã ưu tiên, ước lượng tương đối như story point và velocity đo được của nhóm, dùng để dự báo một bản phát hành cần bao nhiêu iteration. Dùng dữ liệu lịch sử và benchmark: ước lượng tương tự (analogous) nhanh nhưng thô, ước lượng tham số (parametric) tính từ một đơn giá đáng tin cậy, ước lượng từ dưới lên (bottom-up) chính xác nhất và chậm nhất, còn ước lượng ba điểm (PERT) cho giá trị kỳ vọng (O + 4M + P) / 6. Phối hợp với các dự án và bộ phận vận hành dùng chung nguồn lực hoặc mốc thời gian, rồi lập baseline cho tiến độ. Để bù trễ, crashing thêm nguồn lực cho công việc trên đường găng với chi phí tăng; fast-tracking cho các việc chạy song song và làm tăng rủi ro. Bẫy: rút ngắn các hoạt động không nằm trên đường găng, so sánh story point giữa các nhóm, và coi dự báo từ velocity là một cam kết."
+          },
+          "questionCount": 17,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p9",
+          "number": 9,
+          "domainId": "D2",
+          "title": {
+            "en": "Project status, metrics and artifacts",
+            "vi": "Tình trạng dự án, chỉ số và tài liệu"
+          },
+          "body": {
+            "en": "Decide early which metrics show progress and how they will be reconciled, then measure, analyse and report them honestly. Earned value management compares planned value (PV), earned value (EV) and actual cost (AC): CV = EV - AC, SV = EV - PV, CPI = EV / AC, SPI = EV / PV, and EAC = BAC / CPI when current performance is expected to continue. Values below 1.0 for CPI or SPI mean over budget or behind schedule. Agile teams show progress with burndown and burnup charts, velocity, cumulative flow diagrams and cycle time. Tailor the artifacts to what the project needs, make sure they are created, reviewed, kept up to date, stored where the people who need them can reach them, and accessible to all users. Review from time to time whether the artifacts are still useful. Traps: reporting green when the data says otherwise, adding reports nobody reads, and confusing a schedule variance with a cost problem.",
+            "vi": "Xác định sớm những chỉ số nào thể hiện tiến độ và cách đối chiếu chúng, rồi đo, phân tích và báo cáo một cách trung thực. Quản lý giá trị thu được (EVM) so sánh giá trị kế hoạch (PV), giá trị thu được (EV) và chi phí thực tế (AC): CV = EV - AC, SV = EV - PV, CPI = EV / AC, SPI = EV / PV, và EAC = BAC / CPI khi hiệu suất hiện tại được dự kiến sẽ tiếp diễn. CPI hoặc SPI nhỏ hơn 1,0 nghĩa là vượt ngân sách hoặc chậm tiến độ. Nhóm agile thể hiện tiến độ bằng biểu đồ burndown, burnup, velocity, sơ đồ luồng tích lũy (CFD) và cycle time. Điều chỉnh bộ tài liệu theo đúng nhu cầu của dự án, đảm bảo chúng được tạo, review, cập nhật, lưu ở nơi người cần có thể truy cập, và dễ tiếp cận với mọi người dùng. Định kỳ xem lại tài liệu nào còn hữu ích. Bẫy: báo cáo trạng thái xanh khi dữ liệu nói khác, thêm những báo cáo không ai đọc, và nhầm chênh lệch tiến độ với vấn đề chi phí."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d2-p10",
+          "number": 10,
+          "domainId": "D2",
+          "title": {
+            "en": "Project and phase closure",
+            "vi": "Đóng dự án và đóng giai đoạn"
+          },
+          "body": {
+            "en": "Closure is planned, not improvised. Agree the criteria for closing the project or phase early, then obtain formal acceptance of the deliverables from the people authorised to give it, and stakeholder approval that the project is complete. Before handing over, validate that the receiving side is ready: the operations or support team has the documentation, training, access and support arrangements it needs, or the next phase has what it requires to start. Then conclude the closing activities: close procurements after confirming every contract term has been met, finalise the financials, release resources, run a final retrospective or lessons-learned session, and archive the project records in the organisation's process assets. A project terminated early is still closed properly, with the work done so far documented and accepted. Traps: releasing the team before acceptance is signed, treating handover as an email, and skipping lessons learned because the project is over.",
+            "vi": "Việc đóng dự án phải được lên kế hoạch, không phải ứng biến. Thống nhất sớm tiêu chí để đóng dự án hoặc giai đoạn, rồi có được sự chấp nhận chính thức đối với sản phẩm bàn giao từ những người có thẩm quyền, và sự phê duyệt của các bên liên quan rằng dự án đã hoàn thành. Trước khi bàn giao, xác nhận bên tiếp nhận đã sẵn sàng: nhóm vận hành hoặc hỗ trợ có đủ tài liệu, đào tạo, quyền truy cập và cơ chế hỗ trợ cần thiết, hoặc giai đoạn tiếp theo có đủ những gì cần để bắt đầu. Sau đó hoàn tất các hoạt động đóng: đóng các hợp đồng mua sắm sau khi xác nhận mọi điều khoản đã được đáp ứng, chốt tài chính, giải phóng nguồn lực, tổ chức retrospective cuối cùng hoặc buổi rút kinh nghiệm, và lưu trữ hồ sơ dự án vào tài sản quy trình của tổ chức (OPA). Dự án bị dừng sớm vẫn phải được đóng đúng cách, với phần việc đã làm được ghi nhận và nghiệm thu. Bẫy: giải tán nhóm trước khi biên bản nghiệm thu được ký, coi việc bàn giao chỉ là một email, và bỏ qua bước rút kinh nghiệm vì dự án đã kết thúc."
+          },
+          "questionCount": 13,
+          "personal_notes": ""
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 26,
+      "name": {
+        "en": "Business Environment",
+        "vi": "Business Environment"
+      },
+      "description": {
+        "en": "How the project works inside the organisation and the world around it: governance and escalation, compliance, change control, impediments and issues, risk, continuous improvement, organisational change and shifts in the external environment. The 2026 ECO moved change control, risk, issues and continuous improvement into this domain from Process.",
+        "vi": "Cách dự án vận hành trong tổ chức và trong môi trường xung quanh: quản trị và leo thang, tuân thủ, kiểm soát thay đổi, trở ngại và vấn đề, rủi ro, cải tiến liên tục, thay đổi tổ chức và biến động của môi trường bên ngoài. ECO 2026 đã chuyển kiểm soát thay đổi, rủi ro, vấn đề (issue) và cải tiến liên tục từ miền Quy trình sang miền này."
+      },
+      "principles": [
+        {
+          "id": "d3-p1",
+          "number": 1,
+          "domainId": "D3",
+          "title": {
+            "en": "Project governance and escalation",
+            "vi": "Quản trị dự án và leo thang"
+          },
+          "body": {
+            "en": "Governance is the framework of structure, rules, procedures, reporting, ethics and policies that decides who may make which decision. Build it from the organisation's process assets (OPAs: policies, templates, PMO standards) rather than inventing it, and tailor it to the approach: stage gates and a change control board for predictive work, release reviews and product owner authority for agile work, a mix of both for hybrid. Governance also defines success metrics (measurable outcomes tied to the business case and agreed with the sponsor) and escalation paths with thresholds: the variance a project manager may absorb, and the point at which the sponsor or steering committee decides. Traps: escalating something that is inside your tolerance (act on it and report it), deciding something above your threshold yourself, bypassing the agreed path, and treating output measures such as velocity as success metrics. When decision rights are unclear, clarify them before work continues.",
+            "vi": "Quản trị (governance) là khung gồm cơ cấu, quy tắc, thủ tục, báo cáo, đạo đức và chính sách, quyết định ai được ra quyết định nào. Hãy xây dựng nó từ tài sản quy trình của tổ chức (OPA: chính sách, biểu mẫu, chuẩn của PMO) thay vì tự nghĩ ra, và điều chỉnh (tailor) theo cách tiếp cận: stage gate và ban kiểm soát thay đổi (CCB) cho công việc dự đoán (predictive), review theo release và quyền của product owner cho công việc agile, cả hai cho dự án kết hợp (hybrid). Quản trị cũng xác định thước đo thành công (kết quả đo được, gắn với business case và được nhà tài trợ (sponsor) đồng ý) và lộ trình leo thang có ngưỡng: mức chênh lệch quản lý dự án được tự xử lý, và điểm mà nhà tài trợ hoặc ban chỉ đạo (steering committee) phải quyết định. Bẫy thường gặp: leo thang việc vẫn nằm trong ngưỡng của mình (hãy tự xử lý và báo cáo), tự quyết việc vượt ngưỡng, đi tắt qua lộ trình đã thống nhất, và coi các thước đo đầu ra như velocity là thước đo thành công. Khi quyền quyết định chưa rõ, hãy làm rõ trước khi tiếp tục công việc."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p2",
+          "number": 2,
+          "domainId": "D3",
+          "title": {
+            "en": "Compliance",
+            "vi": "Tuân thủ"
+          },
+          "body": {
+            "en": "Compliance requirements come from laws and regulations, standards, contracts and internal policies, and cover areas such as security, health and safety, sustainability and data protection. Confirm them early with the people who own them (legal, compliance, safety, the data protection officer), classify them, and record them as requirements with an owner and evidence. Then build compliance into the work: acceptance criteria and the definition of done in agile, quality checks and audits in predictive plans, and traceability from each requirement to its test or evidence. Measure compliance as you go, not only at the end. A mandatory requirement is not traded off against schedule or cost; if it threatens the date, change the schedule or scope through change control. When noncompliance is found, assess its consequences (fines, safety, stoppage, reputation), report it through governance and put a corrective action plan in place. Pressure from anyone, the sponsor included, to skip a mandatory check is refused and escalated.",
+            "vi": "Yêu cầu tuân thủ đến từ luật và quy định, tiêu chuẩn, hợp đồng và chính sách nội bộ, bao gồm các lĩnh vực như bảo mật, an toàn và sức khỏe, phát triển bền vững và bảo vệ dữ liệu. Hãy xác nhận chúng sớm với những người sở hữu chúng (pháp chế, bộ phận tuân thủ, an toàn, cán bộ bảo vệ dữ liệu), phân loại, và ghi nhận thành yêu cầu có người phụ trách và bằng chứng. Sau đó đưa tuân thủ vào trong công việc: tiêu chí chấp nhận và definition of done trong agile, kiểm tra chất lượng và audit trong kế hoạch dự đoán (predictive), và truy vết (traceability) từ mỗi yêu cầu đến bài test hoặc bằng chứng tương ứng. Đo mức độ tuân thủ trong suốt quá trình, không chỉ ở cuối. Yêu cầu bắt buộc không được đánh đổi với tiến độ hay chi phí; nếu nó đe dọa ngày hoàn thành, hãy thay đổi tiến độ hoặc phạm vi qua kiểm soát thay đổi. Khi phát hiện không tuân thủ, đánh giá hậu quả (phạt, an toàn, ngừng hoạt động, uy tín), báo cáo qua kênh quản trị và lập kế hoạch hành động khắc phục. Áp lực bỏ qua một bước kiểm tra bắt buộc, kể cả từ nhà tài trợ (sponsor), phải bị từ chối và leo thang."
+          },
+          "questionCount": 12,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p3",
+          "number": 3,
+          "domainId": "D3",
+          "title": {
+            "en": "Change control",
+            "vi": "Kiểm soát thay đổi"
+          },
+          "body": {
+            "en": "In a predictive project, any change to an approved baseline goes through integrated change control: record the request, analyse its impact on scope, schedule, cost, quality, risk and contracts, get a decision from whoever holds the authority (often a change control board), then update the plan, baselines and documents, communicate the decision and implement it. Rejected and deferred requests are logged and explained too. In agile work, new requests go to the product backlog, where the product owner orders them; the sprint goal is protected, and when the date is fixed, scope flexes. Hybrid projects use both, and changes that touch a contract follow the contract's change clause. Traps: a team member making a change directly for a stakeholder, gold plating, implementing before baselines and documents are updated, and a project manager approving something beyond their authority. When a stem says a change was requested, the first step is usually to assess its impact.",
+            "vi": "Trong dự án dự đoán (predictive), mọi thay đổi đối với baseline đã phê duyệt đều đi qua kiểm soát thay đổi tích hợp: ghi nhận yêu cầu, phân tích tác động lên phạm vi, tiến độ, chi phí, chất lượng, rủi ro và hợp đồng, xin quyết định từ người có thẩm quyền (thường là ban kiểm soát thay đổi (CCB), CCB), sau đó cập nhật kế hoạch, baseline và tài liệu, thông báo quyết định và triển khai. Các yêu cầu bị từ chối hoặc hoãn cũng được ghi lại và giải thích. Trong agile, yêu cầu mới đi vào product backlog, nơi product owner sắp thứ tự ưu tiên; sprint goal được bảo vệ, và khi ngày phát hành cố định thì phạm vi được điều chỉnh. Dự án kết hợp (hybrid) dùng cả hai cách, và thay đổi liên quan đến hợp đồng phải theo điều khoản thay đổi của hợp đồng. Bẫy thường gặp: thành viên tự làm thay đổi theo yêu cầu trực tiếp của một bên liên quan, gold plating (tự thêm thứ không được yêu cầu), triển khai trước khi cập nhật baseline và tài liệu, và quản lý dự án phê duyệt việc vượt thẩm quyền. Khi đề bài nói có một yêu cầu thay đổi, bước đầu tiên thường là đánh giá tác động."
+          },
+          "questionCount": 16,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p4",
+          "number": 4,
+          "domainId": "D3",
+          "title": {
+            "en": "Impediments and issues",
+            "vi": "Trở ngại và vấn đề"
+          },
+          "body": {
+            "en": "An impediment is anything that slows or blocks the team; an issue is a current problem that needs action, often a risk that has occurred. Make them visible (daily standup, a blocked flag on the board, an issue log with an owner and due date), evaluate their impact and deal first with the ones that block the goal or the critical path. The servant leader removes what the team cannot remove itself, and coaches the team to solve what is within its control. If an impediment cannot be removed, minimise it: work around it, resequence work or start long-lead items earlier. Recurring problems get a root-cause fix, not repeated workarounds. Reassess continually. When a risk occurs, apply its planned response, record it in the issue log and update the risk register. Issues owned outside the team are resolved by collaborating with those stakeholders, and anything beyond your authority is escalated with data and options.",
+            "vi": "Trở ngại (impediment) là bất cứ thứ gì làm chậm hoặc chặn nhóm; vấn đề (issue) là sự cố đang xảy ra cần hành động, thường là một rủi ro đã thành hiện thực. Hãy làm chúng hiển thị rõ (daily standup, cờ blocked trên board, issue log có người phụ trách và hạn xử lý), đánh giá tác động và xử lý trước những cái chặn mục tiêu hoặc đường găng (critical path). Người lãnh đạo phục vụ (servant leader) gỡ bỏ những gì nhóm không tự gỡ được, và huấn luyện nhóm tự giải quyết những gì nằm trong tầm kiểm soát của mình. Nếu không thể gỡ bỏ trở ngại, hãy giảm thiểu nó: đi đường vòng, sắp xếp lại công việc hoặc bắt đầu sớm các hạng mục có thời gian chờ dài. Vấn đề lặp lại cần được sửa tận gốc, không phải lặp đi lặp lại giải pháp tạm. Liên tục đánh giá lại. Khi một rủi ro xảy ra, áp dụng phương án ứng phó đã lập, ghi vào issue log và cập nhật risk register. Vấn đề thuộc quyền bên ngoài nhóm được giải quyết bằng cách phối hợp với các bên liên quan đó, và việc vượt thẩm quyền thì leo thang kèm dữ liệu và phương án."
+          },
+          "questionCount": 13,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p5",
+          "number": 5,
+          "domainId": "D3",
+          "title": {
+            "en": "Risk management",
+            "vi": "Quản lý rủi ro"
+          },
+          "body": {
+            "en": "Risk management starts with a plan that sets the method, roles, risk categories, probability and impact scales and the organisation's risk thresholds. Identify risks with the team and stakeholders (threats and opportunities, including security and sustainability risks), analyse them qualitatively with a probability and impact matrix and, when it matters, quantitatively with expected monetary value or simulation, and record them in the risk register with an owner. Responses to threats are escalate, avoid, transfer, mitigate and accept; to opportunities, escalate, exploit, share, enhance and accept. Contingency reserve covers identified risks; management reserve covers unknown ones and needs management approval to use. Monitor triggers, reassess regularly (in agile, every iteration, using spikes and a risk-adjusted backlog) and communicate the status of risk impact. Traps: reacting to a realised risk without checking the register's planned response, and naming an owner who is not best placed to act.",
+            "vi": "Quản lý rủi ro bắt đầu bằng một kế hoạch xác định phương pháp, vai trò, nhóm rủi ro, thang xác suất và tác động, và ngưỡng rủi ro của tổ chức. Nhận diện rủi ro cùng nhóm và các bên liên quan (cả mối đe dọa và cơ hội, kể cả rủi ro bảo mật và bền vững), phân tích định tính bằng ma trận xác suất và tác động, và khi cần thì định lượng bằng giá trị tiền tệ kỳ vọng (EMV) hoặc mô phỏng, rồi ghi vào risk register kèm người phụ trách. Ứng phó với mối đe dọa gồm escalate, avoid, transfer, mitigate và accept; với cơ hội gồm escalate, exploit, share, enhance và accept. Dự phòng rủi ro (contingency reserve) dành cho rủi ro đã nhận diện; dự phòng quản lý (management reserve) dành cho rủi ro chưa biết và cần cấp quản lý phê duyệt khi sử dụng. Theo dõi dấu hiệu kích hoạt (trigger), đánh giá lại định kỳ (trong agile là mỗi iteration, dùng spike và backlog đã điều chỉnh theo rủi ro) và thông báo tình trạng tác động của rủi ro. Bẫy thường gặp: phản ứng với rủi ro đã xảy ra mà không xem phương án ứng phó trong register, và chỉ định người phụ trách không phải là người phù hợp nhất để hành động."
+          },
+          "questionCount": 15,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p6",
+          "number": 6,
+          "domainId": "D3",
+          "title": {
+            "en": "Continuous improvement and lessons learned",
+            "vi": "Cải tiến liên tục và bài học kinh nghiệm"
+          },
+          "body": {
+            "en": "Lessons learned are captured throughout the project, not only at closure: in retrospectives at the end of each iteration, at phase reviews and whenever something goes notably well or badly. Use them, too: review lessons from similar past projects during planning, and turn each finding into a concrete action with an owner. Improvement has to stick. Update the team's working agreements and processes, and feed organisation-wide improvements back into the organisational process assets (templates, checklists, policies, the lessons learned repository) so the next project benefits. Retrospectives, kaizen and Plan-Do-Check-Act are the usual tools. Traps: a lessons learned register that is written and never read, waiting until the end of the project to discuss what went wrong, and retrospectives that list problems but agree no actions. When a stem asks how to stop a problem repeating on future projects, the answer usually involves updating OPAs.",
+            "vi": "Bài học kinh nghiệm (lessons learned) được ghi nhận suốt dự án, không chỉ khi đóng dự án: trong retrospective cuối mỗi iteration, ở các buổi review giai đoạn và bất cứ khi nào có việc diễn ra đặc biệt tốt hoặc tệ. Và phải sử dụng chúng: xem lại bài học từ các dự án tương tự trước đây khi lập kế hoạch, và biến mỗi phát hiện thành một hành động cụ thể có người phụ trách. Cải tiến phải được duy trì. Cập nhật thỏa thuận làm việc và quy trình của nhóm, và đưa các cải tiến cấp tổ chức trở lại tài sản quy trình của tổ chức (biểu mẫu, checklist, chính sách, kho bài học kinh nghiệm) để dự án sau được hưởng lợi. Retrospective, kaizen và Plan-Do-Check-Act là các công cụ thường dùng. Bẫy thường gặp: lessons learned register được viết ra nhưng không ai đọc, chờ đến cuối dự án mới bàn về những gì sai, và retrospective liệt kê vấn đề nhưng không thống nhất hành động nào. Khi đề bài hỏi cách ngăn một vấn đề lặp lại ở các dự án sau, đáp án thường liên quan đến việc cập nhật OPA."
+          },
+          "questionCount": 9,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p7",
+          "number": 7,
+          "domainId": "D3",
+          "title": {
+            "en": "Supporting organizational change",
+            "vi": "Hỗ trợ thay đổi tổ chức"
+          },
+          "body": {
+            "en": "Projects both cause and absorb organisational change. Assess the culture first: how decisions are made, the appetite for risk, attitudes to agile ways of working and how earlier changes landed. That tells you how much readiness work the project needs. When the organisation changes around the project (a merger, a restructure, a new sponsor, a move to agile), evaluate the impact on objectives, stakeholders, resources and governance, then decide the actions: re-confirm the business case with the new sponsor, update the stakeholder register and communication plan, and adjust the plan through change control. For the change the project delivers, plan adoption, not only delivery: involve affected users early, use change agents, provide training and support, and measure adoption. Resistance is information about unmet needs, so listen to it before trying to overcome it. Traps: assuming a restructure leaves the project untouched, and treating training at go-live as the whole adoption plan.",
+            "vi": "Dự án vừa tạo ra vừa chịu tác động của thay đổi tổ chức. Trước hết hãy đánh giá văn hóa: cách ra quyết định, mức chấp nhận rủi ro, thái độ với cách làm agile và các thay đổi trước đây đã được đón nhận ra sao. Điều đó cho biết dự án cần bao nhiêu công sức chuẩn bị sẵn sàng. Khi tổ chức thay đổi xung quanh dự án (sáp nhập, tái cơ cấu, nhà tài trợ (sponsor) mới, chuyển sang agile), hãy đánh giá tác động lên mục tiêu, các bên liên quan, nguồn lực và quản trị, rồi quyết định hành động: xác nhận lại business case với nhà tài trợ mới, cập nhật stakeholder register và kế hoạch truyền thông, và điều chỉnh kế hoạch qua kiểm soát thay đổi. Với thay đổi mà dự án mang lại, hãy lập kế hoạch cho việc áp dụng, không chỉ cho việc bàn giao: lôi kéo người dùng bị ảnh hưởng tham gia sớm, dùng change agent, đào tạo và hỗ trợ, và đo mức độ áp dụng. Sự phản kháng là thông tin về nhu cầu chưa được đáp ứng, nên hãy lắng nghe trước khi tìm cách vượt qua. Bẫy thường gặp: cho rằng tái cơ cấu không ảnh hưởng đến dự án, và coi đào tạo lúc go-live là toàn bộ kế hoạch áp dụng."
+          },
+          "questionCount": 11,
+          "personal_notes": ""
+        },
+        {
+          "id": "d3-p8",
+          "number": 8,
+          "domainId": "D3",
+          "title": {
+            "en": "External business environment changes",
+            "vi": "Thay đổi trong môi trường kinh doanh bên ngoài"
+          },
+          "body": {
+            "en": "Markets, regulations, technology and geopolitics change during a project. Survey the external environment regularly, for example with PESTLE-style scans, input from compliance and market experts, and customer feedback, not only at initiation. When something changes, assess its impact on the scope or backlog and on the business case, then prioritise: a new regulation with a fixed effective date usually becomes mandatory work; a competitor's launch may change the value order of backlog items; a tariff or sanctions change may affect suppliers and cost. In predictive work the response goes through change control; in agile work the product owner reorders the backlog. Keep reviewing, because a scan at the start goes stale. Traps: carrying on with the original plan after a change that undermines the business case, and reacting to rumours before analysing the actual impact. When a change threatens the case for the project, raise it with the sponsor or governance body.",
+            "vi": "Thị trường, quy định, công nghệ và địa chính trị thay đổi trong lúc dự án diễn ra. Hãy khảo sát môi trường bên ngoài thường xuyên, ví dụ bằng phân tích kiểu PESTLE, ý kiến của chuyên gia tuân thủ và thị trường, và phản hồi của khách hàng, chứ không chỉ lúc khởi động. Khi có thay đổi, đánh giá tác động lên phạm vi hoặc backlog và lên business case, rồi xếp ưu tiên: một quy định mới có ngày hiệu lực cố định thường trở thành công việc bắt buộc; sản phẩm mới của đối thủ có thể thay đổi thứ tự giá trị của các hạng mục backlog; thay đổi thuế quan hoặc lệnh trừng phạt có thể ảnh hưởng nhà cung cấp và chi phí. Trong dự đoán (predictive), phản ứng đi qua kiểm soát thay đổi; trong agile, product owner sắp xếp lại backlog. Hãy tiếp tục rà soát, vì một lần khảo sát lúc đầu sẽ nhanh chóng lỗi thời. Bẫy thường gặp: tiếp tục kế hoạch ban đầu sau một thay đổi làm suy yếu business case, và phản ứng với tin đồn trước khi phân tích tác động thực tế. Khi thay đổi đe dọa lý do tồn tại của dự án, hãy đưa lên nhà tài trợ (sponsor) hoặc cơ quan quản trị."
+          },
+          "questionCount": 12,
+          "personal_notes": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2430 @@
+{
+  "slug": "ccar-f",
+  "certId": "ccaf",
+  "scrapedAt": "2026-11-24T00:51:00.241Z",
+  "rules": [
+    {
+      "id": "rule-01",
+      "index": "01",
+      "situation": {
+        "en": "Search content/pattern inside files",
+        "vi": "Tìm nội dung/pattern bên trong file"
+      },
+      "choice": {
+        "en": "Grep",
+        "vi": "Grep"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-02",
+      "index": "02",
+      "situation": {
+        "en": "Search by file name/path",
+        "vi": "Tìm theo tên/đường dẫn file"
+      },
+      "choice": {
+        "en": "Glob",
+        "vi": "Glob"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-03",
+      "index": "03",
+      "situation": {
+        "en": "Two independent subagents need to run in parallel",
+        "vi": "Hai subagent độc lập cần chạy song song"
+      },
+      "choice": {
+        "en": "Emit both Task tool calls in the SAME message",
+        "vi": "Phát cả hai lệnh gọi Task tool trong CÙNG một message"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-04",
+      "index": "04",
+      "situation": {
+        "en": "Subtasks vary per input, unpredictable",
+        "vi": "Subtask thay đổi tuỳ input, không đoán trước được"
+      },
+      "choice": {
+        "en": "Orchestrator-workers",
+        "vi": "Orchestrator-workers"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-05",
+      "index": "05",
+      "situation": {
+        "en": "Same fixed steps every time",
+        "vi": "Các bước cố định giống nhau mỗi lần"
+      },
+      "choice": {
+        "en": "Prompt chaining",
+        "vi": "Prompt chaining"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-06",
+      "index": "06",
+      "situation": {
+        "en": "Inputs fall into distinct categories, handled differently",
+        "vi": "Input rơi vào các loại rõ rệt, xử lý khác nhau"
+      },
+      "choice": {
+        "en": "Routing",
+        "vi": "Routing"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-07",
+      "index": "07",
+      "situation": {
+        "en": "Coordinator can't spawn a subagent, no errors",
+        "vi": "Coordinator không spawn được subagent, không có lỗi"
+      },
+      "choice": {
+        "en": "Check whether \"Task\" is in allowedTools",
+        "vi": "Kiểm tra Task có trong allowedTools không"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-08",
+      "index": "08",
+      "situation": {
+        "en": "A mandatory compliance rule (must never be violated)",
+        "vi": "Một quy tắc compliance bắt buộc"
+      },
+      "choice": {
+        "en": "A deterministic hook blocking the tool call — NOT a prompt",
+        "vi": "Một hook deterministic chặn tool call — KHÔNG dùng prompt"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-09",
+      "index": "09",
+      "situation": {
+        "en": "When should you escalate to a human?",
+        "vi": "Khi nào nên escalate cho người thật?"
+      },
+      "choice": {
+        "en": "Customer asks / needs a policy exception / agent is stuck",
+        "vi": "Khách yêu cầu / cần ngoại lệ chính sách / agent bị bế tắc (không phải đếm retry hay điểm sentiment)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-10",
+      "index": "10",
+      "situation": {
+        "en": "An MCP tool error",
+        "vi": "Lỗi từ một MCP tool"
+      },
+      "choice": {
+        "en": "content + isError:true + errorCategory + isRetryable",
+        "vi": "content + isError:true + errorCategory + isRetryable"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-11",
+      "index": "11",
+      "situation": {
+        "en": "The model \"forgets\" information mid-conversation",
+        "vi": "Model quên thông tin giữa hội thoại"
+      },
+      "choice": {
+        "en": "Check whether the full messages array is being sent (API is stateless)",
+        "vi": "Kiểm tra xem messages array đầy đủ có được gửi không (API là stateless)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-12",
+      "index": "12",
+      "situation": {
+        "en": "Reduce low-quality output from the start",
+        "vi": "Giảm output kém chất lượng ngay từ đầu"
+      },
+      "choice": {
+        "en": "Write criteria/examples into CLAUDE.md",
+        "vi": "Viết tiêu chí/ví dụ vào CLAUDE.md"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-13",
+      "index": "13",
+      "situation": {
+        "en": "Cap cost/iterations per headless run",
+        "vi": "Giới hạn chi phí/số vòng lặp mỗi lần chạy headless"
+      },
+      "choice": {
+        "en": "--max-turns / --max-budget-usd",
+        "vi": "--max-turns / --max-budget-usd"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-14",
+      "index": "14",
+      "situation": {
+        "en": "Agent picks a built-in tool over a specialized MCP tool",
+        "vi": "Agent chọn built-in tool thay vì MCP tool chuyên biệt"
+      },
+      "choice": {
+        "en": "Write a more detailed MCP tool description",
+        "vi": "Viết mô tả MCP tool chi tiết hơn"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-15",
+      "index": "15",
+      "situation": {
+        "en": "Edit fails because old_string isn't unique",
+        "vi": "Edit fails because old_string isn't unique"
+      },
+      "choice": {
+        "en": "Read the whole file → edit in memory → Write it back",
+        "vi": "Read the whole file → edit in memory → Write it back"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-16",
+      "index": "16",
+      "situation": {
+        "en": "Context degrades after a long session (vague answers)",
+        "vi": "Context suy giảm sau phiên dài"
+      },
+      "choice": {
+        "en": "Summarize, then hand off to a fresh subagent",
+        "vi": "Tóm tắt rồi giao cho subagent mới với context sạch"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-17",
+      "index": "17",
+      "situation": {
+        "en": "You want to stop missing bugs (\"only report high-confidence\")",
+        "vi": "Muốn tránh bỏ sót bug"
+      },
+      "choice": {
+        "en": "Split the coverage stage from the threshold stage",
+        "vi": "Tách giai đoạn tìm-hết (coverage) khỏi giai đoạn lọc (threshold)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-18",
+      "index": "18",
+      "situation": {
+        "en": "Urgent work needing an alert within minutes",
+        "vi": "Việc gấp cần cảnh báo trong vài phút"
+      },
+      "choice": {
+        "en": "Real-time Messages API, NOT Batch",
+        "vi": "Real-time Messages API, KHÔNG dùng Batch"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-19",
+      "index": "19",
+      "situation": {
+        "en": "Non-urgent, high-volume, cost-sensitive work",
+        "vi": "Việc không gấp, khối lượng lớn, cần tiết kiệm chi phí"
+      },
+      "choice": {
+        "en": "Batch API (50% cheaper, up to 24h)",
+        "vi": "Batch API (rẻ hơn 50%, tới 24h)"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-20",
+      "index": "20",
+      "situation": {
+        "en": "A field may have no information in the source",
+        "vi": "Một field có thể không có thông tin trong nguồn"
+      },
+      "choice": {
+        "en": "Instruct: return null instead of guessing (don't require it)",
+        "vi": "Chỉ dẫn rõ: trả về null thay vì đoán"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-21",
+      "index": "21",
+      "situation": {
+        "en": "Can retries fix \"missing information not in the input\"?",
+        "vi": "Retry có sửa được thiếu thông tin không có trong input không?"
+      },
+      "choice": {
+        "en": "No — only few-shot examples or better source data can help",
+        "vi": "Không — chỉ few-shot examples hoặc nguồn dữ liệu tốt hơn mới giúp được"
+      },
+      "personal_notes": ""
+    },
+    {
+      "id": "rule-22",
+      "index": "22",
+      "situation": {
+        "en": "context_length_exceeded on a few % of documents in a large batch",
+        "vi": "Lỗi context_length_exceeded trên vài % tài liệu trong một batch lớn"
+      },
+      "choice": {
+        "en": "Chunk and resubmit ONLY the failed documents",
+        "vi": "Chunk và gửi lại CHỈ những tài liệu bị lỗi"
+      },
+      "personal_notes": ""
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v-1",
+      "term": "Dispute",
+      "meaning": {
+        "en": "Tranh chấp, bác bỏ.",
+        "vi": "Tranh chấp, bác bỏ."
+      }
+    },
+    {
+      "id": "v-2",
+      "term": "Accumulate / Accumulated",
+      "meaning": {
+        "en": "Tích lũy, dồn lại.",
+        "vi": "Tích lũy, dồn lại."
+      }
+    },
+    {
+      "id": "v-3",
+      "term": "Consolidate / Consolidated",
+      "meaning": {
+        "en": "Tập lại, gộp lại (merge).",
+        "vi": "Tập lại, gộp lại (merge)."
+      }
+    },
+    {
+      "id": "v-4",
+      "term": "Amendments",
+      "meaning": {
+        "en": "Chỉnh sửa, điều chỉnh, bổ sung.",
+        "vi": "Chỉnh sửa, điều chỉnh, bổ sung."
+      }
+    },
+    {
+      "id": "v-5",
+      "term": "Reveals",
+      "meaning": {
+        "en": "Tiết lộ, làm lộ ra.",
+        "vi": "Tiết lộ, làm lộ ra."
+      }
+    },
+    {
+      "id": "v-6",
+      "term": "Propagate",
+      "meaning": {
+        "en": "Truyền, lan truyền.",
+        "vi": "Truyền, lan truyền."
+      }
+    },
+    {
+      "id": "v-7",
+      "term": "Leverage",
+      "meaning": {
+        "en": "Tận dụng.",
+        "vi": "Tận dụng."
+      }
+    },
+    {
+      "id": "v-8",
+      "term": "Contradictory",
+      "meaning": {
+        "en": "Mâu thuẫn.",
+        "vi": "Mâu thuẫn."
+      }
+    },
+    {
+      "id": "v-9",
+      "term": "Hate speech",
+      "meaning": {
+        "en": "Ngôn từ kích động thù ghét.",
+        "vi": "Ngôn từ kích động thù ghét."
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "id": "g-1",
+      "letter": "A",
+      "term": "abstraction",
+      "definition": {
+        "en": "sự trừu tượng hoá",
+        "vi": "sự trừu tượng hoá"
+      }
+    },
+    {
+      "id": "g-2",
+      "letter": "A",
+      "term": "acknowledge",
+      "definition": {
+        "en": "thừa nhận",
+        "vi": "thừa nhận"
+      }
+    },
+    {
+      "id": "g-3",
+      "letter": "A",
+      "term": "adapt",
+      "definition": {
+        "en": "thích nghi",
+        "vi": "thích nghi"
+      }
+    },
+    {
+      "id": "g-4",
+      "letter": "A",
+      "term": "adaptive",
+      "definition": {
+        "en": "có khả năng thích nghi",
+        "vi": "có khả năng thích nghi"
+      }
+    },
+    {
+      "id": "g-5",
+      "letter": "A",
+      "term": "agentdefinitions",
+      "definition": {
+        "en": "định nghĩa cấu hình agent",
+        "vi": "định nghĩa cấu hình agent"
+      }
+    },
+    {
+      "id": "g-6",
+      "letter": "A",
+      "term": "agentic",
+      "definition": {
+        "en": "mang tính tự chủ (agent tự hành động, tự gọi tool)",
+        "vi": "mang tính tự chủ (agent tự hành động, tự gọi tool)"
+      }
+    },
+    {
+      "id": "g-7",
+      "letter": "A",
+      "term": "agentic loop",
+      "definition": {
+        "en": "vòng lặp agentic",
+        "vi": "vòng lặp agentic"
+      }
+    },
+    {
+      "id": "g-8",
+      "letter": "A",
+      "term": "aggregate",
+      "definition": {
+        "en": "tổng hợp, gộp lại",
+        "vi": "tổng hợp, gộp lại"
+      }
+    },
+    {
+      "id": "g-9",
+      "letter": "A",
+      "term": "aggregate accuracy",
+      "definition": {
+        "en": "độ chính xác tổng hợp",
+        "vi": "độ chính xác tổng hợp"
+      }
+    },
+    {
+      "id": "g-10",
+      "letter": "A",
+      "term": "alias",
+      "definition": {
+        "en": "bí danh, tên gọi khác",
+        "vi": "bí danh, tên gọi khác"
+      }
+    },
+    {
+      "id": "g-11",
+      "letter": "A",
+      "term": "aliased",
+      "definition": {
+        "en": "được gán bí danh",
+        "vi": "được gán bí danh"
+      }
+    },
+    {
+      "id": "g-12",
+      "letter": "A",
+      "term": "allowedtools",
+      "definition": {
+        "en": "danh sách tool được phép dùng",
+        "vi": "danh sách tool được phép dùng"
+      }
+    },
+    {
+      "id": "g-13",
+      "letter": "A",
+      "term": "append",
+      "definition": {
+        "en": "thêm vào cuối",
+        "vi": "thêm vào cuối"
+      }
+    },
+    {
+      "id": "g-14",
+      "letter": "A",
+      "term": "appending",
+      "definition": {
+        "en": "việc thêm vào cuối",
+        "vi": "việc thêm vào cuối"
+      }
+    },
+    {
+      "id": "g-15",
+      "letter": "A",
+      "term": "asynchronous",
+      "definition": {
+        "en": "bất đồng bộ",
+        "vi": "bất đồng bộ"
+      }
+    },
+    {
+      "id": "g-16",
+      "letter": "A",
+      "term": "attribution",
+      "definition": {
+        "en": "quy kết nguồn gốc",
+        "vi": "quy kết nguồn gốc"
+      }
+    },
+    {
+      "id": "g-17",
+      "letter": "A",
+      "term": "authentication",
+      "definition": {
+        "en": "xác thực",
+        "vi": "xác thực"
+      }
+    },
+    {
+      "id": "g-18",
+      "letter": "B",
+      "term": "backend",
+      "definition": {
+        "en": "hệ thống xử lý phía sau",
+        "vi": "hệ thống xử lý phía sau"
+      }
+    },
+    {
+      "id": "g-19",
+      "letter": "B",
+      "term": "base class",
+      "definition": {
+        "en": "lớp cơ sở",
+        "vi": "lớp cơ sở"
+      }
+    },
+    {
+      "id": "g-20",
+      "letter": "B",
+      "term": "baseline",
+      "definition": {
+        "en": "điểm chuẩn, mốc ban đầu",
+        "vi": "điểm chuẩn, mốc ban đầu"
+      }
+    },
+    {
+      "id": "g-21",
+      "letter": "B",
+      "term": "batch api",
+      "definition": {
+        "en": "API xử lý theo lô",
+        "vi": "API xử lý theo lô"
+      }
+    },
+    {
+      "id": "g-22",
+      "letter": "B",
+      "term": "branch",
+      "definition": {
+        "en": "nhánh",
+        "vi": "nhánh"
+      }
+    },
+    {
+      "id": "g-23",
+      "letter": "B",
+      "term": "branches",
+      "definition": {
+        "en": "các nhánh",
+        "vi": "các nhánh"
+      }
+    },
+    {
+      "id": "g-24",
+      "letter": "B",
+      "term": "brittle",
+      "definition": {
+        "en": "dễ vỡ, thiếu ổn định",
+        "vi": "dễ vỡ, thiếu ổn định"
+      }
+    },
+    {
+      "id": "g-25",
+      "letter": "C",
+      "term": "cadence",
+      "definition": {
+        "en": "nhịp độ, tần suất",
+        "vi": "nhịp độ, tần suất"
+      }
+    },
+    {
+      "id": "g-26",
+      "letter": "C",
+      "term": "calculated field",
+      "definition": {
+        "en": "trường được tính toán",
+        "vi": "trường được tính toán"
+      }
+    },
+    {
+      "id": "g-27",
+      "letter": "C",
+      "term": "calibrate",
+      "definition": {
+        "en": "hiệu chỉnh",
+        "vi": "hiệu chỉnh"
+      }
+    },
+    {
+      "id": "g-28",
+      "letter": "C",
+      "term": "canonical format",
+      "definition": {
+        "en": "định dạng chuẩn",
+        "vi": "định dạng chuẩn"
+      }
+    },
+    {
+      "id": "g-29",
+      "letter": "C",
+      "term": "catalog",
+      "definition": {
+        "en": "danh mục",
+        "vi": "danh mục"
+      }
+    },
+    {
+      "id": "g-30",
+      "letter": "C",
+      "term": "categorical",
+      "definition": {
+        "en": "thuộc dạng phân loại",
+        "vi": "thuộc dạng phân loại"
+      }
+    },
+    {
+      "id": "g-31",
+      "letter": "C",
+      "term": "chain-of-thought",
+      "definition": {
+        "en": "chuỗi suy luận từng bước",
+        "vi": "chuỗi suy luận từng bước"
+      }
+    },
+    {
+      "id": "g-32",
+      "letter": "C",
+      "term": "chunk",
+      "definition": {
+        "en": "chia nhỏ thành từng phần",
+        "vi": "chia nhỏ thành từng phần"
+      }
+    },
+    {
+      "id": "g-33",
+      "letter": "C",
+      "term": "chunking",
+      "definition": {
+        "en": "việc chia nhỏ dữ liệu",
+        "vi": "việc chia nhỏ dữ liệu"
+      }
+    },
+    {
+      "id": "g-34",
+      "letter": "C",
+      "term": "classifier",
+      "definition": {
+        "en": "bộ phân loại",
+        "vi": "bộ phân loại"
+      }
+    },
+    {
+      "id": "g-35",
+      "letter": "C",
+      "term": "compliance",
+      "definition": {
+        "en": "sự tuân thủ quy định",
+        "vi": "sự tuân thủ quy định"
+      }
+    },
+    {
+      "id": "g-36",
+      "letter": "C",
+      "term": "compliance-grade",
+      "definition": {
+        "en": "đạt chuẩn tuân thủ",
+        "vi": "đạt chuẩn tuân thủ"
+      }
+    },
+    {
+      "id": "g-37",
+      "letter": "C",
+      "term": "concurrently",
+      "definition": {
+        "en": "đồng thời, song song",
+        "vi": "đồng thời, song song"
+      }
+    },
+    {
+      "id": "g-38",
+      "letter": "C",
+      "term": "confidence",
+      "definition": {
+        "en": "độ tin cậy",
+        "vi": "độ tin cậy"
+      }
+    },
+    {
+      "id": "g-39",
+      "letter": "C",
+      "term": "contested",
+      "definition": {
+        "en": "còn tranh cãi",
+        "vi": "còn tranh cãi"
+      }
+    },
+    {
+      "id": "g-40",
+      "letter": "C",
+      "term": "context isolation",
+      "definition": {
+        "en": "sự cô lập ngữ cảnh giữa các agent",
+        "vi": "sự cô lập ngữ cảnh giữa các agent"
+      }
+    },
+    {
+      "id": "g-41",
+      "letter": "C",
+      "term": "context window",
+      "definition": {
+        "en": "cửa sổ ngữ cảnh",
+        "vi": "cửa sổ ngữ cảnh"
+      }
+    },
+    {
+      "id": "g-42",
+      "letter": "C",
+      "term": "context_length_exceeded",
+      "definition": {
+        "en": "lỗi vượt quá độ dài ngữ cảnh",
+        "vi": "lỗi vượt quá độ dài ngữ cảnh"
+      }
+    },
+    {
+      "id": "g-43",
+      "letter": "C",
+      "term": "contradictory",
+      "definition": {
+        "en": "mâu thuẫn",
+        "vi": "mâu thuẫn"
+      }
+    },
+    {
+      "id": "g-44",
+      "letter": "C",
+      "term": "conventions",
+      "definition": {
+        "en": "quy ước",
+        "vi": "quy ước"
+      }
+    },
+    {
+      "id": "g-45",
+      "letter": "C",
+      "term": "coordinator",
+      "definition": {
+        "en": "agent điều phối",
+        "vi": "agent điều phối"
+      }
+    },
+    {
+      "id": "g-46",
+      "letter": "C",
+      "term": "corroborate",
+      "definition": {
+        "en": "củng cố, xác nhận thêm",
+        "vi": "củng cố, xác nhận thêm"
+      }
+    },
+    {
+      "id": "g-47",
+      "letter": "C",
+      "term": "coverage",
+      "definition": {
+        "en": "độ phủ, mức bao quát",
+        "vi": "độ phủ, mức bao quát"
+      }
+    },
+    {
+      "id": "g-48",
+      "letter": "C",
+      "term": "cross-contamination",
+      "definition": {
+        "en": "nhiễu chéo lẫn nhau",
+        "vi": "nhiễu chéo lẫn nhau"
+      }
+    },
+    {
+      "id": "g-49",
+      "letter": "D",
+      "term": "decision tree",
+      "definition": {
+        "en": "cây quyết định",
+        "vi": "cây quyết định"
+      }
+    },
+    {
+      "id": "g-50",
+      "letter": "D",
+      "term": "decompose",
+      "definition": {
+        "en": "phân rã",
+        "vi": "phân rã"
+      }
+    },
+    {
+      "id": "g-51",
+      "letter": "D",
+      "term": "decomposition",
+      "definition": {
+        "en": "sự phân rã (chia nhỏ nhiệm vụ)",
+        "vi": "sự phân rã (chia nhỏ nhiệm vụ)"
+      }
+    },
+    {
+      "id": "g-52",
+      "letter": "D",
+      "term": "degraded context",
+      "definition": {
+        "en": "ngữ cảnh đã suy giảm chất lượng",
+        "vi": "ngữ cảnh đã suy giảm chất lượng"
+      }
+    },
+    {
+      "id": "g-53",
+      "letter": "D",
+      "term": "delegate",
+      "definition": {
+        "en": "giao việc, uỷ quyền",
+        "vi": "giao việc, uỷ quyền"
+      }
+    },
+    {
+      "id": "g-54",
+      "letter": "D",
+      "term": "delegating",
+      "definition": {
+        "en": "việc giao nhiệm vụ",
+        "vi": "việc giao nhiệm vụ"
+      }
+    },
+    {
+      "id": "g-55",
+      "letter": "D",
+      "term": "delegation",
+      "definition": {
+        "en": "sự uỷ quyền/giao việc",
+        "vi": "sự uỷ quyền/giao việc"
+      }
+    },
+    {
+      "id": "g-56",
+      "letter": "D",
+      "term": "dependencies",
+      "definition": {
+        "en": "các phụ thuộc",
+        "vi": "các phụ thuộc"
+      }
+    },
+    {
+      "id": "g-57",
+      "letter": "D",
+      "term": "dependency",
+      "definition": {
+        "en": "sự phụ thuộc",
+        "vi": "sự phụ thuộc"
+      }
+    },
+    {
+      "id": "g-58",
+      "letter": "D",
+      "term": "deterministic",
+      "definition": {
+        "en": "tất định (kết quả luôn giống nhau)",
+        "vi": "tất định (kết quả luôn giống nhau)"
+      }
+    },
+    {
+      "id": "g-59",
+      "letter": "D",
+      "term": "discoverable",
+      "definition": {
+        "en": "có thể khám phá được",
+        "vi": "có thể khám phá được"
+      }
+    },
+    {
+      "id": "g-60",
+      "letter": "D",
+      "term": "discretion",
+      "definition": {
+        "en": "quyền tự quyết định",
+        "vi": "quyền tự quyết định"
+      }
+    },
+    {
+      "id": "g-61",
+      "letter": "D",
+      "term": "distribution",
+      "definition": {
+        "en": "sự phân bố",
+        "vi": "sự phân bố"
+      }
+    },
+    {
+      "id": "g-62",
+      "letter": "D",
+      "term": "downstream",
+      "definition": {
+        "en": "ở tầng xử lý phía sau",
+        "vi": "ở tầng xử lý phía sau"
+      }
+    },
+    {
+      "id": "g-63",
+      "letter": "D",
+      "term": "durable",
+      "definition": {
+        "en": "bền vững, lâu dài",
+        "vi": "bền vững, lâu dài"
+      }
+    },
+    {
+      "id": "g-64",
+      "letter": "D",
+      "term": "dynamically",
+      "definition": {
+        "en": "một cách linh hoạt, động",
+        "vi": "một cách linh hoạt, động"
+      }
+    },
+    {
+      "id": "g-65",
+      "letter": "E",
+      "term": "effective date",
+      "definition": {
+        "en": "ngày có hiệu lực",
+        "vi": "ngày có hiệu lực"
+      }
+    },
+    {
+      "id": "g-66",
+      "letter": "E",
+      "term": "entry point",
+      "definition": {
+        "en": "điểm vào của luồng code",
+        "vi": "điểm vào của luồng code"
+      }
+    },
+    {
+      "id": "g-67",
+      "letter": "E",
+      "term": "entry points",
+      "definition": {
+        "en": "các điểm vào của luồng code",
+        "vi": "các điểm vào của luồng code"
+      }
+    },
+    {
+      "id": "g-68",
+      "letter": "E",
+      "term": "enum",
+      "definition": {
+        "en": "kiểu liệt kê (danh sách giá trị cố định)",
+        "vi": "kiểu liệt kê (danh sách giá trị cố định)"
+      }
+    },
+    {
+      "id": "g-69",
+      "letter": "E",
+      "term": "errorcategory",
+      "definition": {
+        "en": "loại lỗi",
+        "vi": "loại lỗi"
+      }
+    },
+    {
+      "id": "g-70",
+      "letter": "E",
+      "term": "escalate",
+      "definition": {
+        "en": "chuyển cho người xử lý",
+        "vi": "chuyển cho người xử lý"
+      }
+    },
+    {
+      "id": "g-71",
+      "letter": "E",
+      "term": "escalating",
+      "definition": {
+        "en": "việc chuyển cấp xử lý",
+        "vi": "việc chuyển cấp xử lý"
+      }
+    },
+    {
+      "id": "g-72",
+      "letter": "E",
+      "term": "escalation",
+      "definition": {
+        "en": "việc chuyển cấp xử lý",
+        "vi": "việc chuyển cấp xử lý"
+      }
+    },
+    {
+      "id": "g-73",
+      "letter": "E",
+      "term": "escape hatch",
+      "definition": {
+        "en": "lối thoát dự phòng",
+        "vi": "lối thoát dự phòng"
+      }
+    },
+    {
+      "id": "g-74",
+      "letter": "E",
+      "term": "event bus",
+      "definition": {
+        "en": "hệ thống truyền sự kiện",
+        "vi": "hệ thống truyền sự kiện"
+      }
+    },
+    {
+      "id": "g-75",
+      "letter": "E",
+      "term": "evolving",
+      "definition": {
+        "en": "đang thay đổi, tiến hoá",
+        "vi": "đang thay đổi, tiến hoá"
+      }
+    },
+    {
+      "id": "g-76",
+      "letter": "E",
+      "term": "exception",
+      "definition": {
+        "en": "ngoại lệ (lỗi trong code)",
+        "vi": "ngoại lệ (lỗi trong code)"
+      }
+    },
+    {
+      "id": "g-77",
+      "letter": "E",
+      "term": "excerpt",
+      "definition": {
+        "en": "trích đoạn",
+        "vi": "trích đoạn"
+      }
+    },
+    {
+      "id": "g-78",
+      "letter": "F",
+      "term": "fanning out",
+      "definition": {
+        "en": "toả ra chạy song song nhiều nhánh",
+        "vi": "toả ra chạy song song nhiều nhánh"
+      }
+    },
+    {
+      "id": "g-79",
+      "letter": "F",
+      "term": "few-shot",
+      "definition": {
+        "en": "ví dụ minh hoạ mẫu (few-shot)",
+        "vi": "ví dụ minh hoạ mẫu (few-shot)"
+      }
+    },
+    {
+      "id": "g-80",
+      "letter": "F",
+      "term": "field",
+      "definition": {
+        "en": "trường dữ liệu",
+        "vi": "trường dữ liệu"
+      }
+    },
+    {
+      "id": "g-81",
+      "letter": "F",
+      "term": "field-level confidence",
+      "definition": {
+        "en": "độ tin cậy theo từng trường dữ liệu",
+        "vi": "độ tin cậy theo từng trường dữ liệu"
+      }
+    },
+    {
+      "id": "g-82",
+      "letter": "F",
+      "term": "fields",
+      "definition": {
+        "en": "các trường dữ liệu",
+        "vi": "các trường dữ liệu"
+      }
+    },
+    {
+      "id": "g-83",
+      "letter": "F",
+      "term": "fixture",
+      "definition": {
+        "en": "dữ liệu mẫu dùng cho test",
+        "vi": "dữ liệu mẫu dùng cho test"
+      }
+    },
+    {
+      "id": "g-84",
+      "letter": "F",
+      "term": "fixture conventions",
+      "definition": {
+        "en": "quy ước dữ liệu mẫu",
+        "vi": "quy ước dữ liệu mẫu"
+      }
+    },
+    {
+      "id": "g-85",
+      "letter": "F",
+      "term": "fork_session",
+      "definition": {
+        "en": "phân nhánh phiên làm việc",
+        "vi": "phân nhánh phiên làm việc"
+      }
+    },
+    {
+      "id": "g-86",
+      "letter": "F",
+      "term": "format-aware",
+      "definition": {
+        "en": "nhận biết định dạng",
+        "vi": "nhận biết định dạng"
+      }
+    },
+    {
+      "id": "g-87",
+      "letter": "G",
+      "term": "glob",
+      "definition": {
+        "en": "công cụ tìm file theo tên/đường dẫn",
+        "vi": "công cụ tìm file theo tên/đường dẫn"
+      }
+    },
+    {
+      "id": "g-88",
+      "letter": "G",
+      "term": "graceful degradation",
+      "definition": {
+        "en": "suy giảm nhẹ nhàng, vẫn hoạt động một phần",
+        "vi": "suy giảm nhẹ nhàng, vẫn hoạt động một phần"
+      }
+    },
+    {
+      "id": "g-89",
+      "letter": "G",
+      "term": "grep",
+      "definition": {
+        "en": "công cụ tìm kiếm nội dung file",
+        "vi": "công cụ tìm kiếm nội dung file"
+      }
+    },
+    {
+      "id": "g-90",
+      "letter": "H",
+      "term": "hallucinated",
+      "definition": {
+        "en": "bị bịa ra (model tự tạo thông tin sai)",
+        "vi": "bị bịa ra (model tự tạo thông tin sai)"
+      }
+    },
+    {
+      "id": "g-91",
+      "letter": "H",
+      "term": "handoff",
+      "definition": {
+        "en": "bàn giao",
+        "vi": "bàn giao"
+      }
+    },
+    {
+      "id": "g-92",
+      "letter": "H",
+      "term": "harness",
+      "definition": {
+        "en": "hệ thống điều khiển agent (bên dưới)",
+        "vi": "hệ thống điều khiển agent (bên dưới)"
+      }
+    },
+    {
+      "id": "g-93",
+      "letter": "H",
+      "term": "headless",
+      "definition": {
+        "en": "chạy không giao diện đồ hoạ",
+        "vi": "chạy không giao diện đồ hoạ"
+      }
+    },
+    {
+      "id": "g-94",
+      "letter": "H",
+      "term": "heuristic",
+      "definition": {
+        "en": "phương pháp suy nghiệm, ước lượng theo kinh nghiệm",
+        "vi": "phương pháp suy nghiệm, ước lượng theo kinh nghiệm"
+      }
+    },
+    {
+      "id": "g-95",
+      "letter": "H",
+      "term": "heuristics",
+      "definition": {
+        "en": "các phương pháp suy nghiệm",
+        "vi": "các phương pháp suy nghiệm"
+      }
+    },
+    {
+      "id": "g-96",
+      "letter": "H",
+      "term": "hierarchies",
+      "definition": {
+        "en": "các hệ phân cấp",
+        "vi": "các hệ phân cấp"
+      }
+    },
+    {
+      "id": "g-97",
+      "letter": "H",
+      "term": "hierarchy",
+      "definition": {
+        "en": "hệ phân cấp",
+        "vi": "hệ phân cấp"
+      }
+    },
+    {
+      "id": "g-98",
+      "letter": "H",
+      "term": "hook",
+      "definition": {
+        "en": "móc can thiệp ở tầng code",
+        "vi": "móc can thiệp ở tầng code"
+      }
+    },
+    {
+      "id": "g-99",
+      "letter": "H",
+      "term": "hub",
+      "definition": {
+        "en": "trung tâm",
+        "vi": "trung tâm"
+      }
+    },
+    {
+      "id": "g-100",
+      "letter": "I",
+      "term": "infrastructure",
+      "definition": {
+        "en": "hạ tầng",
+        "vi": "hạ tầng"
+      }
+    },
+    {
+      "id": "g-101",
+      "letter": "I",
+      "term": "inject",
+      "definition": {
+        "en": "tiêm, chèn vào",
+        "vi": "tiêm, chèn vào"
+      }
+    },
+    {
+      "id": "g-102",
+      "letter": "I",
+      "term": "injects",
+      "definition": {
+        "en": "tiêm, chèn vào",
+        "vi": "tiêm, chèn vào"
+      }
+    },
+    {
+      "id": "g-103",
+      "letter": "I",
+      "term": "input/output contract",
+      "definition": {
+        "en": "hợp đồng đầu vào/đầu ra",
+        "vi": "hợp đồng đầu vào/đầu ra"
+      }
+    },
+    {
+      "id": "g-104",
+      "letter": "I",
+      "term": "intercept",
+      "definition": {
+        "en": "chặn lại giữa chừng",
+        "vi": "chặn lại giữa chừng"
+      }
+    },
+    {
+      "id": "g-105",
+      "letter": "I",
+      "term": "intercepts",
+      "definition": {
+        "en": "chặn lại giữa chừng",
+        "vi": "chặn lại giữa chừng"
+      }
+    },
+    {
+      "id": "g-106",
+      "letter": "I",
+      "term": "interface",
+      "definition": {
+        "en": "giao diện lập trình",
+        "vi": "giao diện lập trình"
+      }
+    },
+    {
+      "id": "g-107",
+      "letter": "I",
+      "term": "invocation",
+      "definition": {
+        "en": "một lần gọi/thực thi",
+        "vi": "một lần gọi/thực thi"
+      }
+    },
+    {
+      "id": "g-108",
+      "letter": "I",
+      "term": "invoke",
+      "definition": {
+        "en": "gọi (thực thi)",
+        "vi": "gọi (thực thi)"
+      }
+    },
+    {
+      "id": "g-109",
+      "letter": "I",
+      "term": "iserror",
+      "definition": {
+        "en": "cờ báo lỗi",
+        "vi": "cờ báo lỗi"
+      }
+    },
+    {
+      "id": "g-110",
+      "letter": "I",
+      "term": "isolated context",
+      "definition": {
+        "en": "ngữ cảnh bị cô lập riêng biệt",
+        "vi": "ngữ cảnh bị cô lập riêng biệt"
+      }
+    },
+    {
+      "id": "g-111",
+      "letter": "I",
+      "term": "isretryable",
+      "definition": {
+        "en": "cờ cho biết có thể thử lại",
+        "vi": "cờ cho biết có thể thử lại"
+      }
+    },
+    {
+      "id": "g-112",
+      "letter": "J",
+      "term": "judgment-heavy",
+      "definition": {
+        "en": "đòi hỏi phán đoán nhiều",
+        "vi": "đòi hỏi phán đoán nhiều"
+      }
+    },
+    {
+      "id": "g-113",
+      "letter": "K",
+      "term": "keyword-based routing",
+      "definition": {
+        "en": "định tuyến theo từ khoá",
+        "vi": "định tuyến theo từ khoá"
+      }
+    },
+    {
+      "id": "g-114",
+      "letter": "L",
+      "term": "labeled validation set",
+      "definition": {
+        "en": "tập dữ liệu kiểm định đã gán nhãn",
+        "vi": "tập dữ liệu kiểm định đã gán nhãn"
+      }
+    },
+    {
+      "id": "g-115",
+      "letter": "L",
+      "term": "latency",
+      "definition": {
+        "en": "độ trễ",
+        "vi": "độ trễ"
+      }
+    },
+    {
+      "id": "g-116",
+      "letter": "L",
+      "term": "localized",
+      "definition": {
+        "en": "đã được khoanh vùng",
+        "vi": "đã được khoanh vùng"
+      }
+    },
+    {
+      "id": "g-117",
+      "letter": "M",
+      "term": "manifest",
+      "definition": {
+        "en": "bản kê khai (danh sách trạng thái)",
+        "vi": "bản kê khai (danh sách trạng thái)"
+      }
+    },
+    {
+      "id": "g-118",
+      "letter": "M",
+      "term": "max_tokens",
+      "definition": {
+        "en": "tham số giới hạn độ dài output",
+        "vi": "tham số giới hạn độ dài output"
+      }
+    },
+    {
+      "id": "g-119",
+      "letter": "M",
+      "term": "mcp",
+      "definition": {
+        "en": "giao thức kết nối công cụ (Model Context Protocol)",
+        "vi": "giao thức kết nối công cụ (Model Context Protocol)"
+      }
+    },
+    {
+      "id": "g-120",
+      "letter": "M",
+      "term": "mcp resource",
+      "definition": {
+        "en": "tài nguyên MCP",
+        "vi": "tài nguyên MCP"
+      }
+    },
+    {
+      "id": "g-121",
+      "letter": "M",
+      "term": "mcp server",
+      "definition": {
+        "en": "máy chủ MCP",
+        "vi": "máy chủ MCP"
+      }
+    },
+    {
+      "id": "g-122",
+      "letter": "M",
+      "term": "mechanical",
+      "definition": {
+        "en": "mang tính máy móc, rập khuôn",
+        "vi": "mang tính máy móc, rập khuôn"
+      }
+    },
+    {
+      "id": "g-123",
+      "letter": "M",
+      "term": "mechanism",
+      "definition": {
+        "en": "cơ chế",
+        "vi": "cơ chế"
+      }
+    },
+    {
+      "id": "g-124",
+      "letter": "M",
+      "term": "messages api",
+      "definition": {
+        "en": "API xử lý theo thời gian thực",
+        "vi": "API xử lý theo thời gian thực"
+      }
+    },
+    {
+      "id": "g-125",
+      "letter": "M",
+      "term": "messages array",
+      "definition": {
+        "en": "mảng danh sách tin nhắn",
+        "vi": "mảng danh sách tin nhắn"
+      }
+    },
+    {
+      "id": "g-126",
+      "letter": "M",
+      "term": "metadata",
+      "definition": {
+        "en": "siêu dữ liệu",
+        "vi": "siêu dữ liệu"
+      }
+    },
+    {
+      "id": "g-127",
+      "letter": "M",
+      "term": "methodological",
+      "definition": {
+        "en": "thuộc về phương pháp luận",
+        "vi": "thuộc về phương pháp luận"
+      }
+    },
+    {
+      "id": "g-128",
+      "letter": "M",
+      "term": "monolith",
+      "definition": {
+        "en": "khối hệ thống duy nhất, không tách rời",
+        "vi": "khối hệ thống duy nhất, không tách rời"
+      }
+    },
+    {
+      "id": "g-129",
+      "letter": "N",
+      "term": "narrative description",
+      "definition": {
+        "en": "mô tả tường thuật",
+        "vi": "mô tả tường thuật"
+      }
+    },
+    {
+      "id": "g-130",
+      "letter": "N",
+      "term": "narrowly-scoped",
+      "definition": {
+        "en": "phạm vi hẹp",
+        "vi": "phạm vi hẹp"
+      }
+    },
+    {
+      "id": "g-131",
+      "letter": "N",
+      "term": "nested",
+      "definition": {
+        "en": "lồng nhau",
+        "vi": "lồng nhau"
+      }
+    },
+    {
+      "id": "g-132",
+      "letter": "N",
+      "term": "nullable",
+      "definition": {
+        "en": "được phép để trống (null)",
+        "vi": "được phép để trống (null)"
+      }
+    },
+    {
+      "id": "g-133",
+      "letter": "O",
+      "term": "observability",
+      "definition": {
+        "en": "khả năng quan sát hệ thống",
+        "vi": "khả năng quan sát hệ thống"
+      }
+    },
+    {
+      "id": "g-134",
+      "letter": "O",
+      "term": "old_string",
+      "definition": {
+        "en": "chuỗi văn bản cũ cần khớp để thay thế",
+        "vi": "chuỗi văn bản cũ cần khớp để thay thế"
+      }
+    },
+    {
+      "id": "g-135",
+      "letter": "O",
+      "term": "orchestrator-workers",
+      "definition": {
+        "en": "mô hình điều phối - tác nhân thực thi",
+        "vi": "mô hình điều phối - tác nhân thực thi"
+      }
+    },
+    {
+      "id": "g-136",
+      "letter": "O",
+      "term": "outdated",
+      "definition": {
+        "en": "đã lỗi thời",
+        "vi": "đã lỗi thời"
+      }
+    },
+    {
+      "id": "g-137",
+      "letter": "O",
+      "term": "overhead",
+      "definition": {
+        "en": "chi phí phát sinh thêm",
+        "vi": "chi phí phát sinh thêm"
+      }
+    },
+    {
+      "id": "g-138",
+      "letter": "P",
+      "term": "paraphrasing",
+      "definition": {
+        "en": "diễn giải lại bằng lời khác",
+        "vi": "diễn giải lại bằng lời khác"
+      }
+    },
+    {
+      "id": "g-139",
+      "letter": "P",
+      "term": "permission",
+      "definition": {
+        "en": "quyền hạn",
+        "vi": "quyền hạn"
+      }
+    },
+    {
+      "id": "g-140",
+      "letter": "P",
+      "term": "plan mode",
+      "definition": {
+        "en": "chế độ lập kế hoạch",
+        "vi": "chế độ lập kế hoạch"
+      }
+    },
+    {
+      "id": "g-141",
+      "letter": "P",
+      "term": "planning blind",
+      "definition": {
+        "en": "lập kế hoạch khi chưa có thông tin",
+        "vi": "lập kế hoạch khi chưa có thông tin"
+      }
+    },
+    {
+      "id": "g-142",
+      "letter": "P",
+      "term": "plausible",
+      "definition": {
+        "en": "nghe có vẻ hợp lý (nhưng có thể sai)",
+        "vi": "nghe có vẻ hợp lý (nhưng có thể sai)"
+      }
+    },
+    {
+      "id": "g-143",
+      "letter": "P",
+      "term": "policy exception",
+      "definition": {
+        "en": "ngoại lệ chính sách",
+        "vi": "ngoại lệ chính sách"
+      }
+    },
+    {
+      "id": "g-144",
+      "letter": "P",
+      "term": "pre-classification",
+      "definition": {
+        "en": "phân loại trước",
+        "vi": "phân loại trước"
+      }
+    },
+    {
+      "id": "g-145",
+      "letter": "P",
+      "term": "prerequisite",
+      "definition": {
+        "en": "điều kiện tiên quyết",
+        "vi": "điều kiện tiên quyết"
+      }
+    },
+    {
+      "id": "g-146",
+      "letter": "P",
+      "term": "prescriptive",
+      "definition": {
+        "en": "mang tính áp đặt, chỉ dẫn cứng nhắc",
+        "vi": "mang tính áp đặt, chỉ dẫn cứng nhắc"
+      }
+    },
+    {
+      "id": "g-147",
+      "letter": "P",
+      "term": "prioritize",
+      "definition": {
+        "en": "ưu tiên",
+        "vi": "ưu tiên"
+      }
+    },
+    {
+      "id": "g-148",
+      "letter": "P",
+      "term": "prompt chaining",
+      "definition": {
+        "en": "chuỗi prompt nối tiếp",
+        "vi": "chuỗi prompt nối tiếp"
+      }
+    },
+    {
+      "id": "g-149",
+      "letter": "P",
+      "term": "prose",
+      "definition": {
+        "en": "văn xuôi",
+        "vi": "văn xuôi"
+      }
+    },
+    {
+      "id": "g-150",
+      "letter": "P",
+      "term": "provenance",
+      "definition": {
+        "en": "nguồn gốc thông tin",
+        "vi": "nguồn gốc thông tin"
+      }
+    },
+    {
+      "id": "g-151",
+      "letter": "P",
+      "term": "prune",
+      "definition": {
+        "en": "cắt tỉa (bớt dữ liệu dư thừa)",
+        "vi": "cắt tỉa (bớt dữ liệu dư thừa)"
+      }
+    },
+    {
+      "id": "g-152",
+      "letter": "P",
+      "term": "pruning",
+      "definition": {
+        "en": "việc cắt tỉa dữ liệu",
+        "vi": "việc cắt tỉa dữ liệu"
+      }
+    },
+    {
+      "id": "g-153",
+      "letter": "P",
+      "term": "purpose-specific",
+      "definition": {
+        "en": "chuyên biệt theo mục đích",
+        "vi": "chuyên biệt theo mục đích"
+      }
+    },
+    {
+      "id": "g-154",
+      "letter": "Q",
+      "term": "quality criteria",
+      "definition": {
+        "en": "tiêu chí chất lượng",
+        "vi": "tiêu chí chất lượng"
+      }
+    },
+    {
+      "id": "g-155",
+      "letter": "Q",
+      "term": "query",
+      "definition": {
+        "en": "câu truy vấn/câu hỏi",
+        "vi": "câu truy vấn/câu hỏi"
+      }
+    },
+    {
+      "id": "g-156",
+      "letter": "R",
+      "term": "race condition",
+      "definition": {
+        "en": "tình huống tranh chấp truy cập đồng thời",
+        "vi": "tình huống tranh chấp truy cập đồng thời"
+      }
+    },
+    {
+      "id": "g-157",
+      "letter": "R",
+      "term": "re-exported",
+      "definition": {
+        "en": "được xuất lại dưới tên khác",
+        "vi": "được xuất lại dưới tên khác"
+      }
+    },
+    {
+      "id": "g-158",
+      "letter": "R",
+      "term": "recall",
+      "definition": {
+        "en": "độ bao phủ (tỷ lệ phát hiện đúng)",
+        "vi": "độ bao phủ (tỷ lệ phát hiện đúng)"
+      }
+    },
+    {
+      "id": "g-159",
+      "letter": "R",
+      "term": "recommended action",
+      "definition": {
+        "en": "hành động được đề xuất",
+        "vi": "hành động được đề xuất"
+      }
+    },
+    {
+      "id": "g-160",
+      "letter": "R",
+      "term": "reconcile",
+      "definition": {
+        "en": "đối chiếu, dung hoà số liệu",
+        "vi": "đối chiếu, dung hoà số liệu"
+      }
+    },
+    {
+      "id": "g-161",
+      "letter": "R",
+      "term": "recursive",
+      "definition": {
+        "en": "đệ quy",
+        "vi": "đệ quy"
+      }
+    },
+    {
+      "id": "g-162",
+      "letter": "R",
+      "term": "reliability",
+      "definition": {
+        "en": "độ tin cậy của hệ thống",
+        "vi": "độ tin cậy của hệ thống"
+      }
+    },
+    {
+      "id": "g-163",
+      "letter": "R",
+      "term": "render",
+      "definition": {
+        "en": "hiển thị, dựng ra",
+        "vi": "hiển thị, dựng ra"
+      }
+    },
+    {
+      "id": "g-164",
+      "letter": "R",
+      "term": "replace_all",
+      "definition": {
+        "en": "thay thế tất cả các chỗ khớp",
+        "vi": "thay thế tất cả các chỗ khớp"
+      }
+    },
+    {
+      "id": "g-165",
+      "letter": "R",
+      "term": "required field",
+      "definition": {
+        "en": "trường bắt buộc",
+        "vi": "trường bắt buộc"
+      }
+    },
+    {
+      "id": "g-166",
+      "letter": "R",
+      "term": "resources",
+      "definition": {
+        "en": "tài nguyên",
+        "vi": "tài nguyên"
+      }
+    },
+    {
+      "id": "g-167",
+      "letter": "R",
+      "term": "resubmit",
+      "definition": {
+        "en": "gửi lại",
+        "vi": "gửi lại"
+      }
+    },
+    {
+      "id": "g-168",
+      "letter": "R",
+      "term": "resume",
+      "definition": {
+        "en": "tiếp tục (một phiên làm việc)",
+        "vi": "tiếp tục (một phiên làm việc)"
+      }
+    },
+    {
+      "id": "g-169",
+      "letter": "R",
+      "term": "resumed",
+      "definition": {
+        "en": "đã được tiếp tục",
+        "vi": "đã được tiếp tục"
+      }
+    },
+    {
+      "id": "g-170",
+      "letter": "R",
+      "term": "resuming",
+      "definition": {
+        "en": "việc tiếp tục lại",
+        "vi": "việc tiếp tục lại"
+      }
+    },
+    {
+      "id": "g-171",
+      "letter": "R",
+      "term": "retraining",
+      "definition": {
+        "en": "huấn luyện lại",
+        "vi": "huấn luyện lại"
+      }
+    },
+    {
+      "id": "g-172",
+      "letter": "R",
+      "term": "role-relevant",
+      "definition": {
+        "en": "liên quan đến vai trò",
+        "vi": "liên quan đến vai trò"
+      }
+    },
+    {
+      "id": "g-173",
+      "letter": "R",
+      "term": "root cause",
+      "definition": {
+        "en": "nguyên nhân gốc rễ",
+        "vi": "nguyên nhân gốc rễ"
+      }
+    },
+    {
+      "id": "g-174",
+      "letter": "R",
+      "term": "root-cause fix",
+      "definition": {
+        "en": "giải pháp sửa tận gốc",
+        "vi": "giải pháp sửa tận gốc"
+      }
+    },
+    {
+      "id": "g-175",
+      "letter": "R",
+      "term": "routing",
+      "definition": {
+        "en": "định tuyến",
+        "vi": "định tuyến"
+      }
+    },
+    {
+      "id": "g-176",
+      "letter": "R",
+      "term": "rules engine",
+      "definition": {
+        "en": "hệ thống luật cứng nhắc",
+        "vi": "hệ thống luật cứng nhắc"
+      }
+    },
+    {
+      "id": "g-177",
+      "letter": "S",
+      "term": "safety margin",
+      "definition": {
+        "en": "biên độ an toàn",
+        "vi": "biên độ an toàn"
+      }
+    },
+    {
+      "id": "g-178",
+      "letter": "S",
+      "term": "scope",
+      "definition": {
+        "en": "phạm vi",
+        "vi": "phạm vi"
+      }
+    },
+    {
+      "id": "g-179",
+      "letter": "S",
+      "term": "scratchpad",
+      "definition": {
+        "en": "bộ nhớ nháp, ghi chú tạm",
+        "vi": "bộ nhớ nháp, ghi chú tạm"
+      }
+    },
+    {
+      "id": "g-180",
+      "letter": "S",
+      "term": "segment",
+      "definition": {
+        "en": "phân khúc",
+        "vi": "phân khúc"
+      }
+    },
+    {
+      "id": "g-181",
+      "letter": "S",
+      "term": "sentiment analysis",
+      "definition": {
+        "en": "phân tích cảm xúc",
+        "vi": "phân tích cảm xúc"
+      }
+    },
+    {
+      "id": "g-182",
+      "letter": "S",
+      "term": "session",
+      "definition": {
+        "en": "phiên làm việc",
+        "vi": "phiên làm việc"
+      }
+    },
+    {
+      "id": "g-183",
+      "letter": "S",
+      "term": "severity metadata",
+      "definition": {
+        "en": "siêu dữ liệu mức độ nghiêm trọng",
+        "vi": "siêu dữ liệu mức độ nghiêm trọng"
+      }
+    },
+    {
+      "id": "g-184",
+      "letter": "S",
+      "term": "sibling",
+      "definition": {
+        "en": "agent ngang hàng",
+        "vi": "agent ngang hàng"
+      }
+    },
+    {
+      "id": "g-185",
+      "letter": "S",
+      "term": "sla",
+      "definition": {
+        "en": "cam kết chất lượng dịch vụ",
+        "vi": "cam kết chất lượng dịch vụ"
+      }
+    },
+    {
+      "id": "g-186",
+      "letter": "S",
+      "term": "sliding window",
+      "definition": {
+        "en": "cửa sổ trượt",
+        "vi": "cửa sổ trượt"
+      }
+    },
+    {
+      "id": "g-187",
+      "letter": "S",
+      "term": "source index",
+      "definition": {
+        "en": "chỉ mục nguồn",
+        "vi": "chỉ mục nguồn"
+      }
+    },
+    {
+      "id": "g-188",
+      "letter": "S",
+      "term": "spawn",
+      "definition": {
+        "en": "khởi tạo (tạo mới một tiến trình/agent con)",
+        "vi": "khởi tạo (tạo mới một tiến trình/agent con)"
+      }
+    },
+    {
+      "id": "g-189",
+      "letter": "S",
+      "term": "spawning",
+      "definition": {
+        "en": "việc khởi tạo agent con",
+        "vi": "việc khởi tạo agent con"
+      }
+    },
+    {
+      "id": "g-190",
+      "letter": "S",
+      "term": "stack trace",
+      "definition": {
+        "en": "dấu vết ngăn xếp lỗi",
+        "vi": "dấu vết ngăn xếp lỗi"
+      }
+    },
+    {
+      "id": "g-191",
+      "letter": "S",
+      "term": "stale",
+      "definition": {
+        "en": "đã cũ, lỗi thời",
+        "vi": "đã cũ, lỗi thời"
+      }
+    },
+    {
+      "id": "g-192",
+      "letter": "S",
+      "term": "stated field",
+      "definition": {
+        "en": "trường được nêu rõ trong nguồn",
+        "vi": "trường được nêu rõ trong nguồn"
+      }
+    },
+    {
+      "id": "g-193",
+      "letter": "S",
+      "term": "stateless",
+      "definition": {
+        "en": "không lưu trạng thái",
+        "vi": "không lưu trạng thái"
+      }
+    },
+    {
+      "id": "g-194",
+      "letter": "S",
+      "term": "static analysis",
+      "definition": {
+        "en": "phân tích tĩnh (không chạy chương trình)",
+        "vi": "phân tích tĩnh (không chạy chương trình)"
+      }
+    },
+    {
+      "id": "g-195",
+      "letter": "S",
+      "term": "structured export",
+      "definition": {
+        "en": "bản xuất dữ liệu có cấu trúc",
+        "vi": "bản xuất dữ liệu có cấu trúc"
+      }
+    },
+    {
+      "id": "g-196",
+      "letter": "S",
+      "term": "subagent",
+      "definition": {
+        "en": "agent con",
+        "vi": "agent con"
+      }
+    },
+    {
+      "id": "g-197",
+      "letter": "S",
+      "term": "subagents",
+      "definition": {
+        "en": "các agent con",
+        "vi": "các agent con"
+      }
+    },
+    {
+      "id": "g-198",
+      "letter": "S",
+      "term": "summarize",
+      "definition": {
+        "en": "tóm tắt",
+        "vi": "tóm tắt"
+      }
+    },
+    {
+      "id": "g-199",
+      "letter": "S",
+      "term": "superseded",
+      "definition": {
+        "en": "đã bị thay thế",
+        "vi": "đã bị thay thế"
+      }
+    },
+    {
+      "id": "g-200",
+      "letter": "S",
+      "term": "synthesis",
+      "definition": {
+        "en": "sự tổng hợp",
+        "vi": "sự tổng hợp"
+      }
+    },
+    {
+      "id": "g-201",
+      "letter": "S",
+      "term": "synthesis agent",
+      "definition": {
+        "en": "agent tổng hợp",
+        "vi": "agent tổng hợp"
+      }
+    },
+    {
+      "id": "g-202",
+      "letter": "S",
+      "term": "systemic",
+      "definition": {
+        "en": "mang tính hệ thống, lan rộng",
+        "vi": "mang tính hệ thống, lan rộng"
+      }
+    },
+    {
+      "id": "g-203",
+      "letter": "T",
+      "term": "tabular",
+      "definition": {
+        "en": "dạng bảng",
+        "vi": "dạng bảng"
+      }
+    },
+    {
+      "id": "g-204",
+      "letter": "T",
+      "term": "temperature",
+      "definition": {
+        "en": "tham số độ ngẫu nhiên (temperature)",
+        "vi": "tham số độ ngẫu nhiên (temperature)"
+      }
+    },
+    {
+      "id": "g-205",
+      "letter": "T",
+      "term": "threshold",
+      "definition": {
+        "en": "ngưỡng",
+        "vi": "ngưỡng"
+      }
+    },
+    {
+      "id": "g-206",
+      "letter": "T",
+      "term": "timeout",
+      "definition": {
+        "en": "hết thời gian chờ",
+        "vi": "hết thời gian chờ"
+      }
+    },
+    {
+      "id": "g-207",
+      "letter": "T",
+      "term": "timestamp",
+      "definition": {
+        "en": "dấu thời gian",
+        "vi": "dấu thời gian"
+      }
+    },
+    {
+      "id": "g-208",
+      "letter": "T",
+      "term": "tool call",
+      "definition": {
+        "en": "lệnh gọi công cụ",
+        "vi": "lệnh gọi công cụ"
+      }
+    },
+    {
+      "id": "g-209",
+      "letter": "T",
+      "term": "tool calls",
+      "definition": {
+        "en": "các lệnh gọi công cụ",
+        "vi": "các lệnh gọi công cụ"
+      }
+    },
+    {
+      "id": "g-210",
+      "letter": "T",
+      "term": "tool description",
+      "definition": {
+        "en": "mô tả công cụ",
+        "vi": "mô tả công cụ"
+      }
+    },
+    {
+      "id": "g-211",
+      "letter": "T",
+      "term": "tool selection",
+      "definition": {
+        "en": "việc chọn công cụ",
+        "vi": "việc chọn công cụ"
+      }
+    },
+    {
+      "id": "g-212",
+      "letter": "T",
+      "term": "tool_choice",
+      "definition": {
+        "en": "tham số ép buộc chọn tool",
+        "vi": "tham số ép buộc chọn tool"
+      }
+    },
+    {
+      "id": "g-213",
+      "letter": "T",
+      "term": "trace",
+      "definition": {
+        "en": "truy vết",
+        "vi": "truy vết"
+      }
+    },
+    {
+      "id": "g-214",
+      "letter": "T",
+      "term": "tracing",
+      "definition": {
+        "en": "việc truy vết",
+        "vi": "việc truy vết"
+      }
+    },
+    {
+      "id": "g-215",
+      "letter": "T",
+      "term": "transcript",
+      "definition": {
+        "en": "bản ghi hội thoại",
+        "vi": "bản ghi hội thoại"
+      }
+    },
+    {
+      "id": "g-216",
+      "letter": "T",
+      "term": "transient",
+      "definition": {
+        "en": "tạm thời, thoáng qua",
+        "vi": "tạm thời, thoáng qua"
+      }
+    },
+    {
+      "id": "g-217",
+      "letter": "T",
+      "term": "trivial",
+      "definition": {
+        "en": "đơn giản, không đáng kể",
+        "vi": "đơn giản, không đáng kể"
+      }
+    },
+    {
+      "id": "g-218",
+      "letter": "T",
+      "term": "typed",
+      "definition": {
+        "en": "có kiểu dữ liệu rõ ràng",
+        "vi": "có kiểu dữ liệu rõ ràng"
+      }
+    },
+    {
+      "id": "g-219",
+      "letter": "U",
+      "term": "unilaterally",
+      "definition": {
+        "en": "một cách đơn phương, tự ý",
+        "vi": "một cách đơn phương, tự ý"
+      }
+    },
+    {
+      "id": "g-220",
+      "letter": "U",
+      "term": "unpredictably",
+      "definition": {
+        "en": "một cách không đoán trước được",
+        "vi": "một cách không đoán trước được"
+      }
+    },
+    {
+      "id": "g-221",
+      "letter": "U",
+      "term": "upstream",
+      "definition": {
+        "en": "ở tầng xử lý phía trước",
+        "vi": "ở tầng xử lý phía trước"
+      }
+    },
+    {
+      "id": "g-222",
+      "letter": "V",
+      "term": "validation",
+      "definition": {
+        "en": "sự kiểm định, xác thực",
+        "vi": "sự kiểm định, xác thực"
+      }
+    },
+    {
+      "id": "g-223",
+      "letter": "V",
+      "term": "vector database",
+      "definition": {
+        "en": "cơ sở dữ liệu vector",
+        "vi": "cơ sở dữ liệu vector"
+      }
+    },
+    {
+      "id": "g-224",
+      "letter": "V",
+      "term": "versioned",
+      "definition": {
+        "en": "có phiên bản",
+        "vi": "có phiên bản"
+      }
+    },
+    {
+      "id": "g-225",
+      "letter": "W",
+      "term": "well-scoped",
+      "definition": {
+        "en": "có phạm vi rõ ràng",
+        "vi": "có phạm vi rõ ràng"
+      }
+    },
+    {
+      "id": "g-226",
+      "letter": "W",
+      "term": "workaround",
+      "definition": {
+        "en": "giải pháp tình thế, xử lý tạm",
+        "vi": "giải pháp tình thế, xử lý tạm"
+      }
+    },
+    {
+      "id": "g-227",
+      "letter": "W",
+      "term": "worst-case",
+      "definition": {
+        "en": "trường hợp xấu nhất",
+        "vi": "trường hợp xấu nhất"
+      }
+    },
+    {
+      "id": "g-228",
+      "letter": "W",
+      "term": "wrapper module",
+      "definition": {
+        "en": "module bao ngoài",
+        "vi": "module bao ngoài"
+      }
+    },
+    {
+      "id": "g-229",
+      "letter": "W",
+      "term": "wrapper modules",
+      "definition": {
+        "en": "các module bao ngoài",
+        "vi": "các module bao ngoài"
+      }
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "slug": "ccar-f",
+  "certId": "ccaf",
+  "code": "CCAR-F",
+  "name": {
+    "en": "Claude Certified Architect – Foundations",
+    "vi": "Claude Certified Architect – Foundations"
+  },
+  "tagline": {
+    "en": "For engineers building with the Claude API, Agent SDK, Claude Code and MCP. Proves you can design agentic systems, tools and prompts that hold up in production.",
+    "vi": "Dành cho kỹ sư xây dựng với Claude API, Agent SDK, Claude Code và MCP. Chứng minh bạn thiết kế được hệ thống agent, tool và prompt vận hành tốt trong production."
+  },
+  "provider": "Anthropic",
+  "category": "AI & Architecture",
+  "accent": "#0ea5e9",
+  "badge": "badges/ccar-f.png",
+  "examConfig": {
+    "totalQuestions": 60,
+    "durationMinutes": 120,
+    "passingScore": "720",
+    "passingDetail": "Scaled 100–1,000",
+    "fee": "$125",
+    "validity": "12 months",
+    "delivery": "Proctored"
+  },
+  "examFacts": [
+    {
+      "label": {
+        "en": "Questions",
+        "vi": "Số câu"
+      },
+      "value": {
+        "en": "60",
+        "vi": "60"
+      },
+      "detail": {
+        "en": "Multiple choice and multiple response. 4 scenarios drawn from a bank of 6.",
+        "vi": "Trắc nghiệm một và nhiều đáp án. 4 tình huống chọn ngẫu nhiên từ 6."
+      }
+    },
+    {
+      "label": {
+        "en": "Duration",
+        "vi": "Thời gian"
+      },
+      "value": {
+        "en": "120 min",
+        "vi": "120 phút"
+      },
+      "detail": {
+        "en": "≈ 120 s per question",
+        "vi": "≈ 120 giây mỗi câu"
+      }
+    },
+    {
+      "label": {
+        "en": "Passing score",
+        "vi": "Điểm đạt"
+      },
+      "value": {
+        "en": "720",
+        "vi": "720"
+      },
+      "detail": {
+        "en": "Scaled 100–1,000",
+        "vi": "Thang điểm 100–1.000"
+      }
+    },
+    {
+      "label": {
+        "en": "Delivery",
+        "vi": "Hình thức"
+      },
+      "value": {
+        "en": "Proctored",
+        "vi": "Có giám thị"
+      },
+      "detail": {
+        "en": "Pearson OnVUE online or a Pearson test centre. Closed book.",
+        "vi": "Thi online qua Pearson OnVUE hoặc tại trung tâm Pearson. Không dùng tài liệu."
+      }
+    },
+    {
+      "label": {
+        "en": "Fee",
+        "vi": "Lệ phí"
+      },
+      "value": {
+        "en": "$125",
+        "vi": "$125"
+      },
+      "detail": {
+        "en": "Paid at Pearson checkout",
+        "vi": "Thanh toán khi đặt lịch ở Pearson"
+      }
+    },
+    {
+      "label": {
+        "en": "Validity",
+        "vi": "Hiệu lực"
+      },
+      "value": {
+        "en": "12 months",
+        "vi": "12 tháng"
+      },
+      "detail": {
+        "en": "Free renewal assessment if on time",
+        "vi": "Gia hạn miễn phí nếu làm đúng hạn"
+      }
+    }
+  ],
+  "factsSource": {
+    "label": "Anthropic Partner Academy",
+    "url": "https://anthropic-partners.skilljar.com/page/partner-certifications"
+  },
+  "domains": [
+    {
+      "id": "D1",
+      "code": "Domain 1",
+      "weight": 27,
+      "name": {
+        "en": "Agentic Architecture & Orchestration",
+        "vi": "Agentic Architecture & Orchestration"
+      },
+      "description": {
+        "en": "Multi-agent orchestration, coordinator–subagent patterns, task decomposition, parallel execution",
+        "vi": "Điều phối multi-agent, các pattern coordinator–subagent, phân rã task, thực thi song song"
+      },
+      "principleCount": 21,
+      "questionCount": 67
+    },
+    {
+      "id": "D2",
+      "code": "Domain 2",
+      "weight": 18,
+      "name": {
+        "en": "Tool Design & MCP Integration",
+        "vi": "Tool Design & MCP Integration"
+      },
+      "description": {
+        "en": "Tool design, built-in tools (Grep/Glob/Bash), MCP servers, tools & resources",
+        "vi": "Thiết kế tool, các built-in tool (Grep/Glob/Bash), MCP server, tool và resource"
+      },
+      "principleCount": 15,
+      "questionCount": 57
+    },
+    {
+      "id": "D3",
+      "code": "Domain 3",
+      "weight": 20,
+      "name": {
+        "en": "Claude Code Configuration & Workflows",
+        "vi": "Claude Code Configuration & Workflows"
+      },
+      "description": {
+        "en": "Claude Code flags, CLAUDE.md, sessions, permissions, developer workflows",
+        "vi": "Các flag của Claude Code, CLAUDE.md, session, permission, workflow của developer"
+      },
+      "principleCount": 16,
+      "questionCount": 43
+    },
+    {
+      "id": "D4",
+      "code": "Domain 4",
+      "weight": 20,
+      "name": {
+        "en": "Prompt Engineering & Structured Output",
+        "vi": "Prompt Engineering & Structured Output"
+      },
+      "description": {
+        "en": "Prompt engineering, few-shot examples, structured output, confidence & severity metadata",
+        "vi": "Prompt engineering, few-shot example, structured output, metadata về độ tin cậy và mức độ nghiêm trọng"
+      },
+      "principleCount": 12,
+      "questionCount": 49
+    },
+    {
+      "id": "D5",
+      "code": "Domain 5",
+      "weight": 15,
+      "name": {
+        "en": "Context Management & Reliability",
+        "vi": "Context Management & Reliability"
+      },
+      "description": {
+        "en": "Context management, batch/async APIs, retries, reliability",
+        "vi": "Quản lý context, batch/async API, retry, độ tin cậy"
+      },
+      "principleCount": 3,
+      "questionCount": 24
+    }
+  ],
+  "studyPlan": [
+    {
+      "phase": "Phase 1",
+      "title": {
+        "en": "D1 + D2 (45% of the exam)",
+        "vi": "D1 + D2 (45% of the exam)"
+      },
+      "steps": [
+        {
+          "en": "Read all 21 Agentic Architecture & Orchestration principles below — the heaviest‑weighted domain.",
+          "vi": "Đọc hết 21 nguyên tắc Agentic Architecture & Orchestration bên dưới — domain nặng nhất."
+        },
+        {
+          "en": "Read all 15 Tool Design & MCP Integration principles.",
+          "vi": "Đọc hết 15 nguyên tắc Tool Design & MCP Integration."
+        },
+        {
+          "en": "Practice: open Quick practice (Study Guide set), complete it, and cross‑check the explanations in this lecture for every wrong answer.",
+          "vi": "Luyện tập: mở Quick practice (Study Guide set), làm hết, đối chiếu phần giải thích trong bài giảng này khi sai."
+        },
+        {
+          "en": "Keep a personal \"weak spots\" list of missed questions to review again in Phase 3.",
+          "vi": "Ghi chú riêng các câu bạn sai vào danh sách điểm yếu để ôn lại ở Phase 3."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2",
+      "title": {
+        "en": "D3 + D4 (40% of the exam)",
+        "vi": "D3 + D4 (40% of the exam)"
+      },
+      "steps": [
+        {
+          "en": "Read all 16 Claude Code Configuration & Workflows principles (flags, sessions, CLAUDE.md, exploration).",
+          "vi": "Đọc hết 16 nguyên tắc Claude Code Configuration & Workflows (flags, sessions, CLAUDE.md, khám phá code)."
+        },
+        {
+          "en": "Read all 12 Prompt Engineering & Structured Output principles (schema design, few‑shot, batch vs. real‑time).",
+          "vi": "Đọc hết 12 nguyên tắc Prompt Engineering & Structured Output (thiết kế schema, few-shot, batch vs real-time)."
+        },
+        {
+          "en": "Practice: open Domain drill (Extended set), complete it, and revisit D1/D2 if your score is still low.",
+          "vi": "Luyện tập: mở Domain drill (Extended set), làm hết, ôn lại D1/D2 nếu điểm còn thấp."
+        },
+        {
+          "en": "Review the Cheat‑sheet table to memorize the quick \"decision rules.\"",
+          "vi": "Xem lại bảng Cheat-sheet để nhớ nhanh các quy tắc quyết định."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3",
+      "title": {
+        "en": "D5 + full review + mock exam",
+        "vi": "D5 + full review + mock exam"
+      },
+      "steps": [
+        {
+          "en": "Read all 3 Context Management & Reliability principles (Batch API, chunking context errors).",
+          "vi": "Đọc hết 3 nguyên tắc Context Management & Reliability (Batch API, xử lý lỗi context bằng chunking)."
+        },
+        {
+          "en": "Quickly review all 5 domains using the Cheat‑sheet and the final Checklist.",
+          "vi": "Ôn nhanh toàn bộ 5 domain bằng bảng Cheat-sheet và Checklist cuối bài."
+        },
+        {
+          "en": "Take the full mock exam: Full mock exam — time yourself like the real thing.",
+          "vi": "Làm thi thử đầy đủ: Full mock exam — canh giờ như thi thật."
+        },
+        {
+          "en": "Only re‑fix the weak spots noted from Phases 1–2 — don't restart from scratch.",
+          "vi": "Chỉ sửa lại các điểm yếu đã ghi chú từ Phase 1-2 — không học lại từ đầu."
+        }
+      ]
+    }
+  ],
+  "guide": {
+    "title": {
+      "en": "About the CCAR-F exam",
+      "vi": "Tìm hiểu kỳ thi CCAR-F"
+    },
+    "intro": {
+      "en": "Claude Certified Architect – Foundations (exam code CCAR-F) is Anthropic's certification for engineers who design and ship production systems with the Claude API, the Claude Agent SDK, Claude Code and the Model Context Protocol (MCP). It is open only to people at Claude Partner Network organisations. Below: who it suits, the 60-question exam, cost, renewal and preparation.",
+      "vi": "Claude Certified Architect – Foundations (mã thi CCAR-F) là chứng chỉ của Anthropic dành cho kỹ sư thiết kế và đưa vào production các hệ thống dùng Claude API, Claude Agent SDK, Claude Code và Model Context Protocol (MCP). Chỉ người làm việc tại tổ chức thuộc Claude Partner Network mới được thi. Dưới đây là chứng chỉ hợp với ai, đề thi 60 câu, chi phí, gia hạn và cách ôn."
+    }
+  },
+  "faqs": [
+    {
+      "question": {
+        "en": "Who it's for and who can sit it",
+        "vi": "Chứng chỉ dành cho ai và ai được thi"
+      },
+      "answer": {
+        "en": "Anthropic describes the ideal candidate as a solution architect who designs and implements production applications with Claude. In practice: engineers who already have hands-on experience with:",
+        "vi": "Anthropic mô tả ứng viên lý tưởng là solution architect thiết kế và triển khai ứng dụng production với Claude. Thực tế đó là kỹ sư đã có kinh nghiệm thực hành với:"
+      }
+    },
+    {
+      "question": {
+        "en": "What's tested",
+        "vi": "Đề thi kiểm tra những gì"
+      },
+      "answer": {
+        "en": "The blueprint has five domains and 30 task statements:",
+        "vi": "Blueprint gồm năm domain và 30 task statement:"
+      }
+    },
+    {
+      "question": {
+        "en": "Exam format and scoring",
+        "vi": "Cấu trúc đề và cách chấm điểm"
+      },
+      "answer": {
+        "en": "CCAR-F is not one of the exams that change on 7 December 2026; Pearson lists that update for Associate – Foundations, Developer – Foundations and Architect – Professional only.",
+        "vi": "CCAR-F không nằm trong các bài thi thay đổi từ ngày 7/12/2026; Pearson chỉ ghi đợt cập nhật này cho Associate – Foundations, Developer – Foundations và Architect – Professional."
+      }
+    },
+    {
+      "question": {
+        "en": "Difficulty and study time",
+        "vi": "Độ khó và thời gian ôn"
+      },
+      "answer": {
+        "en": "CCAR-F is hard because most options are plausible: you must pick the one that holds up in production. The guide's sample questions keep rewarding the same instincts:",
+        "vi": "CCAR-F khó vì hầu hết phương án đều nghe hợp lý: bạn phải chọn phương án đứng vững trong production. Câu hỏi mẫu trong exam guide liên tục thưởng cho cùng một kiểu tư duy:"
+      }
+    },
+    {
+      "question": {
+        "en": "Cost, eligibility and booking",
+        "vi": "Chi phí, điều kiện và đặt lịch thi"
+      },
+      "answer": {
+        "en": "Fee. US$125 per attempt before discounts, when we checked. Discounts follow your firm's Claude Partner Network tier: Registered partners pay full price; Select, Preferred and Global Premier partners get 50% off at Pearson checkout, and Global Premier gets 100% off until 31 December 2026. Retakes cost the full fee again.",
+        "vi": "Lệ phí. 125 USD mỗi lần thi, chưa tính giảm giá, tại thời điểm chúng tôi kiểm tra. Mức giảm theo hạng của công ty bạn trong Claude Partner Network: hạng Registered trả đủ; Select, Preferred và Global Premier được giảm 50% khi thanh toán ở Pearson, riêng Global Premier được giảm 100% đến hết 31/12/2026. Thi lại phải trả lại toàn bộ lệ phí."
+      }
+    },
+    {
+      "question": {
+        "en": "Renewal",
+        "vi": "Gia hạn chứng chỉ"
+      },
+      "answer": {
+        "en": "CCAR-F is valid for 12 months from the date you earn it.",
+        "vi": "CCAR-F có hiệu lực 12 tháng kể từ ngày bạn đạt."
+      }
+    },
+    {
+      "question": {
+        "en": "How it compares",
+        "vi": "So sánh với các chứng chỉ khác"
+      },
+      "answer": {
+        "en": "",
+        "vi": ""
+      }
+    },
+    {
+      "question": {
+        "en": "How to prepare",
+        "vi": "Cách ôn thi"
+      },
+      "answer": {
+        "en": "Our free practice questions and mock exams follow the official domains; they are written by us, not by Anthropic. Practica is not affiliated with Anthropic. Claude is a trademark of Anthropic.",
+        "vi": "Câu hỏi luyện tập và đề thi thử miễn phí trên trang của chúng tôi bám theo các domain chính thức; câu hỏi do chúng tôi tự soạn, không phải của Anthropic. Practica không liên kết với Anthropic. Claude là nhãn hiệu của Anthropic."
+      }
+    },
+    {
+      "question": {
+        "en": "How many questions are on the CCAR-F exam?",
+        "vi": "Đề thi CCAR-F có bao nhiêu câu hỏi?"
+      },
+      "answer": {
+        "en": "The CCAR-F exam has 60 questions.",
+        "vi": "Đề thi CCAR-F có 60 câu hỏi."
+      }
+    },
+    {
+      "question": {
+        "en": "How long is the CCAR-F exam?",
+        "vi": "Thời gian làm bài thi CCAR-F là bao lâu?"
+      },
+      "answer": {
+        "en": "You have 120 minutes, about 120 seconds per question.",
+        "vi": "Bạn có 120 phút, khoảng 120 giây cho mỗi câu."
+      }
+    },
+    {
+      "question": {
+        "en": "What is the passing score for CCAR-F?",
+        "vi": "Điểm đạt của kỳ thi CCAR-F là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The passing score is 720.",
+        "vi": "Điểm đạt là 720."
+      }
+    },
+    {
+      "question": {
+        "en": "How much does the CCAR-F exam cost?",
+        "vi": "Lệ phí thi CCAR-F là bao nhiêu?"
+      },
+      "answer": {
+        "en": "The exam fee is $125.",
+        "vi": "Lệ phí thi là $125."
+      }
+    },
+    {
+      "question": {
+        "en": "What does the CCAR-F exam cover?",
+        "vi": "Đề thi CCAR-F gồm những nội dung gì?"
+      },
+      "answer": {
+        "en": "Agentic Architecture & Orchestration (27%); Tool Design & MCP Integration (18%); Claude Code Configuration & Workflows (20%); Prompt Engineering & Structured Output (20%); Context Management & Reliability (15%).",
+        "vi": "Agentic Architecture & Orchestration (27%); Tool Design & MCP Integration (18%); Claude Code Configuration & Workflows (20%); Prompt Engineering & Structured Output (20%); Context Management & Reliability (15%)."
+      }
+    },
+    {
+      "question": {
+        "en": "Is Practica Cert Prep free?",
+        "vi": "Practica Cert Prep có miễn phí không?"
+      },
+      "answer": {
+        "en": "Yes. Every study page, the practice questions and the mock exam are free, with no login. Progress is saved in your browser.",
+        "vi": "Có. Mọi trang học, câu hỏi luyện tập và bài thi thử đều miễn phí, không cần đăng nhập. Tiến độ được lưu trên trình duyệt của bạn."
+      }
+    }
+  ],
+  "stats": {
+    "domains": 5,
+    "principles": 67,
+    "rules": 22,
+    "glossary": 229,
+    "questions": 287
+  },
+  "sourceUrl": "https://certprep.practica.asia/vi/ccar-f",
+  "scrapedAt": "2026-11-24T00:51:00.241Z"
+}

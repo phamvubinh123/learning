@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-11-24T00:51:52.967Z",
+  "certifications": [
+    {
+      "slug": "ccar-f",
+      "certId": "ccaf",
+      "code": "CCAR-F",
+      "name": {
+        "en": "Claude Certified Architect – Foundations",
+        "vi": "Claude Certified Architect – Foundations"
+      },
+      "tagline": {
+        "en": "For engineers building with the Claude API, Agent SDK, Claude Code and MCP. Proves you can design agentic systems, tools and prompts that hold up in production.",
+        "vi": "Dành cho kỹ sư xây dựng với Claude API, Agent SDK, Claude Code và MCP. Chứng minh bạn thiết kế được hệ thống agent, tool và prompt vận hành tốt trong production."
+      },
+      "provider": "Anthropic",
+      "category": "AI & Architecture",
+      "accent": "#0ea5e9",
+      "badge": "badges/ccar-f.png",
+      "examConfig": {
+        "totalQuestions": 60,
+        "durationMinutes": 120,
+        "passingScore": "720",
+        "passingDetail": "Scaled 100–1,000",
+        "fee": "$125",
+        "validity": "12 months",
+        "delivery": "Proctored"
+      },
+      "stats": {
+        "domains": 5,
+        "principles": 67,
+        "rules": 22,
+        "glossary": 229,
+        "questions": 287
+      },
+      "scrapedAt": "2026-11-24T00:51:00.241Z"
+    },
+    {
+      "slug": "ccar-p",
+      "certId": "ccap",
+      "code": "CCAR-P",
+      "name": {
+        "en": "Claude Certified Architect – Professional",
+        "vi": "Claude Certified Architect – Professional"
+      },
+      "tagline": {
+        "en": "For senior architects, AI/ML engineers and tech leads who design, integrate and govern Claude systems in enterprise production, from discovery to handoff.",
+        "vi": "Dành cho kiến trúc sư, kỹ sư AI/ML và tech lead cấp cao thiết kế, tích hợp và quản trị hệ thống Claude trong doanh nghiệp, từ khảo sát đến bàn giao."
+      },
+      "provider": "Anthropic",
+      "category": "AI & Architecture",
+      "accent": "#0284c7",
+      "badge": "badges/ccar-p.png",
+      "examConfig": {
+        "totalQuestions": 70,
+        "durationMinutes": 120,
+        "passingScore": "720",
+        "passingDetail": "Scaled 100–1,000",
+        "fee": "$175",
+        "validity": "12 months",
+        "delivery": "Proctored"
+      },
+      "stats": {
+        "domains": 7,
+        "principles": 39,
+        "rules": 34,
+        "glossary": 0,
+        "questions": 140
+      },
+      "scrapedAt": "2026-11-24T00:51:10.092Z"
+    },
+    {
+      "slug": "cpmai",
+      "certId": "pmi-cpmai",
+      "code": "CPMAI",
+      "name": {
+        "en": "PMI Certified Professional in Managing AI",
+        "vi": "PMI Certified Professional in Managing AI"
+      },
+      "tagline": {
+        "en": "For project and product leaders who run AI initiatives with the CPMAI methodology: responsible AI, business needs, data needs, model development and evaluation, and operationalization.",
+        "vi": "Dành cho trưởng dự án và sản phẩm triển khai các sáng kiến AI theo phương pháp CPMAI: AI có trách nhiệm, nhu cầu kinh doanh, nhu cầu dữ liệu, phát triển và đánh giá mô hình, và đưa vào vận hành."
+      },
+      "provider": "PMI",
+      "category": "AI Project Management",
+      "accent": "#10b981",
+      "badge": "badges/cpmai.png",
+      "examConfig": {
+        "totalQuestions": 120,
+        "durationMinutes": 160,
+        "passingScore": "TBC",
+        "passingDetail": "Pass/fail. PMI publishes no passing score.",
+        "fee": "$490 / $630",
+        "validity": "3 years",
+        "delivery": "Proctored"
+      },
+      "stats": {
+        "domains": 5,
+        "principles": 37,
+        "rules": 38,
+        "glossary": 102,
+        "questions": 0
+      },
+      "scrapedAt": "2026-11-24T00:51:31.658Z"
+    },
+    {
+      "slug": "pmp",
+      "certId": "pmi-pmp",
+      "code": "PMP",
+      "name": {
+        "en": "Project Management Professional",
+        "vi": "Project Management Professional"
+      },
+      "tagline": {
+        "en": "The global standard for experienced project managers: leading people, running delivery across predictive, agile and hybrid approaches, and keeping projects aligned with the business.",
+        "vi": "Chuẩn quốc tế cho người quản lý dự án có kinh nghiệm: dẫn dắt con người, triển khai theo cách tiếp cận dự đoán, agile và kết hợp, và giữ dự án gắn với mục tiêu kinh doanh."
+      },
+      "provider": "PMI",
+      "category": "Project Management",
+      "accent": "#f59e0b",
+      "badge": "badges/pmp.png",
+      "examConfig": {
+        "totalQuestions": 180,
+        "durationMinutes": 240,
+        "passingScore": "TBC",
+        "passingDetail": "Pass/fail with feedback per domain. PMI publishes no passing score.",
+        "fee": "$405 / $655",
+        "validity": "3 years",
+        "delivery": "Proctored"
+      },
+      "stats": {
+        "domains": 3,
+        "principles": 26,
+        "rules": 51,
+        "glossary": 107,
+        "questions": 0
+      },
+      "scrapedAt": "2026-11-24T00:51:52.919Z"
+    }
+  ]
+}

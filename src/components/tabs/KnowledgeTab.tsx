@@ -2,9 +2,14 @@ import { Check, ChevronDown, ChevronRight, Headphones, ListTree, Pencil, Play, S
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import {
+  buildLectureScript,
   buildPrincipleSpeechSegments,
+  fetchOpenAITtsAudio,
   isSpeechSupported,
+  loadSpeechPrefs,
   pickBestVoice,
+  saveSpeechPrefs,
+  type SpeechPreferences,
   type SpeechStyle,
 } from '../../services/speechService';
 import { mergePrinciple } from '../../services/storage';
@@ -63,10 +68,20 @@ export function KnowledgeTab({
   const [speechIdx, setSpeechIdx] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isLoadingAudio, setIsLoadingAudio] = useState(false);
+  const [speechError, setSpeechError] = useState<string | null>(null);
   const [speechStyle, setSpeechStyle] = useState<SpeechStyle>('lecture');
   const [speechRate, setSpeechRate] = useState<number>(1.0);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [speechPrefs, setSpeechPrefs] = useState<SpeechPreferences>(() => loadSpeechPrefs());
   const playbackSessionRef = useRef(0);
+  const audioElRef = useRef<HTMLAudioElement | null>(null);
+  const audioUrlRef = useRef<string | null>(null);
+
+  const updateSpeechPrefs = useCallback((next: SpeechPreferences) => {
+    setSpeechPrefs(next);
+    saveSpeechPrefs(next);
+  }, []);
 
   useEffect(() => {
     if (!speechSupported) return;
@@ -78,41 +93,58 @@ export function KnowledgeTab({
     };
   }, [speechSupported]);
 
+  const cleanupAudioEl = useCallback(() => {
+    if (audioElRef.current) {
+      audioElRef.current.pause();
+      audioElRef.current.src = '';
+      audioElRef.current = null;
+    }
+    if (audioUrlRef.current) {
+      URL.revokeObjectURL(audioUrlRef.current);
+      audioUrlRef.current = null;
+    }
+  }, []);
+
   const stopSpeech = useCallback(() => {
     playbackSessionRef.current += 1;
     if (speechSupported) window.speechSynthesis.cancel();
+    cleanupAudioEl();
     setIsPlaying(false);
     setIsPaused(false);
+    setIsLoadingAudio(false);
+    setSpeechError(null);
     setSpeechQueue([]);
     setSpeechIdx(0);
-  }, [speechSupported]);
+  }, [speechSupported, cleanupAudioEl]);
 
   useEffect(() => {
     return () => {
       playbackSessionRef.current += 1;
       if (isSpeechSupported()) window.speechSynthesis.cancel();
+      cleanupAudioEl();
     };
-  }, [slug]);
+  }, [slug, cleanupAudioEl]);
 
   const playAtIndex = useCallback(
-    (
+    async (
       queue: { domainId: string; principle: Principle }[],
       index: number,
       style: SpeechStyle,
       rate: number
     ) => {
-      if (!speechSupported || index < 0 || index >= queue.length) {
+      if (index < 0 || index >= queue.length) {
         stopSpeech();
         return;
       }
 
       const item = queue[index];
       const sessionId = ++playbackSessionRef.current;
-      window.speechSynthesis.cancel();
+      if (speechSupported) window.speechSynthesis.cancel();
+      cleanupAudioEl();
 
       setSpeechQueue(queue);
       setSpeechIdx(index);
-      setIsPlaying(true);
+      setSpeechError(null);
       setIsPaused(false);
       setActivePrincipleId(item.principle.id);
       setExpandedDomains({ [item.domainId]: true });
@@ -127,6 +159,50 @@ export function KnowledgeTab({
         }, 500);
       }, 60);
 
+      // Path 1: OpenAI Neural TTS (when user configured an API key)
+      const apiKey = speechPrefs.openaiApiKey.trim();
+      if (apiKey) {
+        try {
+          setIsLoadingAudio(true);
+          setIsPlaying(true);
+          const script = buildLectureScript(item.principle, languageMode, style);
+          const url = await fetchOpenAITtsAudio(script, apiKey, speechPrefs.openaiVoice, rate);
+          if (playbackSessionRef.current !== sessionId) {
+            URL.revokeObjectURL(url);
+            return;
+          }
+          audioUrlRef.current = url;
+          const audio = new Audio(url);
+          audioElRef.current = audio;
+          setIsLoadingAudio(false);
+          audio.onended = () => {
+            if (playbackSessionRef.current !== sessionId) return;
+            if (index + 1 < queue.length) playAtIndex(queue, index + 1, style, rate);
+            else stopSpeech();
+          };
+          audio.onerror = () => {
+            if (playbackSessionRef.current !== sessionId) return;
+            setSpeechError('Không phát được audio AI.');
+            setIsPlaying(false);
+          };
+          await audio.play();
+          return;
+        } catch (err) {
+          if (playbackSessionRef.current !== sessionId) return;
+          setIsLoadingAudio(false);
+          setSpeechError(err instanceof Error ? err.message : 'Lỗi OpenAI TTS');
+          setIsPlaying(false);
+          return;
+        }
+      }
+
+      // Path 2: Built-in Web Speech with smart mixed EN-VI voice switching
+      if (!speechSupported) {
+        stopSpeech();
+        return;
+      }
+
+      setIsPlaying(true);
       const segments = buildPrincipleSpeechSegments(item.principle, languageMode, style);
       if (!segments.length) {
         if (index + 1 < queue.length) playAtIndex(queue, index + 1, style, rate);
@@ -150,7 +226,8 @@ export function KnowledgeTab({
         const utter = new SpeechSynthesisUtterance(seg.text);
         utter.lang = seg.lang;
         utter.rate = rate;
-        const voice = pickBestVoice(voices, seg.lang);
+        const preferred = seg.lang === 'vi-VN' ? speechPrefs.viVoiceName : speechPrefs.enVoiceName;
+        const voice = pickBestVoice(voices, seg.lang, preferred);
         if (voice) utter.voice = voice;
 
         utter.onend = () => speakNextSegment();
@@ -163,7 +240,7 @@ export function KnowledgeTab({
 
       speakNextSegment();
     },
-    [speechSupported, languageMode, voices, stopSpeech]
+    [speechSupported, languageMode, voices, speechPrefs, cleanupAudioEl, stopSpeech]
   );
 
   useEffect(() => {
@@ -791,11 +868,28 @@ export function KnowledgeTab({
         }
         isPlaying={isPlaying}
         isPaused={isPaused}
+        isLoadingAudio={isLoadingAudio}
+        errorMsg={speechError}
         style={speechStyle}
         rate={speechRate}
         hasPrev={speechIdx > 0}
         hasNext={speechIdx < speechQueue.length - 1}
+        voices={voices}
+        prefs={speechPrefs}
+        onUpdatePrefs={updateSpeechPrefs}
         onTogglePlayPause={() => {
+          if (audioElRef.current) {
+            if (isPaused) {
+              audioElRef.current.play();
+              setIsPaused(false);
+              setIsPlaying(true);
+            } else {
+              audioElRef.current.pause();
+              setIsPaused(true);
+              setIsPlaying(false);
+            }
+            return;
+          }
           if (!speechSupported) return;
           if (isPaused) {
             window.speechSynthesis.resume();

@@ -53,7 +53,7 @@ export function KnowledgeTab({
   useEffect(() => {
     if (focusDomainId) {
       setSelectedDomain(focusDomainId);
-      setExpandedDomains((prev) => ({ ...prev, [focusDomainId]: true }));
+      setExpandedDomains({ [focusDomainId]: true });
     }
   }, [focusDomainId]);
 
@@ -67,7 +67,7 @@ export function KnowledgeTab({
         d.principles.some((p) => p.id === focusPrincipleId)
       );
       if (ownerDomain) {
-        setExpandedDomains((prev) => ({ ...prev, [ownerDomain.id]: true }));
+        setExpandedDomains({ [ownerDomain.id]: true });
       }
       setTimeout(() => {
         const el = document.getElementById(`principle-${focusPrincipleId}`);
@@ -156,7 +156,11 @@ export function KnowledgeTab({
           const ownerEl = document.querySelector<HTMLElement>(`article[data-principle-id="${bestId}"]`);
           const domId = ownerEl?.getAttribute('data-domain-id');
           if (domId) {
-            setExpandedDomains((prev) => (prev[domId] ? prev : { ...prev, [domId]: true }));
+            setExpandedDomains((prev) => {
+              const activeKeys = Object.keys(prev).filter((k) => prev[k]);
+              if (activeKeys.length === 1 && activeKeys[0] === domId) return prev;
+              return { [domId]: true };
+            });
           }
           // Keep active item visible inside desktop sidebar scroll area
           const navBtn = document.querySelector<HTMLElement>(`[data-nav-principle="${bestId}"]`);
@@ -181,10 +185,9 @@ export function KnowledgeTab({
 
   const handleDomainClick = (domainId: string) => {
     setSelectedDomain(domainId);
-    setExpandedDomains((prev) => ({
-      ...prev,
-      [domainId]: selectedDomain === domainId ? !prev[domainId] : true,
-    }));
+    setExpandedDomains((prev) =>
+      selectedDomain === domainId && prev[domainId] ? {} : { [domainId]: true }
+    );
   };
 
   const handlePrincipleJump = (domainId: string, principleId: string) => {
@@ -256,7 +259,7 @@ export function KnowledgeTab({
               <button
                 type="button"
                 onClick={() =>
-                  setExpandedDomains((prev) => ({ ...prev, [d.id]: !prev[d.id] }))
+                  setExpandedDomains((prev) => (prev[d.id] ? {} : { [d.id]: true }))
                 }
                 aria-label={isExpanded ? `Thu gọn ${d.id}` : `Mở rộng ${d.id}`}
                 className="flex shrink-0 items-center gap-1 rounded-md px-1 py-0.5 font-mono text-xs text-[var(--ink-muted)] hover:bg-[var(--bg-hover)] cursor-pointer"

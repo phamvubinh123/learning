@@ -44,18 +44,18 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
 
   return (
     <div className="space-y-8">
-      <section className="surface-card p-6 sm:p-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="flex items-start gap-4">
+      <section className="surface-card p-5 sm:p-8">
+        <div className="space-y-4">
+          <div className="flex items-start gap-3.5 sm:gap-4">
             {meta.badge && (
               <img
                 src={assetUrl(meta.badge)}
                 alt={meta.code}
-                className="h-16 w-16 shrink-0 rounded-2xl bg-[var(--bg-subtle)] p-2 object-contain sm:h-20 sm:w-20"
+                className="h-14 w-14 shrink-0 rounded-2xl bg-[var(--bg-subtle)] p-1.5 object-contain sm:h-20 sm:w-20 sm:p-2"
               />
             )}
-            <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold sm:gap-2">
                 <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 font-mono text-[var(--accent-ink)]">
                   {meta.code}
                 </span>
@@ -63,20 +63,20 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
                 <span className="text-[var(--ink-muted)]">·</span>
                 <span className="text-[var(--ink-muted)]">{meta.category}</span>
               </div>
-              <h1 className="mt-1.5 text-2xl font-extrabold tracking-tight sm:text-3xl">
+              <h1 className="mt-1.5 text-xl font-extrabold leading-snug tracking-tight sm:text-3xl">
                 {meta.name.en}
               </h1>
-              {meta.guide?.intro?.vi && (
-                <div className="mt-3 max-w-3xl text-sm">
-                  <BilingualBlock
-                    text={meta.guide.intro}
-                    primaryClassName="reading-prose text-[14.5px]"
-                    secondaryClassName="text-[13.5px]"
-                  />
-                </div>
-              )}
             </div>
           </div>
+          {meta.guide?.intro?.vi && (
+            <div className="max-w-3xl text-sm">
+              <BilingualBlock
+                text={meta.guide.intro}
+                primaryClassName="reading-prose text-[14.5px]"
+                secondaryClassName="text-[13.5px]"
+              />
+            </div>
+          )}
         </div>
 
         <div className="mt-6 flex flex-wrap gap-3">

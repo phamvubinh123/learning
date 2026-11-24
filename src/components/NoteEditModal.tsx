@@ -134,14 +134,15 @@ export function NoteEditModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-xs sm:items-center sm:p-4"
       onClick={onClose}
     >
       <div
-        className="surface-card flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden shadow-2xl"
+        className="surface-card flex max-h-[92dvh] w-full max-w-2xl flex-col overflow-hidden rounded-b-none rounded-t-2xl shadow-2xl sm:rounded-2xl safe-pb"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 border-b border-[var(--border-hairline)] px-6 py-4">
+        <div className="mx-auto mt-2.5 h-1 w-10 shrink-0 rounded-full bg-[var(--border-strong)] sm:hidden" />
+        <div className="flex items-center justify-between gap-4 border-b border-[var(--border-hairline)] px-4 py-3.5 sm:px-6 sm:py-4">
           <div className="flex items-center gap-2">
             <StickyNote className="h-4.5 w-4.5 text-[var(--accent-ink)]" />
             <h3 className="text-base font-bold">{heading}</h3>

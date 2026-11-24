@@ -88,13 +88,14 @@ export function DataToolsModal({ open, onClose, activeBundle }: DataToolsModalPr
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 backdrop-blur-xs sm:items-center sm:p-4"
       onClick={onClose}
     >
       <div
-        className="surface-card max-h-[90vh] w-full max-w-2xl overflow-y-auto p-6 shadow-2xl"
+        className="surface-card max-h-[92dvh] w-full max-w-2xl overflow-y-auto rounded-b-none rounded-t-2xl p-5 shadow-2xl sm:rounded-2xl sm:p-6 safe-pb"
         onClick={(e) => e.stopPropagation()}
       >
+        <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[var(--border-strong)] sm:hidden" />
         <div className="flex items-start justify-between gap-4 border-b border-[var(--border-hairline)] pb-4">
           <div>
             <h2 className="text-lg font-bold">Quản lý Dữ liệu, Export JSON & Đồng bộ</h2>

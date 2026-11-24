@@ -98,24 +98,24 @@ export function KnowledgeTab({
   const totalVisible = filteredDomains.reduce((sum, d) => sum + d.principles.length, 0);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
-      <aside className="lg:sticky lg:top-32 lg:self-start">
-        <div className="surface-card p-3.5">
-          <div className="px-2 pb-2 text-[11px] font-bold uppercase tracking-wider text-[var(--ink-muted)]">
+    <div className="grid gap-5 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-6">
+      <aside className="min-w-0 lg:sticky lg:top-32 lg:self-start">
+        <div className="surface-card p-3 sm:p-3.5">
+          <div className="px-1.5 pb-2 text-[11px] font-bold uppercase tracking-wider text-[var(--ink-muted)]">
             Danh mục Domain
           </div>
-          <nav className="flex gap-1.5 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible lg:pb-0 no-scrollbar">
+          <nav className="flex w-full gap-1.5 overflow-x-auto pb-0.5 lg:flex-col lg:overflow-visible lg:pb-0 no-scrollbar">
             <button
               type="button"
               onClick={() => setSelectedDomain('ALL')}
               className={`flex shrink-0 items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-semibold transition cursor-pointer ${
                 selectedDomain === 'ALL'
                   ? 'bg-[var(--accent-soft)] text-[var(--accent-ink)]'
-                  : 'text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)]'
+                  : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)] lg:bg-transparent'
               }`}
             >
-              <span>Tất cả Domain</span>
-              <span className="ml-2 font-mono text-[11px]">{bundle.meta.stats.principles}</span>
+              <span>Tất cả</span>
+              <span className="ml-1.5 font-mono text-[11px]">{bundle.meta.stats.principles}</span>
             </button>
 
             {mergedDomains.map((d) => {
@@ -129,10 +129,10 @@ export function KnowledgeTab({
                   className={`flex shrink-0 items-center justify-between gap-2 rounded-xl px-3 py-2 text-left text-xs transition cursor-pointer ${
                     active
                       ? 'bg-[var(--accent-soft)] font-semibold text-[var(--accent-ink)]'
-                      : 'text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)]'
+                      : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)] lg:bg-transparent'
                   }`}
                 >
-                  <span className="truncate">
+                  <span className="max-w-[175px] truncate lg:max-w-none">
                     <span className="font-mono font-bold">{d.id}</span> · {d.name.en}
                   </span>
                   <span className="shrink-0 font-mono text-[11px] opacity-80">
@@ -246,20 +246,25 @@ export function KnowledgeTab({
                       <article
                         key={principle.id}
                         id={`principle-${principle.id}`}
-                        className={`surface-card p-5 transition sm:p-6 ${
+                        className={`surface-card p-4 transition sm:p-6 ${
                           isRead ? 'border-l-4 border-l-[var(--success)]' : ''
                         }`}
                       >
-                        <div className="flex items-start gap-3.5">
-                          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[var(--bg-subtle)] font-mono text-xs font-bold text-[var(--ink-secondary)]">
+                        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-3.5">
+                          <span className="hidden h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[var(--bg-subtle)] font-mono text-xs font-bold text-[var(--ink-secondary)] sm:mt-0.5 sm:flex">
                             {principle.number}
                           </span>
 
                           <div className="min-w-0 flex-1 space-y-3">
                             <div className="flex flex-wrap items-start justify-between gap-2">
-                              <h3 className="text-[17px] font-bold leading-snug">
-                                <BilingualBlock text={principle.title} inline />
-                              </h3>
+                              <div className="flex items-start gap-2">
+                                <span className="mt-0.5 inline-flex h-6 min-w-[24px] shrink-0 items-center justify-center rounded-md bg-[var(--bg-subtle)] px-1.5 font-mono text-[11px] font-bold text-[var(--ink-secondary)] sm:hidden">
+                                  {principle.number}
+                                </span>
+                                <h3 className="text-[16px] font-bold leading-snug sm:text-[17px]">
+                                  <BilingualBlock text={principle.title} inline />
+                                </h3>
+                              </div>
                               <div className="flex items-center gap-1.5">
                                 <span className="font-mono text-[11px] text-[var(--ink-muted)]">#{principle.id}</span>
                                 {hasOverride && (

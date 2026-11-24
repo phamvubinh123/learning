@@ -89,8 +89,8 @@ export function QuestionCard({
 
   return (
     <article className="surface-card overflow-hidden">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/55 px-5 py-3">
-        <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--border-hairline)] bg-[var(--bg-subtle)]/55 px-4 py-2.5 sm:px-5 sm:py-3">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           {index !== undefined && total !== undefined && (
             <span className="font-mono text-xs font-bold text-[var(--ink-primary)]">
               Câu {index + 1}/{total}
@@ -99,52 +99,52 @@ export function QuestionCard({
           <span className="rounded-md bg-[var(--bg-surface)] px-2 py-0.5 font-mono text-[11px] font-semibold text-[var(--ink-secondary)] border border-[var(--border-hairline)]">
             {question.domain}
           </span>
-          <span className="font-mono text-[11px] text-[var(--ink-muted)]">{question.uid}</span>
+          <span className="hidden font-mono text-[11px] text-[var(--ink-muted)] sm:inline">{question.uid}</span>
           {question.type !== 'single' && (
             <span className="rounded-md bg-[var(--warn-soft)] px-2 py-0.5 text-[11px] font-semibold text-[var(--warn)]">
               {question.type === 'multi'
                 ? `Chọn ${question.select || correctArray.length}`
                 : question.type === 'dropdown'
-                  ? 'Ghép cặp / Dropdown'
+                  ? 'Dropdown'
                   : 'Hotspot'}
             </span>
           )}
           {hasOverride && (
             <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[11px] font-semibold text-[var(--accent-ink)]">
-              Đã tùy chỉnh
+              Edited
             </span>
           )}
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1">
           {onToggleFlag && (
             <button
               type="button"
               onClick={onToggleFlag}
-              className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold transition cursor-pointer ${
                 flagged
                   ? 'bg-[var(--warn-soft)] text-[var(--warn)]'
                   : 'text-[var(--ink-muted)] hover:bg-[var(--bg-hover)] hover:text-[var(--ink-primary)]'
               }`}
             >
               <Flag className="h-3.5 w-3.5" />
-              <span>{flagged ? 'Đã đánh dấu' : 'Đánh dấu'}</span>
+              <span className="hidden sm:inline">{flagged ? 'Đã đánh dấu' : 'Đánh dấu'}</span>
             </button>
           )}
           {onEditNote && (
             <button
               type="button"
               onClick={onEditNote}
-              className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-xs font-semibold text-[var(--ink-secondary)] transition hover:bg-[var(--bg-hover)] hover:text-[var(--ink-primary)] cursor-pointer"
+              className="inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold text-[var(--ink-secondary)] transition hover:bg-[var(--bg-hover)] hover:text-[var(--ink-primary)] cursor-pointer"
             >
               <Pencil className="h-3.5 w-3.5" />
-              <span>{question.personal_notes ? 'Sửa ghi chú' : 'Edit / Note'}</span>
+              <span>{question.personal_notes ? 'Note' : 'Note'}</span>
             </button>
           )}
         </div>
       </div>
 
-      <div className="space-y-5 p-5 sm:p-6">
+      <div className="space-y-4 p-4 sm:space-y-5 sm:p-6">
         {caseStudy && (
           <details className="rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/70 p-4" open>
             <summary className="flex cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--accent-ink)]">

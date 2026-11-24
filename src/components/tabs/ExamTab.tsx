@@ -40,6 +40,7 @@ interface ExamTabProps {
   launchIntent: ExamLaunchIntent | null;
   onConsumeIntent: () => void;
   onJumpPrinciple: (principleId: string) => void;
+  onActiveSessionChange?: (active: boolean) => void;
 }
 
 interface ActiveSession {
@@ -57,7 +58,13 @@ interface ActiveSession {
   recorded: boolean;
 }
 
-export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple }: ExamTabProps) {
+export function ExamTab({
+  bundle,
+  launchIntent,
+  onConsumeIntent,
+  onJumpPrinciple,
+  onActiveSessionChange,
+}: ExamTabProps) {
   const {
     getProgress,
     getOverrides,
@@ -159,6 +166,12 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
   }, [launchIntent]);
 
   const hasActiveSession = Boolean(session && !session.submitted);
+
+  useEffect(() => {
+    onActiveSessionChange?.(hasActiveSession);
+    return () => onActiveSessionChange?.(false);
+  }, [hasActiveSession, onActiveSessionChange]);
+
   useEffect(() => {
     if (!hasActiveSession) return;
     const id = window.setInterval(() => {
@@ -689,22 +702,22 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
   };
 
   return (
-    <div className="space-y-4">
-      <div className="surface-card flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-5">
-        <div className="flex items-center gap-3">
+    <div className="space-y-3.5 sm:space-y-4">
+      <div className="surface-card flex items-center justify-between gap-2 px-3 py-2.5 sm:px-5 sm:py-3">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           <button
             type="button"
             onClick={() => setSession(null)}
-            className="rounded-lg px-2 py-1 text-xs font-semibold text-[var(--ink-muted)] hover:bg-[var(--bg-subtle)] hover:text-[var(--ink-primary)] cursor-pointer"
+            className="shrink-0 rounded-lg px-2 py-1.5 text-xs font-semibold text-[var(--ink-muted)] hover:bg-[var(--bg-subtle)] hover:text-[var(--ink-primary)] cursor-pointer"
           >
             ← Thoát
           </button>
-          <span className="hidden text-sm font-bold sm:inline">{session.label}</span>
+          <span className="hidden truncate text-sm font-bold sm:inline">{session.label}</span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
           <div
-            className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-mono text-xs font-bold ${
+            className={`inline-flex items-center gap-1 rounded-lg px-2 py-1.5 font-mono text-xs font-bold sm:gap-1.5 sm:px-3 ${
               lowTime ? 'bg-[var(--danger-soft)] text-[var(--danger)]' : 'bg-[var(--bg-subtle)] text-[var(--ink-primary)]'
             }`}
           >
@@ -712,25 +725,28 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
             <span>{remainingSec !== null ? formatDuration(remainingSec) : formatDuration(session.elapsedSec)}</span>
           </div>
 
-          <span className="font-mono text-xs text-[var(--ink-muted)]">
+          <span className="hidden font-mono text-xs text-[var(--ink-muted)] sm:inline">
             {answeredCount}/{sessionQuestions.length} đã trả lời
           </span>
 
           <button
             type="button"
             onClick={() => setShowNavGrid((s) => !s)}
-            className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition cursor-pointer ${
+            className={`inline-flex items-center gap-1 rounded-lg border px-2 py-1.5 text-xs font-semibold transition sm:gap-1.5 sm:px-2.5 cursor-pointer ${
               showNavGrid ? 'border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent-ink)]' : 'border-[var(--border-hairline)] bg-[var(--bg-surface)]'
             }`}
           >
             <Grid3X3 className="h-3.5 w-3.5" />
+            <span className="font-mono sm:hidden">
+              {answeredCount}/{sessionQuestions.length}
+            </span>
             <span className="hidden sm:inline">Danh sách câu</span>
           </button>
 
           <button
             type="button"
             onClick={() => setSession((prev) => (prev ? { ...prev, submitted: true } : prev))}
-            className="rounded-lg bg-[var(--accent)] px-3.5 py-1.5 text-xs font-bold text-white transition hover:bg-[var(--accent-hover)] dark:text-[#0f1115] cursor-pointer"
+            className="rounded-lg bg-[var(--accent)] px-3 py-1.5 text-xs font-bold text-white transition hover:bg-[var(--accent-hover)] sm:px-3.5 dark:text-[#0f1115] cursor-pointer"
           >
             Nộp bài
           </button>
@@ -738,12 +754,12 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
       </div>
 
       {showNavGrid && (
-        <div className="surface-card p-4">
-          <div className="mb-2.5 flex items-center justify-between text-xs text-[var(--ink-muted)]">
+        <div className="surface-card p-3.5 sm:p-4">
+          <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-[var(--ink-muted)]">
             <span className="font-semibold">Chuyển nhanh câu hỏi</span>
             <span>Xanh: đã làm · Vàng: đánh dấu</span>
           </div>
-          <div className="grid grid-cols-8 gap-1.5 sm:grid-cols-12 md:grid-cols-15">
+          <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-10 md:grid-cols-12">
             {sessionQuestions.map((q, idx) => {
               const isCurrent = idx === session.currentIdx;
               const done = isAnswerComplete(q, session.answers[q.uid]);
@@ -764,7 +780,7 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
                     setSession((prev) => (prev ? { ...prev, currentIdx: idx } : prev));
                     setShowNavGrid(false);
                   }}
-                  className={`h-8 rounded-lg font-mono text-xs font-bold transition cursor-pointer ${btnStyle} ${
+                  className={`h-9 rounded-lg font-mono text-xs font-bold transition sm:h-8 cursor-pointer ${btnStyle} ${
                     isCurrent ? 'ring-2 ring-[var(--accent)]' : ''
                   }`}
                 >
@@ -797,54 +813,66 @@ export function ExamTab({ bundle, launchIntent, onConsumeIntent, onJumpPrinciple
         onJumpPrinciple={onJumpPrinciple}
       />
 
-      <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-        <button
-          type="button"
-          disabled={session.currentIdx === 0}
-          onClick={() =>
-            setSession((prev) => (prev ? { ...prev, currentIdx: Math.max(0, prev.currentIdx - 1) } : prev))
-          }
-          className="inline-flex items-center gap-1.5 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-4 py-2.5 text-sm font-semibold transition hover:bg-[var(--bg-subtle)] disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          <span>Câu trước</span>
-        </button>
+      {/* Mobile Fixed Thumb Action Bar / Desktop Static Bar */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--border-hairline)] px-3 py-2.5 backdrop-blur-lg md:static md:border-0 md:bg-transparent md:p-0 md:pt-1 md:backdrop-blur-none safe-pb"
+        style={{ backgroundColor: 'color-mix(in srgb, var(--bg-surface) 94%, transparent)' }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 sm:gap-3">
+          <button
+            type="button"
+            disabled={session.currentIdx === 0}
+            onClick={() => {
+              setSession((prev) => (prev ? { ...prev, currentIdx: Math.max(0, prev.currentIdx - 1) } : prev));
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="inline-flex min-h-[42px] items-center gap-1 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3 py-2 text-xs font-semibold transition hover:bg-[var(--bg-subtle)] disabled:opacity-40 sm:gap-1.5 sm:px-4 sm:text-sm cursor-pointer disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            <span className="hidden sm:inline">Câu trước</span>
+            <span className="sm:hidden">Trước</span>
+          </button>
 
-        <div className="flex items-center gap-2">
-          {session.instantFeedback && !isRevealed && (
-            <button
-              type="button"
-              disabled={!isAnswerComplete(currentQ, currentAns)}
-              onClick={handleCheckInstant}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)] disabled:opacity-40 dark:text-[#0f1115] cursor-pointer disabled:cursor-not-allowed"
-            >
-              <CheckCircle2 className="h-4 w-4" />
-              <span>Kiểm tra đáp án</span>
-            </button>
-          )}
+          <div className="flex flex-1 items-center justify-end gap-2 md:flex-initial">
+            {session.instantFeedback && !isRevealed && (
+              <button
+                type="button"
+                disabled={!isAnswerComplete(currentQ, currentAns)}
+                onClick={handleCheckInstant}
+                className="inline-flex min-h-[42px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--accent)] px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-[var(--accent-hover)] disabled:opacity-40 sm:flex-initial sm:px-5 sm:text-sm dark:text-[#0f1115] cursor-pointer disabled:cursor-not-allowed"
+              >
+                <CheckCircle2 className="h-4 w-4 shrink-0" />
+                <span className="hidden sm:inline">Kiểm tra đáp án</span>
+                <span className="sm:hidden">Kiểm tra</span>
+              </button>
+            )}
 
-          {session.currentIdx < sessionQuestions.length - 1 ? (
-            <button
-              type="button"
-              onClick={() =>
-                setSession((prev) =>
-                  prev ? { ...prev, currentIdx: Math.min(sessionQuestions.length - 1, prev.currentIdx + 1) } : prev
-                )
-              }
-              className="inline-flex items-center gap-1.5 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-4 py-2.5 text-sm font-semibold transition hover:bg-[var(--bg-subtle)] cursor-pointer"
-            >
-              <span>Câu tiếp</span>
-              <ChevronRight className="h-4 w-4" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setSession((prev) => (prev ? { ...prev, submitted: true } : prev))}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--accent-hover)] dark:text-[#0f1115] cursor-pointer"
-            >
-              <span>Hoàn thành & Chấm điểm</span>
-            </button>
-          )}
+            {session.currentIdx < sessionQuestions.length - 1 ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setSession((prev) =>
+                    prev ? { ...prev, currentIdx: Math.min(sessionQuestions.length - 1, prev.currentIdx + 1) } : prev
+                  );
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-flex min-h-[42px] items-center gap-1 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3 py-2 text-xs font-semibold transition hover:bg-[var(--bg-subtle)] sm:gap-1.5 sm:px-4 sm:text-sm cursor-pointer"
+              >
+                <span className="hidden sm:inline">Câu tiếp</span>
+                <span className="sm:hidden">Tiếp</span>
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setSession((prev) => (prev ? { ...prev, submitted: true } : prev))}
+                className="inline-flex min-h-[42px] items-center gap-1.5 rounded-xl bg-[var(--accent)] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[var(--accent-hover)] sm:px-5 sm:text-sm dark:text-[#0f1115] cursor-pointer"
+              >
+                <span className="hidden sm:inline">Hoàn thành & Chấm điểm</span>
+                <span className="sm:hidden">Chấm điểm</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

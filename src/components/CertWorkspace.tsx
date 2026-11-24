@@ -17,12 +17,12 @@ interface CertWorkspaceProps {
   onBundleLoaded: (bundle: CertBundle | null) => void;
 }
 
-const TABS: { id: CertTab; label: string; icon: typeof Compass }[] = [
-  { id: 'overview', label: 'Tổng quan', icon: Compass },
-  { id: 'knowledge', label: 'Kiến thức', icon: BookOpen },
-  { id: 'cheatsheet', label: 'Cheatsheet & Glossary', icon: Zap },
-  { id: 'exam', label: 'Thi thử', icon: ClipboardCheck },
-  { id: 'weakspots', label: 'Kho câu sai', icon: AlertTriangle },
+const TABS: { id: CertTab; label: string; mobileLabel: string; icon: typeof Compass }[] = [
+  { id: 'overview', label: 'Tổng quan', mobileLabel: 'Tổng quan', icon: Compass },
+  { id: 'knowledge', label: 'Kiến thức', mobileLabel: 'Kiến thức', icon: BookOpen },
+  { id: 'cheatsheet', label: 'Cheatsheet & Glossary', mobileLabel: 'Cheat', icon: Zap },
+  { id: 'exam', label: 'Thi thử', mobileLabel: 'Thi thử', icon: ClipboardCheck },
+  { id: 'weakspots', label: 'Kho câu sai', mobileLabel: 'Câu sai', icon: AlertTriangle },
 ];
 
 export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: CertWorkspaceProps) {
@@ -34,12 +34,14 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
   const [focusDomainId, setFocusDomainId] = useState<string | null>(null);
   const [focusPrincipleId, setFocusPrincipleId] = useState<string | null>(null);
   const [examIntent, setExamIntent] = useState<ExamLaunchIntent | null>(null);
+  const [examFocusMode, setExamFocusMode] = useState(false);
 
   useEffect(() => {
     let active = true;
     setLoading(true);
     setError(null);
     setBundle(null);
+    setExamFocusMode(false);
     onBundleLoaded(null);
 
     loadCertBundle(slug)
@@ -61,9 +63,13 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
     };
   }, [slug, onBundleLoaded]);
 
+  useEffect(() => {
+    if (activeTab !== 'exam') setExamFocusMode(false);
+  }, [activeTab]);
+
   if (loading) {
     return (
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div className="mx-auto max-w-6xl px-3 py-6 sm:px-6 sm:py-10">
         <div className="surface-card h-72 animate-pulse bg-[var(--bg-subtle)]/50" />
       </div>
     );
@@ -96,13 +102,14 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
   };
 
   return (
-    <div className="pb-16">
+    <div className={examFocusMode ? 'pb-24 md:pb-16' : 'pb-24 md:pb-16'}>
+      {/* Desktop & iPad Sticky Top 5-Tab Bar */}
       <div
-        className="sticky top-15 z-30 border-b border-[var(--border-hairline)] backdrop-blur-md"
+        className="sticky top-15 z-30 hidden border-b border-[var(--border-hairline)] backdrop-blur-md md:block"
         style={{ backgroundColor: 'color-mix(in srgb, var(--bg-canvas) 90%, transparent)' }}
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <nav aria-label="Lộ trình học 5 tab" className="-mb-px flex items-center gap-1 overflow-x-auto no-scrollbar sm:gap-2">
+          <nav aria-label="Lộ trình học 5 tab" className="-mb-px flex items-center gap-2">
             {TABS.map((t) => {
               const Icon = t.icon;
               const active = activeTab === t.id;
@@ -111,8 +118,10 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
                   key={t.id}
                   type="button"
                   onClick={() => onChangeTab(t.id)}
-                  className={`relative inline-flex shrink-0 items-center gap-2 border-b-2 px-3 py-3.5 text-sm font-semibold transition cursor-pointer sm:px-4 ${
-                    active ? 'border-[var(--accent)] text-[var(--accent-ink)]' : 'border-transparent text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]'
+                  className={`relative inline-flex shrink-0 items-center gap-2 border-b-2 px-4 py-3.5 text-sm font-semibold transition cursor-pointer ${
+                    active
+                      ? 'border-[var(--accent)] text-[var(--accent-ink)]'
+                      : 'border-transparent text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -129,7 +138,8 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
         </div>
       </div>
 
-      <main className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 sm:pt-8">
+      {/* Main Content */}
+      <main className="mx-auto max-w-6xl px-3 pt-4 sm:px-6 sm:pt-7">
         {activeTab === 'overview' && <OverviewTab bundle={bundle} onNavigateTab={handleNavigateFromOverview} />}
         {activeTab === 'knowledge' && (
           <KnowledgeTab
@@ -156,6 +166,7 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
               setFocusPrincipleId(pid);
               onChangeTab('knowledge');
             }}
+            onActiveSessionChange={setExamFocusMode}
           />
         )}
         {activeTab === 'weakspots' && (
@@ -172,6 +183,45 @@ export function CertWorkspace({ slug, activeTab, onChangeTab, onBundleLoaded }: 
           />
         )}
       </main>
+
+      {/* Mobile App Native Bottom Tab Bar (hidden during active timed exam focus mode) */}
+      {!examFocusMode && (
+        <nav
+          aria-label="Điều hướng di động 5 tab"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--border-hairline)] backdrop-blur-lg md:hidden safe-pb"
+          style={{ backgroundColor: 'color-mix(in srgb, var(--bg-surface) 94%, transparent)' }}
+        >
+          <div className="grid grid-cols-5">
+            {TABS.map((t) => {
+              const Icon = t.icon;
+              const active = activeTab === t.id;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => onChangeTab(t.id)}
+                  className={`relative flex flex-col items-center justify-center gap-1 py-2 text-[10.5px] font-semibold transition cursor-pointer ${
+                    active ? 'text-[var(--accent-ink)]' : 'text-[var(--ink-muted)]'
+                  }`}
+                >
+                  {active && (
+                    <span className="absolute top-0 h-0.5 w-8 rounded-full bg-[var(--accent)]" />
+                  )}
+                  <span className="relative">
+                    <Icon className="h-5 w-5" />
+                    {t.id === 'weakspots' && weakSpotCount > 0 && (
+                      <span className="absolute -right-2.5 -top-1.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-[var(--danger)] px-1 font-mono text-[9px] font-bold leading-none text-white">
+                        {weakSpotCount > 99 ? '99+' : weakSpotCount}
+                      </span>
+                    )}
+                  </span>
+                  <span className="truncate">{t.mobileLabel}</span>
+                </button>
+              );
+            })}
+          </div>
+        </nav>
+      )}
     </div>
   );
 }

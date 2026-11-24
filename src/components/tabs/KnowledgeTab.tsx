@@ -168,8 +168,18 @@ export function KnowledgeTab({
 
   useEffect(() => {
     if (focusDomainId) {
+      isManualJumpRef.current = true;
       setSelectedDomain(focusDomainId);
       setExpandedDomains({ [focusDomainId]: true });
+      setTimeout(() => {
+        document.getElementById(`domain-${focusDomainId}`)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        setTimeout(() => {
+          isManualJumpRef.current = false;
+        }, 600);
+      }, 100);
     }
   }, [focusDomainId]);
 
@@ -214,7 +224,6 @@ export function KnowledgeTab({
   const filteredDomains = useMemo(() => {
     const q = query.trim().toLowerCase();
     return mergedDomains
-      .filter((d) => selectedDomain === 'ALL' || d.id === selectedDomain)
       .map((d) => ({
         ...d,
         principles: d.principles.filter((p) => {
@@ -229,7 +238,7 @@ export function KnowledgeTab({
         }),
       }))
       .filter((d) => d.principles.length > 0);
-  }, [mergedDomains, selectedDomain, filter, query, progress.readPrinciples, overrides.principles]);
+  }, [mergedDomains, filter, query, progress.readPrinciples, overrides.principles]);
 
   // Scroll-spy: automatically track visible principle & expand its domain while scrolling
   useEffect(() => {
@@ -272,6 +281,7 @@ export function KnowledgeTab({
           const ownerEl = document.querySelector<HTMLElement>(`article[data-principle-id="${bestId}"]`);
           const domId = ownerEl?.getAttribute('data-domain-id');
           if (domId) {
+            setSelectedDomain(domId);
             setExpandedDomains((prev) => {
               const activeKeys = Object.keys(prev).filter((k) => prev[k]);
               if (activeKeys.length === 1 && activeKeys[0] === domId) return prev;
@@ -291,7 +301,7 @@ export function KnowledgeTab({
 
     for (const el of principleElements) observer.observe(el);
     return () => observer.disconnect();
-  }, [filteredDomains, isManualJumpRef]);
+  }, [filteredDomains]);
 
   const totalVisible = filteredDomains.reduce((sum, d) => sum + d.principles.length, 0);
   const totalReadAll = mergedDomains.reduce(
@@ -300,19 +310,31 @@ export function KnowledgeTab({
   );
 
   const handleDomainClick = (domainId: string) => {
+    isManualJumpRef.current = true;
     setSelectedDomain(domainId);
-    setExpandedDomains((prev) =>
-      selectedDomain === domainId && prev[domainId] ? {} : { [domainId]: true }
-    );
+    setExpandedDomains({ [domainId]: true });
+    setMobileTocOpen(false);
+    if (filter !== 'all' || query) {
+      setFilter('all');
+      setQuery('');
+    }
+    setTimeout(() => {
+      document.getElementById(`domain-${domainId}`)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setTimeout(() => {
+        isManualJumpRef.current = false;
+      }, 650);
+    }, 60);
   };
 
   const handlePrincipleJump = (domainId: string, principleId: string) => {
     isManualJumpRef.current = true;
+    setSelectedDomain(domainId);
+    setExpandedDomains({ [domainId]: true });
     setActivePrincipleId(principleId);
     setMobileTocOpen(false);
-    if (selectedDomain !== 'ALL' && selectedDomain !== domainId) {
-      setSelectedDomain(domainId);
-    }
     if (filter !== 'all' || query) {
       setFilter('all');
       setQuery('');
@@ -330,7 +352,11 @@ export function KnowledgeTab({
     <div className="space-y-1">
       <button
         type="button"
-        onClick={() => setSelectedDomain('ALL')}
+        onClick={() => {
+          setSelectedDomain('ALL');
+          setMobileTocOpen(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
         className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-[13px] font-semibold transition cursor-pointer ${
           selectedDomain === 'ALL'
             ? 'bg-[var(--accent-soft)] text-[var(--accent-ink)]'
@@ -573,7 +599,7 @@ export function KnowledgeTab({
               : 0;
 
             return (
-              <section key={domain.id} className="space-y-4">
+              <section key={domain.id} id={`domain-${domain.id}`} className="scroll-mt-28 space-y-4">
                 <div className="surface-subtle flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--accent-ink)]">

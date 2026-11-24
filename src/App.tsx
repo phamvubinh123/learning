@@ -32,7 +32,7 @@ function AppShell() {
       window.location.hash = '';
       setRoute({ slug: null, tab: 'overview' });
       setActiveBundle(null);
-      document.title = 'CertStudio — Personalized Certification Study';
+      document.title = 'CertStudio';
     } else {
       window.location.hash = `#/${slug}/${tab}`;
       setRoute({ slug, tab });

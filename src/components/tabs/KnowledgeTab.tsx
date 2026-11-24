@@ -1,10 +1,12 @@
-import { Check, ChevronRight, Pencil, Play, Search, StickyNote, Target } from 'lucide-react';
+import { Check, ChevronDown, ChevronRight, ListTree, Pencil, Play, Search, StickyNote, Target } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { mergePrinciple } from '../../services/storage';
 import type { CertBundle, Principle } from '../../types/cert';
-import { BilingualBlock } from '../BilingualBlock';
+import { BilingualBlock, pickText } from '../BilingualBlock';
 import { type EditableTarget, NoteEditModal } from '../NoteEditModal';
+
+const DOMAIN_COLORS = ['#0d9488', '#0284c7', '#d97706', '#e11d48', '#4f46e5', '#059669', '#ea580c'];
 
 interface KnowledgeTabProps {
   bundle: CertBundle;
@@ -24,6 +26,7 @@ export function KnowledgeTab({
   onPracticePrinciple,
 }: KnowledgeTabProps) {
   const {
+    languageMode,
     getProgress,
     getOverrides,
     toggleReadPrinciple,
@@ -38,10 +41,19 @@ export function KnowledgeTab({
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<FilterKind>('all');
   const [selectedDomain, setSelectedDomain] = useState<string>('ALL');
+  const [expandedDomains, setExpandedDomains] = useState<Record<string, boolean>>(() => {
+    const firstId = bundle.knowledge.domains[0]?.id;
+    return firstId ? { [firstId]: true } : {};
+  });
+  const [activePrincipleId, setActivePrincipleId] = useState<string | null>(null);
+  const [mobileTocOpen, setMobileTocOpen] = useState(false);
   const [editTarget, setEditTarget] = useState<EditableTarget | null>(null);
 
   useEffect(() => {
-    if (focusDomainId) setSelectedDomain(focusDomainId);
+    if (focusDomainId) {
+      setSelectedDomain(focusDomainId);
+      setExpandedDomains((prev) => ({ ...prev, [focusDomainId]: true }));
+    }
   }, [focusDomainId]);
 
   useEffect(() => {
@@ -49,12 +61,19 @@ export function KnowledgeTab({
       setSelectedDomain('ALL');
       setFilter('all');
       setQuery('');
+      setActivePrincipleId(focusPrincipleId);
+      const ownerDomain = bundle.knowledge.domains.find((d) =>
+        d.principles.some((p) => p.id === focusPrincipleId)
+      );
+      if (ownerDomain) {
+        setExpandedDomains((prev) => ({ ...prev, [ownerDomain.id]: true }));
+      }
       setTimeout(() => {
         const el = document.getElementById(`principle-${focusPrincipleId}`);
         el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 120);
     }
-  }, [focusPrincipleId]);
+  }, [focusPrincipleId, bundle.knowledge.domains]);
 
   const questionCountByPrinciple = useMemo(() => {
     const map: Record<string, number> = {};
@@ -96,52 +115,217 @@ export function KnowledgeTab({
   }, [mergedDomains, selectedDomain, filter, query, progress.readPrinciples, overrides.principles]);
 
   const totalVisible = filteredDomains.reduce((sum, d) => sum + d.principles.length, 0);
+  const totalReadAll = mergedDomains.reduce(
+    (sum, d) => sum + d.principles.filter((p) => progress.readPrinciples[p.id]).length,
+    0
+  );
 
-  return (
-    <div className="grid gap-5 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-6">
-      <aside className="min-w-0 lg:sticky lg:top-32 lg:self-start">
-        <div className="surface-card p-3 sm:p-3.5">
-          <div className="px-1.5 pb-2 text-[11px] font-bold uppercase tracking-wider text-[var(--ink-muted)]">
-            Danh mục Domain
-          </div>
-          <nav className="flex w-full gap-1.5 overflow-x-auto pb-0.5 lg:flex-col lg:overflow-visible lg:pb-0 no-scrollbar">
-            <button
-              type="button"
-              onClick={() => setSelectedDomain('ALL')}
-              className={`flex shrink-0 items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-semibold transition cursor-pointer ${
-                selectedDomain === 'ALL'
-                  ? 'bg-[var(--accent-soft)] text-[var(--accent-ink)]'
-                  : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)] lg:bg-transparent'
+  const handleDomainClick = (domainId: string) => {
+    setSelectedDomain(domainId);
+    setExpandedDomains((prev) => ({
+      ...prev,
+      [domainId]: selectedDomain === domainId ? !prev[domainId] : true,
+    }));
+  };
+
+  const handlePrincipleJump = (domainId: string, principleId: string) => {
+    setActivePrincipleId(principleId);
+    setMobileTocOpen(false);
+    if (selectedDomain !== 'ALL' && selectedDomain !== domainId) {
+      setSelectedDomain(domainId);
+    }
+    if (filter !== 'all' || query) {
+      setFilter('all');
+      setQuery('');
+    }
+    setTimeout(() => {
+      const el = document.getElementById(`principle-${principleId}`);
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+  };
+
+  const renderDomainTree = () => (
+    <div className="space-y-1">
+      <button
+        type="button"
+        onClick={() => setSelectedDomain('ALL')}
+        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-[13px] font-semibold transition cursor-pointer ${
+          selectedDomain === 'ALL'
+            ? 'bg-[var(--accent-soft)] text-[var(--accent-ink)]'
+            : 'text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)]'
+        }`}
+      >
+        <span>Tất cả Domain</span>
+        <span className="font-mono text-xs opacity-80">
+          {totalReadAll}/{bundle.meta.stats.principles}
+        </span>
+      </button>
+
+      {mergedDomains.map((d, idx) => {
+        const read = d.principles.filter((p) => progress.readPrinciples[p.id]).length;
+        const isSelected = selectedDomain === d.id;
+        const isExpanded = Boolean(expandedDomains[d.id]);
+        const dotColor = DOMAIN_COLORS[idx % DOMAIN_COLORS.length];
+
+        return (
+          <div key={d.id} className="space-y-1">
+            <div
+              className={`flex w-full items-center gap-1.5 rounded-xl px-2.5 py-2 transition ${
+                isSelected
+                  ? 'bg-[var(--bg-subtle)] font-semibold text-[var(--ink-primary)]'
+                  : 'text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)]/60'
               }`}
             >
-              <span>Tất cả</span>
-              <span className="ml-1.5 font-mono text-[11px]">{bundle.meta.stats.principles}</span>
-            </button>
+              <button
+                type="button"
+                onClick={() => handleDomainClick(d.id)}
+                className="flex min-w-0 flex-1 items-center gap-2.5 text-left text-[13.5px] cursor-pointer"
+              >
+                <span
+                  className="h-2.5 w-2.5 shrink-0 rounded-[3px]"
+                  style={{ backgroundColor: dotColor }}
+                />
+                <span className="truncate">
+                  <span className="font-mono font-bold">{d.id}</span> · {d.name.en}
+                </span>
+              </button>
 
-            {mergedDomains.map((d) => {
-              const read = d.principles.filter((p) => progress.readPrinciples[p.id]).length;
-              const active = selectedDomain === d.id;
-              return (
-                <button
-                  key={d.id}
-                  type="button"
-                  onClick={() => setSelectedDomain(d.id)}
-                  className={`flex shrink-0 items-center justify-between gap-2 rounded-xl px-3 py-2 text-left text-xs transition cursor-pointer ${
-                    active
-                      ? 'bg-[var(--accent-soft)] font-semibold text-[var(--accent-ink)]'
-                      : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)] lg:bg-transparent'
-                  }`}
-                >
-                  <span className="max-w-[175px] truncate lg:max-w-none">
-                    <span className="font-mono font-bold">{d.id}</span> · {d.name.en}
-                  </span>
-                  <span className="shrink-0 font-mono text-[11px] opacity-80">
-                    {read}/{d.principles.length}
-                  </span>
-                </button>
-              );
-            })}
-          </nav>
+              <button
+                type="button"
+                onClick={() =>
+                  setExpandedDomains((prev) => ({ ...prev, [d.id]: !prev[d.id] }))
+                }
+                aria-label={isExpanded ? `Thu gọn ${d.id}` : `Mở rộng ${d.id}`}
+                className="flex shrink-0 items-center gap-1 rounded-md px-1 py-0.5 font-mono text-xs text-[var(--ink-muted)] hover:bg-[var(--bg-hover)] cursor-pointer"
+              >
+                <span>
+                  {read}/{d.principles.length}
+                </span>
+                {isExpanded ? (
+                  <ChevronDown className="h-3.5 w-3.5" />
+                ) : (
+                  <ChevronRight className="h-3.5 w-3.5" />
+                )}
+              </button>
+            </div>
+
+            {isExpanded && (
+              <ul className="ml-3.5 space-y-0.5 border-l border-[var(--border-hairline)] pl-3 py-1">
+                {d.principles.map((p) => {
+                  const isRead = Boolean(progress.readPrinciples[p.id]);
+                  const isCurrent = activePrincipleId === p.id;
+                  return (
+                    <li key={p.id}>
+                      <button
+                        type="button"
+                        onClick={() => handlePrincipleJump(d.id, p.id)}
+                        className={`flex w-full items-start gap-2.5 rounded-lg px-2 py-1.5 text-left text-[13px] leading-snug transition cursor-pointer ${
+                          isCurrent
+                            ? 'bg-[var(--accent-soft)] font-semibold text-[var(--accent-ink)]'
+                            : isRead
+                              ? 'text-[var(--ink-muted)] hover:bg-[var(--bg-subtle)] hover:text-[var(--ink-primary)]'
+                              : 'text-[var(--ink-secondary)] hover:bg-[var(--bg-subtle)] hover:text-[var(--ink-primary)]'
+                        }`}
+                      >
+                        <span className="mt-0.5 w-4 shrink-0 font-mono text-[11.5px] font-semibold opacity-70">
+                          {p.number}
+                        </span>
+                        <span className="flex-1">{pickText(p.title, languageMode)}</span>
+                        {isRead && (
+                          <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--success)]" />
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <div className="grid gap-5 lg:grid-cols-[290px_minmax(0,1fr)] lg:gap-6">
+      <aside className="min-w-0 lg:sticky lg:top-28 lg:self-start">
+        {/* Desktop & iPad Landscape Expandable Tree Rail */}
+        <div className="surface-card hidden max-h-[calc(100vh-8.5rem)] overflow-y-auto p-3.5 lg:block">
+          <div className="px-2 pb-2.5 text-[11px] font-bold uppercase tracking-wider text-[var(--ink-muted)]">
+            Danh mục Domain & Nguyên tắc
+          </div>
+          {renderDomainTree()}
+        </div>
+
+        {/* Mobile Compact Pills + Expandable Detail Outline */}
+        <div className="surface-card p-3 lg:hidden">
+          <div className="flex items-center justify-between gap-2 pb-2">
+            <span className="px-1 text-[11px] font-bold uppercase tracking-wider text-[var(--ink-muted)]">
+              Danh mục Domain
+            </span>
+            <button
+              type="button"
+              onClick={() => setMobileTocOpen((o) => !o)}
+              className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition cursor-pointer ${
+                mobileTocOpen
+                  ? 'bg-[var(--accent)] text-white dark:text-[#0f1115]'
+                  : 'bg-[var(--bg-subtle)] text-[var(--accent-ink)]'
+              }`}
+            >
+              <ListTree className="h-3.5 w-3.5" />
+              <span>{mobileTocOpen ? 'Đóng mục lục' : 'Mục lục chi tiết'}</span>
+            </button>
+          </div>
+
+          {mobileTocOpen ? (
+            <div className="max-h-[60dvh] overflow-y-auto border-t border-[var(--border-hairline)] pt-2">
+              {renderDomainTree()}
+            </div>
+          ) : (
+            <nav className="flex w-full gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
+              <button
+                type="button"
+                onClick={() => setSelectedDomain('ALL')}
+                className={`flex shrink-0 items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-semibold transition cursor-pointer ${
+                  selectedDomain === 'ALL'
+                    ? 'bg-[var(--accent-soft)] text-[var(--accent-ink)]'
+                    : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)]'
+                }`}
+              >
+                <span>Tất cả</span>
+                <span className="ml-1.5 font-mono text-[11px]">{bundle.meta.stats.principles}</span>
+              </button>
+
+              {mergedDomains.map((d, idx) => {
+                const read = d.principles.filter((p) => progress.readPrinciples[p.id]).length;
+                const active = selectedDomain === d.id;
+                const dotColor = DOMAIN_COLORS[idx % DOMAIN_COLORS.length];
+                return (
+                  <button
+                    key={d.id}
+                    type="button"
+                    onClick={() => handleDomainClick(d.id)}
+                    className={`flex shrink-0 items-center justify-between gap-2 rounded-xl px-3 py-2 text-left text-xs transition cursor-pointer ${
+                      active
+                        ? 'bg-[var(--accent-soft)] font-semibold text-[var(--accent-ink)]'
+                        : 'bg-[var(--bg-subtle)]/70 text-[var(--ink-secondary)]'
+                    }`}
+                  >
+                    <span
+                      className="h-2 w-2 shrink-0 rounded-[2px]"
+                      style={{ backgroundColor: dotColor }}
+                    />
+                    <span className="max-w-[165px] truncate">
+                      <span className="font-mono font-bold">{d.id}</span> · {d.name.en}
+                    </span>
+                    <span className="shrink-0 font-mono text-[11px] opacity-80">
+                      {read}/{d.principles.length}
+                    </span>
+                  </button>
+                );
+              })}
+            </nav>
+          )}
         </div>
       </aside>
 

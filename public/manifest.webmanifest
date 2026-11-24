@@ -1,0 +1,24 @@
+{
+  "name": "CertStudio — Study & Mock Exam",
+  "short_name": "CertStudio",
+  "description": "Ứng dụng tự học chứng chỉ cá nhân hóa song ngữ EN–VI (CCAR-F, CCAR-P, CPMAI, PMP).",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fafaf8",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

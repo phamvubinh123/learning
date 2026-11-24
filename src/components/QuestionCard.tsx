@@ -159,8 +159,8 @@ export function QuestionCard({
 
         <BilingualBlock
           text={question.question}
-          primaryClassName="text-[16px] font-medium leading-[1.7] text-[var(--ink-primary)]"
-          secondaryClassName="text-[14.5px] leading-[1.68]"
+          primaryClassName="text-[16.5px] font-medium leading-[1.72] text-[var(--ink-primary)]"
+          secondaryClassName="text-[15.5px] leading-[1.7]"
         />
 
         {(question.type === 'single' || question.type === 'multi') && question.options && (
@@ -196,7 +196,7 @@ export function QuestionCard({
                       ? handleSingleSelect(opt.key)
                       : handleMultiToggle(opt.key)
                   }
-                  className={`flex w-full items-start gap-3.5 rounded-xl border p-3.5 text-left transition ${
+                  className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left transition ${
                     locked ? 'cursor-default' : 'cursor-pointer'
                   } ${containerStyle}`}
                 >
@@ -213,11 +213,11 @@ export function QuestionCard({
                   >
                     {opt.key}
                   </span>
-                  <div className="min-w-0 flex-1 text-sm leading-relaxed">
+                  <div className="min-w-0 flex-1 text-[15px] leading-relaxed">
                     <BilingualBlock
                       text={{ en: opt.en, vi: opt.vi }}
                       primaryClassName="text-[var(--ink-primary)]"
-                      secondaryClassName="text-[13.5px]"
+                      secondaryClassName="text-[14.5px]"
                     />
                   </div>
                   {revealAnswer && isRightOption && (

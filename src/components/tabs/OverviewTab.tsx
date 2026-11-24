@@ -69,11 +69,11 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
             </div>
           </div>
           {meta.guide?.intro?.vi && (
-            <div className="max-w-3xl text-sm">
+            <div className="max-w-3xl">
               <BilingualBlock
                 text={meta.guide.intro}
-                primaryClassName="reading-prose text-[14.5px]"
-                secondaryClassName="text-[13.5px]"
+                primaryClassName="reading-prose text-[15.5px]"
+                secondaryClassName="text-[15px]"
               />
             </div>
           )}
@@ -110,40 +110,40 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
 
         <div className="mt-7 grid grid-cols-2 gap-3 border-t border-[var(--border-hairline)] pt-6 lg:grid-cols-4">
           <div className="surface-subtle p-4">
-            <div className="flex items-center justify-between text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between text-[13px] font-medium text-[var(--ink-muted)]">
               <span>Kiến thức đã hiểu</span>
               <CheckCircle2 className="h-4 w-4 text-[var(--accent-ink)]" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="font-mono text-2xl font-bold">{readPct}%</span>
-              <span className="text-xs text-[var(--ink-muted)]">{readPrinciples}/{totalPrinciples}</span>
+              <span className="text-[13px] text-[var(--ink-muted)]">{readPrinciples}/{totalPrinciples}</span>
             </div>
           </div>
 
           <div className="surface-subtle p-4">
-            <div className="flex items-center justify-between text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between text-[13px] font-medium text-[var(--ink-muted)]">
               <span>Câu hỏi đã luyện</span>
               <Layers className="h-4 w-4 text-[var(--accent-ink)]" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="font-mono text-2xl font-bold">{practicedQuestions}</span>
-              <span className="text-xs text-[var(--ink-muted)]">/ {questions.totalCount}</span>
+              <span className="text-[13px] text-[var(--ink-muted)]">/ {questions.totalCount}</span>
             </div>
           </div>
 
           <div className="surface-subtle p-4">
-            <div className="flex items-center justify-between text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between text-[13px] font-medium text-[var(--ink-muted)]">
               <span>Độ chính xác</span>
               <Target className="h-4 w-4 text-[var(--accent-ink)]" />
             </div>
             <div className="mt-2 flex items-baseline gap-2">
               <span className="font-mono text-2xl font-bold">{totalAttempts ? `${accuracyPct}%` : '—'}</span>
-              <span className="text-xs text-[var(--ink-muted)]">{progress.examHistory.length} lượt thi</span>
+              <span className="text-[13px] text-[var(--ink-muted)]">{progress.examHistory.length} lượt thi</span>
             </div>
           </div>
 
           <div className="surface-subtle p-4">
-            <div className="flex items-center justify-between text-xs text-[var(--ink-muted)]">
+            <div className="flex items-center justify-between text-[13px] font-medium text-[var(--ink-muted)]">
               <span>Kho câu sai</span>
               <AlertTriangle className={`h-4 w-4 ${weakSpotsCount > 0 ? 'text-[var(--danger)]' : 'text-[var(--ink-muted)]'}`} />
             </div>
@@ -151,7 +151,7 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
               <span className={`font-mono text-2xl font-bold ${weakSpotsCount > 0 ? 'text-[var(--danger)]' : ''}`}>
                 {weakSpotsCount}
               </span>
-              <span className="text-xs text-[var(--ink-muted)]">cần khắc phục</span>
+              <span className="text-[13px] text-[var(--ink-muted)]">cần khắc phục</span>
             </div>
           </div>
         </div>
@@ -160,12 +160,12 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
       <section className="space-y-4">
         <div>
           <h2 className="text-xl font-bold">Tỷ trọng Domain & Tiến độ ôn tập</h2>
-          <p className="mt-1 text-sm text-[var(--ink-secondary)]">
+          <p className="mt-1 text-[14.5px] leading-relaxed text-[var(--ink-secondary)]">
             Ưu tiên học các domain chiếm tỷ trọng cao trước. Bấm vào từng domain để học hoặc luyện đề riêng.
           </p>
         </div>
 
-        <div className="surface-card p-5">
+        <div className="surface-card p-4 sm:p-5">
           <div className="flex h-3.5 w-full overflow-hidden rounded-full bg-[var(--bg-subtle)]">
             {meta.domains.map((d, idx) => (
               <div
@@ -180,7 +180,7 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
             ))}
           </div>
 
-          <div className="mt-5 grid gap-3.5 md:grid-cols-2">
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
             {knowledge.domains.map((domain, idx) => {
               const color = DOMAIN_COLORS[idx % DOMAIN_COLORS.length];
               const domainRead = domain.principles.filter((p) => progress.readPrinciples[p.id]).length;
@@ -194,42 +194,47 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
               return (
                 <div
                   key={domain.id}
-                  className="flex flex-col justify-between rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/40 p-4 transition hover:border-[var(--border-strong)]"
+                  className="flex flex-col justify-between rounded-xl border border-[var(--border-hairline)] bg-[var(--bg-subtle)]/40 p-4 sm:p-5 transition hover:border-[var(--border-strong)]"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-2">
-                        <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: color }} />
-                        <span className="font-mono text-xs font-bold uppercase text-[var(--ink-muted)]">
+                        <span className="h-3 w-3 rounded-full" style={{ backgroundColor: color }} />
+                        <span className="font-mono text-[13px] font-bold uppercase text-[var(--ink-muted)]">
                           {domain.id}
                         </span>
                       </div>
-                      <span className="font-mono text-lg font-extrabold" style={{ color }}>
+                      <span className="font-mono text-xl font-extrabold" style={{ color }}>
                         {domain.weight}%
                       </span>
                     </div>
 
-                    <h3 className="mt-1.5 text-base font-bold leading-snug">{domain.name.en}</h3>
+                    <h3 className="mt-2 text-[17px] font-bold leading-snug sm:text-lg">{domain.name.en}</h3>
                     {domain.description.vi && (
-                      <div className="mt-1 text-xs text-[var(--ink-secondary)]">
-                        <BilingualBlock text={domain.description} inline />
+                      <div className="mt-2 text-[14.5px] leading-relaxed text-[var(--ink-secondary)]">
+                        <BilingualBlock
+                          text={domain.description}
+                          primaryClassName="text-[14.5px] leading-[1.65]"
+                          secondaryClassName="text-[14px] leading-[1.65]"
+                          inline
+                        />
                       </div>
                     )}
                   </div>
 
-                  <div className="mt-4 space-y-2.5">
+                  <div className="mt-5 space-y-3">
                     <div>
-                      <div className="flex justify-between text-[11px] font-medium text-[var(--ink-muted)]">
+                      <div className="flex justify-between text-[13px] font-medium text-[var(--ink-secondary)]">
                         <span>Kiến thức: {domainRead}/{domain.principles.length} nguyên tắc</span>
-                        <span className="font-mono">{domainPct}%</span>
+                        <span className="font-mono font-semibold">{domainPct}%</span>
                       </div>
-                      <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-[var(--bg-hover)]">
+                      <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-[var(--bg-hover)]">
                         <div className="h-full rounded-full transition-all" style={{ width: `${domainPct}%`, backgroundColor: color }} />
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-1 text-xs">
-                      <span className="text-[var(--ink-muted)]">
+                    <div className="flex flex-wrap items-center justify-between gap-2 pt-1.5 text-sm">
+                      <span className="text-[13.5px] font-medium text-[var(--ink-muted)]">
                         Đề: {domainQuestions.length} câu
                         {domainAnswered.length > 0 && ` · Đúng ${domainCorrect.length}/${domainAnswered.length}`}
                       </span>
@@ -237,18 +242,17 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
                         <button
                           type="button"
                           onClick={() => onNavigateTab('knowledge', { domainId: domain.id })}
-                          className="font-semibold text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] cursor-pointer"
+                          className="rounded-lg border border-[var(--border-hairline)] bg-[var(--bg-surface)] px-3 py-1.5 text-[13.5px] font-semibold text-[var(--ink-primary)] hover:border-[var(--border-strong)] cursor-pointer"
                         >
                           Học
                         </button>
-                        <span className="text-[var(--border-strong)]">|</span>
                         <button
                           type="button"
                           onClick={() => onNavigateTab('exam', { domainId: domain.id, autoStartMode: 'domain' })}
-                          className="inline-flex items-center gap-1 font-semibold text-[var(--accent-ink)] hover:underline cursor-pointer"
+                          className="inline-flex items-center gap-1 rounded-lg bg-[var(--accent-soft)] px-3 py-1.5 text-[13.5px] font-semibold text-[var(--accent-ink)] hover:opacity-85 cursor-pointer"
                         >
                           Luyện đề
-                          <ArrowRight className="h-3 w-3" />
+                          <ArrowRight className="h-3.5 w-3.5" />
                         </button>
                       </div>
                     </div>
@@ -262,31 +266,31 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
 
       {meta.examFacts.length > 0 && (
         <section className="space-y-4">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-xl font-bold">Cấu trúc bài thi chính thức</h2>
             {meta.factsSource && (
               <a
                 href={meta.factsSource.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium text-[var(--ink-muted)] hover:text-[var(--accent-ink)]"
+                className="inline-flex items-center gap-1 text-[13px] font-medium text-[var(--ink-muted)] hover:text-[var(--accent-ink)]"
               >
                 <span>Nguồn: {meta.factsSource.label}</span>
-                <ExternalLink className="h-3 w-3" />
+                <ExternalLink className="h-3.5 w-3.5" />
               </a>
             )}
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {meta.examFacts.map((fact, idx) => (
-              <div key={idx} className="surface-card p-4">
-                <div className="text-xs font-semibold uppercase tracking-wider text-[var(--ink-muted)]">
+              <div key={idx} className="surface-card p-4 sm:p-5">
+                <div className="text-[12.5px] font-semibold uppercase tracking-wider text-[var(--ink-muted)]">
                   <BilingualBlock text={fact.label} inline />
                 </div>
                 <div className="mt-1.5 font-[var(--font-display)] text-xl font-extrabold">
                   <BilingualBlock text={fact.value} inline />
                 </div>
                 {fact.detail.vi && (
-                  <div className="mt-1.5 text-xs leading-relaxed text-[var(--ink-secondary)]">
+                  <div className="mt-2 text-sm leading-relaxed text-[var(--ink-secondary)]">
                     <BilingualBlock text={fact.detail} />
                   </div>
                 )}
@@ -303,21 +307,25 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
             {meta.studyPlan.map((phase, idx) => (
               <div key={idx} className="surface-card p-5">
                 <div className="flex items-center justify-between">
-                  <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 font-mono text-xs font-bold text-[var(--accent-ink)]">
+                  <span className="rounded-md bg-[var(--accent-soft)] px-2.5 py-0.5 font-mono text-xs font-bold text-[var(--accent-ink)]">
                     {phase.phase}
                   </span>
                   <span className="font-mono text-xs text-[var(--ink-muted)]">
                     0{idx + 1}/0{meta.studyPlan.length}
                   </span>
                 </div>
-                <h3 className="mt-2.5 text-base font-bold">
+                <h3 className="mt-2.5 text-[17px] font-bold">
                   <BilingualBlock text={phase.title} inline />
                 </h3>
-                <ul className="mt-3 space-y-2.5 text-sm">
+                <ul className="mt-3.5 space-y-3">
                   {phase.steps.map((step, sIdx) => (
-                    <li key={sIdx} className="flex items-start gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
-                      <BilingualBlock text={step} primaryClassName="text-[13.5px] leading-relaxed" secondaryClassName="text-[12.5px]" />
+                    <li key={sIdx} className="flex items-start gap-2.5">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                      <BilingualBlock
+                        text={step}
+                        primaryClassName="text-[14.5px] leading-relaxed"
+                        secondaryClassName="text-[14px]"
+                      />
                     </li>
                   ))}
                 </ul>
@@ -333,11 +341,11 @@ export function OverviewTab({ bundle, onNavigateTab }: OverviewTabProps) {
           <div className="surface-card divide-y divide-[var(--border-hairline)] overflow-hidden">
             {meta.faqs.map((faq, idx) => (
               <details key={idx} className="group px-5 py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-[15px] leading-snug">
                   <BilingualBlock text={faq.question} inline />
                   <span className="font-mono text-lg text-[var(--ink-muted)] transition group-open:rotate-45">+</span>
                 </summary>
-                <div className="mt-3 text-sm text-[var(--ink-secondary)]">
+                <div className="mt-3 text-[15px] text-[var(--ink-secondary)]">
                   <BilingualBlock text={faq.answer} primaryClassName="leading-relaxed" />
                 </div>
               </details>

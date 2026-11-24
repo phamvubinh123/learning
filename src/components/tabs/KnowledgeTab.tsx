@@ -220,7 +220,7 @@ export function KnowledgeTab({
                     </div>
                     <h2 className="mt-1 text-xl font-bold">{domain.name.en}</h2>
                     {domain.description.vi && (
-                      <div className="mt-1 text-xs text-[var(--ink-secondary)]">
+                      <div className="mt-1.5 text-[14.5px] leading-relaxed text-[var(--ink-secondary)]">
                         <BilingualBlock text={domain.description} inline />
                       </div>
                     )}
@@ -229,7 +229,7 @@ export function KnowledgeTab({
                   <button
                     type="button"
                     onClick={() => onPracticeDomain(domain.id)}
-                    className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3.5 py-2 text-xs font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent-ink)] sm:self-center cursor-pointer"
+                    className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3.5 py-2 text-[13px] font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent-ink)] sm:self-center cursor-pointer"
                   >
                     <Play className="h-3.5 w-3.5" />
                     <span>Luyện {domain.id}</span>
@@ -258,10 +258,10 @@ export function KnowledgeTab({
                           <div className="min-w-0 flex-1 space-y-3">
                             <div className="flex flex-wrap items-start justify-between gap-2">
                               <div className="flex items-start gap-2">
-                                <span className="mt-0.5 inline-flex h-6 min-w-[24px] shrink-0 items-center justify-center rounded-md bg-[var(--bg-subtle)] px-1.5 font-mono text-[11px] font-bold text-[var(--ink-secondary)] sm:hidden">
+                                <span className="mt-0.5 inline-flex h-6 min-w-[24px] shrink-0 items-center justify-center rounded-md bg-[var(--bg-subtle)] px-1.5 font-mono text-xs font-bold text-[var(--ink-secondary)] sm:hidden">
                                   {principle.number}
                                 </span>
-                                <h3 className="text-[16px] font-bold leading-snug sm:text-[17px]">
+                                <h3 className="text-[17px] font-bold leading-snug sm:text-[18px]">
                                   <BilingualBlock text={principle.title} inline />
                                 </h3>
                               </div>

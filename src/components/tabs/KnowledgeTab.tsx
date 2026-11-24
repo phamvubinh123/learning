@@ -48,6 +48,7 @@ export function KnowledgeTab({
   const [activePrincipleId, setActivePrincipleId] = useState<string | null>(null);
   const [mobileTocOpen, setMobileTocOpen] = useState(false);
   const [editTarget, setEditTarget] = useState<EditableTarget | null>(null);
+  const isManualJumpRef = useMemo(() => ({ current: false }), []);
 
   useEffect(() => {
     if (focusDomainId) {
@@ -114,6 +115,64 @@ export function KnowledgeTab({
       .filter((d) => d.principles.length > 0);
   }, [mergedDomains, selectedDomain, filter, query, progress.readPrinciples, overrides.principles]);
 
+  // Scroll-spy: automatically track visible principle & expand its domain while scrolling
+  useEffect(() => {
+    const principleElements = Array.from(
+      document.querySelectorAll<HTMLElement>('article[data-principle-id]')
+    );
+    if (!principleElements.length) return;
+
+    const visibleMap = new Map<string, number>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isManualJumpRef.current) return;
+
+        for (const entry of entries) {
+          const pid = entry.target.getAttribute('data-principle-id');
+          if (!pid) continue;
+          if (entry.isIntersecting) {
+            visibleMap.set(pid, entry.boundingClientRect.top);
+          } else {
+            visibleMap.delete(pid);
+          }
+        }
+
+        if (visibleMap.size === 0) return;
+
+        // Pick the topmost visible principle near the reading header
+        let bestId: string | null = null;
+        let bestScore = Infinity;
+        for (const [pid, top] of visibleMap.entries()) {
+          const dist = Math.abs(top - 140);
+          if (dist < bestScore) {
+            bestScore = dist;
+            bestId = pid;
+          }
+        }
+
+        if (bestId) {
+          setActivePrincipleId(bestId);
+          const ownerEl = document.querySelector<HTMLElement>(`article[data-principle-id="${bestId}"]`);
+          const domId = ownerEl?.getAttribute('data-domain-id');
+          if (domId) {
+            setExpandedDomains((prev) => (prev[domId] ? prev : { ...prev, [domId]: true }));
+          }
+          // Keep active item visible inside desktop sidebar scroll area
+          const navBtn = document.querySelector<HTMLElement>(`[data-nav-principle="${bestId}"]`);
+          navBtn?.scrollIntoView({ block: 'nearest' });
+        }
+      },
+      {
+        rootMargin: '-120px 0px -55% 0px',
+        threshold: [0, 0.25, 0.6],
+      }
+    );
+
+    for (const el of principleElements) observer.observe(el);
+    return () => observer.disconnect();
+  }, [filteredDomains, isManualJumpRef]);
+
   const totalVisible = filteredDomains.reduce((sum, d) => sum + d.principles.length, 0);
   const totalReadAll = mergedDomains.reduce(
     (sum, d) => sum + d.principles.filter((p) => progress.readPrinciples[p.id]).length,
@@ -129,6 +188,7 @@ export function KnowledgeTab({
   };
 
   const handlePrincipleJump = (domainId: string, principleId: string) => {
+    isManualJumpRef.current = true;
     setActivePrincipleId(principleId);
     setMobileTocOpen(false);
     if (selectedDomain !== 'ALL' && selectedDomain !== domainId) {
@@ -141,6 +201,9 @@ export function KnowledgeTab({
     setTimeout(() => {
       const el = document.getElementById(`principle-${principleId}`);
       el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        isManualJumpRef.current = false;
+      }, 600);
     }, 80);
   };
 
@@ -218,6 +281,7 @@ export function KnowledgeTab({
                     <li key={p.id}>
                       <button
                         type="button"
+                        data-nav-principle={p.id}
                         onClick={() => handlePrincipleJump(d.id, p.id)}
                         className={`flex w-full items-start gap-2.5 rounded-lg px-2 py-1.5 text-left text-[13px] leading-snug transition cursor-pointer ${
                           isCurrent
@@ -430,7 +494,9 @@ export function KnowledgeTab({
                       <article
                         key={principle.id}
                         id={`principle-${principle.id}`}
-                        className={`surface-card p-4 transition sm:p-6 ${
+                        data-principle-id={principle.id}
+                        data-domain-id={domain.id}
+                        className={`surface-card scroll-mt-32 p-4 transition sm:p-6 ${
                           isRead ? 'border-l-4 border-l-[var(--success)]' : ''
                         }`}
                       >

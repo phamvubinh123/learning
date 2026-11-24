@@ -1,8 +1,15 @@
-import { Check, ChevronDown, ChevronRight, ListTree, Pencil, Play, Search, StickyNote, Target } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { Check, ChevronDown, ChevronRight, Headphones, ListTree, Pencil, Play, Search, StickyNote, Target, Volume2 } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useApp } from '../../context/AppContext';
+import {
+  buildPrincipleSpeechSegments,
+  isSpeechSupported,
+  pickBestVoice,
+  type SpeechStyle,
+} from '../../services/speechService';
 import { mergePrinciple } from '../../services/storage';
 import type { CertBundle, Principle } from '../../types/cert';
+import { AudioLectureBar } from '../AudioLectureBar';
 import { BilingualBlock, pickText } from '../BilingualBlock';
 import { type EditableTarget, NoteEditModal } from '../NoteEditModal';
 
@@ -48,7 +55,116 @@ export function KnowledgeTab({
   const [activePrincipleId, setActivePrincipleId] = useState<string | null>(null);
   const [mobileTocOpen, setMobileTocOpen] = useState(false);
   const [editTarget, setEditTarget] = useState<EditableTarget | null>(null);
-  const isManualJumpRef = useMemo(() => ({ current: false }), []);
+  const isManualJumpRef = useRef(false);
+
+  // Audio Lecture & Read-Aloud state
+  const speechSupported = isSpeechSupported();
+  const [speechQueue, setSpeechQueue] = useState<{ domainId: string; principle: Principle }[]>([]);
+  const [speechIdx, setSpeechIdx] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [speechStyle, setSpeechStyle] = useState<SpeechStyle>('lecture');
+  const [speechRate, setSpeechRate] = useState<number>(1.0);
+  const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const playbackSessionRef = useRef(0);
+
+  useEffect(() => {
+    if (!speechSupported) return;
+    const loadVoices = () => setVoices(window.speechSynthesis.getVoices());
+    loadVoices();
+    window.speechSynthesis.addEventListener?.('voiceschanged', loadVoices);
+    return () => {
+      window.speechSynthesis.removeEventListener?.('voiceschanged', loadVoices);
+    };
+  }, [speechSupported]);
+
+  const stopSpeech = useCallback(() => {
+    playbackSessionRef.current += 1;
+    if (speechSupported) window.speechSynthesis.cancel();
+    setIsPlaying(false);
+    setIsPaused(false);
+    setSpeechQueue([]);
+    setSpeechIdx(0);
+  }, [speechSupported]);
+
+  useEffect(() => {
+    return () => {
+      playbackSessionRef.current += 1;
+      if (isSpeechSupported()) window.speechSynthesis.cancel();
+    };
+  }, [slug]);
+
+  const playAtIndex = useCallback(
+    (
+      queue: { domainId: string; principle: Principle }[],
+      index: number,
+      style: SpeechStyle,
+      rate: number
+    ) => {
+      if (!speechSupported || index < 0 || index >= queue.length) {
+        stopSpeech();
+        return;
+      }
+
+      const item = queue[index];
+      const sessionId = ++playbackSessionRef.current;
+      window.speechSynthesis.cancel();
+
+      setSpeechQueue(queue);
+      setSpeechIdx(index);
+      setIsPlaying(true);
+      setIsPaused(false);
+      setActivePrincipleId(item.principle.id);
+      setExpandedDomains({ [item.domainId]: true });
+
+      isManualJumpRef.current = true;
+      setTimeout(() => {
+        document
+          .getElementById(`principle-${item.principle.id}`)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          isManualJumpRef.current = false;
+        }, 500);
+      }, 60);
+
+      const segments = buildPrincipleSpeechSegments(item.principle, languageMode, style);
+      if (!segments.length) {
+        if (index + 1 < queue.length) playAtIndex(queue, index + 1, style, rate);
+        else stopSpeech();
+        return;
+      }
+
+      let segIdx = 0;
+      const speakNextSegment = () => {
+        if (playbackSessionRef.current !== sessionId) return;
+        if (segIdx >= segments.length) {
+          if (index + 1 < queue.length) {
+            playAtIndex(queue, index + 1, style, rate);
+          } else {
+            stopSpeech();
+          }
+          return;
+        }
+
+        const seg = segments[segIdx++];
+        const utter = new SpeechSynthesisUtterance(seg.text);
+        utter.lang = seg.lang;
+        utter.rate = rate;
+        const voice = pickBestVoice(voices, seg.lang);
+        if (voice) utter.voice = voice;
+
+        utter.onend = () => speakNextSegment();
+        utter.onerror = (e) => {
+          if (e.error === 'interrupted' || e.error === 'canceled') return;
+          speakNextSegment();
+        };
+        window.speechSynthesis.speak(utter);
+      };
+
+      speakNextSegment();
+    },
+    [speechSupported, languageMode, voices, stopSpeech]
+  );
 
   useEffect(() => {
     if (focusDomainId) {
@@ -477,21 +593,39 @@ export function KnowledgeTab({
                     )}
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => onPracticeDomain(domain.id)}
-                    className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3.5 py-2 text-[13px] font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent-ink)] sm:self-center cursor-pointer"
-                  >
-                    <Play className="h-3.5 w-3.5" />
-                    <span>Luyện {domain.id}</span>
-                  </button>
+                  <div className="flex flex-wrap items-center gap-2 self-start sm:self-center">
+                    {speechSupported && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const queue = domain.principles.map((p) => ({ domainId: domain.id, principle: p }));
+                          playAtIndex(queue, 0, speechStyle, speechRate);
+                        }}
+                        className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-[var(--accent)] px-3.5 py-2 text-[13px] font-semibold text-white transition hover:bg-[var(--accent-hover)] dark:text-[#0f1115] cursor-pointer"
+                      >
+                        <Headphones className="h-3.5 w-3.5" />
+                        <span>Nghe giảng {domain.id}</span>
+                      </button>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => onPracticeDomain(domain.id)}
+                      className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface)] px-3.5 py-2 text-[13px] font-semibold transition hover:border-[var(--accent)] hover:text-[var(--accent-ink)] cursor-pointer"
+                    >
+                      <Play className="h-3.5 w-3.5" />
+                      <span>Luyện {domain.id}</span>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="space-y-3.5">
-                  {domain.principles.map((principle) => {
+                  {domain.principles.map((principle, pIdx) => {
                     const isRead = Boolean(progress.readPrinciples[principle.id]);
                     const hasOverride = Boolean(overrides.principles[principle.id]);
                     const linkedQuestions = questionCountByPrinciple[principle.id] || principle.questionCount || 0;
+                    const isCurrentlySpeaking =
+                      (isPlaying || isPaused) && speechQueue[speechIdx]?.principle.id === principle.id;
 
                     return (
                       <article
@@ -501,7 +635,7 @@ export function KnowledgeTab({
                         data-domain-id={domain.id}
                         className={`surface-card scroll-mt-32 p-4 transition sm:p-6 ${
                           isRead ? 'border-l-4 border-l-[var(--success)]' : ''
-                        }`}
+                        } ${isCurrentlySpeaking ? 'ring-2 ring-[var(--accent)]' : ''}`}
                       >
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-3.5">
                           <span className="hidden h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[var(--bg-subtle)] font-mono text-xs font-bold text-[var(--ink-secondary)] sm:mt-0.5 sm:flex">
@@ -559,6 +693,31 @@ export function KnowledgeTab({
                               </button>
 
                               <div className="flex flex-wrap items-center gap-2">
+                                {speechSupported && (
+                                  <button
+                                    type="button"
+                                    onClick={() => {
+                                      if (isCurrentlySpeaking) {
+                                        stopSpeech();
+                                      } else {
+                                        const queue = domain.principles.map((p) => ({
+                                          domainId: domain.id,
+                                          principle: p,
+                                        }));
+                                        playAtIndex(queue, pIdx, speechStyle, speechRate);
+                                      }
+                                    }}
+                                    className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition cursor-pointer ${
+                                      isCurrentlySpeaking
+                                        ? 'bg-[var(--accent)] text-white dark:text-[#0f1115]'
+                                        : 'border border-[var(--border-hairline)] bg-[var(--bg-surface)] text-[var(--ink-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent-ink)]'
+                                    }`}
+                                  >
+                                    <Volume2 className="h-3.5 w-3.5" />
+                                    <span>{isCurrentlySpeaking ? 'Đang phát' : 'Nghe'}</span>
+                                  </button>
+                                )}
+
                                 <button
                                   type="button"
                                   onClick={() => setEditTarget({ kind: 'principle', item: principle, hasOverride })}
@@ -592,6 +751,51 @@ export function KnowledgeTab({
           })
         )}
       </div>
+
+      <AudioLectureBar
+        title={
+          speechQueue[speechIdx]
+            ? pickText(speechQueue[speechIdx].principle.title, languageMode)
+            : ''
+        }
+        subtitle={
+          speechQueue[speechIdx]
+            ? `${speechQueue[speechIdx].domainId} · Nguyên tắc ${speechIdx + 1}/${speechQueue.length}`
+            : ''
+        }
+        isPlaying={isPlaying}
+        isPaused={isPaused}
+        style={speechStyle}
+        rate={speechRate}
+        hasPrev={speechIdx > 0}
+        hasNext={speechIdx < speechQueue.length - 1}
+        onTogglePlayPause={() => {
+          if (!speechSupported) return;
+          if (isPaused) {
+            window.speechSynthesis.resume();
+            setIsPaused(false);
+            setIsPlaying(true);
+          } else {
+            window.speechSynthesis.pause();
+            setIsPaused(true);
+            setIsPlaying(false);
+          }
+        }}
+        onPrev={() => playAtIndex(speechQueue, speechIdx - 1, speechStyle, speechRate)}
+        onNext={() => playAtIndex(speechQueue, speechIdx + 1, speechStyle, speechRate)}
+        onStop={stopSpeech}
+        onToggleStyle={() => {
+          const nextStyle: SpeechStyle = speechStyle === 'lecture' ? 'read' : 'lecture';
+          setSpeechStyle(nextStyle);
+          if (speechQueue.length) playAtIndex(speechQueue, speechIdx, nextStyle, speechRate);
+        }}
+        onCycleRate={() => {
+          const rates = [0.9, 1.0, 1.2, 1.5];
+          const nextRate = rates[(rates.indexOf(speechRate) + 1) % rates.length];
+          setSpeechRate(nextRate);
+          if (speechQueue.length) playAtIndex(speechQueue, speechIdx, speechStyle, nextRate);
+        }}
+      />
 
       <NoteEditModal
         target={editTarget}
